@@ -1,0 +1,51 @@
+
+/* -----------------------------
+=caclulator
+----------------------------- */
+
+.c-calculator {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  width: 280px;
+  height: 400px;
+  grid-template-columns: repeat(4, minmax(auto, 150px));
+  grid-template-rows: minmax(80px, auto) repeat(5, minmax(auto, 150px));
+  background-color: #000;
+}
+
+.c-calculator__btn {
+  cursor: pointer;
+  font-size: 1rem;
+  border: 1px solid #000;
+  outline: none;
+
+  background-color: #fff;
+}
+
+.c-calculator__screen {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 15px 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.c-screen__previous {
+  color: #fff;
+  font-size: 0.75em;
+}
+
+.c-screen__current {
+  color: #fff;
+  font-size: 1em;
+}
+
+.c-span--two {
+  grid-column: span 2;
+}

@@ -1,0 +1,72 @@
+
+@font-face {
+  font-family: 'Munro';
+  src: url('../../../fonts/oneBitFont/munro-2lye-webfont.woff2') format('woff2'),
+       url('../../../fonts/oneBitFont/munro-2lye-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+*,
+*::before,
+*::after {
+  font-family: "Munro", system-ui, sans-serif;
+  font-weight: normal;
+}
+
+.c-screen{
+  background: #C0C0C0;
+}
+
+/* -----------------------------
+=menu-bar
+----------------------------- */
+.c-menu-bar{
+  background-color: #fff;
+  border-bottom: 2px solid #000;
+}
+
+/* -----------------------------
+=dock
+----------------------------- */
+
+.c-dock{
+  background: #fff;
+  border: 2px solid #000;
+  width: 100%;
+  height: 45px;
+}
+
+.c-dock__active::before{
+  width: 2px;
+  height: 100%;
+  background-color: #000;
+}
+
+.c-dock__icon{
+  position: relative;
+  transform-origin: bottom center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c-dock__app--active::before{
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #ffffffab;
+}
+
+
+/* -----------------------------
+=photo
+----------------------------- */
+
+img{
+  filter: grayscale(1) contrast(1.8);
+}

@@ -1,0 +1,38 @@
+.c-calculator {
+    background-color: #2B2D2F;
+    color: #fff;
+}
+
+.c-calculator__btn {
+    color: #fff;
+    border: 1px solid #2B2D2F;
+    background-color: #5F6062;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.c-calculator__btn:hover {
+    background-color: #7f8185;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.c-calculator__screen {
+    background-color: #3D3C3C;
+}
+
+.c-screen__previous {
+    color: #ffffffaa;
+  }
+  
+.c-screen__current {
+    color: #ffffff;
+  }
+  
+.c-calculator__btn--equals {
+    background-color: #FD9E2B;
+}
+
+.c-calculator__btn--equals:hover {
+    background-color: #faa946;
+}

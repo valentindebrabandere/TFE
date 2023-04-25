@@ -1,0 +1,51 @@
+.c-window{
+    position: absolute;
+    width: fit-content;
+    height: fit-content; 
+
+    overflow: hidden;
+}
+
+.c-window__head{
+    width: 100%;
+    height: 40px;
+    background-color: #000;
+}
+
+.c-window__content{
+    width: 100%;
+    height: 100%;
+}
+
+
+.c-window__contols{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    height: 100%;
+    list-style: none;
+    margin: 0 15px;
+}
+
+.c-window__control{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* -----------------------------
+=states
+----------------------------- */
+
+ .state--big{
+    left: 0 !important;
+    top:0 !important;
+}

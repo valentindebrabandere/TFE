@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SystemWindow</title>
+    <link rel="icon" type="image/x-icon" href="img/favIcon.png" />
+
+    <link rel="stylesheet" href="css/basics/IpsonSystemBasics.css" />
+    <link rel="stylesheet" href="css/basics/IpsonWindowBasic.css" />
+    <link rel="stylesheet" href="css/basics/IpsonCalculatorBasics.css" />
+    <link rel="stylesheet" href="css/basics/IpsonErrorBasics.css" />
+    <link rel="stylesheet" href="css/basics/IpsonDesktopBasics.css" />
+
+    <link
+      data-css-style="modernMac"
+      rel="stylesheet"
+      href="css/allStyles/modernMac/IpsonSystemStyle.css"
+    />
+    <link
+      data-css-style="modernMac"
+      rel="stylesheet"
+      href="css/allStyles/modernMac/IpsonWindowStyle.css"
+    />
+    <link
+      data-css-style="modernMac"
+      rel="stylesheet"
+      href="css/allStyles/modernMac/IpsonCalculatorStyle.css"
+    />
+    <link
+      data-css-style="modernMac"
+      rel="stylesheet"
+      href="css/allStyles/modernMac/IpsonErrorStyle.css"
+    />
+    <link
+      data-css-style="modernMac"
+      rel="stylesheet"
+      href="css/allStyles/modernMac/IpsonDesktopStyle.css"
+    />
+
+    <link rel="stylesheet" href="css/IpsonLayout.css" />
+
+    <script defer src="js/script.js"></script>
+    <script defer type="module" src="js/IpsonSystem.js"></script>
+    <script defer type="module" src="js/IpsonCalculator.js"></script>
+    <script defer type="module" src="js/IpsonWindow.js"></script>
+    <script defer src="js/IpsonInterractions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="c-screen js-screen">
+      <div class="c-screen__overlay js-screen__overlay"></div>
+      <div class="c-menu-bar">
+        <ul class="c-menu-bar__left">
+          <li class="c-menu-bar__item">
+            <button class="c-menu-bar__btn js-menu-bar__logo">
+              <img
+                class="c-menu-bar__icon"
+                src="img/modernMac/menuBarre/logoLoremIpson.png"
+                alt="logoLoremIpson"
+              />
+            </button>
+          </li>
+          <li class="c-menu-bar__item c-menubar__application">
+            <button data-menu-bar="Files" class="c-menu-bar__btn">Files</button>
+          </li>
+          <li class="c-menu-bar__item">
+            <button data-menu-bar="Edit" class="c-menu-bar__btn">Edit</button>
+          </li>
+          <li class="c-menu-bar__item">
+            <button data-menu-bar="View" class="c-menu-bar__btn">View</button>
+          </li>
+          <li class="c-menu-bar__item">
+            <button data-menu-bar="Go" class="c-menu-bar__btn">Go</button>
+          </li>
+          <li class="c-menu-bar__item">
+            <button data-menu-bar="View" class="c-menu-bar__btn">Window</button>
+          </li>
+          <li class="c-menu-bar__item">
+            <button data-menu-bar="Help" class="c-menu-bar__btn">Help</button>
+          </li>
+        </ul>
+        <ul class="c-menu-bar__rigth">
+          <li class="c-menu-bar__item">
+            <button class="c-menu-bar__btn" data-menu-bar="Wifi">
+              <img
+                class="c-menu-bar__icon"
+                src="img/modernMac/menuBarre/wifiIcon.png"
+                alt="icon Wifi"
+              />
+            </button>
+          </li>
+          <li class="c-menu-bar__item">
+            <button class="c-menu-bar__btn" data-menu-bar="Search">
+              <img
+                class="c-menu-bar__icon"
+                src="img/modernMac/menuBarre/searchIcon.png"
+                alt="icon Search"
+              />
+            </button>
+          </li>
+          <li class="c-menu-bar__item">
+            <button class="c-menu-bar__btn" data-menu-bar="Control center">
+              <img
+                class="c-menu-bar__icon"
+                src="img/modernMac/menuBarre/controlCenterIcon.png"
+                alt="icon Control center"
+              />
+            </button>
+          </li>
+          <li class="c-menu-bar__item" data-menu-bar="Date">
+            <button
+              class="c-menu-bar__btn js-mennubar__btn--date c-mennubar__btn--date"
+            >
+              Sat 25 Jun
+            </button>
+          </li>
+          <li class="c-menu-bar__item">
+            <button
+              class="c-menu-bar__btn js-mennubar__btn--hour"
+              data-menu-bar="Hour"
+            >
+              17:13
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="o-container js-container">
+        <div class="c-desktop js-desktop">
+          <div
+            class="c-desktop__element js-desktop__element"
+            data-drag="draggable"
+            data-type="folder"
+            data-drop="droppable"
+            data-application-name="Folder"
+            data-extention=""
+          >
+            <div class="c-desktop__icon js-desktop__icon">
+              <img
+                class="c-desktop__icon-img js-desktop__icon-img o-fluidimage"
+                src="img/modernMac/desktopIcons/folder.png"
+                alt="Folder"
+              />
+            </div>
+            <p class="c-desktop__name js-desktop__name">Utilted01</p>
+          </div>
+          <div
+            class="c-desktop__element js-desktop__element"
+            data-drag="draggable"
+            data-type="slide"
+            data-drop="droppable"
+            data-application-name="Slides"
+            data-extention=".sld"
+            data-n-pages="4"
+          >
+            <div class="c-desktop__icon js-desktop__icon">
+              <img
+                class="c-desktop__icon-img js-desktop__icon-img o-fluidimage"
+                src="img//modernMac/desktopIcons/slides.png"
+                alt="Icon Logo"
+              />
+            </div>
+            <p class="c-desktop__name js-desktop__name">SlidesTest</p>
+          </div>
+          <div
+            class="c-desktop__element js-desktop__element"
+            data-drag="draggable"
+            data-type="image"
+            data-drop="droppable"
+            data-application-name="Photos"
+            data-extention=".jpg"
+          >
+            <div class="c-desktop__icon js-desktop__icon">
+              <img
+                class="c-desktop__icon-img js-desktop__icon-img c-desktop__icon-img--image"
+                src="img/constantImages/hans-ott-oxkf_pBlR7o-unsplash.jpg"
+                alt="Image"
+              />
+            </div>
+            <p class="c-desktop__name js-desktop__name">ImageTest</p>
+          </div>
+          <div
+            class="c-desktop__element js-desktop__element"
+            data-drag="draggable"
+            data-type="folder"
+            data-drop="droppable"
+            data-application-name="Folder"
+            data-extention=""
+          >
+            <div class="c-desktop__icon js-desktop__icon">
+              <img
+                class="c-desktop__icon-img js-desktop__icon-img o-fluidimage"
+                src="img/modernMac/desktopIcons/folder.png"
+                alt="Folder"
+              />
+            </div>
+            <p class="c-desktop__name js-desktop__name">Utilted</p>
+          </div>
+        </div>
+      </div>
+      <div class="c-dock js-dock">
+        <div class="c-dock__static js-dock__static">
+          <div
+            data-application-name="Finder"
+            class="c-dock__app js-dock__app c-dock__app--active"
+          >
+            <img
+              class="c-dock__icon js-dock__icon"
+              src="img/modernMac/dockIcons/finder.png"
+            />
+          </div>
+          <div
+            class="c-dock__app js-dock__app"
+            data-application-name="System preferences"
+          >
+            <img
+              class="c-dock__icon js-dock__icon"
+              src="img/modernMac/dockIcons/preferences.png"
+            />
+          </div>
+          <div
+            data-application-name="App Store"
+            class="c-dock__app js-dock__app"
+          >
+            <img
+              class="c-dock__icon js-dock__icon"
+              src="img/modernMac/dockIcons/appStore.png"
+            />
+          </div>
+          <div data-application-name="Camera" class="c-dock__app js-dock__app">
+            <img
+              class="c-dock__icon js-dock__icon"
+              src="img/modernMac/dockIcons/camera.png"
+            />
+          </div>
+          <div data-application-name="Photos" class="c-dock__app js-dock__app">
+            <img
+              class="c-dock__icon js-dock__icon"
+              src="img/modernMac/dockIcons/photo.png"
+            />
+          </div>
+          <div class="c-dock__app js-dock__app" data-application-name="Mail">
+            <img
+              class="c-dock__icon js-dock__icon"
+              src="img/modernMac/dockIcons/mail.png"
+            />
+          </div>
+          <div
+            class="c-dock__app js-dock__app"
+            data-application-name="Calculator"
+          >
+            <img
+              class="c-dock__icon js-dock__icon"
+              src="img/modernMac/dockIcons/calculator.png"
+            />
+          </div>
+          <div data-application-name="Chrome" class="c-dock__app js-dock__app">
+            <img
+              class="c-dock__icon js-dock__icon"
+              src="img/modernMac/dockIcons/chrome.png"
+            />
+          </div>
+          <div data-application-name="Figma" class="c-dock__app js-dock__app">
+            <img
+              class="c-dock__icon js-dock__icon"
+              src="img/modernMac/dockIcons/figma.png"
+            />
+          </div>
+        </div>
+        <div class="c-dock__active js-dock__active">
+          <div data-application-name="Trash" class="c-dock__app js-dock__app">
+            <img
+              class="c-dock__icon js-dock__icon"
+              src="img/modernMac/dockIcons/trash.png"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="c-layout js-layout">
+      <div class="c-layout__display">
+        <div class="c-layout__controls">
+          <button
+            disabled
+            class="c-layout__btn c-layout__btn--back js-layout__btn"
+          >
+            <img
+              src="img/layout/layout__btn-icon--up.png"
+              alt="Bouton pécédent"
+              class="c-layout__btn-icon o-fluidimage"
+            />
+          </button>
+          <button
+            disabled
+            class="c-layout__btn c-layout__btn--next js-layout__btn"
+          >
+            <img
+              src="img/layout/layout__btn-icon--down.png"
+              alt="Bouton pécédent"
+              class="c-layout__btn-icon c-layout__btn-icon--invert o-fluidimage"
+            />
+          </button>
+        </div>
+        <div class="c-layout__icon">
+          <img
+            class="o-fluidimage"
+            src="img/layout/loremIpsonIcon.png"
+            alt="Logo neumorphique Lorem Ipson"
+          />
+        </div>
+
+        <h2 class="c-layout__style js-layout__style">Modern Mac</h2>
+      </div>
+      <div class="c-layout__screen js-layout__screen"></div>
+    </div>
+  </body>
+</html>

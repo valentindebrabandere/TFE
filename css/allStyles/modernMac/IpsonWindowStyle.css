@@ -1,0 +1,39 @@
+
+.c-window{
+    background-color: #3D3C3C;
+    border-radius: 10px;
+   
+    filter: drop-shadow(0px 9px 10px rgba(21, 21, 15, 0.5));
+    -webkit-filter: drop-shadow(0px 9px 10px rgba(21, 21, 15, 0.5));
+}
+
+.c-window__head{
+    background-color: #3D3C3C;
+}
+
+.c-window__contols:hover .c-window__control-icon{
+    transform: translate3d(0,0,0) rotate(0);
+    transition: transform 0.25s ease-in-out;
+}
+
+.c-window__control-icon{
+    display: block;
+    width: 70%;
+    height: auto;
+    opacity: 70%;
+    transform: translate3d(0,12px,0) rotate(-145deg);
+    transition: transform 0.25s ease-in-out;
+}
+
+.c-window__control--quit{
+    background-color: #E0463C;
+    border: solid 1px #bd3c33;
+}
+.c-window__control--hide{
+    background-color: #D9A623;
+    border: solid 1px #b58a1e;
+}
+.c-window__control--scale{
+    background-color: #73BE59;
+    border: solid 1px #528840;
+}

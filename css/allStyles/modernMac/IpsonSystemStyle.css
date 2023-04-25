@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: normal;
+  box-sizing:content-box;
+}
+
+.c-screen{
+  background: url(../../../img/modernMac/background.png) 50% 50% no-repeat;
+  background-size:cover;
+}
+
+/* -----------------------------
+=menu-bar
+----------------------------- */
+.c-menu-bar{
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px); 
+  background-color: #ffffff44;
+}
+
+/* -----------------------------
+=dock
+----------------------------- */
+
+.c-dock{
+  border-radius: 15px;
+  background: #ffffff4a;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  filter: drop-shadow(0px 9px 10px rgba(21, 21, 15, 0.5));
+  -webkit-filter: drop-shadow(0px 9px 10px rgba(21, 21, 15, 0.5));
+}
+
+.c-dock__active::before{
+  border-radius: 15px;
+  background-color: #ffffff4b
+}
+
+.c-dock__icon{
+  position: relative;
+  transform-origin: bottom center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.c-dock__app--active::before{
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #ffffffab;
+}
+
+
