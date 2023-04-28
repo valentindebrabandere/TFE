@@ -56,7 +56,7 @@ export default class IpsonWindow {
     const windowDisplay = document.createElement("div");
     windowDisplay.classList.add("c-window");
     windowDisplay.innerHTML = `<div class="c-window__head js-window__head">
-    <ul class="c-window__contols">
+    <ul class="c-window__controls">
       <li>
         <button
         data-window-control="quit"

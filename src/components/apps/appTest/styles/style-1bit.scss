@@ -1,39 +1,42 @@
+.style-oneBit {
 
-.c-window{
+  .c-window {
     background: #C0C0C0;
     border: 2px solid #000;
-}
+  }
 
-.c-window__head{
+  .c-window__head {
     background: #fff;
     border-bottom: 2px solid #000;
-}
+  }
 
-.c-window__contols{
+  .c-window__controls {
     height: 100%;
     margin: 0 10px;
-}
+  }
 
-.c-window__contols>li{
+  .c-window__controls>li {
     display: flex;
     align-items: center;
     height: 100%;
-}
+  }
 
-.c-window__control{
+  .c-window__control {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 20px;
     width: 20px;
-    border: 2px solid #000;;
+    border: 2px solid #000;
+    ;
     border-radius: 0;
     padding: 2px;
-}
+  }
 
-.c-window__control-icon{
+  .c-window__control-icon {
     display: block;
     width: 100%;
     height: auto;
     opacity: 100%;
+  }
 }

@@ -7,21 +7,19 @@
     <title>SystemWindow</title>
     <link rel="icon" type="image/x-icon" href="img/favIcon.png" />
 
+    <script type="module" src="/src/index.js"></script>
+
     <link rel="stylesheet" href="css/basics/IpsonSystemBasics.css" />
-    <link rel="stylesheet" href="css/basics/IpsonWindowBasic.css" />
     <link rel="stylesheet" href="css/basics/IpsonCalculatorBasics.css" />
     <link rel="stylesheet" href="css/basics/IpsonErrorBasics.css" />
     <link rel="stylesheet" href="css/basics/IpsonDesktopBasics.css" />
+
+    <script type="module" src="./src/components/apps/appTest/AppTest.ts"></script>
 
     <link
       data-css-style="modernMac"
       rel="stylesheet"
       href="css/allStyles/modernMac/IpsonSystemStyle.css"
-    />
-    <link
-      data-css-style="modernMac"
-      rel="stylesheet"
-      href="css/allStyles/modernMac/IpsonWindowStyle.css"
     />
     <link
       data-css-style="modernMac"
@@ -55,7 +53,7 @@
     ></script>
   </head>
   <body>
-    <div class="c-screen js-screen">
+    <div class="c-screen js-screen modernMac">
       <div class="c-screen__overlay js-screen__overlay"></div>
       <div class="c-menu-bar">
         <ul class="c-menu-bar__left">
@@ -133,6 +131,7 @@
         </ul>
       </div>
       <div class="o-container js-container">
+        <app-test></app-test>
         <div class="c-desktop js-desktop">
           <div
             class="c-desktop__element js-desktop__element"

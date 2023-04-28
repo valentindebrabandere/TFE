@@ -1,5 +1,7 @@
 .c-window{
     position: absolute;
+    top: 20%;
+    left: 30%;
     width: fit-content;
     height: fit-content; 
 
@@ -17,8 +19,7 @@
     height: 100%;
 }
 
-
-.c-window__contols{
+.c-window__controls{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -49,3 +50,12 @@
     left: 0 !important;
     top:0 !important;
 }
+
+
+/* -----------------------------
+=styles
+----------------------------- */
+
+//import scss
+@import "./styles/style-1bit.scss";
+@import "./styles/style-modernMac.scss";

@@ -328,11 +328,10 @@ function componentGetFocus(evt) {
 //================
 
 function applyStyle(myNewStyle) {
-  let newStyleCall = myNewStyle.call;
   let allCSS = document.querySelectorAll("[data-css-style]");
   allCSS.forEach((css) => {
     let href = css.href;
-    let newHref = href.replace(currentStyle.call, newStyleCall);
+    let newHref = href.replace(currentStyle.call, myNewStyle.call);
     css.setAttribute("href", newHref);
     css.dataset.cssStyle = myNewStyle;
   });
@@ -340,9 +339,15 @@ function applyStyle(myNewStyle) {
   let allIMG = document.querySelectorAll("img");
   allIMG.forEach((img) => {
     let src = img.src;
-    let newSrc = src.replace(currentStyle.call, newStyleCall);
+    let newSrc = src.replace(currentStyle.call, myNewStyle.call);
     img.setAttribute("src", newSrc);
   });
+
+  let screen = document.querySelector(".c-screen");
+  console.log(screen);
+
+  screen.classList.remove("style-" + currentStyle.call);
+  screen.classList.add("style-"+myNewStyle.call);
 
   currentStyle = myNewStyle;
 }
