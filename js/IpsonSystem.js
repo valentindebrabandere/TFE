@@ -344,7 +344,6 @@ function applyStyle(myNewStyle) {
   });
 
   let screen = document.querySelector(".c-screen");
-  console.log(screen);
 
   screen.classList.remove("style-" + currentStyle.call);
   screen.classList.add("style-"+myNewStyle.call);

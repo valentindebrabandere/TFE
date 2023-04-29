@@ -1,14 +1,24 @@
-import { LitElement, html } from 'lit';
+import { LitElement, html, css } from 'lit';
 
 class AppTest extends LitElement {
 
-  createRenderRoot() {
-    return this;
+  //style
+  static get styles() {
+    return [
+      css`
+       div{
+        background-color: red;
+        }
+        h1 {
+          margin: 0;
+        }
+      `
+    ]
   }
 
   render() {
     return html`
-      <h1>Test</h1>
+      <div><h1>Test</h1></div>
       `
   }
 

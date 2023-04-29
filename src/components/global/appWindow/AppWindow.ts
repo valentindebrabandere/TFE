@@ -1,9 +1,13 @@
 import { LitElement, html } from 'lit';
+import { basic, styles } from './styles';
+
+const currentStyle = 'modernMac'
 
 class AppWindow extends LitElement {
-
-  createRenderRoot() {
-    return this;
+  
+  static get styles() {
+    const styleIndex = styles.findIndex(style => style.styleName === currentStyle);
+    return [basic, styles[styleIndex].css];
   }
 
   render() {
