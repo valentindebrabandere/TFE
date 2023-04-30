@@ -27,10 +27,9 @@ systemStart();
 
 function systemStart() {
   applyStyle(style1);
-  applyHour();
   setDesktop();
   animDock();
-  addIteractivityToLayout();
+  // addIteractivityToLayout();
 
   let staticApps = dockStatic.querySelectorAll(".js-dock__app");
   staticApps.forEach((app) => {
@@ -124,8 +123,8 @@ function setFolder(folder) {
 //Met en place le fonctionnemnt du layout
 function addIteractivityToLayout() {
   //activer le layout de changment de style au dbl click
-  let logoIpson = document.querySelector(".js-menu-bar__logo");
   let allLayoutBtn = document.querySelectorAll(".js-layout__btn");
+  let logoIpson = document.querySelector(".js-menu-bar__logo");
   logoIpson.addEventListener("click", function () {
     layout.style.pointerEvents = "auto";
     layout.style.transform = "scale(1)";
@@ -423,30 +422,3 @@ function animeJsTarget(target, scale) {
   });
 }
 
-//================
-//= Hour menu bar
-//================
-
-//apply hour on the element hour
-function applyHour() {
-  let hour = document.querySelector(".js-mennubar__btn--hour");
-  hour.textContent = getHour();
-  setTimeout(applyHour, 1000);
-}
-
-//get the hour with Date()
-function getHour() {
-  const d = new Date();
-  let hour = d.getHours();
-  hour = formatHour(hour);
-  let minute = d.getMinutes();
-  minute = formatHour(minute);
-  let finalHour = hour + ":" + minute;
-  return finalHour;
-}
-
-//put a 0 before numbers <10 (9:4) => (09:04)
-function formatHour(hour) {
-  let result = ("0" + hour).slice(-2);
-  return result;
-}

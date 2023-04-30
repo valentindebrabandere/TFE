@@ -54,85 +54,11 @@
     <script type="module" src="./src/components/apps/appTest/AppTest.ts"></script>
     <script type="module" src="./src/components/global/appWindow/AppWindow.ts"></script>
     <script type="module" src="./src/components/global/menu/Menu.ts"></script>
+    <script type="module" src="./src/components/global/layout/Layout.ts"></script>
   </head>
   <body>
     <div class="c-screen js-screen modernMac">
       <div class="c-screen__overlay js-screen__overlay"></div>
-      <div class="c-menu-bar">
-        <ul class="c-menu-bar__left">
-          <li class="c-menu-bar__item">
-            <button class="c-menu-bar__btn js-menu-bar__logo">
-              <img
-                class="c-menu-bar__icon"
-                src="img/modernMac/menuBarre/logoLoremIpson.png"
-                alt="logoLoremIpson"
-              />
-            </button>
-          </li>
-          <li class="c-menu-bar__item c-menubar__application">
-            <button data-menu-bar="Files" class="c-menu-bar__btn">Files</button>
-          </li>
-          <li class="c-menu-bar__item">
-            <button data-menu-bar="Edit" class="c-menu-bar__btn">Edit</button>
-          </li>
-          <li class="c-menu-bar__item">
-            <button data-menu-bar="View" class="c-menu-bar__btn">View</button>
-          </li>
-          <li class="c-menu-bar__item">
-            <button data-menu-bar="Go" class="c-menu-bar__btn">Go</button>
-          </li>
-          <li class="c-menu-bar__item">
-            <button data-menu-bar="View" class="c-menu-bar__btn">Window</button>
-          </li>
-          <li class="c-menu-bar__item">
-            <button data-menu-bar="Help" class="c-menu-bar__btn">Help</button>
-          </li>
-        </ul>
-        <ul class="c-menu-bar__rigth">
-          <li class="c-menu-bar__item">
-            <button class="c-menu-bar__btn" data-menu-bar="Wifi">
-              <img
-                class="c-menu-bar__icon"
-                src="img/modernMac/menuBarre/wifiIcon.png"
-                alt="icon Wifi"
-              />
-            </button>
-          </li>
-          <li class="c-menu-bar__item">
-            <button class="c-menu-bar__btn" data-menu-bar="Search">
-              <img
-                class="c-menu-bar__icon"
-                src="img/modernMac/menuBarre/searchIcon.png"
-                alt="icon Search"
-              />
-            </button>
-          </li>
-          <li class="c-menu-bar__item">
-            <button class="c-menu-bar__btn" data-menu-bar="Control center">
-              <img
-                class="c-menu-bar__icon"
-                src="img/modernMac/menuBarre/controlCenterIcon.png"
-                alt="icon Control center"
-              />
-            </button>
-          </li>
-          <li class="c-menu-bar__item" data-menu-bar="Date">
-            <button
-              class="c-menu-bar__btn js-mennubar__btn--date c-mennubar__btn--date"
-            >
-              Sat 25 Jun
-            </button>
-          </li>
-          <li class="c-menu-bar__item">
-            <button
-              class="c-menu-bar__btn js-mennubar__btn--hour"
-              data-menu-bar="Hour"
-            >
-              17:13
-            </button>
-          </li>
-        </ul>
-      </div>
       <menu-component></menu-component>
       <div class="o-container js-container">
         <!-- <app-window> <app-test></app-test></app-window> -->
@@ -287,7 +213,8 @@
         </div>
       </div>
     </div>
-    <div class="c-layout js-layout">
+    <layout-component/>
+    <!-- <div class="c-layout js-layout">
       <div class="c-layout__display">
         <div class="c-layout__controls">
           <button
@@ -322,6 +249,6 @@
         <h2 class="c-layout__style js-layout__style">Modern Mac</h2>
       </div>
       <div class="c-layout__screen js-layout__screen"></div>
-    </div>
+    </div> -->
   </body>
 </html>

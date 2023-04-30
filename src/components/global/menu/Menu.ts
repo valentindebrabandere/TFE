@@ -1,8 +1,10 @@
 // menu-component.js
 import { LitElement, html } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
-import { basic, styles } from './styles';
 
+import { dispatchOpenLayoutEvent } from '../../../utils/layoutUtils';
+
+import { basic, styles } from './styles';
 import { imageElements } from './images.ts';
 
 const currentStyle = 'modernMac'
@@ -18,7 +20,6 @@ const searchIcon = imageElements.searchIcon.src;
 export class MenuComponent extends LitElement {
   @state() time = new Date();
   timer: ReturnType<typeof setTimeout> | undefined = undefined;
-
 
   static get styles() {
     const styleIndex = styles.findIndex(style => style.styleName === currentStyle);
@@ -42,6 +43,11 @@ export class MenuComponent extends LitElement {
     this.time = new Date();
   }
 
+  callOpenLayout() {
+    console.log('callOpenLayout')
+    dispatchOpenLayoutEvent(this);
+  }
+
   render() {
     const formattedTime = `${this.time
       .getHours()
@@ -60,8 +66,8 @@ export class MenuComponent extends LitElement {
     return html`
       <div class="c-menu-bar">
         <ul class="c-menu-bar__left">
-          <li class="c-menu-bar__item">
-            <button class="c-menu-bar__btn js-menu-bar__logo">
+          <li class="c-menu-bar__item"> 
+            <button @click=${this.callOpenLayout} class="c-menu-bar__btn js-menu-bar__logo">
               <img
                 class="c-menu-bar__icon"
                 src="${logoLoremIpson}"

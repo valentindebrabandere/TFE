@@ -1,3 +1,5 @@
+/* Use it to import font into shadow elements */
+
 @font-face {
     font-family: 'Munro';
     src: url('../fonts/oneBitFont/munro-2lye-webfont.woff2') format('woff2'),
