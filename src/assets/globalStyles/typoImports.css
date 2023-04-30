@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Munro';
+    src: url('../fonts/oneBitFont/munro-2lye-webfont.woff2') format('woff2'),
+         url('../fonts/oneBitFont/munro-2lye-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

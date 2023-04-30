@@ -1,4 +1,4 @@
-import IpsonCalculator from "./IpsonCalculator.js";
+// import IpsonCalculator from "./IpsonCalculator.js";
 import IpsonError from "./IpsonError.js";
 import IpsonPhoto from "./IpsonPhoto.js";
 import IpsonSlides from "./IpsonSlides.js";

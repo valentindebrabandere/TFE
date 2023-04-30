@@ -13,10 +13,7 @@
     <link rel="stylesheet" href="css/basics/IpsonCalculatorBasics.css" />
     <link rel="stylesheet" href="css/basics/IpsonErrorBasics.css" />
     <link rel="stylesheet" href="css/basics/IpsonDesktopBasics.css" />
-    <!-- Components declarations -->
-    <script type="module" src="./src/components/apps/appTest/AppTest.ts"></script>
-    <script type="module" src="./src/components/global/appWindow/AppWindow.ts"></script>
-
+    
     <link
       data-css-style="modernMac"
       rel="stylesheet"
@@ -52,6 +49,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
+    <!-- Components declarations -->
+    <script type="module" src="./src/components/apps/appTest/AppTest.ts"></script>
+    <script type="module" src="./src/components/global/appWindow/AppWindow.ts"></script>
+    <script type="module" src="./src/components/global/menu/Menu.ts"></script>
   </head>
   <body>
     <div class="c-screen js-screen modernMac">
@@ -131,8 +133,9 @@
           </li>
         </ul>
       </div>
+      <menu-component></menu-component>
       <div class="o-container js-container">
-        <app-window> <app-test></app-test></app-window>
+        <!-- <app-window> <app-test></app-test></app-window> -->
         <div class="c-desktop js-desktop">
           <div
             class="c-desktop__element js-desktop__element"

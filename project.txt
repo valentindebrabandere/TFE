@@ -1,0 +1,162 @@
+.
+├── css
+│   ├── IpsonLayout.css
+│   ├── allStyles
+│   │   ├── 1bit
+│   │   │   ├── IpsonCalculatorStyle.css
+│   │   │   ├── IpsonDesktopStyle.css
+│   │   │   ├── IpsonErrorStyle.css
+│   │   │   └── IpsonSystemStyle.css
+│   │   └── modernMac
+│   │       ├── IpsonCalculatorStyle.css
+│   │       ├── IpsonDesktopStyle.css
+│   │       ├── IpsonErrorStyle.css
+│   │       └── IpsonSystemStyle.css
+│   └── basics
+│       ├── IpsonCalculatorBasics.css
+│       ├── IpsonDesktopBasics.css
+│       ├── IpsonErrorBasics.css
+│       └── IpsonSystemBasics.css
+├── fonts
+│   └── oneBitFont
+│       ├── munro-2lye-webfont.woff
+│       └── munro-2lye-webfont.woff2
+├── img
+│   ├── 1bit
+│   │   ├── background.png
+│   │   ├── desktopIcons
+│   │   │   ├── folder.png
+│   │   │   └── slides.png
+│   │   ├── dockIcons
+│   │   │   ├── appStore.png
+│   │   │   ├── calculator.png
+│   │   │   ├── camera.png
+│   │   │   ├── chrome.png
+│   │   │   ├── figma.png
+│   │   │   ├── finder.png
+│   │   │   ├── mail.png
+│   │   │   ├── photo.png
+│   │   │   ├── preferences.png
+│   │   │   ├── spotify.png
+│   │   │   └── trash.png
+│   │   └── menuBarre
+│   │       ├── controlCenterIcon.png
+│   │       ├── logoLoremIpson.png
+│   │       ├── searchIcon.png
+│   │       └── wifiIcon.png
+│   ├── constantImages
+│   │   ├── hans-ott-oxkf_pBlR7o-unsplash.jpg
+│   │   └── slideTest
+│   │       ├── slide(1).jpg
+│   │       ├── slide(2).jpg
+│   │       ├── slide(3).jpg
+│   │       └── slide(4).jpg
+│   ├── favIcon.png
+│   ├── layout
+│   │   ├── layout__btn-icon--down.png
+│   │   ├── layout__btn-icon--up.png
+│   │   ├── layout__rounded-borders - Copy.png
+│   │   ├── layout__rounded-borders.png
+│   │   └── loremIpsonIcon.png
+│   └── modernMac
+│       ├── background.png
+│       ├── desktopIcons
+│       │   ├── folder.png
+│       │   └── slides.png
+│       ├── dockIcons
+│       │   ├── VScode.png
+│       │   ├── appStore.png
+│       │   ├── calculator.png
+│       │   ├── camera.png
+│       │   ├── chrome.png
+│       │   ├── figma.png
+│       │   ├── finder.png
+│       │   ├── mail.png
+│       │   ├── photo.png
+│       │   ├── preferences.png
+│       │   ├── spotify.png
+│       │   └── trash.png
+│       └── menuBarre
+│           ├── controlCenterIcon.png
+│           ├── logoLoremIpson.png
+│           ├── searchIcon.png
+│           └── wifiIcon.png
+├── index.html
+├── js
+│   ├── IpsonCalculator.js
+│   ├── IpsonError.js
+│   ├── IpsonFolder.js
+│   ├── IpsonInterractions.js
+│   ├── IpsonPhoto.js
+│   ├── IpsonSlides.js
+│   ├── IpsonSystem.js
+│   ├── IpsonWindow.js
+│   └── script.js
+├── package-lock.json
+├── package.json
+├── project.txt
+├── public
+│   ├── appIcons
+│   │   └── modernMac
+│   │       ├── VScode.png
+│   │       ├── appStore.png
+│   │       ├── calculator.png
+│   │       ├── camera.png
+│   │       ├── chrome.png
+│   │       ├── figma.png
+│   │       ├── finder.png
+│   │       ├── mail.png
+│   │       ├── photo.png
+│   │       ├── preferences.png
+│   │       ├── spotify.png
+│   │       └── trash.png
+│   └── img
+│       └── favIcon.png
+├── src
+│   ├── assets
+│   │   ├── fonts
+│   │   │   └── oneBitFont
+│   │   │       ├── munro-2lye-webfont.woff
+│   │   │       └── munro-2lye-webfont.woff2
+│   │   └── globalStyles
+│   │       └── typoImports.css
+│   ├── components
+│   │   ├── apps
+│   │   │   ├── appTest
+│   │   │   │   ├── AppTest.scss
+│   │   │   │   ├── AppTest.ts
+│   │   │   │   └── styles
+│   │   │   │       ├── style-1bit.scss
+│   │   │   │       └── style-modernMac.scss
+│   │   │   └── calculator
+│   │   │       ├── Calculator.ts
+│   │   │       └── styles.ts
+│   │   └── global
+│   │       ├── appWindow
+│   │       │   ├── AppWindow.ts
+│   │       │   └── styles.ts
+│   │       └── menu
+│   │           ├── Menu.scss
+│   │           ├── Menu.ts
+│   │           ├── assets
+│   │           │   ├── modernMac
+│   │           │   │   ├── controlCenterIcon.png
+│   │           │   │   ├── logoLoremIpson.png
+│   │           │   │   ├── searchIcon.png
+│   │           │   │   └── wifiIcon.png
+│   │           │   └── oneBit
+│   │           │       ├── controlCenterIcon.png
+│   │           │       ├── logoLoremIpson.png
+│   │           │       ├── searchIcon.png
+│   │           │       └── wifiIcon.png
+│   │           ├── images.ts
+│   │           ├── styles
+│   │           │   └── style-modernMac.scss
+│   │           └── styles.ts
+│   ├── index.js
+│   ├── main.scss
+│   └── vite-env.d.ts
+├── tsconfig.json
+└── vite.config.js
+
+42 directories, 118 files
