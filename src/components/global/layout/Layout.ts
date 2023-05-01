@@ -2,6 +2,12 @@ import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { basic } from './styles.ts';
 
+//images import
+import logoLoremIpson from './assets/loremIpsonIcon.png';
+import iconDownn from './assets/layout__btn-icon--down.png'
+import iconUp from './assets/layout__btn-icon--up.png'
+
+
 @customElement('layout-component')
 export class Layout extends LitElement {
   static get styles() {
@@ -45,6 +51,22 @@ export class Layout extends LitElement {
     });
   }
 
+  closeLayout(): void {
+    console.log('closeLayout method called');
+    const screen: HTMLElement|null = document.querySelector('.js-screen');
+  
+    if (this.layout === null || screen === null) return;
+    this.layout.style.pointerEvents = 'none';
+    this.layout.style.transform = 'scale(1.5)';
+    screen.style.transform = 'scale(1)';
+  
+    if (this.allLayoutBtn === null) return;
+    this.allLayoutBtn.forEach((btn) => {
+      btn.setAttribute('disabled', '');
+    });
+  }
+  
+
   render() {
     return html`
       <div class="c-layout js-layout">
@@ -55,7 +77,7 @@ export class Layout extends LitElement {
               @click=${() => this.changeStyle('back')}
             >
               <img
-                src="img/layout/layout__btn-icon--up.png"
+                src="${iconUp}"
                 alt="Bouton pécédent"
                 class="c-layout__btn-icon o-fluidimage"
               />
@@ -65,7 +87,7 @@ export class Layout extends LitElement {
               @click=${() => this.changeStyle('next')}
             >
               <img
-                src="img/layout/layout__btn-icon--down.png"
+                src="${iconDownn}"
                 alt="Bouton pécédent"
                 class="c-layout__btn-icon c-layout__btn-icon--invert o-fluidimage"
               />
@@ -74,14 +96,14 @@ export class Layout extends LitElement {
           <div class="c-layout__icon">
             <img
               class="o-fluidimage"
-              src="img/layout/loremIpsonIcon.png"
+              src="${logoLoremIpson}"
               alt="Logo neumorphique Lorem Ipson"
             />
           </div>
   
           <h2 class="c-layout__style js-layout__style">Modern Mac</h2>
         </div>
-        <div class="c-layout__screen js-layout__screen"></div>
+        <div class="c-layout__screen js-layout__screen" @click=${() => this.closeLayout()}></div>
       </div>
     `;
   }  

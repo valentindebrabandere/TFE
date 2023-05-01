@@ -15,7 +15,7 @@ export const basic = css`
   left: 0;
   bottom: 0;
   right: 0;
-  transform: scale(2);
+  transform: scale(1.5);
   pointer-events: none;
   z-index: 1000;
   transition: transform 0.3s ease-in-out;
@@ -110,7 +110,7 @@ export const basic = css`
       height: 70vh;
       
       border: 25px solid #00000001;
-      border-image-source: url("../img/layout/layout__rounded-borders.png");
+      border-image-source: url("/public/layout__rounded-borders.png");
       border-image-slice: 34;
       border-image-repeat: round;
       border-image-width: 38px;
