@@ -3,6 +3,5 @@ export function dispatchOpenLayoutEvent(sourceElement: HTMLElement) {
       bubbles: true,
       composed: true,
     });
-    console.log('dispatchOpenLayoutEvent')
     sourceElement.dispatchEvent(openLayoutEvent);
 }

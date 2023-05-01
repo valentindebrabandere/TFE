@@ -2,6 +2,10 @@ import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { basic } from './styles.ts';
 
+//utils imports
+import { GlobalStyleController } from '../../../utils/global-style-controller';
+
+
 //images import
 import logoLoremIpson from './assets/loremIpsonIcon.png';
 import iconDownn from './assets/layout__btn-icon--down.png'
@@ -10,6 +14,8 @@ import iconUp from './assets/layout__btn-icon--up.png'
 
 @customElement('layout-component')
 export class Layout extends LitElement {
+  private globalStyleController = new GlobalStyleController(this);
+
   static get styles() {
     return [basic];
   }
@@ -32,12 +38,11 @@ export class Layout extends LitElement {
     }
   }
 
-  changeStyle(type: string) {
-    console.log(type);
+  changeStyleHandler(direction: string) {
+    this.globalStyleController.changeStyle(direction);
   }
 
   openLayout(): void {
-    console.log('openLayout method called');
     const screen: HTMLElement|null = document.querySelector('.js-screen');
 
     if(this.layout === null || screen === null) return;
@@ -52,7 +57,6 @@ export class Layout extends LitElement {
   }
 
   closeLayout(): void {
-    console.log('closeLayout method called');
     const screen: HTMLElement|null = document.querySelector('.js-screen');
   
     if (this.layout === null || screen === null) return;
@@ -74,7 +78,7 @@ export class Layout extends LitElement {
           <div class="c-layout__controls">
             <button
               class="c-layout__btn c-layout__btn--back js-layout__btn"
-              @click=${() => this.changeStyle('back')}
+              @click=${() => this.changeStyleHandler('back')}
             >
               <img
                 src="${iconUp}"
@@ -84,7 +88,7 @@ export class Layout extends LitElement {
             </button>
             <button
               class="c-layout__btn c-layout__btn--next js-layout__btn"
-              @click=${() => this.changeStyle('next')}
+              @click=${() => this.changeStyleHandler('next')}
             >
               <img
                 src="${iconDownn}"
