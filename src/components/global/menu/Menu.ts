@@ -50,6 +50,7 @@ export class MenuComponent extends StyledElement {
   }
 
   render() {
+    this.updateStyles();
     const formattedTime = `${this.time
       .getHours()
       .toString()

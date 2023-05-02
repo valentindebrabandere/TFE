@@ -3,7 +3,7 @@ import { customElement } from 'lit/decorators.js';
 import { basic } from './styles.ts';
 
 //utils imports
-import { GlobalStyleController } from '../../../utils/global-style-controller';
+import { GlobalStyleController } from '../../../utils/styleController.ts';
 
 
 //images import

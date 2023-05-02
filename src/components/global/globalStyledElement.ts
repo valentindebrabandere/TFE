@@ -1,5 +1,5 @@
 import { LitElement } from 'lit';
-import { GlobalStyleController } from '../../utils/global-style-controller';
+import { GlobalStyleController } from '../../utils/styleController';
 
 export class StyledElement extends LitElement {
   protected globalStyleController = new GlobalStyleController(this);
