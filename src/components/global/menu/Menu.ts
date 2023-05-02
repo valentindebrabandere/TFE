@@ -4,16 +4,9 @@ import { customElement, state } from 'lit/decorators.js';
 import { dispatchOpenLayoutEvent } from '../../../utils/layoutUtils';
 
 import { basic, styles } from './styles';
-import { imageElements } from './images.ts';
 
 // utils imports
 import { StyledElement } from '../globalStyledElement';
-
-// images import
-const logoLoremIpson = imageElements.logoLoremIpson.src;
-const wifiIcon = imageElements.wifiIcon.src;
-const controlCenterIcon = imageElements.controlCenterIcon.src;
-const searchIcon = imageElements.searchIcon.src;
 
 @customElement('menu-component')
 export class MenuComponent extends StyledElement {
@@ -65,6 +58,8 @@ export class MenuComponent extends StyledElement {
       month: 'short',
     });
 
+    const currentStyle = this.globalStyleController.style;
+
     return html`
       <style>
         /* Import the good style */
@@ -76,7 +71,7 @@ export class MenuComponent extends StyledElement {
             <button @click=${this.callOpenLayout} class="c-menu-bar__btn js-menu-bar__logo">
               <img
                 class="c-menu-bar__icon"
-                src="${logoLoremIpson}"
+                src="/images/components/menu/${currentStyle}/logoLoremIpson.png"
                 alt="logoLoremIpson"
               />
             </button>
@@ -117,7 +112,7 @@ export class MenuComponent extends StyledElement {
             <button class="c-menu-bar__btn" data-menu-bar="Wifi">
               <img
                 class="c-menu-bar__icon"
-                src="${wifiIcon}"
+                src="/images/components/menu/${currentStyle}/wifiIcon.png"
                 alt="icon Wifi"
               />
             </button>
@@ -126,7 +121,7 @@ export class MenuComponent extends StyledElement {
             <button class="c-menu-bar__btn" data-menu-bar="Search">
               <img
                 class="c-menu-bar__icon"
-                src="${searchIcon}"
+                src="/images/components/menu/${currentStyle}/searchIcon.png"
                 alt="icon Search"
               />
             </button>
@@ -138,7 +133,7 @@ export class MenuComponent extends StyledElement {
             >
               <img
                 class="c-menu-bar__icon"
-                src="${controlCenterIcon}"
+                src="/images/components/menu/${currentStyle}/controlCenterIcon.png"
                 alt="icon Control center"
               />
             </button>

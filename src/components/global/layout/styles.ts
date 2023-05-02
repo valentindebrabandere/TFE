@@ -110,7 +110,7 @@ export const basic = css`
       height: 70vh;
       
       border: 25px solid #00000001;
-      border-image-source: url("/public/layout__rounded-borders.png");
+      border-image-source: url("/layout__rounded-borders.png");
       border-image-slice: 34;
       border-image-repeat: round;
       border-image-width: 38px;
