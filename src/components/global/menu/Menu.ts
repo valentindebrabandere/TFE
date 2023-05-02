@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { html, css } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
 
 import { dispatchOpenLayoutEvent } from '../../../utils/layoutUtils';
@@ -7,7 +7,7 @@ import { basic, styles } from './styles';
 import { imageElements } from './images.ts';
 
 // utils imports
-import { GlobalStyleController } from '../../../utils/global-style-controller';
+import { StyledElement } from '../globalStyledElement';
 
 // images import
 const logoLoremIpson = imageElements.logoLoremIpson.src;
@@ -16,9 +16,7 @@ const controlCenterIcon = imageElements.controlCenterIcon.src;
 const searchIcon = imageElements.searchIcon.src;
 
 @customElement('menu-component')
-export class MenuComponent extends LitElement {
-  private globalStyleController = new GlobalStyleController(this);
-
+export class MenuComponent extends StyledElement {
   @state() time = new Date();
   timer: ReturnType<typeof setTimeout> | undefined = undefined;
 
@@ -26,29 +24,15 @@ export class MenuComponent extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.globalStyleController.elements.push(this);
-    this.updateStyles();
     this.updateTime();
     this.timer = setInterval(() => {
       this.updateTime();
     }, 60000); // Update every 60,000 ms (1 minute)
-
-     // Add an event listener for the 'style-changed' event
-     this.addEventListener('style-changed', this.onStyleChanged.bind(this));
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this.globalStyleController.elements = this.globalStyleController.elements.filter(
-      el => el !== this
-    );
     clearInterval(this.timer);
-    // Remove the event listener for the 'style-changed' event
-    this.removeEventListener('style-changed', this.onStyleChanged.bind(this));
-  }
-
-  onStyleChanged() {
-    this.updateStyles();
   }
 
   updateTime() {
@@ -59,9 +43,10 @@ export class MenuComponent extends LitElement {
     dispatchOpenLayoutEvent(this);
   }
 
+  //need to be called to change the style
   updateStyles() {
-    const styleIndex = styles.findIndex(style => style.styleName === this.globalStyleController.style);
-    this.styles = [basic, styles[styleIndex].css];
+    //select the current style (globalStyledElement.ts)
+    this.styles = this.applyStyles(styles, basic);
   }
 
   render() {
@@ -81,9 +66,9 @@ export class MenuComponent extends LitElement {
 
     return html`
       <style>
+        /* Import the good style */
         ${this.styles}
       </style>
-      <p>${this.globalStyleController.style}</p>
       <div class="c-menu-bar">
         <ul class="c-menu-bar__left">
           <li class="c-menu-bar__item"> 
