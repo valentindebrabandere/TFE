@@ -4,16 +4,16 @@ import { customElement, state } from 'lit/decorators.js';
 import { dispatchOpenLayoutEvent } from '../../../utils/layoutUtils';
 
 import { basic, styles } from './styles';
-import { imageElements } from './images.ts';
+import { imageElementsExport } from './images.ts';
 
 // utils imports
 import { StyledElement } from '../globalStyledElement';
 
 // images import
-const logoLoremIpson = imageElements.logoLoremIpson.src;
-const wifiIcon = imageElements.wifiIcon.src;
-const controlCenterIcon = imageElements.controlCenterIcon.src;
-const searchIcon = imageElements.searchIcon.src;
+const logoLoremIpson = imageElementsExport.logoLoremIpson.src;
+const wifiIcon = imageElementsExport.wifiIcon.src;
+const controlCenterIcon = imageElementsExport.controlCenterIcon.src;
+const searchIcon = imageElementsExport.searchIcon.src;
 
 @customElement('menu-component')
 export class MenuComponent extends StyledElement {

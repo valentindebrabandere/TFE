@@ -1,10 +1,5 @@
-const currentStyle = 'modernMac';
-const styles = ['oneBit', 'modernMac'];
-
-import {createImageElements} from '../../../utils/createImageElements';
-
-//To add new images add them to the images folder and import them here
-//Then in const images make correspond the image name with the style
+import { stylesList, currentStyle, GlobalStyleController } from '../../../utils/styleController';
+import { initializeImageElements } from '../../../utils/createImageElements';
 
 // import images in the different styles
 import logoLoremIpsonOneBit from './assets/oneBit/logoLoremIpson.png';
@@ -26,26 +21,25 @@ interface ImageObject {
 // Create an object to store the image names and their styles
 const images: ImageObject = {
   logoLoremIpson: {
-    [styles[0]]: logoLoremIpsonOneBit,
-    [styles[1]]: logoLoremIpsonModernMac,
+    [stylesList[0].call]: logoLoremIpsonOneBit,
+    [stylesList[1].call]: logoLoremIpsonModernMac,
   },
   wifiIcon: {
-    [styles[0]]: wifiIconOneBit,
-    [styles[1]]: wifiIconModernMac,
+    [stylesList[0].call]: wifiIconOneBit,
+    [stylesList[1].call]: wifiIconModernMac,
   },
   controlCenterIcon: {
-    [styles[0]]: controlCenterIconOneBit,
-    [styles[1]]: controlCenterIconModernMac,
+    [stylesList[0].call]: controlCenterIconOneBit,
+    [stylesList[1].call]: controlCenterIconModernMac,
   },
   searchIcon: {
-    [styles[0]]: searchIconOneBit,
-    [styles[1]]: searchIconModernMac,
+    [stylesList[0].call]: searchIconOneBit,
+    [stylesList[1].call]: searchIconModernMac,
   },
 };
 
+const globalStyleController = new GlobalStyleController(null, images, imageElements);
 
-  
-const imageElements = createImageElements(images, currentStyle);
-  
+const imageElementsExport = initializeImageElements(images, currentStyle, globalStyleController);
 
-export { imageElements };
+export { imageElementsExport };
