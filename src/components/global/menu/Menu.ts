@@ -16,7 +16,7 @@ const controlCenterIcon = imageElementsExport.controlCenterIcon.src;
 const searchIcon = imageElementsExport.searchIcon.src;
 
 @customElement('menu-component')
-export class MenuComponent extends StyledElement {
+export class MenuComponent extends StyledElement { 
   @state() time = new Date();
   timer: ReturnType<typeof setTimeout> | undefined = undefined;
 
