@@ -1,5 +1,6 @@
-import { LitElement, html } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { html } from 'lit';
+import { StyledElement } from '../globalStyledElement';
+import { customElement, state } from 'lit/decorators.js';
 import { basic } from './styles.ts';
 
 //utils imports
@@ -13,8 +14,14 @@ import iconUp from './assets/layout__btn-icon--up.png'
 
 
 @customElement('layout-component')
-export class Layout extends LitElement {
-  private globalStyleController = new GlobalStyleController(this);
+export class Layout extends StyledElement {
+
+  @state() currentStyle = this.globalStyleController.style;
+  @state() currentStyleDate = this.globalStyleController.getDate();
+  @state() currentStyleName = this.globalStyleController.getName();
+
+  protected globalStyleController = new GlobalStyleController(this);
+
 
   static get styles() {
     return [basic];
@@ -40,6 +47,9 @@ export class Layout extends LitElement {
 
   changeStyleHandler(direction: string) {
     this.globalStyleController.changeStyle(direction);
+    this.currentStyle = this.globalStyleController.style;
+    this.currentStyleDate = this.globalStyleController.getDate();
+    this.currentStyleName = this.globalStyleController.getName();
   }
 
   openLayout(): void {
@@ -104,10 +114,10 @@ export class Layout extends LitElement {
               alt="Logo neumorphique Lorem Ipson"
             />
           </div>
-  
-          <h2 class="c-layout__style js-layout__style">Modern Mac</h2>
+          <h2 class="c-layout__name">${this.currentStyleName}</h2>
+          <p class="c-layout__date">${this.currentStyleDate}</p>
         </div>
-        <div class="c-layout__screen js-layout__screen" @click=${() => this.closeLayout()}></div>
+        <div class="c-layout__screen" @click=${() => this.closeLayout()}></div>
       </div>
     `;
   }  

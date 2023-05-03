@@ -51,6 +51,16 @@ class GlobalStyleController implements ReactiveController {
     GlobalStyleController.instance = this;
   }
 
+  getDate() {
+    const currentStyleObj = stylesList.find(style => style.call === this.style);
+    return currentStyleObj ? currentStyleObj.date : '';
+  }
+
+  getName() {
+    const currentStyleObj = stylesList.find(style => style.call === this.style);
+    return currentStyleObj ? currentStyleObj.name : '';
+  }
+
   hostConnected() {
     // Perform any setup needed when the host is connected
   }
@@ -89,7 +99,6 @@ class GlobalStyleController implements ReactiveController {
   changeStyle(direction: string) {
     setCurrentStyle(changeStyle(direction));
     this.style = currentStyle;
-    console.log('current style is: ', this.style);
   }
 }
 

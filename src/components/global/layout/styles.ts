@@ -89,13 +89,25 @@ export const basic = css`
   transition: transform 0.3s ease-in-out;
 }
 
-.c-layout__style{
+.c-layout__name{
   position: absolute;
   left: 50%;
-  bottom: 3vh;
+  top: 4vh;
   transform: translate3d(-50%,0,0);
   font-family: "Poppins", system-ui, sans-serif;
   font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  
+}
+.c-layout__date{
+  position: absolute;
+  left: 50%;
+  bottom: 4vh;
+  transform: translate3d(-50%,0,0);
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 400;
+  opacity: 0.5;
   text-transform: uppercase;
   margin: 0;
 }
@@ -110,7 +122,7 @@ export const basic = css`
       height: 70vh;
       
       border: 25px solid #00000001;
-      border-image-source: url("/layout__rounded-borders.png");
+      border-image-source: url("/images/layout__rounded-borders.png");
       border-image-slice: 34;
       border-image-repeat: round;
       border-image-width: 38px;
