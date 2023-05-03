@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { StyledElement } from '../globalStyledElement';
+import { StyledElement } from '../../../utils/globalStyledElement.ts';
 import { customElement, state } from 'lit/decorators.js';
 import { basic } from './styles.ts';
 

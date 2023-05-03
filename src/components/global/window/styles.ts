@@ -1,4 +1,3 @@
-
 import { css, CSSResult } from 'lit';
 
 export const basic = css`

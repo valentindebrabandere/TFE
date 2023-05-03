@@ -4,7 +4,7 @@ import { customElement, state } from 'lit/decorators.js';
 import { basic, styles } from './styles';
 
 // utils imports
-import { StyledElement } from '../globalStyledElement';
+import { StyledElement } from '../../../utils/globalStyledElement.ts';
 import { animDock } from './anim.ts';
 
 
@@ -20,10 +20,6 @@ export class DockComponent extends StyledElement {
   connectedCallback() {
     super.connectedCallback();
     this.updateStyles()
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
   }
 
   //need to be called to change the style

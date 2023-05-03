@@ -45,14 +45,14 @@ function animDockAddEvtList(app:Element) {
   
 
 function addAnim(evt: Event, iconAnimDock: Function) {
-const dock = getDockElement();
-if (!dock) return;
-let dockAppsDyn = dock.querySelectorAll('.js-dock__icon');
-let arrDockAppsDyn = Array.from(dockAppsDyn);
-let currentApp = arrDockAppsDyn.indexOf(evt.currentTarget as HTMLElement);
-let appBefore: Element | null = currentApp > 0 ? arrDockAppsDyn[currentApp - 1] : null;
-let appAfter: Element | null = currentApp < arrDockAppsDyn.length - 1 ? arrDockAppsDyn[currentApp + 1] : null;
-iconAnimDock(appBefore, evt.currentTarget, appAfter);
+    const dock = getDockElement();
+    if (!dock) return;
+    let dockAppsDyn = dock.querySelectorAll('.js-dock__icon');
+    let arrDockAppsDyn = Array.from(dockAppsDyn);
+    let currentApp = arrDockAppsDyn.indexOf(evt.currentTarget as HTMLElement);
+    let appBefore: Element | null = currentApp > 0 ? arrDockAppsDyn[currentApp - 1] : null;
+    let appAfter: Element | null = currentApp < arrDockAppsDyn.length - 1 ? arrDockAppsDyn[currentApp + 1] : null;
+    iconAnimDock(appBefore, evt.currentTarget, appAfter);
 }
   
 
