@@ -35,19 +35,21 @@ export function changeStyle(direction: string): string {
 }
 
 class GlobalStyleController implements ReactiveController {
-  private host: ReactiveElement;
+  private host?: ReactiveElement;
   private _style = currentStyle;
   public elements: HTMLElement[] = [];
   private static instance: GlobalStyleController;
 
-  constructor(host: ReactiveElement) {
-    this.host = host;
-    this.host.addController(this);
-
+  constructor(host?: ReactiveElement) {
+    if (host) {
+      this.host = host;
+      this.host.addController(this);
+    }
+  
     if (GlobalStyleController.instance) {
       return GlobalStyleController.instance;
     }
-
+  
     GlobalStyleController.instance = this;
   }
 
@@ -84,10 +86,10 @@ class GlobalStyleController implements ReactiveController {
   set style(style: string) {
     if (style !== this._style) {
       this._style = style;
-      this.host.requestUpdate();
-
-        // Dispatch the 'style-changed' event
-        this.dispatchEvent();
+      this.host?.requestUpdate();
+  
+      // Dispatch the 'style-changed' event
+      this.dispatchEvent();
     }
   }
 
