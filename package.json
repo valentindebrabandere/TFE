@@ -12,6 +12,7 @@
     "animejs": "^3.2.1",
     "lit": "^2.6.1",
     "node-sass": "^8.0.0",
+    "rxjs": "^7.8.1",
     "sass": "^1.62.1"
   },
   "devDependencies": {
