@@ -1,5 +1,4 @@
-import { LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+// openedAppsProvider.ts
 import { BehaviorSubject } from 'rxjs';
 
 interface OpenedApp {
@@ -10,7 +9,7 @@ interface OpenedApp {
 export const openedAppsSubject = new BehaviorSubject<OpenedApp[]>([]);
 
 export function addNewOpenedApp(id: string, component: any) {
-  console.log('addNewOpenedApp called', id, component)
+  console.log('addNewOpenedApp called', id, component);
   const currentApps = openedAppsSubject.getValue();
   openedAppsSubject.next([...currentApps, { id, component }]);
 }
@@ -20,25 +19,12 @@ export function removeOpenedApp(id: string) {
   openedAppsSubject.next(currentApps.filter((app) => app.id !== id));
 }
 
-@customElement('opened-apps-provider')
-export class OpenedAppsProvider extends LitElement {
-  constructor() {
-    super();
-    this.handleAddOpenedApp = this.handleAddOpenedApp.bind(this);
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    window.addEventListener('addOpenedApp', this.handleAddOpenedApp as EventListener);
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    window.removeEventListener('addOpenedApp', this.handleAddOpenedApp as EventListener);
-  }
-
+export const openedAppsProvider = {  
   handleAddOpenedApp(e: CustomEvent<{ id: string; component: any }>) {
     addNewOpenedApp(e.detail.id, e.detail.component);
     console.log('handleAddOpenedApp called', e.detail);
-  }
-}
+  },
+};
+
+// Corrected reference to the handleAddOpenedApp function
+window.addEventListener('addOpenedApp', openedAppsProvider.handleAddOpenedApp as EventListener);

@@ -2,6 +2,8 @@ import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { openedAppsSubject } from '../../../utils/openedAppsProvider'; 
 
+import './assets/appIconImport';
+
 interface OpenedApp {
   id: string;
   component: any;
@@ -28,11 +30,11 @@ export class OpenedApps extends LitElement {
     return html`
       ${this.openedApps.map(
         (app) => html`
-          <window-component>
-            <div slot="content">
-              <${app.component.tagName}></${app.component.tagName}>
-            </div>
-          </window-component>
+           <window-component>
+          <div slot="content">
+            <dynamic-element .componentClass=${app.component}></dynamic-element>
+          </div>
+        </window-component>
         `
       )}
     `;
