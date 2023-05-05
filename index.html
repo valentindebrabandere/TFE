@@ -43,17 +43,21 @@
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 
     <!-- Components declarations -->
-    <script type="module" src="./src/components/apps/appTest/AppTest.ts"></script>
-    <script type="module" src="./src/components/global/window/window.ts"></script>
-    <script type="module" src="./src/components/global/menu/Menu.ts"></script>
-    <script type="module" src="./src/components/global/dock/Dock.ts"></script>
     <script type="module" src="./src/components/global/layout/Layout.ts"></script>
+    <script type="module" src="./src/components/global/window/window.ts"></script>
+    <script type="module" src="./src/components/global/menu/menu.ts"></script>
+    <script type="module" src="./src/components/global/appIcon/appIcon.ts"></script>
+    <script type="module" src="./src/components/global/openedApps/openedApps.ts"></script>
+    <script type="module" src="./src/components/global/dock/dock.ts"></script>
+    <script type="module" src="./src/components/apps/appTest/AppTest.ts"></script>
   </head>
   <body>
     <div class="c-screen js-screen modernMac">
-      <div class="c-screen__overlay js-screen__overlay"></div>
+      <div class="c-screen__overlay js-screen__overlay">
+      </div>
       <menu-component></menu-component>
       <div class="o-container js-container">
+        <opened-apps-component></opened-apps-component>
         <!-- <window-component> <app-test></app-test></window-component> -->
         <div class="c-desktop js-desktop">
           <div

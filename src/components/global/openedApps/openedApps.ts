@@ -1,21 +1,21 @@
 import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { openedAppsSubject } from '../../../utils/openedAppsStore'; // Import openedAppsSubject from the OpenedAppsProvider
-import '../window/window.ts';
+import { openedAppsSubject } from '../../../utils/openedAppsProvider'; 
 
 interface OpenedApp {
   id: string;
   component: any;
 }
 
-@customElement('opened-apps')
+
+@customElement('opened-apps-component')
 export class OpenedApps extends LitElement {
   static styles = css`
-    /* Add your styles here */
+  /* Add your styles here */
   `;
-
+  
   private openedApps: OpenedApp[] = [];
-
+  
   constructor() {
     super();
     openedAppsSubject.subscribe((apps) => {

@@ -3,8 +3,6 @@ import { customElement, state } from 'lit/decorators.js';
 
 import { basic, styles } from './styles.ts';
 
-import '../appIcon/appIcon.ts';
-
 // utils imports
 import { StyledElement } from '../../../utils/globalStyledElement.ts';
 import { animDock } from '../anim.ts';
@@ -42,12 +40,12 @@ export class DockComponent extends StyledElement {
       <div class="c-dock js-dock">
         <div class="c-dock__static js-dock__static">
           ${dockApps.map((app) => html`
-            <app-icon style="height: 100%;" name=${app.name} dock=${true} />
+            <app-icon-component style="height: 100%;" name=${app.name} dock=${true} />
           `)}
         </div>
         <div class="c-dock__active js-dock__active">
           ${dockAppsActives.map((app) => html`
-              <app-icon style="height: 100%;" name=${app.name} dock=${true} />
+              <app-icon-component style="height: 100%;" name=${app.name} dock=${true} />
             `)}
         </div>
       </div>

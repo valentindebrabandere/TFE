@@ -1,4 +1,4 @@
-import { LitElement} from 'lit';
+import { LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { BehaviorSubject } from 'rxjs';
 
@@ -10,6 +10,7 @@ interface OpenedApp {
 export const openedAppsSubject = new BehaviorSubject<OpenedApp[]>([]);
 
 export function addNewOpenedApp(id: string, component: any) {
+  console.log('addNewOpenedApp called', id, component)
   const currentApps = openedAppsSubject.getValue();
   openedAppsSubject.next([...currentApps, { id, component }]);
 }
@@ -28,11 +29,16 @@ export class OpenedAppsProvider extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.addEventListener('addOpenedApp', this.handleAddOpenedApp as EventListener);
+    window.addEventListener('addOpenedApp', this.handleAddOpenedApp as EventListener);
   }
-  
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    window.removeEventListener('addOpenedApp', this.handleAddOpenedApp as EventListener);
+  }
 
   handleAddOpenedApp(e: CustomEvent<{ id: string; component: any }>) {
     addNewOpenedApp(e.detail.id, e.detail.component);
+    console.log('handleAddOpenedApp called', e.detail);
   }
 }

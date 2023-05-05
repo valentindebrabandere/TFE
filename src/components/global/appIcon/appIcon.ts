@@ -7,7 +7,7 @@ import { StyledElement } from '../../../utils/globalStyledElement.ts';
 
 import { basic, styles } from './styles.ts';
 
-@customElement('app-icon')
+@customElement('app-icon-component')
 export class Appicon extends StyledElement {
     @property({ type: String }) name: string = '';
     @property({ type: Boolean }) dock: boolean = false;
