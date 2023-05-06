@@ -36,9 +36,8 @@ export class DefaultApp extends StyledElement {
   `;
 
   render() {
+    const currentStyle = this.globalStyleController.style;
     const app = getApplicationByID(this.name);
-    console.log(app)
-
 
     return html`
       <style>
@@ -46,7 +45,7 @@ export class DefaultApp extends StyledElement {
         ${this.styles}
       </style>
       <div class="c-default">
-        <img class="c-default__icon" src=${app.icon} alt="App icon" />
+        <img class="c-default__icon" src=${app.icon(currentStyle)} alt="App icon" />
         <h2 class="c-default__title">${this.name} application is updating</h2>
         <div class="c-default__animtxt">
           <p>Please wait </p>
