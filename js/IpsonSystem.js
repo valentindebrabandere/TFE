@@ -28,13 +28,6 @@ systemStart();
 function systemStart() {
   applyStyle(style1);
   setDesktop();
-  animDock();
-  // addIteractivityToLayout();
-
-  let staticApps = dockStatic.querySelectorAll(".js-dock__app");
-  staticApps.forEach((app) => {
-    app.addEventListener("click", openNewApp);
-  });
 }
 
 //================
@@ -114,73 +107,6 @@ function addOpenSelect(evt) {
 //proprités propres à un dossier
 function setFolder(folder) {
   folder.filesContains = [];
-}
-
-//================
-//= Layout
-//================
-
-//Met en place le fonctionnemnt du layout
-function addIteractivityToLayout() {
-  //activer le layout de changment de style au dbl click
-  let allLayoutBtn = document.querySelectorAll(".js-layout__btn");
-  let logoIpson = document.querySelector(".js-menu-bar__logo");
-  logoIpson.addEventListener("click", function () {
-    layout.style.pointerEvents = "auto";
-    layout.style.transform = "scale(1)";
-    screen.style.transform = "scale(0.7)";
-    allLayoutBtn.forEach((btn) => {
-      btn.removeAttribute("disabled");
-    });
-  });
-  //ajouter le changment de style au click du btn
-  layout.style.transform = "scale(1.5)";
-  allLayoutBtn.forEach((btn) => {
-    btn.addEventListener("mouseup", function () {
-      if (currentStyle == style1) {
-        applyStyle(style2);
-      } else {
-        applyStyle(style1);
-      }
-      //changer le nom qui s'affiche lorsqu'on change de style
-      let displayStyle = document.querySelector(".js-layout__style");
-      displayStyle.textContent = currentStyle.name;
-    });
-  });
-  let layoutScreen = document.querySelector(".js-layout__screen");
-
-  layoutScreen.addEventListener("mouseup", function () {
-    layout.style.pointerEvents = "none";
-    layout.style.transform = "scale(1.5)";
-    screen.style.transform = "scale(1)";
-    allLayoutBtn.forEach((btn) => {
-      btn.setAttribute("disabled", "");
-    });
-  });
-}
-
-//================
-//= OpenApp
-//================
-
-//Fait ouvrir les app ou erreur si l'app n'existe pas
-function openNewApp(evt) {
-  let app = evt.currentTarget;
-  let appName = app.dataset.applicationName;
-
-  if (appName == "Calculator") {
-    createCalculator();
-  } else if (appName == "Photos") {
-    createPhoto(app);
-  } else if (appName == "Folder") {
-    createFolder(app);
-  } else if (appName == "Slides") {
-    createSlides(app);
-  } else {
-    let iconPath = app.querySelector(".js-dock__icon").getAttribute("src");
-    const appError = new IpsonError(appName, iconPath, currentStyle.call);
-    appError.build();
-  }
 }
 
 //mets en place le focus et ajoute l'app sur l'écran
@@ -350,75 +276,5 @@ function applyStyle(myNewStyle) {
   currentStyle = myNewStyle;
 }
 
-//================
-//= Dock
-//================
-//dock animation
 
-//observe uand une icone est ajoutée au dock afin de l'ajouter au cycle d'animation
-let observer = new MutationObserver((reccordedMutations) => {
-  reccordedMutations.forEach((mutation) => {
-    mutation.addedNodes.forEach((app) => {
-      let appIcon = app.querySelector(".js-dock__icon");
-      animDockAddEvtList(appIcon);
-      appIcon.style.transform = "scale(1)";
-    });
-  });
-});
-
-// observe everything except attributes
-observer.observe(dockActive, {
-  childList: true, // observe direct children
-  subtree: true, // and lower descendants too
-});
-
-//met en place l'animation de base
-function animDock() {
-  let dockApps = dock.querySelectorAll(".js-dock__icon");
-  let arrDockApps = Array.from(dockApps);
-  arrDockApps.forEach((dockApp) => {
-    animDockAddEvtList(dockApp);
-  });
-}
-//ajoute un addEvtListener a l'application qu'on lui passe (important quand on hide une app)
-function animDockAddEvtList(app) {
-  app.addEventListener("mouseenter", (evt) => {
-    addAnim(evt, iconAnimDockIn);
-  });
-  app.addEventListener("mouseleave", (evt) => {
-    addAnim(evt, iconAnimDockOut);
-  });
-}
-
-function addAnim(evt, iconAnimDock) {
-  let dockAppsDyn = dock.querySelectorAll(".js-dock__icon");
-  let arrDockAppsDyn = Array.from(dockAppsDyn);
-  let currentApp = arrDockAppsDyn.indexOf(evt.currentTarget);
-  let appBefore = arrDockAppsDyn.at(currentApp - 1);
-  let appAfter = arrDockAppsDyn.at(currentApp + 1);
-  if (currentApp == 0) {
-    appBefore = null;
-  }
-  iconAnimDock(appBefore, evt.currentTarget, appAfter);
-}
-
-function iconAnimDockIn(appBefore, currentApp, appAfter) {
-  animeJsTarget(currentApp, 1.3);
-  animeJsTarget(appBefore, 1.1);
-  animeJsTarget(appAfter, 1.1);
-}
-function iconAnimDockOut(appBefore, currentApp, appAfter) {
-  animeJsTarget(currentApp, 1);
-  animeJsTarget(appBefore, 1);
-  animeJsTarget(appAfter, 1);
-}
-
-function animeJsTarget(target, scale) {
-  anime({
-    targets: target,
-    scale: scale,
-    duration: 10,
-    easing: "easeInOutSine",
-  });
-}
 

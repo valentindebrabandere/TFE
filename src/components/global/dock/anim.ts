@@ -1,5 +1,5 @@
 import anime from 'animejs';
-import { GlobalStyleController } from '../../utils/styleController';
+import { GlobalStyleController } from '../../../utils/styleController';
 
 const globalStyleController = new GlobalStyleController();
 

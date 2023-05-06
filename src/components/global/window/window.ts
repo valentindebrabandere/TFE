@@ -16,6 +16,8 @@ export class WindowComponent extends StyledElement {
   connectedCallback() {
     super.connectedCallback();
     this.updateStyles()
+    const dragEvent = new CustomEvent('initDraggable', { detail: { target: this }, bubbles: true, composed: true });
+    this.dispatchEvent(dragEvent);
   }
 
   //need to be called to change the style

@@ -5,7 +5,7 @@ import { basic, styles } from './styles.ts';
 
 // utils imports
 import { StyledElement } from '../../../utils/globalStyledElement.ts';
-import { animDock } from '../anim.ts';
+import { animDock } from './anim.ts';
 import { dockApps, dockAppsActives } from "../../../utils/appManager.ts";
 
 
