@@ -11,17 +11,20 @@ const allApplicationsList = [...dockApps, ...dockAppsActives];
 
 const applications = new Map();
 
+const iconPathByStyle = (appName: string, style: string) =>
+  `/public/images/appIcons/${style}/${appName}.png`;
+
 allApplicationsList.forEach((app) => {
-    applications.set(app.name, {
-        icon: "/public/images/appIcons/modernMac/" + app.name + ".png",
-        component: app,
-        name: app.name
-    });
+  applications.set(app.name, {
+    icon: (style: string) => iconPathByStyle(app.name, style),
+    component: app,
+    name: app.name,
+  });
 });
 
 applications.set("default", {
-    icon: "path",
-    component: null,
+  icon: (style: string) => iconPathByStyle("default", style),
+  component: null,
 });
 
 export function getApplicationByID(id: string) {

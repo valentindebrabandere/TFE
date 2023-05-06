@@ -30,11 +30,9 @@ export class OpenedApps extends LitElement {
     return html`
       ${this.openedApps.map(
         (app) => html`
-           <window-component>
-          <div slot="content">
+          <window-component>
             <dynamic-element .componentClass=${app.component}></dynamic-element>
-          </div>
-        </window-component>
+          </window-component>
         `
       )}
     `;

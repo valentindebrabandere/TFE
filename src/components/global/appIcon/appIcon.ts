@@ -31,7 +31,8 @@ export class Appicon extends StyledElement {
   }
 
   render() {
-    const iconPath = getApplicationByID(this.name).icon;
+    const currentStyle = this.globalStyleController.style;
+    const iconPath = getApplicationByID(this.name).icon(currentStyle);
 
     return html`
         <style>
