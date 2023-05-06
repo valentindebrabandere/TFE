@@ -31,10 +31,6 @@ export class DefaultApp extends StyledElement {
     this.styles = this.applyStyles(styles, basic);
   }
 
-  static styles = css`
-    /* DefaultApp.scss styles go here */
-  `;
-
   render() {
     const currentStyle = this.globalStyleController.style;
     const app = getApplicationByID(this.name);
