@@ -43,7 +43,6 @@ const styleModernMac:StyleObject = {
 
     /* CSS here */
 
-
     .c-dock__icon{
       position: relative;
       transform-origin: bottom center;

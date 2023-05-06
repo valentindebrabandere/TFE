@@ -15,7 +15,6 @@ export const basic = css`
   align-items: center;
 
   width: fit-content;
-  min-width: 500px;
   max-width: 90vw;
   height: 70px;
   padding: 0 20px;
