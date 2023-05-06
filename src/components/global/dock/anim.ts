@@ -12,7 +12,9 @@ function shouldApplyAnimation(): boolean {
 
 // Get the dock element from the shadow DOM
 function getDockElement(): HTMLElement | null {
-  return document.querySelector('dock-component');
+  const dockComponent = document.querySelector('dock-component');
+  if (!dockComponent) return null;
+  return dockComponent.shadowRoot ? dockComponent.shadowRoot.querySelector('.js-dock') : dockComponent;
 }
   
 
@@ -20,7 +22,8 @@ function getDockElement(): HTMLElement | null {
 export function animDock() {
   const dock = getDockElement();
   if (!dock) return;
-  let dockApps = dock.querySelectorAll('.c-appicon');
+  let dockApps = dock.querySelectorAll('.c-dock__icon');
+  console.log(dockApps);
   let arrDockApps = Array.from(dockApps);
   arrDockApps.forEach((dockApp) => {
     animDockAddEvtList(dockApp);
@@ -45,7 +48,7 @@ function animDockAddEvtList(app:Element) {
 function addAnim(evt: Event, iconAnimDock: Function) {
     const dock = getDockElement();
     if (!dock) return;
-    let dockAppsDyn = dock.querySelectorAll('.c-appicon');
+    let dockAppsDyn = dock.querySelectorAll('.c-dock__icon');
     let arrDockAppsDyn = Array.from(dockAppsDyn);
     let currentApp = arrDockAppsDyn.indexOf(evt.currentTarget as HTMLElement);
     let appBefore: Element | null = currentApp > 0 ? arrDockAppsDyn[currentApp - 1] : null;

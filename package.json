@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@interactjs/interact": "^1.10.17",
     "animejs": "^3.2.1",
+    "interactjs": "^1.10.17",
     "lit": "^2.6.1",
     "node-sass": "^8.0.0",
     "rxjs": "^7.8.1",

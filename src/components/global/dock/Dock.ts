@@ -14,13 +14,15 @@ export class DockComponent extends StyledElement {
 
   @state() styles = [basic, css``];
 
-  firstUpdated() {
+  async firstUpdated() {
+    await this.updateComplete;
     animDock();
   }
 
-  connectedCallback() {
+  async connectedCallback() {
     super.connectedCallback();
-    this.updateStyles()
+    await this.updateComplete;
+    this.updateStyles();
   }
 
   //need to be called to change the style

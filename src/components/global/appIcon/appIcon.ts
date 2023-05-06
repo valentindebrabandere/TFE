@@ -17,6 +17,7 @@ export class Appicon extends StyledElement {
   constructor() {
     super();
     this.classList.add('c-appicon');
+    this.updateStyles();
   }
 
     //need to be called to change the style
