@@ -13,7 +13,12 @@ interface OpenedApp {
 @customElement('opened-apps-component')
 export class OpenedApps extends LitElement {
   static styles = css`
-  /* Add your styles here */
+    :host {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 100;
+    }
   `;
   
   private openedApps: OpenedApp[] = [];

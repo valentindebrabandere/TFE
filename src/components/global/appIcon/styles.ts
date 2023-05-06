@@ -4,9 +4,13 @@ import "/src/assets/globalStyles/typoImports.css"
 
 export const basic = css`
 
-    .c-dock__app{
+    :host{
       position: relative;
       display: inline-block;
+      height: 100%;
+    }
+
+    .c-dock__app{
       height: 100%;
     }
 
@@ -46,7 +50,7 @@ const styleModernMac:StyleObject = {
       transition: transform 0.2s ease-in-out;
     }
 
-    .c-dock__app--active::before{
+    :host--active::before{
       content: "";
       position: absolute;
       bottom: 3px;

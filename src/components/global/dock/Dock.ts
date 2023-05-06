@@ -40,12 +40,12 @@ export class DockComponent extends StyledElement {
       <div class="c-dock js-dock">
         <div class="c-dock__static js-dock__static">
           ${dockApps.map((app) => html`
-            <app-icon-component style="height: 100%;" name=${app.name} dock=${true} />
+            <app-icon-component name=${app.name} dock=${true} />
           `)}
         </div>
         <div class="c-dock__active js-dock__active">
           ${dockAppsActives.map((app) => html`
-              <app-icon-component style="height: 100%;" name=${app.name} dock=${true} />
+              <app-icon-component name=${app.name} dock=${true} />
             `)}
         </div>
       </div>

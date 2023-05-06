@@ -11,8 +11,7 @@ const allApplicationsList = [...dockApps, ...dockAppsActives];
 
 const applications = new Map();
 
-const iconPathByStyle = (appName: string, style: string) =>
-  `/public/images/appIcons/${style}/${appName}.png`;
+const iconPathByStyle = (appName: string, style: string) =>`/public/images/appIcons/${style}/${appName}.png`;
 
 allApplicationsList.forEach((app) => {
   applications.set(app.name, {

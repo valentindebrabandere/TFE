@@ -1,7 +1,7 @@
 import { css, CSSResult } from 'lit';
 
 export const basic = css`
-.c-window{
+:host{
     position: absolute;
     top: 20%;
     left: 30%;
@@ -31,6 +31,7 @@ export const basic = css`
     height: 100%;
     list-style: none;
     margin: 0 15px;
+    padding: 0;
 }
 
 .c-window__control{
@@ -107,7 +108,7 @@ const styleOneBit:StyleObject = {
 const styleModernMac:StyleObject = {
     styleName: "modernMac",
     css: css`
-    .c-window{
+    :host{
       background-color: #3D3C3C;
       border-radius: 10px;
     

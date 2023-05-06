@@ -1,5 +1,5 @@
 import { html, css } from 'lit';
-import { customElement, state } from 'lit/decorators.js';
+import { customElement, state, property } from 'lit/decorators.js';
 
 import { basic, styles } from './styles.ts';
 
@@ -10,6 +10,7 @@ import { StyledElement } from '../../../utils/globalStyledElement.ts';
 @customElement('window-component')
 export class WindowComponent extends StyledElement {
 
+  @property({ type: String, reflect: true }) myAttribute = 'default-value';
   @state() styles = [basic, css``];
 
   connectedCallback() {

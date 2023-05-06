@@ -9,7 +9,6 @@ interface OpenedApp {
 export const openedAppsSubject = new BehaviorSubject<OpenedApp[]>([]);
 
 export function addNewOpenedApp(id: string, component: any) {
-  console.log('addNewOpenedApp called', id, component);
   const currentApps = openedAppsSubject.getValue();
   openedAppsSubject.next([...currentApps, { id, component }]);
 }
@@ -22,7 +21,6 @@ export function removeOpenedApp(id: string) {
 export const openedAppsProvider = {  
   handleAddOpenedApp(e: CustomEvent<{ id: string; component: any }>) {
     addNewOpenedApp(e.detail.id, e.detail.component);
-    console.log('handleAddOpenedApp called', e.detail);
   },
 };
 

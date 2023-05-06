@@ -37,6 +37,8 @@ export class DefaultApp extends StyledElement {
 
   render() {
     const app = getApplicationByID(this.name);
+    console.log(app)
+
 
     return html`
       <style>
