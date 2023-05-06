@@ -14,6 +14,11 @@ export class Appicon extends StyledElement {
 
     @state() styles = [basic, css``];
 
+  constructor() {
+    super();
+    this.classList.add('c-appicon');
+  }
+
     //need to be called to change the style
   updateStyles() {
     //select the current style (globalStyledElement.ts)

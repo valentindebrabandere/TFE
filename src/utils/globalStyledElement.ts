@@ -26,6 +26,10 @@ export class StyledElement extends LitElement {
     // This method should be implemented in the derived class
   }
 
+  createRenderRoot() {
+    return this;
+  }
+
   applyStyles(stylesArray: any[], basicStyle: any) {
     const styleIndex = stylesArray.findIndex(
       (style) => style.styleName === this.globalStyleController.style

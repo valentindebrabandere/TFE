@@ -1,23 +1,20 @@
 import { html, css } from 'lit';
-import { customElement, state, property } from 'lit/decorators.js';
+import { customElement, state } from 'lit/decorators.js';
 
 import { basic, styles } from './styles.ts';
 
 // utils imports
 import { StyledElement } from '../../../utils/globalStyledElement.ts';
 
-
 @customElement('window-component')
 export class WindowComponent extends StyledElement {
 
-  @property({ type: String, reflect: true }) myAttribute = 'default-value';
   @state() styles = [basic, css``];
 
   connectedCallback() {
     super.connectedCallback();
-    this.updateStyles()
-    const dragEvent = new CustomEvent('initDraggable', { detail: { target: this }, bubbles: true, composed: true });
-    this.dispatchEvent(dragEvent);
+    this.updateStyles();
+    this.classList.add('c-window');
   }
 
   //need to be called to change the style
@@ -27,7 +24,6 @@ export class WindowComponent extends StyledElement {
   }
 
   render() {
-
     return html`
       <style>
         /* Import the good style */
@@ -101,9 +97,8 @@ export class WindowComponent extends StyledElement {
         </ul>
       </div>
       <div class="c-window__content js-window__content">
-        <slot></slot>
+        ${this.children}
       </div>
-    </div>
     `;
   }
 }

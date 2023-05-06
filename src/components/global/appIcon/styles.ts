@@ -4,7 +4,7 @@ import "/src/assets/globalStyles/typoImports.css"
 
 export const basic = css`
 
-    :host{
+    .c-appicon{
       position: relative;
       display: inline-block;
       height: 100%;
@@ -50,7 +50,7 @@ const styleModernMac:StyleObject = {
       transition: transform 0.2s ease-in-out;
     }
 
-    :host--active::before{
+    .c-appicon--active::before{
       content: "";
       position: absolute;
       bottom: 3px;

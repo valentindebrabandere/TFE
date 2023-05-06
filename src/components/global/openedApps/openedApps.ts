@@ -13,11 +13,13 @@ interface OpenedApp {
 @customElement('opened-apps-component')
 export class OpenedApps extends LitElement {
   static styles = css`
-    :host {
+    .c-opened-apps {
       position: absolute;
+      display: block;
       height: 100%;
       width: 100%;
       z-index: 100;
+      padding: 0;
     }
   `;
   
@@ -29,6 +31,11 @@ export class OpenedApps extends LitElement {
       this.openedApps = apps;
       this.requestUpdate();
     });
+    this.classList.add('c-opened-apps');
+  }
+
+  createRenderRoot() {
+    return this;
   }
 
   render() {
