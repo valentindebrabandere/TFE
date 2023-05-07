@@ -3,6 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js';
 import { getApplicationByID } from '../../../utils/appManager';
 
 import { StyledElement } from '../../../utils/globalStyledElement.ts';
+import { openedAppsSubject } from '../../../utils/openedAppsProvider.ts';
 
 
 import { basic, styles } from './styles.ts';
@@ -28,13 +29,23 @@ export class Appicon extends StyledElement {
 
   openApp() {
     const app = getApplicationByID(this.name);
-    const openAppEvent = new CustomEvent('addOpenedApp', {
-      detail: { id: app.name, component: app.component },
-      bubbles: true,
-      composed: true,
-    });
-    this.dispatchEvent(openAppEvent);
+    const openedApps = openedAppsSubject.getValue();
+  
+    // Check if the app is already open
+    const appIsOpen = openedApps.some(openedApp => openedApp.id === app.name);
+  
+    if (appIsOpen) {
+      console.log(`${app.name} focused`);
+    } else {
+      const openAppEvent = new CustomEvent('addOpenedApp', {
+        detail: { id: app.name, component: app.component },
+        bubbles: true,
+        composed: true,
+      });
+      this.dispatchEvent(openAppEvent);
+    }
   }
+  
 
   render() {
     const currentStyle = this.globalStyleController.style;

@@ -20,7 +20,7 @@ export class OpenedApps extends LitElement {
       width: 100%;
       z-index: 100;
       padding: 0;
-  
+      pointer-events: none;
     }
   `;
   
@@ -46,7 +46,7 @@ export class OpenedApps extends LitElement {
       </style>
       ${this.openedApps.map(
         (app) => html`
-          <window-component>
+          <window-component .appId=${app.id}>
             <dynamic-element .componentClass=${app.component}/>
           </window-component>
         `

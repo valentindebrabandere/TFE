@@ -2,13 +2,14 @@ import { css, CSSResult } from 'lit';
 
 export const basic = css`
 .c-window{
-    position: absolute;
-    top: 20%;
-    left: 30%;
-    width: fit-content;
-    height: fit-content; 
-
-    overflow: hidden;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: fit-content;
+  height: fit-content; 
+  
+  overflow: hidden;
+  pointer-events: auto;
 }
 
 .c-window__head{
