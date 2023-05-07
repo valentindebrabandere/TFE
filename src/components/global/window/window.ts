@@ -15,6 +15,7 @@ export class WindowComponent extends StyledElement {
     super.connectedCallback();
     this.updateStyles();
     this.classList.add('c-window');
+    this.setAttribute('data-drag', 'draggable');
   }
 
   //need to be called to change the style
@@ -29,11 +30,11 @@ export class WindowComponent extends StyledElement {
         /* Import the good style */
         ${this.styles}
       </style>
-      <div class="c-window__head js-window__head">
+      <div data-drag="draggable-dragger" class="c-window__head js-window__head">
         <ul class="c-window__controls">
           <li>
             <button
-            data-window-control="quit"
+              data-window-control="quit"
               class="c-window__control c-window__control--quit"
             >
               <svg   

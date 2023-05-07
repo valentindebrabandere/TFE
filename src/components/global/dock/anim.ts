@@ -14,8 +14,9 @@ function shouldApplyAnimation(): boolean {
 function getDockElement(): HTMLElement | null {
   const dockComponent = document.querySelector('dock-component');
   if (!dockComponent) return null;
-  return dockComponent.shadowRoot ? dockComponent.shadowRoot.querySelector('.js-dock') : dockComponent;
+  return (dockComponent.shadowRoot ? dockComponent.shadowRoot.querySelector('.js-dock') : dockComponent) as HTMLElement;
 }
+
   
 
 // Met en place l'animation de base
@@ -23,7 +24,6 @@ export function animDock() {
   const dock = getDockElement();
   if (!dock) return;
   let dockApps = dock.querySelectorAll('.c-dock__icon');
-  console.log(dockApps);
   let arrDockApps = Array.from(dockApps);
   arrDockApps.forEach((dockApp) => {
     animDockAddEvtList(dockApp);
