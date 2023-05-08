@@ -54,6 +54,10 @@ export class TextEdit extends StyledElement {
     }
   }
 
+  updateContent(content: string) {
+    this.content = content;
+  }
+
   render() {
     // create a text-edit app
     return html`
@@ -61,7 +65,12 @@ export class TextEdit extends StyledElement {
         /* Import the good style */
         ${this.styles}
       </style>
-        <textarea class="text-edit__editor" .value="${this.content}" placeholder="Type your text here..."></textarea>
+       <div
+        class="text-edit__editor"
+        contenteditable
+        .innerHTML="${this.content}"
+        placeholder="Type your text here..."
+      ></div>
     `;
   }
 }

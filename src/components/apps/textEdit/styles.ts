@@ -6,23 +6,28 @@ export const basic = css`
   .c-text-edit {
     display: flex;
     flex-direction: column;
-    width: 50vw;
-    height: 50vh;
+    width: 60vw;
+    height: 60vh;
+    background-color: #fff;
   }
 
   .text-edit__editor {
     width: 100%;
     height: 100%;
-    resize: none;
     flex-grow: 1;
-    padding: 2rem;
+    padding: 2rem 8%;
     border: none;
     outline: none;
     font-family: 'Arial', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.4;
     overflow-y: auto;
-  }  
+    box-sizing: border-box;
+  }
+
+  .text-edit__editor > * {
+    word-break: keep-all;
+}
 `;
 
 interface StyleObject {
