@@ -36,6 +36,7 @@
     <script type="module" src="./src/components/global/window/window.ts"></script>
     <script type="module" src="./src/components/global/menu/menu.ts"></script>
     <script type="module" src="./src/components/global/appIcon/appIcon.ts"></script>
+    <script type="module" src="./src/components/global/file/file.ts"></script>
     <script type="module" src="./src/components/global/openedApps/openedApps.ts"></script>
     <script type="module" src="./src/components/global/dock/dock.ts"></script>
 
@@ -49,6 +50,10 @@
         <opened-apps-component></opened-apps-component>
         <!-- <window-component> <app-test></app-test></window-component> -->
         <div class="c-desktop js-desktop">
+            <file-component
+                appname="TextEdit"
+                filelink="/public/content/modernMac/hello.md"
+            ></file-component>
           <div
             class="c-desktop__element js-desktop__element"
             data-drag="draggable"
