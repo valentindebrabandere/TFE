@@ -23,7 +23,6 @@ export class TextEdit extends StyledElement {
   }
 
   connectedCallback() {
-    console.log(this.filelink)
     super.connectedCallback();
     this.updateStyles();
     this.classList.add('c-text-edit');
@@ -36,7 +35,7 @@ export class TextEdit extends StyledElement {
   }
 
   async updated(changedProperties: Map<string, any>) {
-    if (changedProperties.has('fileLink')) {
+    if (changedProperties.has('filelink')) {
       if (this.filelink === undefined) {
         return;
       }
@@ -44,9 +43,9 @@ export class TextEdit extends StyledElement {
     }
   }
 
-  async fetchFileContent(fileLink: string): Promise<string> {
+  async fetchFileContent(filelink: string): Promise<string> {
     try {
-      const response = await fetch(fileLink);
+      const response = await fetch(filelink);
       const content = await response.text();
       return content;
     } catch (error) {

@@ -6,10 +6,6 @@ interface OpenedApp {
   component: any;
   filelink?: string;
 }
-interface DynamicElementHTMLElement extends HTMLElement {
-  componentClass: any;
-  options: { filelink?: string };
-}
 
 export const openedAppsSubject = new BehaviorSubject<OpenedApp[]>([]);
 
@@ -24,13 +20,9 @@ export function removeOpenedApp(id: string) {
 }
 
 // openedAppsProvider.ts
-export const openedAppsProvider = {
-  handleAddOpenedApp(e: CustomEvent<{ id: string; component: any; filelink?: string }>) {
-    const dynamicElement = document.createElement('dynamic-element') as DynamicElementHTMLElement;
-    dynamicElement.componentClass = e.detail.component;
-    dynamicElement.options = { filelink: e.detail.filelink };
-    document.body.appendChild(dynamicElement);
-    addNewOpenedApp(e.detail.id, dynamicElement, e.detail.filelink);
+export const openedAppsProvider = {  
+  handleAddOpenedApp(e: CustomEvent<{ id: string; component: any; filelink: string}>) {
+    addNewOpenedApp(e.detail.id, e.detail.component, e.detail.filelink);
   },
 };
 
