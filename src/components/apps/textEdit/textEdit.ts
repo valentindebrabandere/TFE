@@ -11,8 +11,8 @@ import '../default/default';
 
 
 
-@customElement('figma-app')
-export class Figma extends StyledElement {
+@customElement('text-edit-component')
+export class TextEdit extends StyledElement {
   @property({ type: String }) name: string;
 
   @state() styles = [basic, css``];
@@ -25,6 +25,7 @@ export class Figma extends StyledElement {
   connectedCallback() {
     super.connectedCallback();
     this.updateStyles();
+    this.classList.add('c-text-edit');
   }
 
   //need to be called to change the style
@@ -33,15 +34,14 @@ export class Figma extends StyledElement {
     this.styles = this.applyStyles(styles, basic);
   }
 
-  static styles = css`
-    /* DefaultApp.scss styles go here */
-  `;
-
   render() {
+    // create a text-editEditeditEdite eddit app
     return html`
-      <div class="c-app">
-        <default-app-component name="Figma"></default-app-component>
-      </div>
+      <style>
+        /* Import the good style */
+        ${this.styles}
+      </style>
+        <textarea class="text-edit__editor" placeholder="Type your text here..."></textarea>
     `;
   }
 
