@@ -14,12 +14,25 @@ const applications = new Map();
 
 const iconPathByStyle = (appName: string, style: string) =>`/public/images/appIcons/${style}/${appName}.png`;
 
-allApplicationsList.forEach((app) => {
-  applications.set(app.name, {
+interface Application {
+  name: string;
+  component: typeof HTMLElement;
+  icon: (style: string) => string;
+  fileIcon?: (style: string) => string;
+}
+
+allApplicationsList.forEach((app: any) => {
+  const application: Application = {
     icon: (style: string) => iconPathByStyle(app.name, style),
     component: app,
     name: app.name,
-  });
+  };
+
+  if (app.prototype.hasOwnProperty('getFileIcon')) {
+    application.fileIcon = (style: string) => app.prototype.getFileIcon(style);
+  }
+
+  applications.set(app.name, application);
 });
 
 applications.set("default", {
@@ -27,6 +40,6 @@ applications.set("default", {
   component: null,
 });
 
-export function getApplicationByID(id: string) {
+export function getApplicationByID(id: string): Application{
     return applications.has(id) ? applications.get(id) : applications.get("default");
 }

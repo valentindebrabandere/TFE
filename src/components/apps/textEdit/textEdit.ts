@@ -27,11 +27,17 @@ export class TextEdit extends StyledElement {
     this.updateStyles();
     this.classList.add('c-text-edit');
   }
-
+  
   //need to be called to change the style
   updateStyles() {
     //select the current style (globalStyledElement.ts)
     this.styles = this.applyStyles(styles, basic);
+  }
+
+  getFileIcon(style: string) {
+    const appName = 'textEdit';
+    const fileIconPath = `/images/fileIcons/${style}/${appName}.png`;
+    return fileIconPath;
   }
 
   async updated(changedProperties: Map<string, any>) {
@@ -40,6 +46,11 @@ export class TextEdit extends StyledElement {
         return;
       }
       this.content = await this.fetchFileContent(this.filelink);
+    }
+    // Set focus on the contenteditable div after updating the content
+    const editor = this.querySelector('.text-edit__editor') as HTMLElement;
+    if (editor) {
+      editor.focus();
     }
   }
 
@@ -69,7 +80,6 @@ export class TextEdit extends StyledElement {
         class="text-edit__editor"
         contenteditable
         .innerHTML="${this.content}"
-        placeholder="Type your text here..."
       ></div>
     `;
   }

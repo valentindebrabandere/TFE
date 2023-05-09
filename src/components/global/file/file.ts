@@ -48,7 +48,8 @@ export class FileComponent extends StyledElement {
 
   render() {
     const currentStyle = this.globalStyleController.style;
-    const iconPath = getApplicationByID(this.appname).icon(currentStyle);
+    const app = getApplicationByID(this.appname);
+    const fileIconPath = app.fileIcon ? app.fileIcon(currentStyle) : app.icon(currentStyle);
 
     return html`
       <style>
@@ -60,7 +61,7 @@ export class FileComponent extends StyledElement {
         data-application-name="${this.appname}"
         @click="${this.openApp}"
       >
-        <img src="${iconPath}" class="c-file__icon" alt="File Icon" />
+        <img src="${fileIconPath}" class="c-file__icon" alt="File Icon" />
       </div>
     `;
   }

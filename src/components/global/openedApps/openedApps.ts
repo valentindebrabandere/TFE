@@ -48,7 +48,7 @@ export class OpenedApps extends LitElement {
       ${this.openedApps.map(
         (app) => html`
           <window-component .appId=${app.id}>
-          <dynamic-element .componentClass=${app.component} .options=${{ filelink: app.filelink }}/>
+            <dynamic-element .componentClass=${app.component} .options=${{ filelink: app.filelink }}/>
           </window-component>
         `
       )}
