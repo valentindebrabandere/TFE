@@ -7,11 +7,9 @@ import { basic, styles } from './styles';
 // utils imports
 import { StyledElement } from '../../../utils/globalStyledElement';
 
-import '../default/default';
-
 @customElement('text-edit-component')
 export class TextEdit extends StyledElement {
-  @property({ type: String }) appname: string;
+  @property({ type: String }) name: string;
   @property({ type: String, attribute: 'filelink' }) filelink: string|undefined;
 
   @state() content: string = '';
@@ -19,7 +17,7 @@ export class TextEdit extends StyledElement {
 
   constructor() {
     super();
-    this.appname = '';
+    this.name = '';
   }
 
   connectedCallback() {
@@ -35,6 +33,7 @@ export class TextEdit extends StyledElement {
   }
 
   getFileIcon(style: string) {
+    console.log(this.name)
     const appName = 'textEdit';
     const fileIconPath = `/images/fileIcons/${style}/${appName}.png`;
     return fileIconPath;
