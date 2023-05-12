@@ -3,8 +3,8 @@
 import { ReactiveController, ReactiveElement } from 'lit';
 
 export const stylesList = [
-  { call: 'modernMac', name: 'Modern Mac', date: 1982 },
-  { call: 'oneBit', name: 'One bit', date: 2023 },
+  { call: 'modernMac', name: 'Modern Mac', date: 2023 },
+  { call: 'oneBit', name: 'One bit', date: 1982 },
 ];
 
 export var currentStyle = 'modernMac';

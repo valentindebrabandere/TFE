@@ -22,11 +22,6 @@ export class Layout extends StyledElement {
 
   protected globalStyleController = new GlobalStyleController(this);
 
-
-  static get styles() {
-    return [basic];
-  }
-
   constructor() {
     super();
   }
@@ -83,6 +78,7 @@ export class Layout extends StyledElement {
 
   render() {
     return html`
+      <style>${basic}</style>
       <div class="c-layout js-layout">
         <div class="c-layout__display">
           <div class="c-layout__controls">
