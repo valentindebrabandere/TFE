@@ -1,6 +1,6 @@
 // DefaultApp.ts
 import { html, css } from 'lit';
-import { customElement, state, property} from 'lit/decorators.js';
+import { customElement, state} from 'lit/decorators.js';
 
 import { basic, styles } from './styles';
 
@@ -13,13 +13,11 @@ import '../default/default';
 
 @customElement('figma-app')
 export class Figma extends StyledElement {
-  @property({ type: String }) name: string;
 
   @state() styles = [basic, css``];
 
   constructor() {
     super();
-    this.name = '';
   }
 
   connectedCallback() {
@@ -40,7 +38,7 @@ export class Figma extends StyledElement {
   render() {
     return html`
       <div class="c-app">
-        <default-app-component name="${this.name}"></default-app-component>
+        <default-app-component name="${Figma.name}"></default-app-component>
       </div>
     `;
   }
