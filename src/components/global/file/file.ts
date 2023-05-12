@@ -11,6 +11,7 @@ import { basic, styles } from './styles.ts';
 @customElement('file-component')
 export class FileComponent extends StyledElement {
   @property({ type: String }) appname: string = '';
+  @property({ type: String }) filename: string = '';
   @property({ type: String }) filelink: string = '';
 
   @state() styles = [basic, css``];
@@ -18,6 +19,13 @@ export class FileComponent extends StyledElement {
   constructor() {
     super();
     this.classList.add('c-file');
+    this.setAttribute('data-drag', 'draggable');
+    this.setAttribute('data-application-name', this.appname);
+    this.updateStyles();
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
     this.updateStyles();
   }
 
@@ -56,13 +64,8 @@ export class FileComponent extends StyledElement {
           /* Import the good style */
           ${this.styles}
       </style>
-      <div
-        class="c-file"
-        data-application-name="${this.appname}"
-        @click="${this.openApp}"
-      >
-        <img src="${fileIconPath}" class="c-file__icon" alt="File Icon" />
-      </div>
+        <img src="${fileIconPath}" @click="${this.openApp}" class="c-file__icon" alt="File Icon" />
+        <p class="c-file__name">${this.filename}</p>
     `;
   }
 }

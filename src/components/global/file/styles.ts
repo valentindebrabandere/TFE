@@ -5,17 +5,35 @@ import "/src/assets/globalStyles/typoImports.css"
 export const basic = css`
 
     .c-file{
-      position: relative;
-      display: inline-block;
+      position: absolute;
       height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .c-dock__app{
-      height: 100%;
+    .c-file__icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
     }
-
-    .c-dock__icon{
-      height: 90%;
+    
+    .c-file__icon--image{
+        width: 85%;
+        height: 85%;
+    }
+    
+    .c-file__name{
+        font-size: calc(10/16*1rem);
+        font-weight: 400;
+        color: #000;
+        max-width: 62px;
+        word-wrap: break-word;
+        margin: 0;
+        margin-top: 5px;
+        text-align: center;
     }
 
 `;
@@ -32,7 +50,19 @@ const styleOneBit:StyleObject = {
     css: css`
     
     /* CSS here */
-
+    .c-file__icon{
+      filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.2));
+    }
+  
+    .c-file__icon--image{
+      border: 2px solid #000;
+    }
+    
+    .c-file__name{
+      font-size: calc(14/16*1rem);
+  
+      color: #000;
+    }
 
     `
 };
@@ -43,22 +73,17 @@ const styleModernMac:StyleObject = {
 
     /* CSS here */
 
-    .c-dock__icon{
-      position: relative;
-      transform-origin: bottom center;
-      transition: transform 0.2s ease-in-out;
+      .c-file__icon{
+        filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.2));
     }
-
-    .c-file--active::before{
-      content: "";
-      position: absolute;
-      bottom: 3px;
-      left: 50%;
-      transform: translate3d(-50%,-50%,0);
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background-color: #ffffffab;
+    
+    .c-file__icon--image{
+        border: 2px solid #fff;
+    }
+    
+    .c-file__name{
+        color: #fff;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
     }
 
     `
