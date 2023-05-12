@@ -17,7 +17,6 @@ export class DynamicElement extends LitElement {
     if (!this.componentAdded) {
       const instance = new this.componentClass();
       instance.filelink = this.options.filelink;
-      instance.name = this.componentClass.name;
       this.renderRoot.appendChild(instance);
       this.componentAdded = true;
     }    
