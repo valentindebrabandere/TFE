@@ -6,23 +6,23 @@ export const basic = css`
 
     .c-file{
       position: absolute;
-      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 70px;
+      height: 70px;
     }
 
     .c-file__icon{
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 70px;
-        height: 70px;
+        width: 100%;
     }
     
     .c-file__icon--image{
         width: 85%;
-        height: 85%;
+        aspect-ratio: 1/1;
     }
     
     .c-file__name{

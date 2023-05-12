@@ -58,9 +58,13 @@ export class File extends StyledElement {
 
   customIcon() {
     let fileIconPath = this.filelink;
-    console.log(fileIconPath)
-    return fileIconPath;
+    fileIconPath = fileIconPath.replace('desktopImages', 'desktopImages/thumb'); // replace part of the path
+    return {
+      path: fileIconPath,
+      additionalClass: 'c-file__icon--image',
+    };
   }
+  
   
 
   defaultIcon(app: any) {
@@ -70,24 +74,27 @@ export class File extends StyledElement {
 
   render() {
     const app = getApplicationByID(this.appname);
-
+  
     let fileIconPath = '';
-
+    let additionalClass = '';
+  
     // Check if the app is included in differentIconDisplayApps
     if (this.differentIconDisplayApps.includes(this.appname)) {
-      fileIconPath = this.customIcon(); // Call the customIcon() method
+      const customIconResult = this.customIcon();
+      fileIconPath = customIconResult.path;
+      additionalClass = customIconResult.additionalClass;
     } else {
       fileIconPath = this.defaultIcon(app); // Call the defaultIcon() method
     }
-    
-
+  
     return html`
       <style>
         /* Import the good style */
         ${this.styles}
       </style>
-      <img src="${fileIconPath}" @dblclick="${this.openApp}" class="c-file__icon" alt="File Icon" />
+      <img src="${fileIconPath}" @dblclick="${this.openApp}" class="c-file__icon ${additionalClass}" alt="File Icon" />
       <p class="c-file__name">${this.filename}</p>
     `;
   }
+  
 }
