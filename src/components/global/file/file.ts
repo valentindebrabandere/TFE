@@ -16,6 +16,8 @@ export class File extends StyledElement {
 
   @state() styles = [basic, css``];
 
+  private differentIconDisplayApps = ['Aperçu'];
+
   constructor() {
     super();
     this.classList.add('c-file');
@@ -38,10 +40,10 @@ export class File extends StyledElement {
   openApp() {
     const app = getApplicationByID(this.appname);
     const openedApps = openedAppsSubject.getValue();
-  
+
     // Check if the app is already open
     const appIsOpen = openedApps.some(openedApp => openedApp.id === app.name);
-  
+
     if (appIsOpen) {
       console.log(`${app.name} focused`);
     } else {
@@ -54,18 +56,38 @@ export class File extends StyledElement {
     }
   }
 
+  customIcon() {
+    let fileIconPath = this.filelink;
+    console.log(fileIconPath)
+    return fileIconPath;
+  }
+  
+
+  defaultIcon(app: any) {
+    const fileIconPath = `/images/fileIcons/${this.globalStyleController.style}/${app.name}.png`;
+    return fileIconPath;
+  }
+
   render() {
-    const currentStyle = this.globalStyleController.style;
     const app = getApplicationByID(this.appname);
-    const fileIconPath = app.fileIcon ? app.fileIcon(currentStyle) : app.icon(currentStyle);
+
+    let fileIconPath = '';
+
+    // Check if the app is included in differentIconDisplayApps
+    if (this.differentIconDisplayApps.includes(this.appname)) {
+      fileIconPath = this.customIcon(); // Call the customIcon() method
+    } else {
+      fileIconPath = this.defaultIcon(app); // Call the defaultIcon() method
+    }
+    
 
     return html`
       <style>
-          /* Import the good style */
-          ${this.styles}
+        /* Import the good style */
+        ${this.styles}
       </style>
-        <img src="${fileIconPath}" @click="${this.openApp}" class="c-file__icon" alt="File Icon" />
-        <p class="c-file__name">${this.filename}</p>
+      <img src="${fileIconPath}" @dblclick="${this.openApp}" class="c-file__icon" alt="File Icon" />
+      <p class="c-file__name">${this.filename}</p>
     `;
   }
 }

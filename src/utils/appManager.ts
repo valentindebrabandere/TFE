@@ -1,3 +1,4 @@
+import { Aperçu } from "../components/apps/aperçu/aperçu";
 import { Figma } from "../components/apps/figma/figma";
 import { TextEdit } from "../components/apps/textEdit/textEdit";
 // import { Calculator } from "../apps/calculator/Calculator";
@@ -5,7 +6,7 @@ import { TextEdit } from "../components/apps/textEdit/textEdit";
 
 // export const dockApps = [Calculator, Figma];
 // export const dockAppsActives = [Trash];
-export const dockApps = [Figma, TextEdit];
+export const dockApps = [Figma, TextEdit, Aperçu];
 export const dockAppsActives = [Figma];
 
 const allApplicationsList = [...dockApps, ...dockAppsActives];

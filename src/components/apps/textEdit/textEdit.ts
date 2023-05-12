@@ -1,4 +1,4 @@
-// DefaultApp.ts
+// TextEdit.ts
 import { html, css } from 'lit';
 import { customElement, state, property } from 'lit/decorators.js';
 
@@ -28,11 +28,6 @@ export class TextEdit extends StyledElement {
   updateStyles() {
     //select the current style (globalStyledElement.ts)
     this.styles = this.applyStyles(styles, basic);
-  }
-
-  getFileIcon(style: string) {
-    const fileIconPath = `/images/fileIcons/${style}/${TextEdit.name}.png`;
-    return fileIconPath;
   }
 
   async updated(changedProperties: Map<string, any>) {
