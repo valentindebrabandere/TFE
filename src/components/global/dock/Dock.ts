@@ -10,7 +10,7 @@ import { dockApps, dockAppsActives } from "../../../utils/appManager.ts";
 
 
 @customElement('dock-component')
-export class DockComponent extends StyledElement {
+export class Dock extends StyledElement {
 
   @state() styles = [basic, css``];
 

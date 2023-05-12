@@ -9,7 +9,7 @@ import { basic, styles } from './styles';
 import { StyledElement } from '../../../utils/globalStyledElement';
 
 @customElement('menu-component')
-export class MenuComponent extends StyledElement {
+export class Menu extends StyledElement {
   @state() time = new Date();
   timer: ReturnType<typeof setTimeout> | undefined = undefined;
 

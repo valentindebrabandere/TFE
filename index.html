@@ -32,13 +32,7 @@
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
     
     <!-- Components declarations -->
-    <script type="module" src="./src/components/global/layout/Layout.ts"></script>
-    <script type="module" src="./src/components/global/window/window.ts"></script>
-    <script type="module" src="./src/components/global/menu/menu.ts"></script>
-    <script type="module" src="./src/components/global/appIcon/appIcon.ts"></script>
-    <script type="module" src="./src/components/global/file/file.ts"></script>
-    <script type="module" src="./src/components/global/openedApps/openedApps.ts"></script>
-    <script type="module" src="./src/components/global/dock/dock.ts"></script>
+    <script type="module" src="./src/utils/componentHtmlImport.ts"></script>
 
   </head>
   <body>
@@ -48,12 +42,11 @@
       <menu-component></menu-component>
       <div class="o-container js-container">
         <opened-apps-component></opened-apps-component>
-        <!-- <window-component> <app-test></app-test></window-component> -->
         <div class="c-desktop js-desktop">
             <file-component
                 appname="TextEdit"
                 filename="hello.doc"
-                filelink="/public/content/modernMac/hello.html"
+                filelink="/content/modernMac/desktop/hello.html"
             ></file-component>
           <div
             class="c-desktop__element js-desktop__element"

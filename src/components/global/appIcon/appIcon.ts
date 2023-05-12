@@ -9,7 +9,7 @@ import { openedAppsSubject } from '../../../utils/openedAppsProvider.ts';
 import { basic, styles } from './styles.ts';
 
 @customElement('app-icon-component')
-export class Appicon extends StyledElement {
+export class AppIcon extends StyledElement {
     @property({ type: String }) name: string = '';
 
     @state() styles = [basic, css``];

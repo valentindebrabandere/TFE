@@ -9,7 +9,7 @@ import { openedAppsSubject } from '../../../utils/openedAppsProvider.ts';
 import { basic, styles } from './styles.ts';
 
 @customElement('file-component')
-export class FileComponent extends StyledElement {
+export class File extends StyledElement {
   @property({ type: String }) appname: string = '';
   @property({ type: String }) filename: string = '';
   @property({ type: String }) filelink: string = '';

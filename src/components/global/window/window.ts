@@ -8,7 +8,7 @@ import { StyledElement } from '../../../utils/globalStyledElement.ts';
 import { removeOpenedApp } from '../../../utils/openedAppsProvider.ts';
 
 @customElement('window-component')
-export class WindowComponent extends StyledElement {
+export class Window extends StyledElement {
 
   @state() styles = [basic, css``];
   @property({ type: String }) appId = '';
