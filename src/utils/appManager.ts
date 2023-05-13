@@ -1,15 +1,14 @@
 import { Aperçu } from "../components/apps/aperçu/aperçu";
 import { Figma } from "../components/apps/figma/figma";
 import { TextEdit } from "../components/apps/textEdit/textEdit";
+import { Corbeille } from "../components/apps/corbeille/corbeille";
 // import { Calculator } from "../apps/calculator/Calculator";
-// import { Trash } from "../apps/trash/Trash";
 
-// export const dockApps = [Calculator, Figma];
-// export const dockAppsActives = [Trash];
-export const dockApps = [Figma, TextEdit, Aperçu];
-export const dockAppsActives = [Figma];
+export const dockApps = [Figma, TextEdit];
+export const dockAppsActives = [Corbeille];
+export const otherApps = [Aperçu];
 
-const allApplicationsList = [...dockApps, ...dockAppsActives];
+const allApplicationsList = [...dockApps, ...dockAppsActives,...otherApps];
 
 const applications = new Map();
 
