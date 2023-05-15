@@ -1,0 +1,50 @@
+{
+    "folderName": "Desktop",
+    "childItems": [
+      {
+        "appname": "Aperçu",
+        "filename": "Image1.jpg",
+        "filelink": "/content/modernMac/desktop/desktopImages/image1.jpg",
+        "childItems": []
+      },
+      {
+        "appname": "Finder",
+        "filename": "subfolder",
+        "filelink": "",
+        "childItems": [
+          {
+            "appname": "Finder",
+            "filename": "subfolder",
+            "filelink": "",
+            "childItems": [
+              {
+                "appname": "Aperçu",
+                "filename": "Image2.jpg",
+                "filelink": "/content/modernMac/desktop/desktopImages/image2.jpg",
+                "childItems": []
+              },
+              {
+                "appname": "Aperçu",
+                "filename": "Image3.jpg",
+                "filelink": "/content/modernMac/desktop/desktopImages/image3.jpg",
+                "childItems": []
+              }
+            ]
+          },
+          {
+            "appname": "Aperçu",
+            "filename": "Image2.jpg",
+            "filelink": "/content/modernMac/desktop/desktopImages/image2.jpg",
+            "childItems": []
+          },
+          {
+            "appname": "Aperçu",
+            "filename": "Image3.jpg",
+            "filelink": "/content/modernMac/desktop/desktopImages/image3.jpg",
+            "childItems": []
+          }
+        ]
+      }
+    ]
+  }
+  

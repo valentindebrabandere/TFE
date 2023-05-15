@@ -11,6 +11,7 @@ export const basic = css`
       align-items: center;
       width: 70px;
       height: 70px;
+      pointer-events: auto;
     }
 
     .c-file__icon{

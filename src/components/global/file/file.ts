@@ -8,11 +8,20 @@ import { openedAppsSubject } from '../../../utils/openedAppsProvider.ts';
 
 import { basic, styles } from './styles.ts';
 
+export interface FileItem {
+  appname: string;
+  filename: string;
+  filelink: string;
+  childItems?: FileItem[];
+}
+
 @customElement('file-component')
 export class File extends StyledElement {
   @property({ type: String }) appname: string = '';
   @property({ type: String }) filename: string = '';
   @property({ type: String }) filelink: string = '';
+  @property({ type: Array }) childItems: FileItem[] = []; // Change here
+  
 
   @state() styles = [basic, css``];
 
@@ -48,7 +57,12 @@ export class File extends StyledElement {
       console.log(`${app.name} focused`);
     } else {
       const openAppEvent = new CustomEvent('addOpenedApp', {
-        detail: { id: app.name, component: app.component, filelink: this.filelink },
+        detail: {
+          id: app.name,
+          component: app.component,
+          filelink: this.filelink,
+          childItems: this.childItems,
+        },
         bubbles: true,
         composed: true,
       });

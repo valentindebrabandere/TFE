@@ -2,9 +2,10 @@ import { Aperçu } from "../components/apps/aperçu/aperçu";
 import { Figma } from "../components/apps/figma/figma";
 import { TextEdit } from "../components/apps/textEdit/textEdit";
 import { Corbeille } from "../components/apps/corbeille/corbeille";
+import { Finder } from "../components/apps/finder/finder";
 // import { Calculator } from "../apps/calculator/Calculator";
 
-export const dockApps = [Figma, TextEdit];
+export const dockApps = [Finder, Figma, TextEdit];
 export const dockAppsActives = [Corbeille];
 export const otherApps = [Aperçu];
 

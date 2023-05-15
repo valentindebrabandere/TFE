@@ -6,3 +6,4 @@ export { AppIcon } from './global/appIcon/appIcon';
 export { File } from './global/file/file';
 export { OpenedApps } from './global/openedApps/openedApps';
 export { Dock } from './global/dock/dock';
+export {Desktop} from './global/desktop/desktop';

@@ -2,14 +2,9 @@ import { LitElement, html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { openedAppsSubject } from '../../../utils/openedAppsProvider'; 
 
+import type { OpenedApp } from '../../../utils/openedAppsProvider';
+
 import './assets/dynamicElement';
-
-interface OpenedApp {
-  id: string;
-  component: { new(): HTMLElement };
-  filelink?: string;
-}
-
 
 @customElement('opened-apps-component')
 export class OpenedApps extends LitElement {
@@ -48,7 +43,7 @@ export class OpenedApps extends LitElement {
       ${this.openedApps.map(
         (app) => html`
           <window-component .appId=${app.id}>
-            <dynamic-element .componentClass=${app.component} .options=${{ filelink: app.filelink }}/>
+            <dynamic-element .componentClass=${app.component} .options=${{ filelink: app.filelink, childItems: app.childItems }}/>
           </window-component>
         `
       )}
