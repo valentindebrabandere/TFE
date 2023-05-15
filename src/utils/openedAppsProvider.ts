@@ -1,10 +1,12 @@
 // openedAppsProvider.ts
 import { BehaviorSubject } from 'rxjs';
+import { v4 as uuidv4 } from 'uuid';
 import { FileItem } from '../components/global/file/file';
 
 export interface OpenedApp {
   id: string;
   component: any;
+  uuid: string;
   filelink?: string;
   childItems?: FileItem[];
 }
@@ -13,12 +15,13 @@ export const openedAppsSubject = new BehaviorSubject<OpenedApp[]>([]);
 
 export function addNewOpenedApp(id: string, component: any, filelink?: string, childItems?: FileItem[]) {
   const currentApps = openedAppsSubject.getValue();
-  openedAppsSubject.next([...currentApps, { id, component, filelink, childItems }]);
+  const newApp = { id, component, uuid: uuidv4(), filelink, childItems };
+  openedAppsSubject.next([...currentApps, newApp]);
 }
 
-export function removeOpenedApp(id: string) {
+export function removeOpenedApp(uuid: string) {
   const currentApps = openedAppsSubject.getValue();
-  openedAppsSubject.next(currentApps.filter((app) => app.id !== id));
+  openedAppsSubject.next(currentApps.filter((app) => app.uuid !== uuid));
 }
 
 export const openedAppsProvider = {  

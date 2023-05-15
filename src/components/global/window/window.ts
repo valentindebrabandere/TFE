@@ -1,4 +1,4 @@
-import { html, css } from 'lit';
+import { html, css, PropertyValues} from 'lit';
 import { customElement, state, property } from 'lit/decorators.js';
 
 import { basic, styles } from './styles.ts';
@@ -11,7 +11,8 @@ import { removeOpenedApp } from '../../../utils/openedAppsProvider.ts';
 export class Window extends StyledElement {
 
   @state() styles = [basic, css``];
-  @property({ type: String }) appId = '';
+  @property({ type: String }) appUuid = '';
+  @property({ type: Number }) windowNumber: number = 0;
 
 
   connectedCallback() {
@@ -21,6 +22,16 @@ export class Window extends StyledElement {
     this.setAttribute('data-drag', 'draggable-dragger');
   }
 
+  updated(changedProperties: PropertyValues) {
+    super.updated(changedProperties);
+    if (changedProperties.has('windowNumber')) {
+      const topOffset = (this.windowNumber * 5) % 100;
+      const leftOffset = (this.windowNumber * 3) % 100;
+      this.style.top = `${20+topOffset}%`;
+      this.style.left = `${20+leftOffset}%`;
+    }
+  }
+
   //need to be called to change the style
   updateStyles() {
     //select the current style (globalStyledElement.ts)
@@ -28,7 +39,7 @@ export class Window extends StyledElement {
   }
 
   handleQuitClick() {
-    removeOpenedApp(this.appId);
+    removeOpenedApp(this.appUuid);
   }
 
   handleHideClick() {

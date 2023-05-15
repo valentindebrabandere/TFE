@@ -3,8 +3,6 @@ import { css, CSSResult } from 'lit';
 export const basic = css`
 .c-window{
   position: absolute;
-  top: 20%;
-  left: 30%;
   width: fit-content;
   height: fit-content; 
   

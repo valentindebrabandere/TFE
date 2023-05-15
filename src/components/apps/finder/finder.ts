@@ -25,6 +25,40 @@ export class Finder extends StyledElement {
     super.connectedCallback();
     this.updateStyles();
 
+    if (!this.childItems) {
+      this.childItems = [];
+    }
+
+    // If childItems is empty, fetch the desktop config.
+    if (this.childItems.length === 0) {
+      this.fetchDesktopConfig();
+    } else {
+      // Arrange the child items in a grid.
+      this.arrangeChildItems();
+    }
+  }
+
+  fetchDesktopConfig() {
+    const currentStyle = this.globalStyleController.style;
+
+    fetch(`/content/${currentStyle}/desktop/desktopConfig.json`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("HTTP error " + response.status);
+        }
+        return response.json();
+      })
+      .then(data => {
+        this.childItems = data.childItems || [];
+        this.arrangeChildItems();
+      })
+      .catch(error => {
+        console.warn("There was an error fetching the desktop config:", error);
+        this.childItems = [];
+      });
+  }
+
+  arrangeChildItems() {
     // Wait for the next frame to make sure the element is rendered and has a non-zero size.
     requestAnimationFrame(() => {
       // Get the bounding box of the Finder component.
