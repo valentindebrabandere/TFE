@@ -12,6 +12,7 @@ export interface FileItem {
   filename: string;
   filelink: string;
   childItems?: FileItem[];
+  position?: { top: number; left: number };
 }
 
 @customElement('file-component')
@@ -47,8 +48,6 @@ export class File extends StyledElement {
 
   openApp() {
     const app = getApplicationByID(this.appname);
-    console.log(this.childItems)
-    console.log(this.filename)
     const openAppEvent = new CustomEvent('addOpenedApp', {
       detail: {
         id: app.name,

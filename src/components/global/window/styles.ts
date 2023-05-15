@@ -110,7 +110,6 @@ const styleModernMac:StyleObject = {
     styleName: "modernMac",
     css: css`
     .c-window{
-      background-color: #3D3C3C;
       border-radius: 10px;
     
       filter: drop-shadow(0px 9px 10px rgba(21, 21, 15, 0.5));
