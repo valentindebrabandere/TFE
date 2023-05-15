@@ -21,7 +21,6 @@ export class Finder extends StyledElement {
   connectedCallback() {
     super.connectedCallback();
     this.updateStyles();
-    console.log(this.childItems)
   }
   
   //need to be called to change the style
@@ -42,6 +41,7 @@ export class Finder extends StyledElement {
               appname="${item.appname}"
               filename="${item.filename}"
               filelink="${item.filelink}"
+              .childItems="${item.childItems}"
             ></file-component>
           `
         )}

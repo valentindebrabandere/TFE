@@ -29,7 +29,7 @@ export class Desktop extends LitElement {
       .then(data => {
         this.desktopItems = data.childItems;
         this.requestUpdate();  // Update the component when the data is loaded
-      });
+    });
   }
 
   createRenderRoot() {
