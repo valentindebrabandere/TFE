@@ -13,7 +13,7 @@ export class Finder extends StyledElement {
   @property({ type: String, attribute: 'filelink' }) filelink: string|undefined;
   @property({ type: Array }) childItems: FileItem[] = [];
   @state() styles = [basic, css``];
-  firstUpdate = true;
+
   size: DOMRect | null = null;
 
   constructor() {
@@ -61,7 +61,7 @@ export class Finder extends StyledElement {
               filename="${item.filename}"
               filelink="${item.filelink}"
               .childItems="${item.childItems}"
-              style="position: absolute; top: ${item.position?.top}px; left: ${item.position?.left}px;"
+              style=" top: ${item.position?.top}px; left: ${item.position?.left}px;"
             ></file-component>
           `
         )}

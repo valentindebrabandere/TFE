@@ -1,50 +1,55 @@
 {
-    "folderName": "Desktop",
-    "childItems": [
-      {
-        "appname": "Aperçu",
-        "filename": "Image1.jpg",
-        "filelink": "/content/modernMac/desktop/desktopImages/image1.jpg",
-        "childItems": []
-      },
-      {
-        "appname": "Finder",
-        "filename": "Fooldér",
-        "filelink": "",
-        "childItems": [
-          {
-            "appname": "Aperçu",
-            "filename": "Image2.jpg",
-            "filelink": "/content/modernMac/desktop/desktopImages/image2.jpg",
-            "childItems": []
-          },
-          {
-            "appname": "Aperçu",
-            "filename": "Image3.jpg",
-            "filelink": "/content/modernMac/desktop/desktopImages/image3.jpg",
-            "childItems": []
-          },
-          {
-            "appname": "Finder",
-            "filename": "subfolder",
-            "filelink": "",
-            "childItems": [
-              {
-                "appname": "Aperçu",
-                "filename": "Image4.jpg",
-                "filelink": "/content/modernMac/desktop/desktopImages/image2.jpg",
-                "childItems": []
-              },
-              {
-                "appname": "Aperçu",
-                "filename": "Image4.jpg",
-                "filelink": "/content/modernMac/desktop/desktopImages/image3.jpg",
-                "childItems": []
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-  
+  "folderName": "Desktop",
+  "childItems": [
+    {
+      "appname": "Aperçu",
+      "filename": "Image1.jpg",
+      "filelink": "/content/modernMac/desktop/desktopImages/image1.jpg",
+      "position": {"top": "30vh", "left": "60vw"},
+      "childItems": []
+    },
+    {
+      "appname": "Finder",
+      "filename": "Fooldér",
+      "filelink": "",
+      "position": {"top": "40vh", "left": "60vw"},
+      "childItems": [
+        {
+          "appname": "Aperçu",
+          "filename": "Image2.jpg",
+          "filelink": "/content/modernMac/desktop/desktopImages/image2.jpg",
+          "childItems": [],
+          "position": {}
+        },
+        {
+          "appname": "Aperçu",
+          "filename": "Image3.jpg",
+          "filelink": "/content/modernMac/desktop/desktopImages/image3.jpg",
+          "childItems": [],
+          "position": {}
+        },
+        {
+          "appname": "Finder",
+          "filename": "subfolder",
+          "filelink": "",
+          "childItems": [
+            {
+              "appname": "Aperçu",
+              "filename": "Image4.jpg",
+              "filelink": "/content/modernMac/desktop/desktopImages/image2.jpg",
+              "childItems": [],
+              "position": {}
+            },
+            {
+              "appname": "Aperçu",
+              "filename": "Image4.jpg",
+              "filelink": "/content/modernMac/desktop/desktopImages/image3.jpg",
+              "childItems": [],
+              "position": {}
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
