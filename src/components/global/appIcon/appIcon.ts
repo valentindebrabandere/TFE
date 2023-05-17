@@ -3,7 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js';
 import { getApplicationByID } from '../../../utils/appManager';
 
 import { StyledElement } from '../../../utils/globalStyledElement.ts';
-import { openedAppsSubject } from '../../../utils/openedAppsProvider.ts';
+import { openedAppsSubject, focusedAppUuidSubject } from '../../../utils/openedAppsProvider.ts';
 
 
 import { basic, styles } from './styles.ts';
@@ -31,10 +31,12 @@ export class AppIcon extends StyledElement {
     const openedApps = openedAppsSubject.getValue();
   
     // Check if the app is already open
-    const appIsOpen = openedApps.some(openedApp => openedApp.id === app.name);
+    const openedApp = openedApps.find(openedApp => openedApp.id === app.name);
   
-    if (appIsOpen) {
+    if (openedApp) {
       console.log(`${app.name} focused`);
+      // Set this app as the focused app
+      focusedAppUuidSubject.next(openedApp.uuid);
     } else {
       const openAppEvent = new CustomEvent('addOpenedApp', {
         detail: { id: app.name, component: app.component },

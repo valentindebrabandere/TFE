@@ -46,7 +46,6 @@ export class Window extends StyledElement {
       this.uuid = this.appUuid;
     }
     if (changedProperties.has('focused')) {
-      console.log('focused changed')
       if (this.focused) {
         this.style.zIndex = '200';  // Some high value to ensure it appears on top
       } else {
