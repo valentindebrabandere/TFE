@@ -3,6 +3,8 @@ import { css, CSSResult } from 'lit';
 export const basic = css`
 .c-window{
   position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
   width: fit-content;
   height: fit-content; 
   

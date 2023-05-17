@@ -1,6 +1,7 @@
 import { LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
+
 @customElement('dynamic-element')
 export class DynamicElement extends LitElement {
   @property({ type: Function }) componentClass: any;
@@ -21,5 +22,5 @@ export class DynamicElement extends LitElement {
       this.renderRoot.appendChild(instance);
       this.componentAdded = true;
     }    
-  }  
+  }
 }

@@ -21,6 +21,13 @@ export function addNewOpenedApp(id: string, component: any, filelink?: string, c
 
 export function removeOpenedApp(uuid: string) {
   const currentApps = openedAppsSubject.getValue();
+  const appToRemove = currentApps.find(app => app.uuid === uuid);
+  
+  if (!appToRemove) {
+    console.error(`No app with uuid ${uuid} found`);
+    return;
+  }
+  
   openedAppsSubject.next(currentApps.filter((app) => app.uuid !== uuid));
 }
 

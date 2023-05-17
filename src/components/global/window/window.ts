@@ -1,20 +1,27 @@
-import { html, css, PropertyValues} from 'lit';
+import { html, css, PropertyValues } from 'lit';
 import { customElement, state, property } from 'lit/decorators.js';
 
 import { basic, styles } from './styles.ts';
 
 // utils imports
 import { StyledElement } from '../../../utils/globalStyledElement.ts';
-import { removeOpenedApp } from '../../../utils/openedAppsProvider.ts';
+import { removeOpenedApp } from '../../../utils/openedAppsProvider.ts'
+
 
 @customElement('window-component')
 export class Window extends StyledElement {
 
   @state() styles = [basic, css``];
-  @property({ type: String }) appUuid = '';
+
+  @property({ type: String }) appUuid: string = '';
   @property({ type: Number }) windowNumber: number = 0;
 
+  private uuid: string = '';
 
+  constructor() {
+    super();
+  }
+  
   connectedCallback() {
     super.connectedCallback();
     this.updateStyles();
@@ -22,13 +29,20 @@ export class Window extends StyledElement {
     this.setAttribute('data-drag', 'draggable-dragger');
   }
 
+  firstUpdated() {
+    this.uuid = this.appUuid;
+  
+    const topOffset = (this.windowNumber * 5) % 100;
+    const leftOffset = (this.windowNumber * 3) % 100;
+    this.style.top = `${20+topOffset}%`;
+    this.style.left = `${20+leftOffset}%`;
+  }
+  
+
   updated(changedProperties: PropertyValues) {
     super.updated(changedProperties);
-    if (changedProperties.has('windowNumber')) {
-      const topOffset = (this.windowNumber * 5) % 100;
-      const leftOffset = (this.windowNumber * 3) % 100;
-      this.style.top = `${20+topOffset}%`;
-      this.style.left = `${20+leftOffset}%`;
+    if (changedProperties.has('appUuid')) {
+      this.uuid = this.appUuid;
     }
   }
 
@@ -38,16 +52,24 @@ export class Window extends StyledElement {
     this.styles = this.applyStyles(styles, basic);
   }
 
-  handleQuitClick() {
-    removeOpenedApp(this.appUuid);
+  async handleQuitClick() {
+    await this.updateComplete;
+    //get attribute data-uiid
+    removeOpenedApp(this.uuid);
   }
-
+  
   handleHideClick() {
-    console.log('Hide clicked');
+    console.log('hide window')
   }
 
   handleScaleClick() {
-    console.log('Scale clicked');
+    console.log('scale window')
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+
+    // Perform any necessary cleanup here.
   }
 
   render() {
@@ -62,7 +84,7 @@ export class Window extends StyledElement {
             <button
               data-window-control="quit"
               class="c-window__control c-window__control--quit"
-              @click=${this.handleQuitClick}
+              @click=${() => this.handleQuitClick()}
             >
               <svg   
                   class="c-window__control-icon"
@@ -125,9 +147,6 @@ export class Window extends StyledElement {
             </button>
           </li>
         </ul>
-      </div>
-      <div class="c-window__content js-window__content">
-        ${this.children}
       </div>
     `;
   }
