@@ -1,9 +1,7 @@
-import { html, css } from 'lit';
+import { html } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
 
 import { dispatchOpenLayoutEvent } from '../../../utils/layoutUtils';
-
-import { basic, styles } from './styles';
 
 // utils imports
 import { StyledElement } from '../../../utils/globalStyledElement';
@@ -12,8 +10,6 @@ import { StyledElement } from '../../../utils/globalStyledElement';
 export class Menu extends StyledElement {
   @state() time = new Date();
   timer: ReturnType<typeof setTimeout> | undefined = undefined;
-
-  @state() styles = [basic, css``];
 
   connectedCallback() {
     super.connectedCallback();
@@ -39,7 +35,7 @@ export class Menu extends StyledElement {
   //need to be called to change the style
   updateStyles() {
     //select the current style (globalStyledElement.ts)
-    this.styles = this.applyStyles(styles, basic);
+    console.log(this.globalStyleController.style);
   }
 
   render() {
@@ -61,10 +57,8 @@ export class Menu extends StyledElement {
     const currentStyle = this.globalStyleController.style;
 
     return html`
-      <style>
-        /* Import the good style */
-        ${this.styles}
-      </style>
+      <link rel="stylesheet" href="./basic.css">
+      <link rel="stylesheet" href="./${currentStyle}.css">
       <div class="c-menu-bar">
         <ul class="c-menu-bar__left">
           <li class="c-menu-bar__item"> 

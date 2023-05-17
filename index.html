@@ -32,20 +32,12 @@
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
     
     <!-- Components declarations -->
-    <script type="module" src="./src/components/componentHtmlImport.ts"></script>
+    <script defer type="module" src="./src/components/global/screen/screen.ts"></script>
+    <script defer type="module" src="./src/components/global/layout/layout.ts"></script>
 
   </head>
   <body>
-    <div class="c-screen js-screen modernMac">
-      <div class="c-screen__overlay js-screen__overlay">
-      </div>
-      <menu-component></menu-component>
-      <div class="o-container js-container">
-        <opened-apps-component></opened-apps-component>
-        <desktop-component></desktop-component>
-      </div>
-      <dock-component/>
-    </div>
+    <screen-component></screen-component>
     <layout-component/>
   </body>
 </html>

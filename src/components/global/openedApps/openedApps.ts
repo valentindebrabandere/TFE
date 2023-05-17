@@ -7,6 +7,7 @@ import { openedAppsSubject, focusedAppUuidSubject} from '../../../utils/openedAp
 import type { OpenedApp } from '../../../utils/openedAppsProvider';
 
 import './assets/dynamicElement';
+import '../window/window'; 
 
 @customElement('opened-apps-component')
 export class OpenedApps extends LitElement {

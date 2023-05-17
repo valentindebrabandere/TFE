@@ -3,6 +3,7 @@ import { customElement } from 'lit/decorators.js';
 
 import type { FileItem } from '../file/file.ts';
 import { StyledElement } from '../../../utils/globalStyledElement.ts';
+import '../file/file.ts';
 
 
 @customElement('desktop-component')

@@ -42,9 +42,9 @@ export class DefaultApp extends StyledElement {
       </style>
       <div class="c-default">
         <img class="c-default__icon" src=${app.icon(currentStyle)} alt="App icon" />
-        <h2 class="c-default__title">${this.name} application is updating</h2>
+        <h2 class="c-default__title">L'application ${this.name} se met a jour</h2>
         <div class="c-default__animtxt">
-          <p>Please wait </p>
+          <p>Un peu de patience </p>
           <span class="c-default__point c-default__point--1">.</span>
           <span class="c-default__point c-default__point--2">.</span>
           <span class="c-default__point c-default__point--3">.</span>

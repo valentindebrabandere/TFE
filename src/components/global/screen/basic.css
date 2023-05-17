@@ -1,0 +1,38 @@
+.c-screen-bar__left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 100%;
+}
+
+.c-screen-bar__rigth {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 100%;
+}
+
+.c-screen-bar__item {
+    height: 100%;
+}
+
+.c-screenbar__application>button {
+    font-weight: 600;
+}
+
+.c-screen-bar__btn {
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    height: 100%;
+}
+
+.c-screen-bar__icon {
+    height: 85%;
+    width: auto;
+}
+
+.c-mennubar__btn--date {
+    font-weight: 500;
+}

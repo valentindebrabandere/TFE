@@ -1,0 +1,13 @@
+.c-screen-bar {
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    background-color: #ffffff44;
+}
+
+*,
+*::before,
+*::after {
+    font-family: system-ui, sans-serif;
+    font-weight: normal;
+    box-sizing: content-box;
+}
