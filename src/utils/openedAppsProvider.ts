@@ -12,11 +12,14 @@ export interface OpenedApp {
 }
 
 export const openedAppsSubject = new BehaviorSubject<OpenedApp[]>([]);
+export const focusedAppUuidSubject = new BehaviorSubject<string>('');
+
 
 export function addNewOpenedApp(id: string, component: any, filelink?: string, childItems?: FileItem[]) {
   const currentApps = openedAppsSubject.getValue();
   const newApp = { id, component, uuid: uuidv4(), filelink, childItems };
   openedAppsSubject.next([...currentApps, newApp]);
+  focusedAppUuidSubject.next(newApp.uuid);  // update the focused app
 }
 
 export function removeOpenedApp(uuid: string) {

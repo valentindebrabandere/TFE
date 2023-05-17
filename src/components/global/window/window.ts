@@ -15,6 +15,7 @@ export class Window extends StyledElement {
 
   @property({ type: String }) appUuid: string = '';
   @property({ type: Number }) windowNumber: number = 0;
+  @property({ type: Boolean }) focused = false;
 
   private uuid: string = '';
 
@@ -44,7 +45,16 @@ export class Window extends StyledElement {
     if (changedProperties.has('appUuid')) {
       this.uuid = this.appUuid;
     }
+    if (changedProperties.has('focused')) {
+      console.log('focused changed')
+      if (this.focused) {
+        this.style.zIndex = '200';  // Some high value to ensure it appears on top
+      } else {
+        this.style.zIndex = '100';  // Normal value
+      }
+    }
   }
+  
 
   //need to be called to change the style
   updateStyles() {
