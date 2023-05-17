@@ -1,6 +1,7 @@
 import { css, CSSResult } from 'lit';
 
 export const basic = css`
+
 .c-window{
   position: absolute;
   display: flex;
@@ -16,11 +17,6 @@ export const basic = css`
     width: 100%;
     height: 40px;
     background-color: #000;
-}
-
-.c-window__content{
-    width: 100%;
-    height: 100%;
 }
 
 .c-window__controls{

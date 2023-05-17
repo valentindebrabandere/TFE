@@ -34,7 +34,6 @@ export class AppIcon extends StyledElement {
     const openedApp = openedApps.find(openedApp => openedApp.id === app.name);
   
     if (openedApp) {
-      console.log(`${app.name} focused`);
       // Set this app as the focused app
       focusedAppUuidSubject.next(openedApp.uuid);
     } else {

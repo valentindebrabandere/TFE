@@ -51,7 +51,7 @@ export class Aperçu extends StyledElement {
         /* Import the good style */
         ${this.styles}
       </style>
-        <img src="${this.filelink}" alt="Preview" />
+        <img class="c-apercu__content" src="${this.filelink}" alt="Preview" />
     `;
   }
 }
