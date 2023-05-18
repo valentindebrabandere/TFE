@@ -1,13 +1,13 @@
-.c-screen-bar {
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-    background-color: #ffffff44;
-}
-
+/* Font init */
 *,
 *::before,
 *::after {
     font-family: system-ui, sans-serif;
     font-weight: normal;
     box-sizing: content-box;
+}
+
+.c-screen{
+    background: url(/images/wallpaper/modernMac.png) 50% 50% no-repeat;
+    background-size:cover;
 }

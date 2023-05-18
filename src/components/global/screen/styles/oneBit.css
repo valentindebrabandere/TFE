@@ -4,3 +4,11 @@
     font-family: "Munro", system-ui, sans-serif;
     font-weight: normal;
 }
+
+.c-screen{
+    background: #C4C4C4;
+}
+
+img{
+    filter: grayscale(1) contrast(1.8);
+}

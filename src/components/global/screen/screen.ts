@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, state } from 'lit/decorators.js';
 
 import '../menu/menu';
 import  '../openedApps/openedApps';
@@ -13,6 +13,8 @@ import { StyledElement } from '../../../utils/globalStyledElement';
 @customElement('screen-component')
 export class Screen extends StyledElement {
 
+  @state() currentStyle = "";
+
   constructor() {
     super();
   }
@@ -20,6 +22,7 @@ export class Screen extends StyledElement {
   connectedCallback() {
     super.connectedCallback();
     this.classList.add('c-screen');
+    this.classList.add('js-screen');
     
   }
 
@@ -31,16 +34,16 @@ export class Screen extends StyledElement {
   //need to be called to change the style
   updateStyles() {
     //select the current style (globalStyledElement.ts)
+    this.currentStyle = this.globalStyleController.style;
   }
+
 
   render() {
     this.updateStyles();
 
-    const currentStyle = this.globalStyleController.style;
-
     return html`
-      <link rel="stylesheet" href="./basic.css">
-      <link rel="stylesheet" href="./${currentStyle}.css">
+      <link rel="stylesheet" href="/src/components/global/screen/basic.css">
+      <link rel="stylesheet" href="/src/components/global/screen/styles/${this.currentStyle}.css">
       <div class="c-screen__overlay">
       </div>
       <menu-component></menu-component>
