@@ -1,0 +1,46 @@
+/* -----------------------------
+=dock
+----------------------------- */
+
+.c-dock {
+    display: flex;
+    align-self: center;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+    max-width: 90vw;
+    height: 70px;
+    padding: 0 20px;
+
+    margin: 0 auto;
+    margin-bottom: 6px;
+
+    background-color: #000;
+
+    z-index: 99;
+}
+
+.c-dock__static {
+    width: fit-content;
+    height: 100%;
+}
+
+.c-dock__active::before {
+    content: "";
+    width: 1.5px;
+    height: 70%;
+    background-color: #fff;
+}
+
+.c-dock__active {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+@import "./styles/oneBit.scss";
+@import "./styles/modernMac.scss";

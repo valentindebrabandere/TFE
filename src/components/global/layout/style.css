@@ -1,0 +1,121 @@
+.c-layout{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: scale(1.5);
+    pointer-events: none;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .c-layout__display{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1001;
+  }
+  
+  .c-layout__icon{
+    position: absolute;
+    top: 50%;
+    left: 4vw;
+    transform: translate3d(0,-50%,0);
+    width: 75px;
+    height: fit-content;
+    line-height: 0;
+  }
+  
+  .c-layout__icon > img{
+    filter: none;
+  }
+  
+  .c-layout__controls{
+    position: absolute;
+    right: 4vw;
+    top: 50%;
+    transform: translate3d(0,-50%,0);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .c-layout__btn{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #F1F1F1;
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(149, 149, 149, 0.5), inset -5px 5px 10px rgba(149, 149, 149, 0.2), inset 5px -5px 10px rgba(149, 149, 149, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.9), inset 5px 5px 13px rgba(149, 149, 149, 0.9);;
+    border: none;
+    padding: 0;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    cursor: pointer;
+    
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .c-layout__btn:hover{
+    transform: scale(0.95);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .c-layout__btn:hover .c-layout__btn-icon{
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .c-layout__btn-icon{
+    width: 60%;
+    height: auto;
+    filter: none;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .c-layout__name{
+    position: absolute;
+    left: 50%;
+    top: 4vh;
+    transform: translate3d(-50%,0,0);
+    font-family: "Poppins", system-ui, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    
+  }
+  .c-layout__date{
+    position: absolute;
+    left: 50%;
+    bottom: 4vh;
+    transform: translate3d(-50%,0,0);
+    font-family: "Poppins", system-ui, sans-serif;
+    font-weight: 400;
+    opacity: 0.5;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  
+  .c-layout__screen{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%,-50%,0);
+    /* taille en fonction du scale de screen */
+        width: 70vw;
+        height: 70vh;
+        
+        border: 25px solid #00000001;
+        border-image-source: url("/images/layout__rounded-borders.png");
+        border-image-slice: 34;
+        border-image-repeat: round;
+        border-image-width: 38px;
+  
+        filter: drop-shadow(0px 104.961px 88.3879px rgba(0, 0, 0, 0.0534177)) drop-shadow(0px 43.8501px 36.9264px rgba(0, 0, 0, 0.0767396)) drop-shadow(0px 23.4443px 19.7426px rgba(0, 0, 0, 0.095)) drop-shadow(0px 13.1427px 11.0675px rgba(0, 0, 0, 0.11326)) drop-shadow(0px 6.97999px 5.87789px rgba(0, 0, 0, 0.136582)) drop-shadow(0px 2.90453px 2.44592px rgba(0, 0, 0, 0.19));
+        z-index: 1005;
+  }

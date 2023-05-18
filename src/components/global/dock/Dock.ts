@@ -1,7 +1,6 @@
-import { html, css } from 'lit';
-import { customElement, state } from 'lit/decorators.js';
+import { html } from 'lit';
+import { customElement } from 'lit/decorators.js';
 
-import { basic, styles } from './styles.ts';
 import { animDock } from './anim.ts';
 import '../appIcon/appIcon.ts';
 
@@ -12,8 +11,6 @@ import { dockApps, dockAppsActives } from "../../../utils/appManager.ts";
 
 @customElement('dock-component')
 export class Dock extends StyledElement {
-
-  @state() styles = [basic, css``];
 
   async firstUpdated() {
     await this.updateComplete;
@@ -29,17 +26,12 @@ export class Dock extends StyledElement {
   //need to be called to change the style
   updateStyles() {
     //select the current style (globalStyledElement.ts)
-    this.styles = this.applyStyles(styles, basic);
     animDock();
   }
 
   render() {
 
     return html`
-      <style>
-        /* Import the good style */
-        ${this.styles}
-      </style>
       <div class="c-dock js-dock">
         <div class="c-dock__static js-dock__static">
           ${dockApps.map((app) => html`

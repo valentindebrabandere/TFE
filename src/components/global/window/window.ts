@@ -1,5 +1,5 @@
 import { html, PropertyValues } from 'lit';
-import { customElement, state, property } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 
 // utils imports
 import { StyledElement } from '../../../utils/globalStyledElement.ts';
@@ -8,8 +8,6 @@ import { removeOpenedApp } from '../../../utils/openedAppsProvider.ts'
 
 @customElement('window-component')
 export class Window extends StyledElement {
-
-  @state() currentStyle = "";
 
   @property({ type: String }) appUuid: string = '';
   @property({ type: Number }) windowNumber: number = 0;
@@ -51,13 +49,6 @@ export class Window extends StyledElement {
       }
     }
   }
-  
-
-  //need to be called to change the style
-  updateStyles() {
-    //select the current style (globalStyledElement.ts)
-    this.currentStyle = this.globalStyleController.style;
-  }
 
   async handleQuitClick() {
     await this.updateComplete;
@@ -81,11 +72,6 @@ export class Window extends StyledElement {
 
   render() {
     return html`
-      <link rel="stylesheet" href="/src/components/global/window/basic.css" />
-      <link
-        rel="stylesheet"
-        href="/src/components/global/window/styles/${this.currentStyle}.css"
-      />
       <div data-drag="dragger" class="c-window__head js-window__head">
         <ul class="c-window__controls">
           <li>

@@ -1,0 +1,16 @@
+.c-appicon {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+}
+
+.c-dock__app {
+    height: 100%;
+}
+
+.c-dock__icon {
+    height: 90%;
+}
+
+@import "./styles/oneBit.scss";
+@import "./styles/modernMac.scss";

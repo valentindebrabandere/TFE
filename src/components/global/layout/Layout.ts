@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { StyledElement } from '../../../utils/globalStyledElement.ts';
 import { customElement, state } from 'lit/decorators.js';
-import { basic } from './styles.ts';
+import './style.css';
 
 //utils imports
 import { GlobalStyleController } from '../../../utils/styleController.ts';
@@ -78,7 +78,6 @@ export class Layout extends StyledElement {
 
   render() {
     return html`
-      <style>${basic}</style>
       <div class="c-layout js-layout">
         <div class="c-layout__display">
           <div class="c-layout__controls">

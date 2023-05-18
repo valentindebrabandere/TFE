@@ -1,11 +1,9 @@
 // file-component.ts
-import { html, css } from 'lit';
-import { customElement, property, state } from 'lit/decorators.js';
+import { html } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 import { getApplicationByID } from '../../../utils/appManager';
 
 import { StyledElement } from '../../../utils/globalStyledElement.ts';
-
-import { basic, styles } from './styles.ts';
 
 export interface FileItem {
   appname: string;
@@ -23,8 +21,6 @@ export class File extends StyledElement {
   @property({ type: Array }) childItems: FileItem[] = []; // Change here
   
 
-  @state() styles = [basic, css``];
-
   private differentIconDisplayApps = ['Aperçu'];
 
   constructor() {
@@ -38,12 +34,6 @@ export class File extends StyledElement {
   connectedCallback() {
     super.connectedCallback();
     this.updateStyles();
-  }
-
-  //need to be called to change the style
-  updateStyles() {
-    //select the current style (globalStyledElement.ts)
-    this.styles = this.applyStyles(styles, basic);
   }
 
   openApp() {
@@ -93,10 +83,6 @@ export class File extends StyledElement {
     }
   
     return html`
-      <style>
-        /* Import the good style */
-        ${this.styles}
-      </style>
       <img src="${fileIconPath}" @dblclick="${this.openApp}" class="c-file__icon ${additionalClass}" alt="File Icon" />
       <p class="c-file__name">${this.filename}</p>
     `;
