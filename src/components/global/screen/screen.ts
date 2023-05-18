@@ -21,9 +21,6 @@ export class Screen extends StyledElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.classList.add('c-screen');
-    this.classList.add('js-screen');
-    
   }
 
   disconnectedCallback() {
@@ -40,18 +37,20 @@ export class Screen extends StyledElement {
 
   render() {
     this.updateStyles();
-
+  
     return html`
-      <link rel="stylesheet" href="/src/components/global/screen/basic.css">
-      <link rel="stylesheet" href="/src/components/global/screen/styles/${this.currentStyle}.css">
-      <div class="c-screen__overlay">
+      <div class="${this.currentStyle} c-screen js-screen">
+        <link rel="stylesheet" href="/src/components/global/screen/basic.css">
+        <link rel="stylesheet" href="/src/components/global/screen/styles/${this.currentStyle}.css">
+        <div class="c-screen__overlay"></div>
+        <menu-component></menu-component>
+        <div class="o-container">
+          <opened-apps-component></opened-apps-component>
+          <desktop-component></desktop-component>
+        </div>
+        <dock-component></dock-component> 
       </div>
-      <menu-component></menu-component>
-      <div class="o-container">
-        <opened-apps-component></opened-apps-component>
-        <desktop-component></desktop-component>
-      </div>
-      <dock-component></dock-component> 
     `;
   }
+  
 }

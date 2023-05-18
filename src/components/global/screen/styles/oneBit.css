@@ -5,10 +5,10 @@
     font-weight: normal;
 }
 
-.c-screen{
+.c-screen {
     background: #C4C4C4;
 }
 
-img{
+img {
     filter: grayscale(1) contrast(1.8);
 }

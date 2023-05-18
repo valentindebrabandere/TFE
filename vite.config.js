@@ -1,20 +1,12 @@
-import { defineConfig } from 'vite';
-import sass from 'node-sass';
+import { defineConfig } from 'vite'
 
 export default defineConfig({
-  plugins: [
-    {
-      apply: 'build',
-      enforce: 'pre',
-      test: /\.(sass|scss)$/,
-      use: [
-        {
-          loader: 'sass-loader',
-          options: {
-            implementation: sass,
-          },
-        },
-      ],
-    },
-  ],
-});
+  css: {
+    preprocessorOptions: {
+      scss: {}
+    }
+  },
+  build: {
+    sourcemap: true
+  }
+})

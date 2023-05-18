@@ -28,4 +28,7 @@
 .o-container{
     position: relative;
     height: 100%;
-  }
+}
+
+@import "./styles/oneBit.scss";
+@import "./styles/modernMac.scss";
