@@ -40,7 +40,7 @@ export class Screen extends StyledElement {
   
     return html`
       <div class="${this.currentStyle} c-screen js-screen">
-        <link rel="stylesheet" href="/src/components/global/screen/basic.css">
+        <link rel="stylesheet" href="/src/components/global/screen/screen.css">
         <link rel="stylesheet" href="/src/components/global/screen/styles/${this.currentStyle}.css">
         <div class="c-screen__overlay"></div>
         <menu-component></menu-component>

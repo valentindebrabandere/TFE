@@ -69,7 +69,7 @@ export class OpenedApps extends LitElement {
         this.openedApps,
         (app) => app.uuid, 
         (app, i) => html`
-          <window-component .appUuid=${app.uuid} .windowNumber=${i} .focused=${app.uuid === this.focusedAppUuid} @mousedown=${() => this.handleWindowClick(app.uuid)}>
+          <window-component .appUuid=${app.uuid} .windowNumber=${i} .focused=${app.uuid === this.focusedAppUuid} @click=${() => this.handleWindowClick(app.uuid)}>
             <dynamic-element .componentClass=${app.component} .options=${{ filelink: app.filelink, childItems: app.childItems }}/>
           </window-component>
         `

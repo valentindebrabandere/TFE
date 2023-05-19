@@ -18,7 +18,16 @@ export class AppIcon extends StyledElement {
 
     // update the active state of the app based on the opened apps
     openedAppsSubject.subscribe((openedApps) => {
-      this.isActive = !!openedApps.find(openedApp => openedApp.id === this.name);
+      const isActive = !!openedApps.find(openedApp => openedApp.id === this.name);
+      if (isActive !== this.isActive) {
+        this.isActive = isActive;
+        const dockEvent = new CustomEvent(this.isActive ? 'addToDock' : 'removeFromDock', {
+          detail: { name: this.name },
+          bubbles: true,
+          composed: true,
+        });
+        this.dispatchEvent(dockEvent);
+      }
     });
   }
 

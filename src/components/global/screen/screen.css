@@ -1,4 +1,4 @@
-.c-screen{
+.c-screen {
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -11,7 +11,7 @@
 =overlay
 ----------------------------- */
 
-.c-screen__overlay{
+.c-screen__overlay {
     display: none;
     position: absolute;
     top: 0;
@@ -25,10 +25,18 @@
 =container
 ----------------------------- */
 
-.o-container{
+.o-container {
     position: relative;
     height: 100%;
 }
+
+/* States */
+
+.is-moving {
+    z-index: 1000;
+}
+
+
 
 @import "./styles/oneBit.scss";
 @import "./styles/modernMac.scss";
