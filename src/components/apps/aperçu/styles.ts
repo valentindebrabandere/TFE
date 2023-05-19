@@ -17,7 +17,19 @@ export const basic = css`
     aspect-ratio: auto;
     object-fit: contain;
   }
-  
+
+  .c-apecu__no-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 40vh;
+  }
+
+  .c-apecu__no-content p{ 
+    opacity: 0.5;
+  }
 `;
 
 interface StyleObject {
@@ -31,12 +43,6 @@ const styleOneBit:StyleObject = {
     
     /* CSS here */
 
-    *,
-    *::before,
-    *::after {
-      font-family: "Munro", system-ui, sans-serif;
-      font-weight: normal;
-    }
     `
 };
   
@@ -44,13 +50,6 @@ const styleModernMac:StyleObject = {
     styleName: "modernMac",
     css: css`
 
-    *,
-    *::before,
-    *::after {
-      font-family: system-ui, sans-serif;
-      font-weight: normal;
-      box-sizing:content-box;
-    }
     `
 };
 

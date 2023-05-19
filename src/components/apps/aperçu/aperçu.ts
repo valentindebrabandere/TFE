@@ -31,17 +31,12 @@ export class Aperçu extends StyledElement {
   }
 
   getFileIcon(style: string) {
-    console.log(this.filelink)
     if (this.filelink) {
       return this.filelink;
     }
     // If filelink is undefined, fall back to the default icon
     const fileIconPath = `/images/fileIcons/${style}/${Aperçu.name}.png`;
     return fileIconPath;
-  }
-
-  updateContent(content: string) {
-    this.content = content;
   }
 
   render() {
@@ -51,7 +46,13 @@ export class Aperçu extends StyledElement {
         /* Import the good style */
         ${this.styles}
       </style>
-        <img class="c-apercu__content" src="${this.filelink}" alt="Preview" />
+        <!-- es6 if statement filelink undefied -->
+        ${this.filelink ? 
+        html`<img class="c-apercu__content" src="${this.filelink}" alt="Preview" />` 
+        : html`<div class="c-apecu__no-content">
+          <h2>Pas de ficher ouvert</h2>
+          <p>Ouvrez une image pour afficher un résultat</p>
+        </div>`}
     `;
   }
 }

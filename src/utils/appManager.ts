@@ -5,11 +5,10 @@ import { Corbeille } from "../components/apps/corbeille/corbeille";
 import { Finder } from "../components/apps/finder/finder";
 // import { Calculator } from "../apps/calculator/Calculator";
 
-export const dockApps = [Finder, Figma, TextEdit];
+export const dockApps = [Finder, Figma, TextEdit, Aperçu];
 export const dockAppsActives = [Corbeille];
-export const otherApps = [Aperçu];
 
-const allApplicationsList = [...dockApps, ...dockAppsActives,...otherApps];
+const allApplicationsList = [...dockApps, ...dockAppsActives];
 
 const applications = new Map();
 
