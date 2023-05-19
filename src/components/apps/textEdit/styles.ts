@@ -18,7 +18,6 @@ export const basic = css`
     padding: 2rem 8%;
     border: none;
     outline: none;
-    font-family: 'Arial', sans-serif;
     font-size: 16px;
     line-height: 1.4;
     overflow-y: auto;
@@ -41,30 +40,18 @@ const styleOneBit:StyleObject = {
     
     /* CSS here */
 
-    *,
-    *::before,
-    *::after {
-      font-family: "Munro", system-ui, sans-serif;
-      font-weight: normal;
+    ::selection {
+      background-color: black;
+      color: white;
     }
+
     `
 };
   
 const styleModernMac:StyleObject = {
     styleName: "modernMac",
     css: css`
-    .c-menu-bar{
-      backdrop-filter: blur(7px);
-      -webkit-backdrop-filter: blur(7px); 
-      background-color: #ffffff44;
-    }
-    *,
-    *::before,
-    *::after {
-      font-family: system-ui, sans-serif;
-      font-weight: normal;
-      box-sizing:content-box;
-    }
+    
     `
 };
 

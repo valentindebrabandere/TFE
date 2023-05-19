@@ -9,12 +9,17 @@ import { openedAppsSubject, focusedAppUuidSubject } from '../../../utils/openedA
 export class AppIcon extends StyledElement {
   @property({ type: String }) name: string = '';
   @state() currentStyle = "";
-
+  @state() isActive = false;
 
   constructor() {
     super();
     this.classList.add('c-appicon');
     this.updateStyles();
+
+    // update the active state of the app based on the opened apps
+    openedAppsSubject.subscribe((openedApps) => {
+      this.isActive = !!openedApps.find(openedApp => openedApp.id === this.name);
+    });
   }
 
   openApp() {
@@ -44,10 +49,11 @@ export class AppIcon extends StyledElement {
 
   render() {
     const iconPath = getApplicationByID(this.name).icon(this.currentStyle);
+    const appClass = this.isActive ? 'c-dock__app active' : 'c-dock__app';
 
     return html`
       <div
-        class="c-dock__app"
+        class="${appClass}"
         data-application-name="${this.name}"
         @click="${this.openApp}"
       >

@@ -8,6 +8,23 @@
     height: 100%;
 }
 
+.c-dock__app::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    background-color: #000;
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+}
+.c-dock__app.active::before {
+    opacity: 1;
+}
+
+
 .c-dock__icon {
     height: 90%;
 }

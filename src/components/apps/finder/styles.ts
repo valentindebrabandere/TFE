@@ -5,7 +5,7 @@ import "/src/assets/globalStyles/typoImports.css"
 export const basic = css`
   .c-finder {
     display: flex;
-    width: 60vw;
+    width: 40vw;
     height: 40vh;
     background-color: #fff;
   }
@@ -21,13 +21,6 @@ const styleOneBit:StyleObject = {
     css: css`
     
     /* CSS here */
-
-    *,
-    *::before,
-    *::after {
-      font-family: "Munro", system-ui, sans-serif;
-      font-weight: normal;
-    }
 
     .c-finder {
       background-color: #C0C0C0;

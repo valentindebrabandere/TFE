@@ -1,22 +1,22 @@
 .modernMac {
   /* CSS here */
 
-  .c-dock__icon{
+  .c-dock__icon {
     position: relative;
     transform-origin: bottom center;
     transition: transform 0.2s ease-in-out;
   }
 
-  .c-appicon--active::before{
-    content: "";
-    position: absolute;
-    bottom: 3px;
-    left: 50%;
-    transform: translate3d(-50%,-50%,0);
-    width: 4px;
-    height: 4px;
+  .c-dock__app::before{
+    background-color: #ffffffAA;
     border-radius: 50%;
-    background-color: #ffffffab;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .c-dock__app.active::before {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
   }
 
 }

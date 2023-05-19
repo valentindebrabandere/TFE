@@ -1,6 +1,6 @@
 // file-component.ts
 import { html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, property, state } from 'lit/decorators.js';
 import { getApplicationByID } from '../../../utils/appManager';
 
 import { StyledElement } from '../../../utils/globalStyledElement.ts';
@@ -19,6 +19,8 @@ export class File extends StyledElement {
   @property({ type: String }) filename: string = '';
   @property({ type: String }) filelink: string = '';
   @property({ type: Array }) childItems: FileItem[] = []; // Change here
+
+  @state() currentStyle = "";
   
 
   private differentIconDisplayApps = ['Aperçu'];
@@ -51,6 +53,12 @@ export class File extends StyledElement {
     this.dispatchEvent(openAppEvent);
   }
 
+  //need to be called to change the style
+  updateStyles() {
+    //select the current style (globalStyledElement.ts)
+    this.currentStyle = this.globalStyleController.style;
+  }
+
   customIcon() {
     let fileIconPath = this.filelink;
     fileIconPath = fileIconPath.replace('desktopImages', 'desktopImages/thumb'); // replace part of the path
@@ -60,10 +68,9 @@ export class File extends StyledElement {
     };
   }
   
-  
 
   defaultIcon(app: any) {
-    const fileIconPath = `/images/fileIcons/${this.globalStyleController.style}/${app.name}.png`;
+    const fileIconPath = `/images/fileIcons/${this.currentStyle}/${app.name}.png`;
     return fileIconPath;
   }
 
