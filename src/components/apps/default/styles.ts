@@ -4,8 +4,8 @@ import "/src/assets/globalStyles/typoImports.css"
 
 export const basic = css`
 .c-default{
-  width: 50vw;
-  height: 50vh;
+  width: 35vw;
+  height: 30vw;
   background-color: #fff;
   
   display: flex;

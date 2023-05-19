@@ -23,8 +23,8 @@ export const basic = css`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 40vw;
-    height: 40vh;
+    width: 35vw;
+    height: 30vw;
   }
 
   .c-apecu__no-content p{ 

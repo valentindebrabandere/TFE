@@ -2,6 +2,8 @@
 import { html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { getApplicationByID } from '../../../utils/appManager';
+import { openedAppsSubject, focusedAppUuidSubject } from '../../../utils/openedAppsProvider.ts';
+
 
 import { StyledElement } from '../../../utils/globalStyledElement.ts';
 
@@ -40,18 +42,36 @@ export class File extends StyledElement {
 
   openApp() {
     const app = getApplicationByID(this.appname);
-    const openAppEvent = new CustomEvent('addOpenedApp', {
-      detail: {
-        id: app.name,
-        component: app.component,
-        filelink: this.filelink,
-        childItems: this.childItems,
-      },
-      bubbles: true,
-      composed: true,
-    });
-    this.dispatchEvent(openAppEvent);
+    const openedApps = openedAppsSubject.getValue();
+  
+    // Check if the app is already open
+    const openedApp = openedApps.find(openedApp => openedApp.id === app.name);
+  
+    if (openedApp) {
+      // Set this app as the focused app
+      focusedAppUuidSubject.next(openedApp.uuid);
+      // Optionally, if you want to bring the window to the front
+      const showAppEvent = new CustomEvent('showApp', {
+        detail: { uuid: openedApp.uuid },
+        bubbles: true,
+        composed: true,
+      });
+      this.dispatchEvent(showAppEvent);
+    } else {
+      const openAppEvent = new CustomEvent('addOpenedApp', {
+        detail: {
+          id: app.name,
+          component: app.component,
+          filelink: this.filelink,
+          childItems: this.childItems,
+        },
+        bubbles: true,
+        composed: true,
+      });
+      this.dispatchEvent(openAppEvent);
+    }
   }
+  
 
   //need to be called to change the style
   updateStyles() {

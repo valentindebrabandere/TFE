@@ -31,8 +31,8 @@ export class Window extends StyledElement {
   
     const topOffset = (this.windowNumber * 5) % 100;
     const leftOffset = (this.windowNumber * 3) % 100;
-    this.style.top = `${20+topOffset}%`;
-    this.style.left = `${20+leftOffset}%`;
+    this.style.top = `${10+topOffset}%`;
+    this.style.left = `${10+leftOffset}%`;
   }
   
 
