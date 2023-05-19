@@ -6,24 +6,11 @@ import '../appIcon/appIcon.ts';
 
 // utils imports
 import { StyledElement } from '../../../utils/globalStyledElement.ts';
-import { dockApps, dockAppsActives, otherApps } from "../../../utils/appManager.ts";
+import { dockApps, dockAppsActives } from "../../../utils/appManager.ts";
 
-
-// Create a dedicated event type
-interface DockEventDetail {
-  name: string;
-}
-
-type DockEvent = CustomEvent<DockEventDetail>;
 
 @customElement('dock-component')
 export class Dock extends StyledElement {
-
-  constructor() {
-    super();
-    this.handleAddToDock = this.handleAddToDock.bind(this);
-    this.handleRemoveFromDock = this.handleRemoveFromDock.bind(this);
-  }
 
   async firstUpdated() {
     await this.updateComplete;
@@ -34,30 +21,6 @@ export class Dock extends StyledElement {
     super.connectedCallback();
     await this.updateComplete;
     this.updateStyles();
-    this.addEventListener('addToDock', this.handleAddToDock as EventListener);
-    this.addEventListener('removeFromDock', this.handleRemoveFromDock as EventListener);
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    this.removeEventListener('addToDock', this.handleAddToDock as EventListener);
-    this.removeEventListener('removeFromDock', this.handleRemoveFromDock as EventListener);
-  }
-
-  handleAddToDock(e: DockEvent) {
-    if (!dockAppsActives.find(app => app.name === e.detail.name)) {
-      dockAppsActives.unshift({ name: e.detail.name });
-      this.requestUpdate(); // force component to re-render
-    }
-}
-
-  
-  handleRemoveFromDock(e: DockEvent) {
-    const index = dockAppsActives.findIndex(app => app.name === e.detail.name);
-    if (index > -1) {
-      dockAppsActives.splice(index, 1);
-      this.requestUpdate(); // force component to re-render
-    }
   }
 
   //need to be called to change the style
@@ -67,6 +30,7 @@ export class Dock extends StyledElement {
   }
 
   render() {
+
     return html`
       <div class="c-dock js-dock">
         <div class="c-dock__static js-dock__static">
