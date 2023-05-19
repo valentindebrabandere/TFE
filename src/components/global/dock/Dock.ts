@@ -30,7 +30,6 @@ export class Dock extends StyledElement {
   }
 
   render() {
-
     return html`
       <div class="c-dock js-dock">
         <div class="c-dock__static js-dock__static">

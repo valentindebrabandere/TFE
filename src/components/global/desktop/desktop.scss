@@ -1,0 +1,47 @@
+.c-desktop {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    pointer-events: none;
+}
+
+/*
+=Select
+*/
+
+.selected::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 105%;
+    height: 105%;
+    border: 2px solid #000;
+    transform: translate(-50%, -50%);
+}
+
+.selected p {
+    color: #fff;
+    background-color: #000;
+    font-weight: 500;
+    padding: 2px 6px;
+}
+
+/*
+=Open
+*/
+
+.opened p {
+
+    color: #fff;
+    font-weight: 500;
+    background-color: #000;
+    padding: 0 4px;
+
+}
+
+@import "./styles/oneBit.scss";
+@import "./styles/modernMac.scss";

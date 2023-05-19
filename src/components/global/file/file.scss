@@ -1,35 +1,37 @@
-.c-file{
+.c-file {
     position: absolute;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 70px;
     height: 70px;
     pointer-events: auto;
-  }
+}
 
-  .c-file__icon{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-  }
-  
-  .c-file__icon--image{
-      width: 85%;
-      aspect-ratio: 1/1;
-  }
-  
-  .c-file__name{
-      font-size: calc(10/16*1rem);
-      font-weight: 400;
-      color: #000;
-      max-width: 62px;
-      word-wrap: break-word;
-      margin: 0;
-      margin-top: 5px;
-      text-align: center;
-  }
+.c-file__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.c-file__icon--image {
+    width: 85%;
+    aspect-ratio: 1/1;
+}
+
+.c-file__name {
+    position: absolute;
+    bottom: -20px;
+    font-size: calc(10/16*1rem);
+    font-weight: 400;
+    color: #000;
+    max-width: 62px;
+    word-wrap: break-word;
+    margin: 0;
+    margin-top: 5px;
+    text-align: center;
+}
 
 @import "./styles/oneBit.scss";
 @import "./styles/modernMac.scss";

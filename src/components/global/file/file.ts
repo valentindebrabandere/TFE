@@ -1,11 +1,13 @@
 // file-component.ts
-import { html } from 'lit';
-import { customElement, property, state } from 'lit/decorators.js';
-import { getApplicationByID } from '../../../utils/appManager';
-import { openedAppsSubject, focusedAppUuidSubject } from '../../../utils/openedAppsProvider.ts';
+import { html } from "lit";
+import { customElement, property, state } from "lit/decorators.js";
+import { getApplicationByID } from "../../../utils/appManager";
+import {
+  openedAppsSubject,
+  focusedAppUuidSubject,
+} from "../../../utils/openedAppsProvider.ts";
 
-
-import { StyledElement } from '../../../utils/globalStyledElement.ts';
+import { StyledElement } from "../../../utils/globalStyledElement.ts";
 
 export interface FileItem {
   appname: string;
@@ -15,23 +17,25 @@ export interface FileItem {
   position?: { top: number; left: number };
 }
 
-@customElement('file-component')
+@customElement("file-component")
 export class File extends StyledElement {
-  @property({ type: String }) appname: string = '';
-  @property({ type: String }) filename: string = '';
-  @property({ type: String }) filelink: string = '';
+  @property({ type: String }) appname: string = "";
+  @property({ type: String }) filename: string = "";
+  @property({ type: String }) filelink: string = "";
   @property({ type: Array }) childItems: FileItem[] = []; // Change here
 
-  @state() currentStyle = "";
-  
+  @state() selected = false;
+  @state() opened = false;
 
-  private differentIconDisplayApps = ['Aperçu'];
+  @state() currentStyle = "";
+
+  private differentIconDisplayApps = ["Aperçu"];
 
   constructor() {
     super();
-    this.classList.add('c-file');
-    this.setAttribute('data-drag', 'draggable');
-    this.setAttribute('data-application-name', this.appname);
+    this.classList.add("c-file");
+    this.setAttribute("data-drag", "draggable");
+    this.setAttribute("data-application-name", this.appname);
     this.updateStyles();
   }
 
@@ -43,22 +47,24 @@ export class File extends StyledElement {
   openApp() {
     const app = getApplicationByID(this.appname);
     const openedApps = openedAppsSubject.getValue();
-  
-    // Check if the app is already open
-    const openedApp = openedApps.find(openedApp => openedApp.id === app.name);
-  
-    if (openedApp) {
+
+    // Check if the file is already open
+    const openedFile = openedApps.find(
+      (openedApp) => openedApp.filelink === this.filelink
+    );
+
+    if (openedFile) {
       // Set this app as the focused app
-      focusedAppUuidSubject.next(openedApp.uuid);
+      focusedAppUuidSubject.next(openedFile.uuid);
       // Optionally, if you want to bring the window to the front
-      const showAppEvent = new CustomEvent('showApp', {
-        detail: { uuid: openedApp.uuid },
+      const showAppEvent = new CustomEvent("showApp", {
+        detail: { uuid: openedFile.uuid },
         bubbles: true,
         composed: true,
       });
       this.dispatchEvent(showAppEvent);
     } else {
-      const openAppEvent = new CustomEvent('addOpenedApp', {
+      const openAppEvent = new CustomEvent("addOpenedApp", {
         detail: {
           id: app.name,
           component: app.component,
@@ -71,7 +77,19 @@ export class File extends StyledElement {
       this.dispatchEvent(openAppEvent);
     }
   }
+
+  onClick() {
+    // Toggle the selected state when clicked
+    this.selected = !this.selected;
+    this.classList.toggle("selected");
+  }
   
+  onDblClick() {
+    // Open the app and set the opened state to true
+    this.openApp();
+    this.opened = true;
+    this.classList.toggle("opened");
+  }
 
   //need to be called to change the style
   updateStyles() {
@@ -81,13 +99,12 @@ export class File extends StyledElement {
 
   customIcon() {
     let fileIconPath = this.filelink;
-    fileIconPath = fileIconPath.replace('desktopImages', 'desktopImages/thumb'); // replace part of the path
+    fileIconPath = fileIconPath.replace("desktopImages", "desktopImages/thumb"); // replace part of the path
     return {
       path: fileIconPath,
-      additionalClass: 'c-file__icon--image',
+      additionalClass: "c-file__icon--image",
     };
   }
-  
 
   defaultIcon(app: any) {
     const fileIconPath = `/images/fileIcons/${this.currentStyle}/${app.name}.png`;
@@ -96,10 +113,10 @@ export class File extends StyledElement {
 
   render() {
     const app = getApplicationByID(this.appname);
-  
-    let fileIconPath = '';
-    let additionalClass = '';
-  
+
+    let fileIconPath = "";
+    let additionalClass = "";
+
     // Check if the app is included in differentIconDisplayApps
     if (this.differentIconDisplayApps.includes(this.appname)) {
       const customIconResult = this.customIcon();
@@ -108,11 +125,16 @@ export class File extends StyledElement {
     } else {
       fileIconPath = this.defaultIcon(app); // Call the defaultIcon() method
     }
-  
+
     return html`
-      <img src="${fileIconPath}" @dblclick="${this.openApp}" class="c-file__icon ${additionalClass}" alt="File Icon" />
+       <img 
+        src="${fileIconPath}" 
+        @click="${this.onClick}" 
+        @dblclick="${this.onDblClick}"
+        class="c-file__icon ${additionalClass}" 
+        alt="File Icon" 
+      />
       <p class="c-file__name">${this.filename}</p>
     `;
   }
-  
 }
