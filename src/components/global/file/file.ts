@@ -1,10 +1,6 @@
 import { html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { getApplicationByID } from "../../../utils/appManager";
-import {
-  openedAppsSubject,
-  focusedAppUuidSubject,
-} from "../../../utils/openedAppsProvider.ts";
 
 import { StyledElement } from "../../../utils/globalStyledElement.ts";
 
@@ -63,33 +59,17 @@ export class FileComponent extends StyledElement {
 
   openApp() {
     const app = getApplicationByID(this.appname);
-    const openedApps = openedAppsSubject.getValue();
-
-    const openedFile = openedApps.find(
-      (openedApp) => openedApp.filelink === this.filelink
-    );
-
-    if (openedFile) {
-      focusedAppUuidSubject.next(openedFile.uuid);
-      const showAppEvent = new CustomEvent("showApp", {
-        detail: { uuid: openedFile.uuid },
-        bubbles: true,
-        composed: true,
-      });
-      this.dispatchEvent(showAppEvent);
-    } else {
-      const openAppEvent = new CustomEvent("addOpenedApp", {
-        detail: {
-          id: app.name,
-          component: app.component,
-          filelink: this.filelink,
-          childItems: this.childItems,
-        },
-        bubbles: true,
-        composed: true,
-      });
-      this.dispatchEvent(openAppEvent);
-    }
+    const openAppEvent = new CustomEvent('addOpenedApp', {
+      detail: {
+        id: app.name,
+        component: app.component,
+        filelink: this.filelink,
+        childItems: this.childItems,
+      },
+      bubbles: true,
+      composed: true,
+    });
+    this.dispatchEvent(openAppEvent);
   }
 
   select() {

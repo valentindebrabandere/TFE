@@ -6,13 +6,14 @@ import { basic, styles } from './styles';
 import { StyledElement } from '../../../utils/globalStyledElement';
 import { arrangeItemsInGrid } from '../../../utils/arrangeItemsGrid.ts';
 
-import type { FileItem } from '../../global/file/file.ts';
+import type { FileItem, FileComponent } from '../../global/file/file.ts';
 
 @customElement('finder-component')
 export class Finder extends StyledElement {
   @property({ type: String, attribute: 'filelink' }) filelink: string|undefined;
   @property({ type: Array }) childItems: FileItem[] = [];
   @state() styles = [basic, css``];
+  public fileClicked: boolean = false;
 
   size: DOMRect | null = null;
 
@@ -28,7 +29,7 @@ export class Finder extends StyledElement {
     if (!this.childItems) {
       this.childItems = [];
     }
-
+    
     // If childItems is empty, fetch the desktop config.
     if (this.childItems.length === 0) {
       this.fetchDesktopConfig();
@@ -36,7 +37,39 @@ export class Finder extends StyledElement {
       // Arrange the child items in a grid.
       this.arrangeChildItems();
     }
+    document.addEventListener("click", this.handleDocumentClick.bind(this));
   }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    document.removeEventListener("click", this.handleDocumentClick.bind(this));
+  }
+
+  handleDocumentClick(event: Event) {
+    if (!(event.target as Element).closest('file-component')) {
+      this.clearSelectedFiles();
+    }
+  }
+
+  clearSelectedFiles() {
+    this.querySelectorAll("file-component").forEach((fileComponent: any) => {
+      fileComponent.deselect();
+    });
+  }
+  
+  selectFile(fileComponent: FileComponent) {
+    this.clearSelectedFiles();
+    fileComponent.select();
+    this.fileClicked = true;
+  }
+  
+  openFile(fileComponent: FileComponent) {
+    this.clearSelectedFiles();
+    fileComponent.open();
+    this.fileClicked = true;
+  }
+  
+  
 
   fetchDesktopConfig() {
     const currentStyle = this.globalStyleController.style;
@@ -96,10 +129,12 @@ export class Finder extends StyledElement {
               filelink="${item.filelink}"
               .childItems="${item.childItems}"
               style=" top: ${item.position?.top}px; left: ${item.position?.left}px;"
+              @click=${(event:any) => this.selectFile(event.currentTarget as FileComponent)}
+              @dblclick=${(event:any) => this.openFile(event.currentTarget as FileComponent)}
             ></file-component>
           `
         )}
       </div>
     `;
-  }
+  }  
 }
