@@ -44,7 +44,7 @@ export class Screen extends StyledElement {
         <link rel="stylesheet" href="/src/components/global/screen/styles/${this.currentStyle}.css">
         <div class="c-screen__overlay"></div>
         <menu-component></menu-component>
-        <div class="o-container">
+        <div class="c-display-container">
           <opened-apps-component></opened-apps-component>
           <desktop-component></desktop-component>
         </div>

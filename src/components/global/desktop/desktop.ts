@@ -3,12 +3,13 @@ import { customElement } from "lit/decorators.js";
 
 import type { FileItem } from "../file/file.ts";
 import { StyledElement } from "../../../utils/globalStyledElement.ts";
+import {FileComponent} from "../file/file.ts";
 import "../file/file.ts";
 
 @customElement("desktop-component")
 export class Desktop extends StyledElement {
-
   private desktopItems: FileItem[] = [];
+  public fileClicked: boolean = false;
 
   constructor() {
     super();
@@ -16,28 +17,39 @@ export class Desktop extends StyledElement {
     this.updateStyles();
   }
 
-  firstUpdated() {
-    // Clear the selection when clicking
-    document.querySelector("body")?.addEventListener("mousedown", () => {
-      this.clearSelectedFiles();
-    });
+  connectedCallback() {
+    super.connectedCallback();
+    document.addEventListener("click", this.handleDocumentClick.bind(this));
   }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    document.removeEventListener("click", this.handleDocumentClick.bind(this));
+  }
+
+  handleDocumentClick(event: Event) {
+    if (!(event.target as Element).closest('file-component')) {
+      this.clearSelectedFiles();
+    }
+  }
+  
 
   clearSelectedFiles() {
     this.querySelectorAll("file-component").forEach((fileComponent: any) => {
-      fileComponent.selected = false;
-      fileComponent.opened = false;
+      fileComponent.deselect();
     });
   }
-
-  selectFile(fileComponent: any) {
+  
+  selectFile(fileComponent: FileComponent) {
     this.clearSelectedFiles();
-    fileComponent.selected = true;
+    fileComponent.select();
+    this.fileClicked = true;
   }
-
-  openFile(fileComponent: any) {
+  
+  openFile(fileComponent: FileComponent) {
     this.clearSelectedFiles();
-    fileComponent.opened = true;
+    fileComponent.open();
+    this.fileClicked = true;
   }
 
   //need to be called to change the style
@@ -79,11 +91,12 @@ export class Desktop extends StyledElement {
             filelink="${item.filelink}"
             .childItems="${item.childItems}"
             style="top: ${item.position?.top}; left: ${item.position?.left};"
-            @mouseup=${() => this.selectFile(item)}
-            @dblclick=${() => this.openFile(item)}
+            @click=${(event:any) => this.selectFile(event.currentTarget as FileComponent)}
+            @dblclick=${(event:any) => this.openFile(event.currentTarget as FileComponent)}
           />
         `
       )}
     `;
   }
+  
 }

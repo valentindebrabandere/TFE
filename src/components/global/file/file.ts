@@ -1,4 +1,3 @@
-// file-component.ts
 import { html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { getApplicationByID } from "../../../utils/appManager";
@@ -18,11 +17,11 @@ export interface FileItem {
 }
 
 @customElement("file-component")
-export class File extends StyledElement {
+export class FileComponent extends StyledElement {
   @property({ type: String }) appname: string = "";
   @property({ type: String }) filename: string = "";
   @property({ type: String }) filelink: string = "";
-  @property({ type: Array }) childItems: FileItem[] = []; // Change here
+  @property({ type: Array }) childItems: FileItem[] = [];
 
   @state() selected = false;
   @state() opened = false;
@@ -37,7 +36,25 @@ export class File extends StyledElement {
     this.setAttribute("data-drag", "draggable");
     this.setAttribute("data-application-name", this.appname);
     this.updateStyles();
+  
+    this.addEventListener('select', () => {
+      this.selected = true;
+      this.requestUpdate();
+    });
+  
+    this.addEventListener('open', () => {
+      this.opened = true;
+      this.requestUpdate();
+    });
+  
+    this.addEventListener('deselect', () => {
+      this.selected = false;
+      this.opened = false;
+      this.requestUpdate();
+    });
   }
+  
+  
 
   connectedCallback() {
     super.connectedCallback();
@@ -48,15 +65,12 @@ export class File extends StyledElement {
     const app = getApplicationByID(this.appname);
     const openedApps = openedAppsSubject.getValue();
 
-    // Check if the file is already open
     const openedFile = openedApps.find(
       (openedApp) => openedApp.filelink === this.filelink
     );
 
     if (openedFile) {
-      // Set this app as the focused app
       focusedAppUuidSubject.next(openedFile.uuid);
-      // Optionally, if you want to bring the window to the front
       const showAppEvent = new CustomEvent("showApp", {
         detail: { uuid: openedFile.uuid },
         bubbles: true,
@@ -78,28 +92,34 @@ export class File extends StyledElement {
     }
   }
 
-  onClick() {
-    // Toggle the selected state when clicked
-    this.selected = !this.selected;
-    this.classList.toggle("selected");
+  select() {
+    this.classList.add("selected");
+    this.selected = true;
+    this.requestUpdate();
   }
-  
-  onDblClick() {
-    // Open the app and set the opened state to true
+
+  deselect() {
+    this.classList.remove("opened");
+    this.classList.remove("selected");
+    this.selected = false;
+    this.opened = false;
+    this.requestUpdate();
+  }
+
+  open() {
     this.openApp();
     this.opened = true;
-    this.classList.toggle("opened");
+    this.requestUpdate();
   }
 
   //need to be called to change the style
   updateStyles() {
-    //select the current style (globalStyledElement.ts)
     this.currentStyle = this.globalStyleController.style;
   }
 
   customIcon() {
     let fileIconPath = this.filelink;
-    fileIconPath = fileIconPath.replace("desktopImages", "desktopImages/thumb"); // replace part of the path
+    fileIconPath = fileIconPath.replace("desktopImages", "desktopImages/thumb");
     return {
       path: fileIconPath,
       additionalClass: "c-file__icon--image",
@@ -117,22 +137,19 @@ export class File extends StyledElement {
     let fileIconPath = "";
     let additionalClass = "";
 
-    // Check if the app is included in differentIconDisplayApps
     if (this.differentIconDisplayApps.includes(this.appname)) {
       const customIconResult = this.customIcon();
       fileIconPath = customIconResult.path;
       additionalClass = customIconResult.additionalClass;
     } else {
-      fileIconPath = this.defaultIcon(app); // Call the defaultIcon() method
+      fileIconPath = this.defaultIcon(app);
     }
 
     return html`
-       <img 
-        src="${fileIconPath}" 
-        @click="${this.onClick}" 
-        @dblclick="${this.onDblClick}"
-        class="c-file__icon ${additionalClass}" 
-        alt="File Icon" 
+      <img
+        src="${fileIconPath}"
+        class="c-file__icon ${additionalClass}"
+        alt="File Icon"
       />
       <p class="c-file__name">${this.filename}</p>
     `;
