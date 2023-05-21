@@ -77,7 +77,7 @@ export class FileComponent extends StyledElement {
     this.selected = true;
     this.requestUpdate();
   }
-
+  
   deselect() {
     this.classList.remove("opened");
     this.classList.remove("selected");
@@ -85,8 +85,10 @@ export class FileComponent extends StyledElement {
     this.opened = false;
     this.requestUpdate();
   }
-
+  
   open() {
+    this.classList.add("selected");
+    this.classList.add("opened");
     this.openApp();
     this.opened = true;
     this.requestUpdate();
