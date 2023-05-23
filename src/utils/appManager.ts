@@ -4,14 +4,14 @@ import { TextEdit } from "../components/apps/textEdit/textEdit";
 import { Corbeille } from "../components/apps/corbeille/corbeille";
 import { Finder } from "../components/apps/finder/finder";
 
-import { GlobalStyleController } from "./styleController";
 // import { GlobalStyleController, addStyleChangedEventListener } from "./styleController";
 
-const styleController = new GlobalStyleController();
+// const styleController = new GlobalStyleController();
+// var currentStyle = styleController.style;
 
 const allApps = [Aperçu, Figma, TextEdit, Finder];
 
-export function getDockApps(style: string = styleController.style) {
+export function getDockApps(style: string) {
   switch (style) {
     case 'modernMac':
       return [Finder, Figma, TextEdit, Aperçu];
@@ -64,13 +64,11 @@ populateApplicationsList(); // Populate the applications list initially
 // addStyleChangedEventListener(onStyleChanged);
 
 // function onStyleChanged() {
-//   // Update dockApps and allApplicationsList for the new style
-//   dockApps = styleApps[styleController.style];
-//   allApplicationsList = [...dockApps, ...dockAppsActives];
-  
-//   // Populate the applications list for the new style
-//   populateApplicationsList();
-// }
+//   currentStyle = styleController.style;
+
+//   //things that have to change with style
+// 
+
 
 export { dockAppsActives };
 export function getApplicationByID(id: string): Application{

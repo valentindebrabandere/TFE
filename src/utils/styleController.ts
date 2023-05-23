@@ -1,13 +1,12 @@
 // styleController.ts
-
 import { ReactiveController, ReactiveElement } from 'lit';
 
 export const stylesList = [
-  { call: 'modernMac', name: 'Modern Mac', date: 2023 },
   { call: 'oneBit', name: 'One bit', date: 1982 },
+  { call: 'modernMac', name: 'Modern Mac', date: 2023 },
 ];
 
-export var currentStyle = 'oneBit';
+export var currentStyle:string;
 
 export function setCurrentStyle(style: string): void {
   currentStyle = style;
@@ -45,6 +44,7 @@ class GlobalStyleController implements ReactiveController {
   private static instance: GlobalStyleController;
 
   constructor(host?: ReactiveElement) {
+
     if (host) {
       this.host = host;
       this.host.addController(this);
@@ -55,6 +55,11 @@ class GlobalStyleController implements ReactiveController {
     }
   
     GlobalStyleController.instance = this;
+
+    // Initialize the style with the first style in the list
+    this._style = stylesList[0].call;
+    setCurrentStyle(this._style);
+    this.dispatchEvent();
   }
 
   getDate() {
@@ -110,3 +115,4 @@ class GlobalStyleController implements ReactiveController {
 }
 
 export { GlobalStyleController };
+

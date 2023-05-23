@@ -1,6 +1,6 @@
-import { LitElement, html, css } from 'lit';
+import { html, css } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
-import { customElement } from 'lit/decorators.js';
+import { customElement, state } from 'lit/decorators.js';
 import { Subscription } from 'rxjs';
 import { openedAppsSubject, focusedAppUuidSubject} from '../../../utils/openedAppsProvider'; 
 
@@ -8,11 +8,13 @@ import type { OpenedApp } from '../../../utils/openedAppsProvider';
 
 import './assets/dynamicElement';
 import '../window/window'; 
+import { StyledElement } from '../../../utils/globalStyledElement';
 
 @customElement('opened-apps-component')
-export class OpenedApps extends LitElement {
+export class OpenedApps extends StyledElement {
 
   private focusedAppUuid: string = '';
+  @state() currentStyle = "";
   
   static styles = css`
   .c-opened-apps {
@@ -45,20 +47,20 @@ export class OpenedApps extends LitElement {
     this.classList.add('c-opened-apps');
   }
 
+  updateStyles() {
+    //select the current style (globalStyledElement.ts)
+    this.currentStyle = this.globalStyleController.style;
+  }
+
   handleWindowClick(uuid: string) {
     focusedAppUuidSubject.next(uuid);
   }
-  
-  
 
   disconnectedCallback() {
     this.subscription.unsubscribe();
     super.disconnectedCallback();
   }
 
-  createRenderRoot() {
-    return this;
-  }
 
   render() {
     return html`
