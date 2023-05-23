@@ -1,16 +1,18 @@
 import { html } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, state } from 'lit/decorators.js';
 
 import { animDock } from './anim.ts';
 import '../appIcon/appIcon.ts';
 
 // utils imports
 import { StyledElement } from '../../../utils/globalStyledElement.ts';
-import { dockApps, dockAppsActives } from "../../../utils/appManager.ts";
+import { getDockApps, dockAppsActives } from "../../../utils/appManager.ts";
 
 
 @customElement('dock-component')
 export class Dock extends StyledElement {
+
+  @state() currentStyle = "";
 
   async firstUpdated() {
     await this.updateComplete;
@@ -26,10 +28,13 @@ export class Dock extends StyledElement {
   //need to be called to change the style
   updateStyles() {
     //select the current style (globalStyledElement.ts)
+    this.currentStyle = this.globalStyleController.style;
     animDock();
   }
 
   render() {
+    const dockApps = getDockApps(this.globalStyleController.style);
+    
     return html`
       <div class="c-dock js-dock">
         <div class="c-dock__static js-dock__static">

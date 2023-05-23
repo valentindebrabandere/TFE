@@ -7,10 +7,14 @@ export const stylesList = [
   { call: 'oneBit', name: 'One bit', date: 1982 },
 ];
 
-export var currentStyle = 'modernMac';
+export var currentStyle = 'oneBit';
 
 export function setCurrentStyle(style: string): void {
   currentStyle = style;
+}
+
+export function addStyleChangedEventListener(listener: EventListenerOrEventListenerObject) {
+  window.addEventListener('style-changed', listener);
 }
 
 export function changeStyle(direction: string): string {
@@ -95,6 +99,7 @@ class GlobalStyleController implements ReactiveController {
 
   dispatchEvent() {
     const event = new CustomEvent('style-changed');
+    window.dispatchEvent(event);
     this.elements.forEach((element: HTMLElement) => element.dispatchEvent(event));
   }
 

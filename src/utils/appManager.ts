@@ -3,12 +3,28 @@ import { Figma } from "../components/apps/figma/figma";
 import { TextEdit } from "../components/apps/textEdit/textEdit";
 import { Corbeille } from "../components/apps/corbeille/corbeille";
 import { Finder } from "../components/apps/finder/finder";
-// import { Calculator } from "../apps/calculator/Calculator";
 
-export const dockApps = [Finder, Figma, TextEdit, Aperçu];
-export const dockAppsActives = [Corbeille];
+import { GlobalStyleController } from "./styleController";
+// import { GlobalStyleController, addStyleChangedEventListener } from "./styleController";
 
-const allApplicationsList = [...dockApps, ...dockAppsActives];
+const styleController = new GlobalStyleController();
+
+const allApps = [Aperçu, Figma, TextEdit, Finder];
+
+export function getDockApps(style: string = styleController.style) {
+  switch (style) {
+    case 'modernMac':
+      return [Finder, Figma, TextEdit, Aperçu];
+    case 'oneBit':
+      return [Finder, TextEdit];
+    // add more cases for other styles
+    default:
+      return [];
+  }
+}
+
+const dockAppsActives = [Corbeille];
+let allApplicationsList = [...allApps, ...dockAppsActives];
 
 const applications = new Map();
 
@@ -21,25 +37,42 @@ interface Application {
   fileIcon?: (style: string) => string;
 }
 
-allApplicationsList.forEach((app: any) => {
-  const application: Application = {
-    icon: (style: string) => iconPathByStyle(app.name, style),
-    component: app,
-    name: app.name,
-  };
+function populateApplicationsList() {
+  applications.clear();
+  allApplicationsList.forEach((app: any) => {
+    const application: Application = {
+      icon: (style: string) => iconPathByStyle(app.name, style),
+      component: app,
+      name: app.name,
+    };
 
-  if (app.prototype.hasOwnProperty('getFileIcon')) {
-    application.fileIcon = (style: string) => app.prototype.getFileIcon(style);
-  }
+    if (app.prototype.hasOwnProperty('getFileIcon')) {
+      application.fileIcon = (style: string) => app.prototype.getFileIcon(style);
+    }
 
-  applications.set(app.name, application);
-});
+    applications.set(app.name, application);
+  });
 
-applications.set("default", {
-  icon: (style: string) => iconPathByStyle("default", style),
-  component: null,
-});
+  applications.set("default", {
+    icon: (style: string) => iconPathByStyle("default", style),
+    component: null,
+  });
+}
 
+populateApplicationsList(); // Populate the applications list initially
+
+// addStyleChangedEventListener(onStyleChanged);
+
+// function onStyleChanged() {
+//   // Update dockApps and allApplicationsList for the new style
+//   dockApps = styleApps[styleController.style];
+//   allApplicationsList = [...dockApps, ...dockAppsActives];
+  
+//   // Populate the applications list for the new style
+//   populateApplicationsList();
+// }
+
+export { dockAppsActives };
 export function getApplicationByID(id: string): Application{
     return applications.has(id) ? applications.get(id) : applications.get("default");
 }
