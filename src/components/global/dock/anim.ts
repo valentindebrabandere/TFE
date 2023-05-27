@@ -58,22 +58,34 @@ function addAnim(evt: Event, iconAnimDock: Function) {
   
 
 function iconAnimDockIn(appBefore: Element | null, currentApp: EventTarget | null, appAfter: Element | null) {
-  animeJsTarget(currentApp, 1.3);
-  animeJsTarget(appBefore, 1.1);
-  animeJsTarget(appAfter, 1.1);
+  animeJsTarget(currentApp, 1.3, '4px');
+  animeJsTarget(appBefore, 1.1, '2px');
+  animeJsTarget(appAfter, 1.1, '2px');
 }
 
 function iconAnimDockOut(appBefore: Element | null, currentApp: EventTarget | null, appAfter: Element | null) {
-  animeJsTarget(currentApp, 1);
-  animeJsTarget(appBefore, 1);
-  animeJsTarget(appAfter, 1);
+  animeJsTarget(currentApp, 1, '1px');
+  animeJsTarget(appBefore, 1, '1px');
+  animeJsTarget(appAfter, 1, '1px');
 }
 
-function animeJsTarget(target: EventTarget | null, scale: number) {
+
+function animeJsTarget(target: EventTarget | null, scale: number, margin: string) {
+  // Scale Animation
   anime({
     targets: target,
     scale: scale,
-    duration: 10,
-    easing: 'easeInOutSine',
+    duration: 15,
+    easing: 'linear',
+  });
+
+  // Margin Animation
+  anime({
+    targets: target,
+    margin: "0 " + margin,
+    duration: 30, 
+    easing: 'linear',
   });
 }
+
+

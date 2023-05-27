@@ -4,6 +4,25 @@
     height: 100%;
 }
 
+.c-appicon::after {
+    content: attr(name);
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+.c-appicon:hover::after {
+    display: block;
+}
+
 .c-dock__app {
     height: 100%;
 }
@@ -20,6 +39,7 @@
     transform: translate(-50%, 0);
     opacity: 0;
 }
+
 .c-dock__app.active::before {
     opacity: 1;
 }

@@ -3,6 +3,7 @@ import { ReactiveController, ReactiveElement } from 'lit';
 
 export const stylesList = [
   { call: 'oneBit', name: 'One bit', date: 1982 },
+  { call: 'skeuo', name: 'Skeuomorphism', date: 2009 },
   { call: 'modernMac', name: 'Modern Mac', date: 2023 },
 ];
 
@@ -57,7 +58,8 @@ class GlobalStyleController implements ReactiveController {
     GlobalStyleController.instance = this;
 
     // Initialize the style with the first style in the list
-    this._style = stylesList[0].call;
+    //Fist style to show
+    this._style = stylesList[2].call;
     setCurrentStyle(this._style);
     this.dispatchEvent();
   }

@@ -5,12 +5,10 @@
 .c-dock {
     display: flex;
     align-self: center;
-    gap: 10px;
     justify-content: center;
     align-items: center;
 
     width: fit-content;
-    max-width: 90vw;
     height: 70px;
     padding: 0 20px;
 
@@ -23,6 +21,7 @@
 }
 
 .c-dock__static {
+    display: flex;
     width: fit-content;
     height: 100%;
 }
@@ -39,7 +38,6 @@
 .c-dock__active {
     position: relative;
     display: flex;
-    padding-left: 10px;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -47,3 +45,4 @@
 
 @import "./styles/oneBit.scss";
 @import "./styles/modernMac.scss";
+@import "./styles/skeuo.scss";
