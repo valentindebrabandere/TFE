@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { FileItem } from '../components/global/file/file';
 import { GlobalStyleController, addStyleChangedEventListener } from "./styleController";
 import { getApplicationByID } from './appManager';
-
+import { getDefaultAppsForStyle } from './defaultAppsByStyle';
 
 export interface OpenedApp {
   id: string;
@@ -45,34 +45,11 @@ export const openedAppsProvider = {
 
 window.addEventListener('addOpenedApp', openedAppsProvider.handleAddOpenedApp as EventListener);
 
-
-// Default opened apps by style
-
-interface AppData {
-  id: string;
-  filelink?: string;
-  childItems?: FileItem[];
-}
-
-const defaultAppsByStyle = new Map<string, AppData[]>();
-
-defaultAppsByStyle.set('modernMac', [
-  { id: 'Finder', filelink: '/content/modernMac/desktop/desktopConfig.json', childItems: [] },
-  { id: 'TextEdit', filelink: '/content/modernMac/documents/example.txt', childItems: [] },
-]);
-defaultAppsByStyle.set('oneBit', [
-  { id: 'Corbeille', filelink: '/content/oneBit/desktop/desktopConfig.json', childItems: [] },
-]);
-
-export function getDefaultAppsForStyle(style: string) {
-  return defaultAppsByStyle.get(style) || [];
-}
-
 //Init change
 
 const styleController = new GlobalStyleController();
 var currentStyle = styleController.style;
-onStyleChanged()
+onStyleChanged();
 
 // Update the opened apps when the style changes
 
