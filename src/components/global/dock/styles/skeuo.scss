@@ -1,14 +1,32 @@
-.skeuo{
+.skeuo {
     .c-dock {
-        background: #fff;
-        border: 2px solid #000;
-        width: 100%;
-        height: 45px;
+        position: relative;
+        background: transparent;
+        width: fit-content;
+        margin-bottom: 15px;
     }
-    
-    .c-dock__active::before {
-        width: 2px;
+
+    .c-dock::before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 0;
+        width: 100%;
         height: 100%;
-        background-color: #000;
+        border-radius: 5px;
+        transform: perspective(200px) rotateX(45deg);
+        border-bottom: 4px solid #b5b5b5;
+        filter: drop-shadow(0px 50px 10px rgba(21, 21, 15, .7));
+        background: linear-gradient(to top,
+                rgba(230, 230, 230, 1) 0%,
+                rgba(163, 163, 163, 1) 100%);
+    }
+
+    .c-dock__active::before {
+        top: 7px;
+        transform: perspective(75px) rotateX(60deg);
+        border-left: 5px dashed #ffffff5f;
+        background-color: transparent;
+        height: 100%;
     }
 }

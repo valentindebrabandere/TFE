@@ -16,7 +16,7 @@ export function getDockApps(style: string) {
     case 'modernMac':
       return [Finder, Figma, TextEdit, Aperçu];
     case 'skeuo':
-      return [Finder, Figma, TextEdit, Aperçu];
+      return [Finder, TextEdit, Aperçu];
     case 'oneBit':
       return [Finder, TextEdit];
     default:

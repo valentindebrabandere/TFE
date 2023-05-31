@@ -23,6 +23,12 @@
     display: block;
 }
 
+.c-dock__icon {
+    position: relative;
+    transform-origin: bottom center;
+    transition: transform 0.2s ease-in-out;
+}
+
 .c-dock__app {
     height: 100%;
 }
@@ -50,4 +56,5 @@
 }
 
 @import "./styles/oneBit.scss";
+@import "./styles/skeuo.scss";
 @import "./styles/modernMac.scss";

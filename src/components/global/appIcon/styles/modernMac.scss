@@ -1,12 +1,6 @@
 .modernMac {
   /* CSS here */
 
-  .c-dock__icon {
-    position: relative;
-    transform-origin: bottom center;
-    transition: transform 0.2s ease-in-out;
-  }
-
   .c-dock__app::before {
     background-color: #ffffff6A;
     border-radius: 50%;
