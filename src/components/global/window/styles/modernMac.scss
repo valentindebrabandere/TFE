@@ -10,9 +10,8 @@
         background-color: #3D3C3C;
     }
     
-    .c-window__controls:hover .c-window__control-icon {
-        transform: translate3d(0, 0, 0) rotate(0);
-        transition: transform 0.25s ease-in-out;
+    .c-window__head:hover .c-window__control-icon {
+        opacity: .7;
     }
     
     .c-window__control {
@@ -25,9 +24,7 @@
         display: block;
         width: 70%;
         height: auto;
-        opacity: 70%;
-        /* transform: translate3d(0, 12px, 0) rotate(-145deg);
-        transition: transform 0.25s ease-in-out; */
+        opacity: 0;
     }
     
     .c-window__control--quit {
