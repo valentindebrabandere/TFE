@@ -48,6 +48,18 @@ const styleOneBit:StyleObject = {
     `
 };
 
+const styleGrey:StyleObject = {
+  styleName: "grey",
+  css: css`
+  
+  /* CSS here */
+
+  .c-text-edit {
+    background-color: #DEDEDE;
+  }
+
+  `
+};
 const styleSkeuo:StyleObject = {
   styleName: "skeuo",
   css: css`
@@ -64,4 +76,4 @@ const styleModernMac:StyleObject = {
     `
 };
 
-export const styles:StyleObject[] = [styleOneBit, styleSkeuo ,styleModernMac];
+export const styles:StyleObject[] = [styleOneBit, styleGrey, styleSkeuo,styleModernMac];

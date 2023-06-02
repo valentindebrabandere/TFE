@@ -82,10 +82,11 @@
 .c-layout__name {
     position: absolute;
     left: 50%;
-    top: 5vh;
+    top: 6vh;
     transform: translate3d(-50%, 0, 0);
     font-family: "Poppins", system-ui, sans-serif;
     font-weight: 600;
+    font-size: 1.3rem;
     text-transform: uppercase;
     margin: 0;
 

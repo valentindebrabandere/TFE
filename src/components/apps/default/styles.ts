@@ -34,7 +34,6 @@ export const basic = css`
 .c-default__animtxt {
   display: flex;
   align-items: center;
-  opacity: .7;
 }
 
 .c-default__point {
@@ -81,11 +80,28 @@ const styleOneBit:StyleObject = {
     `
 };
 
+const styleGrey:StyleObject = {
+    styleName: "grey",
+    css: css`
+    
+    /* CSS here */
+    .c-default{
+      background-color: #DEDEDE;
+    }
+
+    `
+};
+
 const styleSkeuo:StyleObject = {
   styleName: "skeuo",
   css: css`
   
   /* CSS here */
+  .c-default__animtxt {
+    display: flex;
+    align-items: center;
+    opacity: .7;
+  }
 
   `
 };
@@ -93,12 +109,12 @@ const styleSkeuo:StyleObject = {
 const styleModernMac:StyleObject = {
     styleName: "modernMac",
     css: css`
-    .c-menu-bar{
-      backdrop-filter: blur(7px);
-      -webkit-backdrop-filter: blur(7px); 
-      background-color: #ffffff44;
+    .c-default__animtxt {
+      display: flex;
+      align-items: center;
+      opacity: .7;
     }
     `
 };
 
-export const styles:StyleObject[] = [styleOneBit, styleSkeuo, styleModernMac];
+export const styles:StyleObject[] = [styleOneBit, styleGrey, styleSkeuo, styleModernMac];

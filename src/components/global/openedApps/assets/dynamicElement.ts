@@ -8,12 +8,13 @@ export class DynamicElement extends LitElement {
   @property({ type: Object }) options: any = {};
 
   private componentAdded = false;
-
+  
   createRenderRoot() {
     return this;
   }
-
+  
   connectedCallback() {
+    this.classList.add('c-window__content');
     super.connectedCallback();
     if (!this.componentAdded) {
       const instance = new this.componentClass();

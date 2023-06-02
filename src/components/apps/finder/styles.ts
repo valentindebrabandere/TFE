@@ -23,10 +23,23 @@ const styleOneBit:StyleObject = {
     /* CSS here */
 
     .c-finder {
-      background-color: #C0C0C0;
+      background-color: #FFF;
     }
 
     `
+};
+
+const styleGrey:StyleObject = {
+  styleName: "grey",
+  css: css`
+  
+  /* CSS here */
+
+  .c-finder {
+    background-color: #DEDEDE;
+  }
+
+  `
 };
 
 const styleSkeuo:StyleObject = {
@@ -49,4 +62,4 @@ const styleModernMac:StyleObject = {
     `
 };
 
-export const styles:StyleObject[] = [styleOneBit, styleSkeuo ,styleModernMac];
+export const styles:StyleObject[] = [styleOneBit, styleGrey, styleSkeuo ,styleModernMac];

@@ -94,35 +94,40 @@ export class Menu extends StyledElement {
           </li>
         </ul>
         <ul class="c-menu-bar__rigth">
-          <li class="c-menu-bar__item">
-            <button class="c-menu-bar__btn" data-menu-bar="Wifi">
-              <img
-                class="c-menu-bar__icon"
-                src="/images/components/menu/${this.currentStyle}/wifiIcon.png"
-                alt="icon Wifi"
-              />
-            </button>
-          </li>
-          <li class="c-menu-bar__item">
-            <button class="c-menu-bar__btn" data-menu-bar="Search">
-              <img
-                class="c-menu-bar__icon"
-                src="/images/components/menu/${this
-                  .currentStyle}/searchIcon.png"
-                alt="icon Search"
-              />
-            </button>
-          </li>
-          <li class="c-menu-bar__item">
-            <button class="c-menu-bar__btn" data-menu-bar="Control center">
-              <img
-                class="c-menu-bar__icon"
-                src="/images/components/menu/${this
-                  .currentStyle}/controlCenterIcon.png"
-                alt="icon Control center"
-              />
-            </button>
-          </li>
+          ${this.currentStyle !== "oneBit" && this.currentStyle !== "grey"
+            ? html`
+                <li class="c-menu-bar__item">
+                  <button class="c-menu-bar__btn" data-menu-bar="Wifi">
+                    <img
+                      class="c-menu-bar__icon"
+                      src="/images/components/menu/${this
+                        .currentStyle}/wifiIcon.png"
+                      alt="icon Wifi"
+                    />
+                  </button>
+                </li>
+                <li class="c-menu-bar__item">
+                  <button class="c-menu-bar__btn" data-menu-bar="Search">
+                    <img
+                      class="c-menu-bar__icon"
+                      src="/images/components/menu/${this
+                        .currentStyle}/searchIcon.png"
+                      alt="icon Search"
+                    />
+                  </button>
+                </li>
+                <li class="c-menu-bar__item">
+                  <button class="c-menu-bar__btn" data-menu-bar="Control center">
+                    <img
+                      class="c-menu-bar__icon"
+                      src="/images/components/menu/${this
+                        .currentStyle}/controlCenterIcon.png"
+                      alt="icon Control center"
+                    />
+                  </button>
+                </li>
+              `
+            : ""}
           <li class="c-menu-bar__item" data-menu-bar="Date">
             <button
               class="c-menu-bar__btn js-mennubar__btn--date c-mennubar__btn--date"

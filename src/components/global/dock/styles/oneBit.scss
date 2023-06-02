@@ -1,9 +1,15 @@
 .oneBit{
     .c-dock {
+        margin-bottom: 0;
         background: #fff;
         border: 2px solid #000;
         width: 100%;
         height: 45px;
+        gap: 5px;
+    }
+
+    .c-dock__static {
+        gap: 5px;
     }
     
     .c-dock__active::before {
