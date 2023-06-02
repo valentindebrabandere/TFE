@@ -4,7 +4,7 @@ import { GlobalStyleController } from "../../../utils/styleController";
 const globalStyleController = new GlobalStyleController();
 
 function shouldApplyAnimation(): boolean {
-  const styleToSkip = ["oneBit"];
+  const styleToSkip = ["oneBit", "grey"];
   const currentStyle = globalStyleController.style;
 
   return !styleToSkip.includes(currentStyle);

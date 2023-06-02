@@ -51,6 +51,13 @@ export class AppIcon extends StyledElement {
     const iconPath = getApplicationByID(this.name).icon(this.currentStyle);
     const appClass = this.isActive ? 'c-dock__app active' : 'c-dock__app';
 
+    if (this.isActive){
+      this.classList.add('active');
+    }
+    else{
+      this.classList.remove('active');
+    }
+
     return html`
       <div
         class="${appClass}"

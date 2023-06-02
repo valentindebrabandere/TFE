@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after {
+    font-family: "MS Sans Serif", system-ui, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.c-screen {
+    background: #9C9CCE;
+    /* background: url(/images/wallpaper/grey.jpg) 50% 50% no-repeat; */
+    background-size: cover;
+}
+
+img {
+    filter: contrast(1.8);
+}

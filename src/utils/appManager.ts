@@ -17,6 +17,8 @@ export function getDockApps(style: string) {
       return [Finder, Figma, TextEdit, Aperçu];
     case 'skeuo':
       return [Finder, TextEdit, Aperçu];
+    case 'grey':
+      return [Finder, TextEdit];
     case 'oneBit':
       return [Finder, TextEdit];
     default:

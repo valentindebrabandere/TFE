@@ -3,6 +3,7 @@ import { ReactiveController, ReactiveElement } from 'lit';
 
 export const stylesList = [
   { call: 'oneBit', name: 'One bit', date: 1982 },
+  { call: 'grey', name: 'Grey scale and color', date: 1997 },
   { call: 'skeuo', name: 'Skeuomorphism', date: 2009 },
   { call: 'modernMac', name: 'Modern Mac', date: 2023 },
 ];

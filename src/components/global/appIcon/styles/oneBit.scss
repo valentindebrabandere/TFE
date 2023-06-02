@@ -1,3 +1,9 @@
-// .oneBit{
-   
-// }
+.oneBit{
+    .c-appicon::after {
+        top: -30px;
+        border-radius: 0;
+        background: #ffffff;
+        color: #000;
+        padding: 4px 8px;
+    } 
+}

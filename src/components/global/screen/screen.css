@@ -35,8 +35,3 @@
 .is-moving {
     z-index: 1000 !important
 }
-
-
-
-@import "./styles/oneBit.scss";
-@import "./styles/modernMac.scss";

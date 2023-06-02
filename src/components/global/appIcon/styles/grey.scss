@@ -1,0 +1,26 @@
+.grey{
+    .c-appicon{
+        background: #cac6cb;
+        box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white, inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+    }
+
+    .c-appicon.active{
+        box-shadow: inset -1px -1px 0 0 white, inset 1px 1px 0 0 #464147, inset -2px -2px 0 0 #dedcde, inset 2px 2px 0 0 #cac6cb;
+    }
+
+    .c-dock__app {
+        height: 75%;
+    }
+
+    .c-appicon::after {
+        top: -25px;
+        border-radius: 0;
+        background: #ffffff;
+        color: #000;
+        padding: 4px 8px;
+    }
+}
