@@ -4,7 +4,7 @@ import { customElement, state } from 'lit/decorators.js';
 import './style.css';
 
 //utils imports
-import { GlobalStyleController } from '../../../utils/styleController.ts';
+import { GlobalStyleController, stylesList } from '../../../utils/styleController.ts';
 
 
 //images import
@@ -19,6 +19,9 @@ export class Layout extends StyledElement {
   @state() currentStyle = this.globalStyleController.style;
   @state() currentStyleDate = this.globalStyleController.getDate();
   @state() currentStyleName = this.globalStyleController.getName();
+  @state() isDisabledPrev = false;
+  @state() isDisabledNext = false;
+
 
   protected globalStyleController = new GlobalStyleController(this);
 
@@ -43,9 +46,15 @@ export class Layout extends StyledElement {
   changeStyleHandler(direction: string) {
     this.globalStyleController.changeStyle(direction);
     this.currentStyle = this.globalStyleController.style;
+    const newIndex = this.globalStyleController.getStyleIndex();
     this.currentStyleDate = this.globalStyleController.getDate();
     this.currentStyleName = this.globalStyleController.getName();
+
+    // Update the disable state for the buttons
+    this.isDisabledPrev = newIndex === 0;
+    this.isDisabledNext = newIndex === stylesList.length - 1;
   }
+
 
   openLayout(): void {
     const screen: HTMLElement|null = document.querySelector('.js-screen');
@@ -81,9 +90,10 @@ export class Layout extends StyledElement {
       <div class="c-layout js-layout">
         <div class="c-layout__display">
           <div class="c-layout__controls">
-            <button
-              class="c-layout__btn c-layout__btn--back js-layout__btn"
-              @click=${() => this.changeStyleHandler('back')}
+          <button
+              class="c-layout__btn c-layout__btn--back js-layout__btn ${this.isDisabledNext ? 'inactive' : ''}"
+              @click=${() => this.changeStyleHandler('next')}
+              ?disabled=${this.isDisabledNext}
             >
               <img
                 src="${iconUp}"
@@ -92,8 +102,9 @@ export class Layout extends StyledElement {
               />
             </button>
             <button
-              class="c-layout__btn c-layout__btn--next js-layout__btn"
-              @click=${() => this.changeStyleHandler('next')}
+              class="c-layout__btn c-layout__btn--back js-layout__btn ${this.isDisabledPrev ? 'inactive' : ''}"
+              @click=${() => this.changeStyleHandler('back')}
+              ?disabled=${this.isDisabledPrev}
             >
               <img
                 src="${iconDownn}"
@@ -112,7 +123,11 @@ export class Layout extends StyledElement {
           <h2 class="c-layout__name">${this.currentStyleName}</h2>
           <p class="c-layout__date">${this.currentStyleDate}</p>
         </div>
-        <div class="c-layout__screen" @click=${() => this.closeLayout()}></div>
+          <div class="c-layout__cache-container">
+            <div class="c-layout__cache"></div>
+          </div>
+        <div class="c-layout__screen" @click=${() => this.closeLayout()}>
+        </div>
       </div>
     `;
   }  

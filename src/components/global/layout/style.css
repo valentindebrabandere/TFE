@@ -49,7 +49,6 @@
     border-radius: 50%;
     background: #F1F1F1;
     box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3), -1px -1px 2px rgba(149, 149, 149, 0.5), inset -5px 5px 10px rgba(149, 149, 149, 0.2), inset 5px -5px 10px rgba(149, 149, 149, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.9), inset 5px 5px 13px rgba(149, 149, 149, 0.9);
-    ;
     border: none;
     padding: 0;
 
@@ -60,6 +59,16 @@
     cursor: pointer;
 
     transition: transform 0.3s ease-in-out;
+}
+
+.c-layout__btn:disabled {
+    opacity: 0.5;
+    transform: scale(.95);
+    cursor: default;
+}
+.c-layout__btn:disabled:hover {
+    transform: scale(.95);
+
 }
 
 .c-layout__btn:hover {
@@ -121,4 +130,25 @@
 
     filter: drop-shadow(0px 104.961px 88.3879px rgba(0, 0, 0, 0.0534177)) drop-shadow(0px 43.8501px 36.9264px rgba(0, 0, 0, 0.0767396)) drop-shadow(0px 23.4443px 19.7426px rgba(0, 0, 0, 0.095)) drop-shadow(0px 13.1427px 11.0675px rgba(0, 0, 0, 0.11326)) drop-shadow(0px 6.97999px 5.87789px rgba(0, 0, 0, 0.136582)) drop-shadow(0px 2.90453px 2.44592px rgba(0, 0, 0, 0.19));
     z-index: 1005;
+    overflow: hidden;
 }
+
+/* .c-layout__cache-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 70vw;
+    height: 70vh;
+    z-index: 1002;
+    overflow: hidden;
+}
+
+.c-layout__cache {
+    position: absolute;
+    transform: translate3d(0, -100%, 0);
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+} */

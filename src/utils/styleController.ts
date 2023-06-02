@@ -65,6 +65,10 @@ class GlobalStyleController implements ReactiveController {
     this.dispatchEvent();
   }
 
+  getStyleIndex(): number {
+    return stylesList.findIndex((style) => style.call === this.style);
+  }
+
   getDate() {
     const currentStyleObj = stylesList.find(style => style.call === this.style);
     return currentStyleObj ? currentStyleObj.date : '';
