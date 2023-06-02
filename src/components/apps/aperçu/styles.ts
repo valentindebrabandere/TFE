@@ -45,6 +45,15 @@ const styleOneBit:StyleObject = {
 
     `
 };
+
+const styleSkeuo:StyleObject = {
+    styleName: "skeuo",
+    css: css`
+    
+    /* CSS here */
+
+    `
+};
   
 const styleModernMac:StyleObject = {
     styleName: "modernMac",
@@ -53,4 +62,4 @@ const styleModernMac:StyleObject = {
     `
 };
 
-export const styles:StyleObject[] = [styleOneBit, styleModernMac];
+export const styles:StyleObject[] = [styleOneBit, styleSkeuo,styleModernMac];

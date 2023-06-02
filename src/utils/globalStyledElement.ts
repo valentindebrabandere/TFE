@@ -34,6 +34,9 @@ export class StyledElement extends LitElement {
     const styleIndex = stylesArray.findIndex(
       (style) => style.styleName === this.globalStyleController.style
     );
+    if (styleIndex === -1) {
+      return [basicStyle];
+    }
     return [basicStyle, stylesArray[styleIndex].css];
   }
 }

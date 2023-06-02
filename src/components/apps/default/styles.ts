@@ -78,13 +78,16 @@ const styleOneBit:StyleObject = {
     
     /* CSS here */
 
-    *,
-    *::before,
-    *::after {
-      font-family: "Munro", system-ui, sans-serif;
-      font-weight: normal;
-    }
     `
+};
+
+const styleSkeuo:StyleObject = {
+  styleName: "skeuo",
+  css: css`
+  
+  /* CSS here */
+
+  `
 };
   
 const styleModernMac:StyleObject = {
@@ -95,14 +98,7 @@ const styleModernMac:StyleObject = {
       -webkit-backdrop-filter: blur(7px); 
       background-color: #ffffff44;
     }
-    *,
-    *::before,
-    *::after {
-      font-family: system-ui, sans-serif;
-      font-weight: normal;
-      box-sizing:content-box;
-    }
     `
 };
 
-export const styles:StyleObject[] = [styleOneBit, styleModernMac];
+export const styles:StyleObject[] = [styleOneBit, styleSkeuo, styleModernMac];
