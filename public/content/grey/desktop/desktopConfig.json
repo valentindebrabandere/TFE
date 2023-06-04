@@ -1,11 +1,11 @@
 {
   "folderName": "Desktop",
-  "style": "skeuo",
+  "style": "grey",
   "childItems": [
     {
       "appname": "Aperçu",
       "filename": "Image1.jpg",
-      "filelink": "/content/skeuo/desktop/desktopImages/image1.jpg",
+      "filelink": "/content/grey/desktop/desktopImages/image1.jpg",
       "position": {"top": "30vh", "left": "60vw"},
       "childItems": []
     },
@@ -18,21 +18,21 @@
         {
           "appname": "TextEdit",
           "filename": "Hello.txt",
-          "filelink": "/content/skeuo/desktop/hello.html",
+          "filelink": "/content/grey/desktop/hello.html",
           "childItems": [],
           "position": {}
         },
         {
           "appname": "Aperçu",
           "filename": "Image2.jpg",
-          "filelink": "/content/skeuo/desktop/desktopImages/image2.jpg",
+          "filelink": "/content/grey/desktop/desktopImages/image2.jpg",
           "childItems": [],
           "position": {}
         },
         {
           "appname": "Aperçu",
           "filename": "Image3.jpg",
-          "filelink": "/content/skeuo/desktop/desktopImages/image3.jpg",
+          "filelink": "/content/grey/desktop/desktopImages/image3.jpg",
           "childItems": [],
           "position": {}
         },
@@ -44,14 +44,14 @@
             {
               "appname": "Aperçu",
               "filename": "Image4.jpg",
-              "filelink": "/content/skeuo/desktop/desktopImages/image2.jpg",
+              "filelink": "/content/grey/desktop/desktopImages/image2.jpg",
               "childItems": [],
               "position": {}
             },
             {
               "appname": "Aperçu",
               "filename": "Image4.jpg",
-              "filelink": "/content/skeuo/desktop/desktopImages/image3.jpg",
+              "filelink": "/content/grey/desktop/desktopImages/image3.jpg",
               "childItems": [],
               "position": {}
             }

@@ -1,15 +1,16 @@
-.grey {
-    
+.skeuo {
     /* CSS here */
 
-    .c-file__icon--image {
-        border: 2px solid #dcd8dd;
+    .c-file__icon{
+        filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.2));
     }
-
-    .c-file__name {
-        font-size: calc(14/16*1rem);
-
-        color: #000;
+    
+    .c-file__icon--image{
+        border: 2px solid #fff;
     }
-
+    
+    .c-file__name{
+        color: #fff;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
 }
