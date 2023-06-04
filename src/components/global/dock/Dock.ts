@@ -16,7 +16,7 @@ export class Dock extends StyledElement {
 
   async firstUpdated() {
     await this.updateComplete;
-    animDock();
+    this.updateStyles();
   }
 
   async connectedCallback() {
@@ -26,9 +26,10 @@ export class Dock extends StyledElement {
   }
 
   //need to be called to change the style
-  updateStyles() {
+  async updateStyles() {
     //select the current style (globalStyledElement.ts)
     this.currentStyle = this.globalStyleController.style;
+    await this.updateComplete; // wait for any pending updates to complete
     animDock();
   }
 

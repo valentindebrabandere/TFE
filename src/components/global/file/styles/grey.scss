@@ -2,12 +2,17 @@
     
     /* CSS here */
 
+    .c-file{
+        width: 60px;
+        height: 60px;
+    }
+
     .c-file__icon--image {
         border: 2px solid #dcd8dd;
     }
 
     .c-file__name {
-        font-size: calc(14/16*1rem);
+        font-size: calc(12/16*1rem);
 
         color: #000;
     }
