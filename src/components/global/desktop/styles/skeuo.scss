@@ -1,0 +1,32 @@
+.modernMac {
+  /*
+=Select
+*/
+
+  .selected::before {
+    border: 1px solid #ffffff8b;
+    border-radius: 5px;
+    background-color: #1111113e;
+  }
+
+  .selected p {
+    background-color: #0085FE;
+    border-radius: 3px;
+    text-shadow: none;
+
+  }
+
+
+  /*
+=Open
+*/
+
+  .opened p {
+
+    color: #6D6D6D;
+    background-color: #CDCDCD;
+    border-radius: 3px;
+    text-shadow: none;
+
+  }
+}

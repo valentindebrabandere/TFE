@@ -23,7 +23,7 @@
 
 .c-file__name {
     position: absolute;
-    bottom: -20px;
+    bottom: -5px;
     font-size: calc(10/16*1rem);
     font-weight: 400;
     color: #000;
@@ -33,7 +33,10 @@
     margin-top: 5px;
     text-align: center;
     padding: 2px 6px;
+    transform: translate3D(0, 100%, 0);
 }
 
 @import "./styles/oneBit.scss";
+@import "./styles/grey.scss";
+@import "./styles/skeuo.scss";
 @import "./styles/modernMac.scss";

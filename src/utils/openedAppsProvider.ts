@@ -56,7 +56,6 @@ onStyleChanged();
 addStyleChangedEventListener(onStyleChanged);
 
 function onStyleChanged() {
-  console.log('Style changed')
   currentStyle = styleController.style;
   openedAppsSubject.next([]);
 

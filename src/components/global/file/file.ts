@@ -102,6 +102,7 @@ export class FileComponent extends StyledElement {
   customIcon() {
     let fileIconPath = this.filelink;
     fileIconPath = fileIconPath.replace("desktopImages", "desktopImages/thumb");
+    console.log(fileIconPath)
     return {
       path: fileIconPath,
       additionalClass: "c-file__icon--image",
