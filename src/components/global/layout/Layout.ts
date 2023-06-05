@@ -30,12 +30,10 @@ export class Layout extends StyledElement {
   }
 
   private layout: HTMLElement|null = null;
-  private allLayoutBtn: NodeListOf<HTMLElement>|null = null;
   
 
   firstUpdated() {
     this.layout = this.renderRoot.querySelector('.js-layout');
-    this.allLayoutBtn = this.renderRoot.querySelectorAll('.js-layout__btn');
 
     const parent = this.parentElement;
     if (parent) {
@@ -46,11 +44,11 @@ export class Layout extends StyledElement {
   changeStyleHandler(direction: string) {
     this.globalStyleController.changeStyle(direction);
     this.currentStyle = this.globalStyleController.style;
-    const newIndex = this.globalStyleController.getStyleIndex();
     this.currentStyleDate = this.globalStyleController.getDate();
     this.currentStyleName = this.globalStyleController.getName();
-
+    
     // Update the disable state for the buttons
+    const newIndex = this.globalStyleController.getStyleIndex();
     this.isDisabledPrev = newIndex === 0;
     this.isDisabledNext = newIndex === stylesList.length - 1;
   }
@@ -58,31 +56,27 @@ export class Layout extends StyledElement {
 
   openLayout(): void {
     const screen: HTMLElement|null = document.querySelector('.js-screen');
-
+  
+    // Update the disable state for the buttons
+    const newIndex = this.globalStyleController.getStyleIndex();
+    this.isDisabledPrev = newIndex === 0;
+    this.isDisabledNext = newIndex === stylesList.length - 1;
+  
     if(this.layout === null || screen === null) return;
     this.layout.style.pointerEvents = 'auto';
     this.layout.style.transform = 'scale(1)';
     screen.style.transform = 'scale(0.7)';
-  
-    if(this.allLayoutBtn === null) return;
-      this.allLayoutBtn.forEach((btn) => {
-      btn.removeAttribute('disabled');
-    });
   }
-
+  
   closeLayout(): void {
     const screen: HTMLElement|null = document.querySelector('.js-screen');
-  
+    
     if (this.layout === null || screen === null) return;
     this.layout.style.pointerEvents = 'none';
     this.layout.style.transform = 'scale(1.5)';
     screen.style.transform = 'scale(1)';
-  
-    if (this.allLayoutBtn === null) return;
-    this.allLayoutBtn.forEach((btn) => {
-      btn.setAttribute('disabled', '');
-    });
   }
+  
   
 
   render() {

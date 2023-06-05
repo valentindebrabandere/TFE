@@ -57,9 +57,7 @@ function addAnim(evt: Event, iconAnimDock: Function) {
   if (!dock) return;
   let dockAppsDyn = dock.querySelectorAll(".c-dock__icon");
   let arrDockAppsDyn = Array.from(dockAppsDyn);
-  console.log(arrDockAppsDyn)
   let currentApp = arrDockAppsDyn.indexOf(evt.currentTarget as HTMLElement);
-  console.log(currentApp)
   let appBefore: Element | null =
     currentApp > 0 ? arrDockAppsDyn[currentApp - 1] : null;
   let appAfter: Element | null =

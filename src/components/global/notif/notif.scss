@@ -1,0 +1,60 @@
+.c-notif{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    padding: 12px 24px 12px 12px;
+    width: 250px;
+
+    border-radius: 15px;
+    border: 1px solid #ffffff2b;
+    outline: 1px solid #00000044;
+
+    color: #fff;
+    background: #4c4c4c5a;
+
+    filter: drop-shadow(0px 9px 10px rgba(21, 21, 15, 0.5));
+    -webkit-filter: drop-shadow(0px 9px 10px rgba(21, 21, 15, 0.5));
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    p{
+        margin: 0;
+    }
+}
+
+.c-notif__appicon{
+    width: 50px;
+    height: 50px;
+}
+
+.c-notif__content{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.c-notif__header{
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-notif__app{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.c-notif__time{
+    font-size: 12px;
+}
+
+.c-notif__message{
+    font-size: 14px;
+}

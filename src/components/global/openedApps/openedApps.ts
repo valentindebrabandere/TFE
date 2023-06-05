@@ -10,6 +10,8 @@ import './assets/dynamicElement';
 import '../window/window'; 
 import { StyledElement } from '../../../utils/globalStyledElement';
 
+import "../notif/notif";
+
 @customElement('opened-apps-component')
 export class OpenedApps extends StyledElement {
 
@@ -67,6 +69,11 @@ export class OpenedApps extends StyledElement {
       <style>
         ${OpenedApps.styles}
       </style>
+      <notif-component
+          .id=${"TextEdit"}
+          .message=${"Message hello hello"}
+          .filelink=${"path/to/file"}
+        ></notif-component>
       ${repeat(
         this.openedApps,
         (app) => app.uuid, 

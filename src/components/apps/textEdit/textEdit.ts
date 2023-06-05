@@ -48,7 +48,6 @@ export class TextEdit extends StyledElement {
     try {
       const response = await fetch(filelink);
       const content = await response.text();
-      console.log('File content fetched:', content)
       return content;
     } catch (error) {
       return '';

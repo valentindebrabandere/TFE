@@ -5,7 +5,8 @@ export const stylesList = [
   { call: 'oneBit', name: 'One bit', date: 1982 },
   { call: 'grey', name: 'Grey scale and color', date: 1997 },
   { call: 'skeuo', name: 'Skeuomorphism', date: 2009 },
-  { call: 'modernMac', name: 'Modern Mac', date: 2023 },
+  { call: 'flat', name: 'Flat design', date: 2017 },
+  { call: 'modernMac', name: 'Modern Mac', date: 2022 },
 ];
 
 export var currentStyle:string;
@@ -60,7 +61,7 @@ class GlobalStyleController implements ReactiveController {
 
     // Initialize the style with the first style in the list
     //Fist style to show
-    this._style = stylesList[2].call;
+    this._style = stylesList[4].call;
     setCurrentStyle(this._style);
     this.dispatchEvent();
   }
