@@ -70,9 +70,9 @@ export class OpenedApps extends StyledElement {
         ${OpenedApps.styles}
       </style>
       <notif-component
-          .id=${"TextEdit"}
-          .message=${"Message hello hello"}
-          .filelink=${"path/to/file"}
+          .id=${"Style"}
+          .message=${"Vous pouvez passer au style suivant"}
+          .filelink=""
         ></notif-component>
       ${repeat(
         this.openedApps,

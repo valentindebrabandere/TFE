@@ -22,6 +22,8 @@ export class Notif extends StyledElement {
     this.message = "";
     this.id = "";
     this.filelink = "";
+    
+    this.classList.add("c-notif-component");
   }
 
   connectedCallback() {
