@@ -3,6 +3,7 @@ import { customElement, state } from 'lit/decorators.js';
 
 import '../menu/menu';
 import  '../openedApps/openedApps';
+import  '../notif/notif';
 import '../dock/dock';
 import '../desktop/desktop';
 
@@ -46,6 +47,7 @@ export class Screen extends StyledElement {
         <div class="c-screen__overlay"></div>
         <menu-component></menu-component>
         <div class="c-display-container">
+          <div class="c-notif-container"></div>
           <opened-apps-component></opened-apps-component>
           <desktop-component></desktop-component>
         </div>

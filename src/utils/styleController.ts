@@ -21,12 +21,17 @@ export function addStyleChangedEventListener(listener: EventListenerOrEventListe
 
 export function changeStyle(direction: string): string {
   const styleIndex = stylesList.findIndex((style) => style.call === currentStyle);
+
+  document.querySelectorAll('notif-component').forEach((el) => {
+    el.remove();
+  });
+
+
   if (direction === 'next') {
     if (styleIndex < stylesList.length - 1) {
       currentStyle = stylesList[styleIndex + 1].call;
       return currentStyle;
     } else {
-      currentStyle = stylesList[0].call;
       return currentStyle;
     }
   } else {
@@ -34,7 +39,6 @@ export function changeStyle(direction: string): string {
       currentStyle = stylesList[styleIndex - 1].call;
       return currentStyle;
     } else {
-      currentStyle = stylesList[stylesList.length - 1].call;
       return currentStyle;
     }
   }

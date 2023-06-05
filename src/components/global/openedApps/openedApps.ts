@@ -69,11 +69,6 @@ export class OpenedApps extends StyledElement {
       <style>
         ${OpenedApps.styles}
       </style>
-      <notif-component
-          .id=${"Style"}
-          .message=${"Vous pouvez passer au style suivant"}
-          .filelink=""
-        ></notif-component>
       ${repeat(
         this.openedApps,
         (app) => app.uuid, 

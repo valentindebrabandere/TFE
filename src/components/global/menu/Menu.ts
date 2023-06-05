@@ -41,6 +41,7 @@ export class Menu extends StyledElement {
 
   render() {
     this.updateStyles();
+
     const formattedTime = `${this.time
       .getHours()
       .toString()
@@ -53,11 +54,7 @@ export class Menu extends StyledElement {
     });
 
     return html`
-      <link rel="stylesheet" href="/src/components/global/menu/basic.css" />
-      <link
-        rel="stylesheet"
-        href="/src/components/global/menu/styles/${this.currentStyle}.css"
-      />
+    
       <div class="c-menu-bar">
         <ul class="c-menu-bar__left">
           <li class="c-menu-bar__item">

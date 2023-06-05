@@ -1,6 +1,7 @@
 // TextEdit.ts
 import { html, css } from 'lit';
 import { customElement, state, property } from 'lit/decorators.js';
+import { Notif } from "../../global/notif/notif";
 
 import { basic, styles } from './styles';
 
@@ -14,14 +15,17 @@ export class TextEdit extends StyledElement {
   @state() content: string = '';
   @state() styles = [basic, css``];
 
-  constructor() {
-    super();
-  }
-
   connectedCallback() {
     super.connectedCallback();
     this.updateStyles();
     this.classList.add('c-text-edit');
+
+    setTimeout(() => {
+      let newNotif = Notif.createNewNotification("Style", "User did something!", "");
+      let display = document.querySelector(".c-notif-container");
+      display?.appendChild(newNotif);
+    }, 200);
+    
   }
   
   //need to be called to change the style
