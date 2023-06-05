@@ -1,13 +1,10 @@
 .skeuo {
-    .c-notif-bar {
-        background: linear-gradient(to top,
-                #EEEEEE 0%,
-                #F5F5F5 15%,
-                #D7D8D5 100%);   
-        box-shadow: 0px 5px 15px 0px rgb(0, 0, 0, .7);
-    }
-
-    .c-notif-bar__icon{
-        scale: .8;
+    .c-notif {
+        border-radius: 10px;
+  
+        color: #4d4d4d;
+        -webkit-box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+        box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+        background-image:(linear-gradient(rgba(255,255,255,0.9), rgba(215,215,215,0.9)));
     }
 }

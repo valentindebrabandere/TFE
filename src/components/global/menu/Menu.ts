@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { customElement, state } from "lit/decorators.js";
-
 import { dispatchOpenLayoutEvent } from "../../../utils/layoutUtils";
 
 // utils imports

@@ -1,9 +1,16 @@
+.c-screen__container{
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    transition: transform 0.4s ease-in-out;
+}
+
 .c-screen {
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    transition: transform 0.3s ease-in-out;
     overflow: hidden;
 }
 

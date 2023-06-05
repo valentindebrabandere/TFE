@@ -1,7 +1,7 @@
 .c-notif-component{
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 12px;
     z-index: 1000;
     pointer-events: auto;
 }
@@ -12,19 +12,10 @@
     gap: 24px;
 
     padding: 12px 24px 12px 12px;
-    width: 250px;
-
-    border-radius: 15px;
-    border: 1px solid #ffffff2b;
-    outline: 1px solid #00000044;
+    width: 300px;
 
     color: #fff;
-    background: #4c4c4c5a;
-
-    filter: drop-shadow(0px 9px 10px rgba(21, 21, 15, 0.5));
-    -webkit-filter: drop-shadow(0px 9px 10px rgba(21, 21, 15, 0.5));
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background: #000;
 
     p{
         margin: 0;
@@ -62,3 +53,9 @@
 .c-notif__message{
     font-size: 14px;
 }
+
+
+@import "./styles/oneBit.scss";
+@import "./styles/grey.scss";
+@import "./styles/skeuo.scss";
+@import "./styles/modernMac.scss";

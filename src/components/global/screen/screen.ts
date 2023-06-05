@@ -17,6 +17,7 @@ export class Screen extends StyledElement {
 
   constructor() {
     super();
+    this.classList.add('c-screen__container');
   }
 
   connectedCallback() {
