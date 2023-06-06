@@ -10,6 +10,13 @@
       "childItems": []
     },
     {
+      "appname": "Excel",
+      "filename": "test.xls",
+      "filelink": "/content/oneBit/desktop/test.csv",
+      "childItems": [],
+      "position": {"top": "30vh", "left": "70vw"}
+    },
+    {
       "appname": "TextEdit",
       "filename": "Journal.txt",
       "filelink": "/content/oneBit/desktop/hello.html",

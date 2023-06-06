@@ -1,6 +1,7 @@
 import { Aperçu } from "../components/apps/aperçu/aperçu";
 import { Figma } from "../components/apps/figma/figma";
 import { TextEdit } from "../components/apps/textEdit/textEdit";
+import { Excel } from "../components/apps/excel/excel";
 import { Corbeille } from "../components/apps/corbeille/corbeille";
 import { Finder } from "../components/apps/finder/finder";
 
@@ -9,7 +10,8 @@ import { Finder } from "../components/apps/finder/finder";
 // const styleController = new GlobalStyleController();
 // var currentStyle = styleController.style;
 
-const allApps = [Aperçu, Figma, TextEdit, Finder];
+//add new apps here
+const allApps = [Aperçu, Figma, TextEdit, Finder, Excel];
 
 export function getDockApps(style: string) {
   switch (style) {
@@ -22,7 +24,7 @@ export function getDockApps(style: string) {
     case 'grey':
       return [Finder, TextEdit];
     case 'oneBit':
-      return [Finder, TextEdit];
+      return [Finder, TextEdit, Excel, Aperçu];
     default:
       return [];
   }

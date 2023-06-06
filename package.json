@@ -11,11 +11,15 @@
   },
   "dependencies": {
     "@interactjs/interact": "^1.10.17",
+    "@types/papaparse": "^5.3.7",
+    "@types/tabulator-tables": "^5.4.8",
     "animejs": "^3.2.1",
     "interactjs": "^1.10.17",
     "lit": "^2.6.1",
+    "papaparse": "^5.4.1",
     "rxjs": "^7.8.1",
     "sharp": "^0.32.1",
+    "tabulator-tables": "^5.5.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
