@@ -13,5 +13,5 @@
 }
 
 img {
-    filter: contrast(1.2), saturate(0.8);
+    filter: saturate(0.8);
 }

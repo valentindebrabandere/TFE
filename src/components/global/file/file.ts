@@ -25,6 +25,7 @@ export class FileComponent extends StyledElement {
   @state() currentStyle = "";
 
   private differentIconDisplayApps = ["Aperçu"];
+  private defaultIconStyles = ["oneBit", "grey"];
 
   constructor() {
     super();
@@ -119,12 +120,12 @@ export class FileComponent extends StyledElement {
     let fileIconPath = "";
     let additionalClass = "";
 
-    if (this.differentIconDisplayApps.includes(this.appname)) {
+    if (this.defaultIconStyles.includes(this.currentStyle) || !this.differentIconDisplayApps.includes(this.appname)) {
+      fileIconPath = this.defaultIcon(app);
+    } else {
       const customIconResult = this.customIcon();
       fileIconPath = customIconResult.path;
       additionalClass = customIconResult.additionalClass;
-    } else {
-      fileIconPath = this.defaultIcon(app);
     }
 
     return html`

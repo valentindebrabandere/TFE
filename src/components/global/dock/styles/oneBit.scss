@@ -2,9 +2,9 @@
     .c-dock {
         margin-bottom: 0;
         background: #fff;
-        border: 2px solid #000;
+        border: 3px solid #000;
         width: 100%;
-        height: 45px;
+        height: 55px;
         gap: 5px;
     }
 
@@ -13,7 +13,7 @@
     }
     
     .c-dock__active::before {
-        width: 2px;
+        width: 3px;
         height: 100%;
         background-color: #000;
     }

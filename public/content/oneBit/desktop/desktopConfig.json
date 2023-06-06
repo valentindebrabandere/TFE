@@ -4,10 +4,17 @@
   "childItems": [
     {
       "appname": "Aperçu",
-      "filename": "Image1.jpg",
-      "filelink": "/content/oneBit/desktop/desktopImages/image1.jpg",
+      "filename": "affiche.jpg",
+      "filelink": "/content/oneBit/desktop/desktopImages/affiche.png",
       "position": {"top": "30vh", "left": "60vw"},
       "childItems": []
+    },
+    {
+      "appname": "TextEdit",
+      "filename": "Journal.txt",
+      "filelink": "/content/oneBit/desktop/hello.html",
+      "childItems": [],
+      "position": {"top": "20vh", "left": "60vw"}
     },
     {
       "appname": "Finder",

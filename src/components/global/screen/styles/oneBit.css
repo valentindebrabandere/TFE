@@ -3,13 +3,15 @@
 *::after {
     font-family: "Munro", system-ui, sans-serif;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .c-screen {
-    background: #C4C4C4;
+    /* background: #C4C4C4; */
+    background: url(/images/wallpaper/oneBit.jpg) 50% 50% no-repeat;
+    background-size: cover;
 }
 
 img {
-    filter: grayscale(1) contrast(1.8);
+    filter: grayscale(1);
 }

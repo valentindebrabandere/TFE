@@ -2,10 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-const watchedFolder = './public/content/modernMac/desktop/desktopImages';
-const thumbnailsFolder = './public/content/modernMac/desktop/desktopImages/thumb';
-const thumbnailWidth = 100;
-const thumbnailHeight = 100;
+const watchedFolder = './public/content/oneBit/desktop/desktopImages';
+const thumbnailsFolder = './public/content/oneBit/desktop/desktopImages/thumb';
+const thumbnailWidth = 75;
+const thumbnailHeight = 75;
 
 // Delete existing thumbnails
 fs.readdirSync(thumbnailsFolder).forEach(file => {
