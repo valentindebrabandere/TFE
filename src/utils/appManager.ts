@@ -15,6 +15,8 @@ export function getDockApps(style: string) {
   switch (style) {
     case 'modernMac':
       return [Finder, Figma, TextEdit, Aperçu];
+    case 'flat':
+      return [Finder, Figma, TextEdit, Aperçu];
     case 'skeuo':
       return [Finder, TextEdit, Aperçu];
     case 'grey':

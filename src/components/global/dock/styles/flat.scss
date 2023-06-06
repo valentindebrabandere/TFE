@@ -1,0 +1,16 @@
+.flat {
+    /* CSS here */
+    .c-dock{
+        border-radius: 2px;
+        
+        background: #ffffffb4;
+
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+      }
+
+      .c-dock__active::before{
+        border-radius: 15px;
+        background-color: #0000004b
+      }
+}
