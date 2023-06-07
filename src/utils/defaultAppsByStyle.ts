@@ -11,10 +11,11 @@ const defaultAppsByStyle = new Map<string, AppData[]>();
 
 defaultAppsByStyle.set('modernMac', [
   { id: 'Finder', filelink: '/content/modernMac/desktop/desktopConfig.json', childItems: [] },
-  { id: 'TextEdit', filelink: '/content/modernMac/documents/example.txt', childItems: [] },
+  { id: 'TextEdit', filelink: '/content/modernMac/desktop/hello.html', childItems: [] },
 ]);
+
 defaultAppsByStyle.set('oneBit', [
-  { id: 'Corbeille', filelink: '/content/oneBit/desktop/desktopConfig.json', childItems: [] },
+  { id: 'Finder', filelink: '/content/oneBit/desktop/desktopConfig.json', childItems: [] },
 ]);
 
 export function getDefaultAppsForStyle(style: string) {

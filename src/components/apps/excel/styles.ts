@@ -3,30 +3,38 @@ import { css, CSSResult } from 'lit';
 import "/src/assets/globalStyles/typoImports.css"
 
 export const basic = css`
-  .c-text-edit {
-    display: flex;
-    flex-direction: column;
+  /* CSS here */
+  .c-excel {
+    display: block;
     width: 60vw;
     height: 60vh;
-    background-color: #fff;
+    overflow-y: scroll;
   }
 
-  .text-edit__editor {
-    width: 100%;
-    height: 100%;
-    flex-grow: 1;
-    padding: 2rem 8%;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    line-height: 1.4;
-    overflow-y: auto;
-    box-sizing: border-box;
+  .c-excel table {
+    border-collapse: collapse;
+    text-align: left;
+    table-layout: fixed;
   }
 
-  .text-edit__editor > * {
-    word-break: keep-all;
-}
+  .c-excel th, .c-excel td {
+    width: fit-content;
+    padding: 2px 5px;
+    border: 1px solid #ddd;
+  }
+
+  .c-excel th {
+    background-color: #f4f4f4;
+  }
+
+  .c-excel tr:nth-child(even) {
+    background-color: #f8f8f8;
+  }
+
+  :focus-visible {
+    outline: 2px solid #000;
+  }
+
 `;
 
 interface StyleObject {

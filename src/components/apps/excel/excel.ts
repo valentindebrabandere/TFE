@@ -10,8 +10,14 @@ import { basic, styles } from './styles';
 export class Excel extends StyledElement {
   @property({ type: String, attribute: 'filelink' }) filelink: string | undefined;
 
-  @state() content: Array<Record<string, unknown>> = [{}];
-  @state() styles = [basic, css``];  // Update with styles for ExcelComponent
+  @state() content: Array<Record<string, unknown>> = Array(20).fill(0).map(() => {
+    let record: Record<string, unknown> = {};
+    for (let i = 0; i < 20; i++) {
+      record[`column${i}`] = '';
+    }
+    return record;
+  });
+  @state() styles = [basic, css``]; // Update with styles for ExcelComponent
 
   connectedCallback() {
     super.connectedCallback();
@@ -25,7 +31,7 @@ export class Excel extends StyledElement {
   //need to be called to change the style
   updateStyles() {
     //select the current style (globalStyledElement.ts)
-    this.styles = this.applyStyles(styles, basic);  // Update with styles for ExcelComponent
+    this.styles = this.applyStyles(styles, basic); // Update with styles for ExcelComponent
   }
 
   async updated(changedProperties: Map<string, any>) {
@@ -38,15 +44,15 @@ export class Excel extends StyledElement {
   }
 
   async fetchFileContent(filelink: string): Promise<Array<Record<string, unknown>>> {
-    if (!filelink) return [{}];
-  
+    if (!filelink) return this.content;
+
     try {
       const response = await fetch(filelink);
       const csvContent = await response.text();
       const parsedContent = Papa.parse(csvContent, { header: true });
-      return parsedContent.data;
+      return parsedContent.data as Array<Record<string, unknown>>; // Explicitly cast to the expected type
     } catch (error) {
-      return [{}];
+      return this.content;
     }
   }
 
@@ -57,18 +63,22 @@ export class Excel extends StyledElement {
         /* Import the good style */
         ${this.styles}
       </style>
-      <table>
+      <table class="c-excel__table">
         <thead>
           <tr>
-            ${Object.keys(this.content[0] || {}).map(header => html`<th>${header}</th>`)}
+            ${Object.keys(this.content[0] || {}).map(
+              header => html`<th contenteditable>${header}</th>`
+            )}
           </tr>
         </thead>
         <tbody>
-          ${this.content.map(row => html`
-            <tr>
-              ${Object.values(row).map(cell => html`<td>${cell}</td>`)}
-            </tr>
-          `)}
+          ${this.content.map(row =>
+            html`
+              <tr>
+                ${Object.values(row).map(cell => html`<td contenteditable>${cell}</td>`)}
+              </tr>
+            `
+          )}
         </tbody>
       </table>
     `;

@@ -49,7 +49,7 @@ export class Layout extends StyledElement {
       anime({
         targets: screen,
         scale: 0.8,
-        duration: 350, // duration of animation in ms
+        duration: 250, // duration of animation in ms
         easing: 'easeInQuad',
         complete: () => {
           // When the scale down animation ends, change the style and instantly scale up the screen
@@ -72,7 +72,7 @@ export class Layout extends StyledElement {
               anime({
                 targets: screen,
                 scale: 1,
-                duration: 500, // duration of animation in ms
+                duration: 400, // duration of animation in ms
                 easing: 'easeOutQuad',
               });
             }
@@ -85,7 +85,7 @@ export class Layout extends StyledElement {
       anime({
         targets: screen,
         scale: 1.2,
-        duration: 350, // duration of animation in ms
+        duration: 250, // duration of animation in ms
         easing: 'easeInQuad',
         complete: () => {
           // Instantly scale up the screen and then animate scaling down to the original size
@@ -97,7 +97,7 @@ export class Layout extends StyledElement {
               anime({
                 targets: screen,
                 scale: 1,
-                duration: 500, // duration of animation in ms
+                duration: 400, // duration of animation in ms
                 easing: 'easeOutQuad',
               });
             }

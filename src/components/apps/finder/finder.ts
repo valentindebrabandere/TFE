@@ -68,8 +68,6 @@ export class Finder extends StyledElement {
     fileComponent.open();
     this.fileClicked = true;
   }
-  
-  
 
   fetchDesktopConfig() {
     const currentStyle = this.globalStyleController.style;
