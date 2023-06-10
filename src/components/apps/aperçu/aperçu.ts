@@ -22,6 +22,7 @@ export class Aperçu extends StyledElement {
     super.connectedCallback();
     this.updateStyles();
     this.classList.add('c-aperçu');
+    this.classList.add('c-app');
   }
   
   //need to be called to change the style
@@ -48,7 +49,7 @@ export class Aperçu extends StyledElement {
       </style>
         <!-- es6 if statement filelink undefied -->
         ${this.filelink ? 
-        html`<img class="c-apercu__content" src="${this.filelink}" alt="Preview" />` 
+        html`<img class="c-apercu__content c-app__content" src="${this.filelink}" alt="Preview" />` 
         : html`<div class="c-apecu__no-content">
           <h2>Pas de ficher ouvert</h2>
           <p>Ouvrez une image pour afficher un résultat</p>

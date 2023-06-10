@@ -12,6 +12,7 @@ export class Window extends StyledElement {
   @property({ type: String }) appUuid: string = '';
   @property({ type: Number }) windowNumber: number = 0;
   @property({ type: Boolean }) focused = false;
+  @property({ type: Boolean }) scaled = false;
 
   private uuid: string = '';
 
@@ -61,7 +62,30 @@ export class Window extends StyledElement {
   }
 
   handleScaleClick() {
-    console.log('scale window')
+    this.scaled = !this.scaled;
+    this.classList.toggle('c-window--scaled');
+    const app = this.querySelector('.c-app');
+    const containerHeight = document.querySelector('.c-display-container')?.clientHeight;
+    const headHeight = this.querySelector('.js-window__head')?.clientHeight;
+    if(app === null) return;
+    if (containerHeight === undefined || headHeight === undefined) return;
+    app?.setAttribute('style', `max-height: ${containerHeight - headHeight}px`);
+    app?.classList.toggle('c-app--scaled');
+    if (this.scaled) {
+      const head = this.querySelector('.js-window__head');
+      //remove data dragger
+      head?.removeAttribute('data-drag');
+    } else {
+      const head = this.querySelector('.js-window__head');
+      //add data dragger
+      head?.setAttribute('data-drag', 'dragger');
+    }
+
+    const appContent = this.querySelector('.c-app__content');
+    if (appContent === null) return;
+    //check if the content is vertical or horizontal
+    appContent?.classList.toggle('c-app__content--scaled');
+    appContent.clientHeight > appContent.clientWidth ? appContent?.classList.toggle('horizontal') : appContent?.classList.toggle('vertical');
   }
 
   disconnectedCallback() {

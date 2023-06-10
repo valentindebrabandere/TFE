@@ -20,6 +20,7 @@ export class Finder extends StyledElement {
   constructor() {
     super();
     this.classList.add('c-finder');
+    this.classList.add('c-app');
   }
 
   connectedCallback() {

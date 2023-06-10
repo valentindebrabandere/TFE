@@ -23,6 +23,7 @@ export class Excel extends StyledElement {
     super.connectedCallback();
     this.updateStyles();
     this.classList.add('c-excel');
+    this.classList.add('c-app');
     if (this.filelink) {
       this.fetchFileContent(this.filelink);
     }

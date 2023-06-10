@@ -18,6 +18,8 @@ export class DefaultApp extends StyledElement {
   constructor() {
     super();
     this.name = '';
+    this.classList.add('c-default');
+    this.classList.add('c-app');
   }
 
   connectedCallback() {
@@ -40,7 +42,6 @@ export class DefaultApp extends StyledElement {
         /* Import the good style */
         ${this.styles}
       </style>
-      <div class="c-default">
         <img class="c-default__icon" src=${app.icon(currentStyle)} alt="App icon" />
         <h2 class="c-default__title">L'application ${this.name} se met a jour</h2>
         <div class="c-default__animtxt">
@@ -49,7 +50,6 @@ export class DefaultApp extends StyledElement {
           <span class="c-default__point c-default__point--2">.</span>
           <span class="c-default__point c-default__point--3">.</span>
         </div>
-      </div>
     `;
   }
 }

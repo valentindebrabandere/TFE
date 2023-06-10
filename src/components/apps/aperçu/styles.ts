@@ -58,6 +58,9 @@ const styleSkeuo:StyleObject = {
 const styleModernMac:StyleObject = {
     styleName: "modernMac",
     css: css`
+      .c-aperçu {
+        background-color: #2D2C2C;
+      }
 
     `
 };

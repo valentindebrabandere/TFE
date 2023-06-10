@@ -19,6 +19,7 @@ export class TextEdit extends StyledElement {
     super.connectedCallback();
     this.updateStyles();
     this.classList.add('c-text-edit');
+    this.classList.add('c-app');
 
     setTimeout(() => {
       let newNotif = Notif.createNewNotification("Style", "User did something!", "");

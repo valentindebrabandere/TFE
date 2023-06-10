@@ -24,6 +24,7 @@ export class Corbeille extends StyledElement {
   constructor() {
     super();
     this.classList.add('c-finder');
+    this.classList.add('c-app');
   }
 
   connectedCallback() {
