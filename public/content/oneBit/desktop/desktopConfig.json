@@ -3,50 +3,52 @@
   "style": "oneBit",
   "childItems": [
     {
-      "appname": "Aperçu",
-      "filename": "affiche.jpg",
-      "filelink": "/content/oneBit/desktop/desktopImages/affiche.png",
-      "position": {"top": "30vh", "left": "60vw"},
-      "childItems": []
+      "appname": "TextEdit",
+      "filename": "Journal.txt",
+      "filelink": "/content/oneBit/desktop/journal.html",
+      "childItems": [],
+      "position": {"top": "15vh", "left": "60vw"}
     },
     {
-      "appname": "Excel",
-      "filename": "test.xls",
-      "filelink": "/content/oneBit/desktop/test.csv",
+      "appname": "Aperçu",
+      "filename": "affiche.jpg",
+      "filelink": "/content/oneBit/desktop/affiche.png",
+      "position": {"top": "15vh", "left": "66vw"},
+      "childItems": []
+    },
+
+
+    {
+      "appname": "TextEdit",
+      "filename": "business plan.txt",
+      "filelink": "/content/oneBit/desktop/buisnessPlan.html",
       "childItems": [],
-      "position": {"top": "30vh", "left": "70vw"}
+      "position": {"top": "15vh", "left": "90vw"}
     },
     {
       "appname": "TextEdit",
-      "filename": "Journal.txt",
-      "filelink": "/content/oneBit/desktop/hello.html",
+      "filename": "bébé noms.txt",
+      "filelink": "/content/oneBit/desktop/baby.html",
       "childItems": [],
-      "position": {"top": "20vh", "left": "60vw"}
+      "position": {"top": "30vh", "left": "90vw"}
+    },
+    {
+      "appname": "TextEdit",
+      "filename": "lettre investisseurs.txt",
+      "filelink": "/content/oneBit/desktop/lettre.html",
+      "childItems": [],
+      "position": {"top": "45vh", "left": "90vw"}
     },
     {
       "appname": "Finder",
-      "filename": "Fooldér daaa",
+      "filename": "Famille",
       "filelink": "",
-      "position": {"top": "40vh", "left": "60vw"},
+      "position": {"top": "30vh", "left": "83vw"},
       "childItems": [
         {
-          "appname": "TextEdit",
-          "filename": "Hello.txt",
-          "filelink": "/content/oneBit/desktop/hello.html",
-          "childItems": [],
-          "position": {}
-        },
-        {
-          "appname": "Aperçu",
-          "filename": "Image2.jpg",
-          "filelink": "/content/oneBit/desktop/desktopImages/image2.jpg",
-          "childItems": [],
-          "position": {}
-        },
-        {
-          "appname": "Aperçu",
-          "filename": "Image3.jpg",
-          "filelink": "/content/oneBit/desktop/desktopImages/image3.jpg",
+          "appname": "Excel",
+          "filename": "test.xls",
+          "filelink": "/content/oneBit/desktop/test.csv",
           "childItems": [],
           "position": {}
         },
@@ -71,6 +73,43 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "appname": "Finder",
+      "filename": "Entreprise",
+      "filelink": "",
+      "position": {"top": "45vh", "left": "83vw"},
+      "childItems": [
+        {
+          "appname": "TextEdit",
+          "filename": "specs_produit.txt",
+          "filelink": "/content/oneBit/desktop/entreprise/productSpecs.html",
+          "childItems": [],
+          "position": {}
+        },
+        {
+          "appname": "TextEdit",
+          "filename": "concurrence.txt",
+          "filelink": "/content/oneBit/desktop/entreprise/competitors.html",
+          "childItems": [],
+          "position": {}
+        },
+        {
+          "appname": "Excel",
+          "filename": "finencial_projection.xls",
+          "filelink": "/content/oneBit/desktop/entreprise/projection.csv",
+          "childItems": [],
+          "position": {}
+        },
+        {
+          "appname": "Aperçu",
+          "filename": "logo-test.jpg",
+          "filelink": "/content/oneBit/desktop/entreprise/logo.png",
+          "childItems": [],
+          "position": {}
+        }
+        
       ]
     }
   ]

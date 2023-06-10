@@ -6,8 +6,10 @@ export const basic = css`
   /* CSS here */
   .c-excel {
     display: block;
-    width: 60vw;
-    height: 60vh;
+    width: fit-content;
+    height: fit-content;
+    max-width: 60vw;
+    max-height: 60vh;
     overflow-y: scroll;
   }
 

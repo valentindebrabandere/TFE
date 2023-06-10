@@ -40,6 +40,15 @@ const styleOneBit:StyleObject = {
     
     /* CSS here */
 
+    p{
+      margin-top: 0;
+      font-size: 18px;
+  }
+  
+    h2{
+       margin-bottom: 6px; 
+    }
+
     ::selection {
       background-color: black;
       color: white;
