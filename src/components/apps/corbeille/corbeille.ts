@@ -20,6 +20,8 @@ export class Corbeille extends StyledElement {
   public fileClicked: boolean = false;
 
   size: DOMRect | null = null;
+  static isHidden: boolean;
+  static uuid: any;
 
   constructor() {
     super();

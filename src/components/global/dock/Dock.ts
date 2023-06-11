@@ -28,17 +28,17 @@ export class Dock extends StyledElement {
     this.updateStyles();
 
     eventBus.subscribe("windowHidden", (data: any) => {
-      let app = getApplicationByID(data.id);
+      let app: any = getApplicationByID(data.id);
       // Create a copy of the app object with the uuid property
-      app = {...app, uuid: data.uuid};
+      app = { ...app, uuid: data.uuid };
       dockAppsActives.unshift(app);
       app.isHidden = true;
       this.requestUpdate();
     });
-    
 
     eventBus.subscribe("restoreWindow", (data: any) => {
-      const index = dockAppsActives.findIndex(app => app.uuid === data.uuid);
+      const index = dockAppsActives.findIndex((app) => app.uuid === data.uuid);
+
       if (index !== -1) {
         dockAppsActives[index].isHidden = false; // If you want to update the isHidden property before removal
         dockAppsActives.splice(index, 1);
@@ -66,7 +66,7 @@ export class Dock extends StyledElement {
           )}
         </div>
         <div class="c-dock__active js-dock__active">
-          ${dockAppsActives.map((app) => {
+          ${dockAppsActives.map((app: any) => {
             return app.name !== "Corbeille"
               ? html`
                   <app-icon-component

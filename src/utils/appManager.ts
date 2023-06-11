@@ -39,10 +39,13 @@ const iconPathByStyle = (appName: string, style: string) =>`/public/images/appIc
 
 interface Application {
   name: string;
-  component: typeof HTMLElement;
+  component: { new (): HTMLElement; prototype: HTMLElement; };
   icon: (style: string) => string;
-  fileIcon?: (style: string) => string;
+  fileIcon?: ((style: string) => string) | undefined;
+  uuid?: string;
+  isHidden?: boolean;
 }
+
 
 function populateApplicationsList() {
   applications.clear();

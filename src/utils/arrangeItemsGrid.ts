@@ -13,7 +13,7 @@ export function arrangeItemsInGrid(boundingBox: DOMRect, gap: number, itemsCount
     const itemHeight: number = 90;
   
     // Determine how many items fit in a row.
-    let itemsPerRow = Math.floor((boundingBox.width + gap) / (itemWidth + gap));
+    let itemsPerRow = Math.floor((boundingBox.width + gap - itemWidth) / (itemWidth + gap));
   
     // If the bounding box is too small for even a single item, return an empty array.
     if (itemsPerRow === 0) {
@@ -26,7 +26,7 @@ export function arrangeItemsInGrid(boundingBox: DOMRect, gap: number, itemsCount
       let columnIndex = i % itemsPerRow;
   
       // Calculate the top and left position for the current item.
-      let top = 75 + rowIndex * (itemHeight + gap);
+      let top = 20 + rowIndex * (itemHeight + gap);
       let left = 30 + columnIndex * (itemWidth + gap);
   
       // Add the position to the array.
