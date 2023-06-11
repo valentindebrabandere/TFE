@@ -77,7 +77,7 @@ export class Corbeille extends StyledElement {
   fetchDesktopConfig() {
     const currentStyle = this.globalStyleController.style;
 
-    fetch(`/content/${currentStyle}/trash.json`)
+    fetch(`/content/${currentStyle}/trash/trash.json`)
       .then(response => {
         if (!response.ok) {
           throw new Error("HTTP error " + response.status);

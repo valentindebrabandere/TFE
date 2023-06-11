@@ -68,3 +68,4 @@ function onStyleChanged() {
     addNewOpenedApp(appData.id, app.component, appData.filelink, appData.childItems);
   });
 }
+

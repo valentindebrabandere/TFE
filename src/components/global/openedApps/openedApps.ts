@@ -3,6 +3,7 @@ import { repeat } from 'lit/directives/repeat.js';
 import { customElement, state } from 'lit/decorators.js';
 import { Subscription } from 'rxjs';
 import { openedAppsSubject, focusedAppUuidSubject} from '../../../utils/openedAppsProvider'; 
+import {eventBus} from '../../../utils/eventBus';
 
 import type { OpenedApp } from '../../../utils/openedAppsProvider';
 
@@ -49,6 +50,14 @@ export class OpenedApps extends StyledElement {
     this.classList.add('c-opened-apps');
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    eventBus.subscribe("restoreWindow", (data: any) => {
+      focusedAppUuidSubject.next(data.uuid);
+
+    });
+  }
+
   updateStyles() {
     //select the current style (globalStyledElement.ts)
     this.currentStyle = this.globalStyleController.style;
@@ -73,7 +82,7 @@ export class OpenedApps extends StyledElement {
         this.openedApps,
         (app) => app.uuid, 
         (app, i) => html`
-          <window-component .appUuid=${app.uuid} .windowNumber=${i} .focused=${app.uuid === this.focusedAppUuid} @click=${() => this.handleWindowClick(app.uuid)}>
+          <window-component .id=${app.id} .appUuid=${app.uuid} .windowNumber=${i} .focused=${app.uuid === this.focusedAppUuid} @click=${() => this.handleWindowClick(app.uuid)}>
             <dynamic-element .componentClass=${app.component} .options=${{ filelink: app.filelink, childItems: app.childItems }}/>
           </window-component>
         `
