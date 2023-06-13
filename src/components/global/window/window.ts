@@ -38,13 +38,16 @@ export class Window extends StyledElement {
 
   firstUpdated() {
     this.uuid = this.appUuid;
-    
+
+    console.log(this.windowNumber)
+
+      
     const topOffset = (this.windowNumber * 5) % 100;
     const leftOffset = (this.windowNumber * 3) % 100;
     this.style.top = `${10 + topOffset}%`;
     this.style.left = `${10 + leftOffset}%`;  
-    
   }
+  
 
   updated(changedProperties: PropertyValues) {
     super.updated(changedProperties);
@@ -60,6 +63,7 @@ export class Window extends StyledElement {
     }
     if (changedProperties.has("top") && this.top !== undefined) {
       this.style.top = `${this.top || (this.windowNumber * 5) % 100}%`;
+
     }
     
     if (changedProperties.has("left") && this.left !== undefined) {

@@ -68,9 +68,12 @@ export class OpenedApps extends StyledElement {
   }
 
   disconnectedCallback() {
+    this.style.top = '';
+    this.style.left = '';
     this.subscription.unsubscribe();
     super.disconnectedCallback();
   }
+  
 
 
   render() {

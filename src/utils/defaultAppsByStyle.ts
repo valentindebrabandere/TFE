@@ -17,7 +17,8 @@ defaultAppsByStyle.set('modernMac', [
 ]);
 
 defaultAppsByStyle.set('oneBit', [
-  { id: 'TextEdit', filelink: '/content/modernMac/desktop/hello.html', childItems: [], top: 10, left: 30 },
+  { id: 'Aperçu', filelink: '/content/oneBit/desktop/entreprise/logo.png', childItems: [], top: 10, left: 10 },
+  { id: 'TextEdit', filelink: '/content/oneBit/desktop/baby.html', childItems: [], top: 15, left: 35 },
 ]);
 
 export function getDefaultAppsForStyle(style: string) {

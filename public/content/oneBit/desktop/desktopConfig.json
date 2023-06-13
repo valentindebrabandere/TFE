@@ -3,18 +3,18 @@
   "style": "oneBit",
   "childItems": [
     {
+      "appname": "Aperçu",
+      "filename": "affiche.jpg",
+      "filelink": "/content/oneBit/desktop/affiche.png",
+      "position": {"top": "15%", "left": "60%"},
+      "childItems": []
+    },
+    {
       "appname": "TextEdit",
       "filename": "Journal.txt",
       "filelink": "/content/oneBit/desktop/journal.html",
       "childItems": [],
-      "position": {"top": "15%", "left": "60%"}
-    },
-    {
-      "appname": "Aperçu",
-      "filename": "affiche.jpg",
-      "filelink": "/content/oneBit/desktop/affiche.png",
-      "position": {"top": "15%", "left": "66%"},
-      "childItems": []
+      "position": {"top": "15%", "left": "66%"}
     },
 
 
