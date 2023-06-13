@@ -68,7 +68,7 @@ export class Excel extends StyledElement {
         <thead>
           <tr>
             ${Object.keys(this.content[0] || {}).map(
-              header => html`<th contenteditable>${header}</th>`
+              header => html`<th contenteditable spellcheck=false>${header}</th>`
             )}
           </tr>
         </thead>

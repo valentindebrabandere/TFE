@@ -40,6 +40,7 @@ export class OpenedApps extends StyledElement {
       this.openedApps = apps;
       this.requestUpdate();
     });
+
     // Create a new subscription for focusedAppUuidSubject
     this.subscription.add(
       focusedAppUuidSubject.subscribe(uuid => {
@@ -54,7 +55,6 @@ export class OpenedApps extends StyledElement {
     super.connectedCallback();
     eventBus.subscribe("restoreWindow", (data: any) => {
       focusedAppUuidSubject.next(data.uuid);
-
     });
   }
 
@@ -82,7 +82,7 @@ export class OpenedApps extends StyledElement {
         this.openedApps,
         (app) => app.uuid, 
         (app, i) => html`
-          <window-component .id=${app.id} .appUuid=${app.uuid} .windowNumber=${i} .focused=${app.uuid === this.focusedAppUuid} @click=${() => this.handleWindowClick(app.uuid)}>
+          <window-component .id=${app.id} .appUuid=${app.uuid} .top=${app.top} .left=${app.left} .windowNumber=${i} .focused=${app.uuid === this.focusedAppUuid} @click=${() => this.handleWindowClick(app.uuid)}>
             <dynamic-element .componentClass=${app.component} .options=${{ filelink: app.filelink, childItems: app.childItems }}/>
           </window-component>
         `

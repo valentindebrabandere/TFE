@@ -7,13 +7,13 @@
       "filename": "Journal.txt",
       "filelink": "/content/oneBit/desktop/journal.html",
       "childItems": [],
-      "position": {"top": "15vh", "left": "60vw"}
+      "position": {"top": "15%", "left": "60%"}
     },
     {
       "appname": "Aperçu",
       "filename": "affiche.jpg",
       "filelink": "/content/oneBit/desktop/affiche.png",
-      "position": {"top": "15vh", "left": "66vw"},
+      "position": {"top": "15%", "left": "66%"},
       "childItems": []
     },
 
@@ -23,27 +23,27 @@
       "filename": "business plan.txt",
       "filelink": "/content/oneBit/desktop/buisnessPlan.html",
       "childItems": [],
-      "position": {"top": "15vh", "left": "90vw"}
+      "position": {"top": "15%", "left": "92%"}
     },
     {
       "appname": "TextEdit",
       "filename": "bébé noms.txt",
       "filelink": "/content/oneBit/desktop/baby.html",
       "childItems": [],
-      "position": {"top": "30vh", "left": "90vw"}
+      "position": {"top": "30%", "left": "92%"}
     },
     {
       "appname": "TextEdit",
       "filename": "lettre investisseurs.txt",
       "filelink": "/content/oneBit/desktop/lettre.html",
       "childItems": [],
-      "position": {"top": "45vh", "left": "90vw"}
+      "position": {"top": "45%", "left": "92%"}
     },
     {
       "appname": "Finder",
       "filename": "Famille",
       "filelink": "",
-      "position": {"top": "30vh", "left": "83vw"},
+      "position": {"top": "30%", "left": "83%"},
       "childItems": [
         {
           "appname": "Excel",
@@ -79,7 +79,7 @@
       "appname": "Finder",
       "filename": "Entreprise",
       "filelink": "",
-      "position": {"top": "45vh", "left": "83vw"},
+      "position": {"top": "45%", "left": "83%"},
       "childItems": [
         {
           "appname": "TextEdit",

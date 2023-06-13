@@ -5,17 +5,19 @@ interface AppData {
   id: string;
   filelink?: string;
   childItems?: FileItem[];
+  top?: number; // percent
+  left?: number; // percent
 }
 
 const defaultAppsByStyle = new Map<string, AppData[]>();
 
 defaultAppsByStyle.set('modernMac', [
-  { id: 'Finder', filelink: '/content/modernMac/desktop/desktopConfig.json', childItems: [] },
-  { id: 'TextEdit', filelink: '/content/modernMac/desktop/hello.html', childItems: [] },
+  { id: 'Finder', filelink: '/content/modernMac/desktop/desktopConfig.json', childItems: [], top: 20, left: 20 },
+  { id: 'TextEdit', filelink: '/content/modernMac/desktop/hello.html', childItems: [], top: 10, left: 10 },
 ]);
 
 defaultAppsByStyle.set('oneBit', [
-  { id: 'Finder', filelink: '/content/oneBit/desktop/desktopConfig.json', childItems: [] },
+  { id: 'TextEdit', filelink: '/content/modernMac/desktop/hello.html', childItems: [], top: 10, left: 30 },
 ]);
 
 export function getDefaultAppsForStyle(style: string) {

@@ -10,6 +10,8 @@ export interface OpenedApp {
   id: string;
   component: any;
   uuid: string;
+  top?: number;
+  left?: number;
   filelink?: string;
   childItems?: FileItem[];
 }
@@ -18,9 +20,9 @@ export const openedAppsSubject = new BehaviorSubject<OpenedApp[]>([]);
 export const focusedAppUuidSubject = new BehaviorSubject<string>('');
 
 
-export function addNewOpenedApp(id: string, component: any, filelink?: string, childItems?: FileItem[]) {
+export function addNewOpenedApp(id: string, component: any, filelink?: string, childItems?: FileItem[], top?: number, left?: number) {
   const currentApps = openedAppsSubject.getValue();
-  const newApp = { id, component, uuid: uuidv4(), filelink, childItems };
+  const newApp = { id, component, uuid: uuidv4(), filelink, childItems, top, left };
   openedAppsSubject.next([...currentApps, newApp]);
   focusedAppUuidSubject.next(newApp.uuid);  // update the focused app
 }
@@ -65,7 +67,7 @@ function onStyleChanged() {
   // Open each default app.
   defaultApps.forEach(appData => {
     const app = getApplicationByID(appData.id);
-    addNewOpenedApp(appData.id, app.component, appData.filelink, appData.childItems);
+    addNewOpenedApp(appData.id, app.component, appData.filelink, appData.childItems, appData.top, appData.left);
   });
 }
 

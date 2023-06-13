@@ -20,13 +20,24 @@ export class TextEdit extends StyledElement {
     this.updateStyles();
     this.classList.add('c-text-edit');
     this.classList.add('c-app');
+    this.notifCheck();
+  }
 
-    setTimeout(() => {
-      let newNotif = Notif.createNewNotification("Style", "User did something!", "");
-      let display = document.querySelector(".c-notif-container");
-      display?.appendChild(newNotif);
-    }, 200);
-    
+  notifCheck(){
+
+    if(this.filelink?.includes("journal.html")){
+      if(this.filelink?.includes("flat")){
+        return;
+      }
+      //create a notification
+      setTimeout(() => {
+        let newNotif = Notif.createNewNotification("Style", "Aller au style suivant", "");
+        let display = document.querySelector(".c-notif-container");
+        display?.appendChild(newNotif);
+      }, 5000);
+
+    }
+
   }
   
   //need to be called to change the style
@@ -73,6 +84,7 @@ export class TextEdit extends StyledElement {
        <div
         class="text-edit__editor"
         contenteditable
+        spellcheck=false
         .innerHTML="${this.content}"
       ></div>
     `;

@@ -14,6 +14,9 @@ export class Window extends StyledElement {
   @property({ type: Boolean }) focused = false;
   @property({ type: Boolean }) scaled = false;
 
+  @property({ type: Number }) top: number = 0;
+  @property({ type: Number }) left: number = 0;
+
   private uuid: string = "";
 
   constructor() {
@@ -35,11 +38,12 @@ export class Window extends StyledElement {
 
   firstUpdated() {
     this.uuid = this.appUuid;
-
+    
     const topOffset = (this.windowNumber * 5) % 100;
     const leftOffset = (this.windowNumber * 3) % 100;
     this.style.top = `${10 + topOffset}%`;
-    this.style.left = `${10 + leftOffset}%`;
+    this.style.left = `${10 + leftOffset}%`;  
+    
   }
 
   updated(changedProperties: PropertyValues) {
@@ -54,7 +58,16 @@ export class Window extends StyledElement {
         this.style.zIndex = "100"; // Normal value
       }
     }
+    if (changedProperties.has("top") && this.top !== undefined) {
+      this.style.top = `${this.top || (this.windowNumber * 5) % 100}%`;
+    }
+    
+    if (changedProperties.has("left") && this.left !== undefined) {
+      this.style.left = `${this.left || (this.windowNumber * 3) % 100}%`;
+    }
+    
   }
+  
 
   async handleQuitClick() {
     await this.updateComplete;

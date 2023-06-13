@@ -42,7 +42,6 @@ const styleOneBit:StyleObject = {
 
     p{
       margin-top: 0;
-      font-size: 18px;
   }
   
     h2{
