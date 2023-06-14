@@ -23,11 +23,17 @@ export class AppIcon extends StyledElement {
     super();
     this.classList.add("c-appicon");
     this.updateStyles();
+    
   }
 
   connectedCallback() {
     super.connectedCallback();
     this.updateStyles(); 
+
+     // update the active state of the app based on the opened apps
+     openedAppsSubject.subscribe((openedApps) => {
+      this.isActive = !!openedApps.find(openedApp => openedApp.id === this.name);
+    });
   }
 
   openApp() {
