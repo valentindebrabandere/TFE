@@ -6,8 +6,8 @@ import { StyledElement } from '../../../utils/globalStyledElement';
 
 import { basic, styles } from './styles';
 
-@customElement('excel-component')
-export class Excel extends StyledElement {
+@customElement('numbers-component')
+export class Numbers extends StyledElement {
   @property({ type: String, attribute: 'filelink' }) filelink: string | undefined;
 
   @state() content: Array<Record<string, unknown>> = Array(20).fill(0).map(() => {
@@ -17,12 +17,12 @@ export class Excel extends StyledElement {
     }
     return record;
   });
-  @state() styles = [basic, css``]; // Update with styles for ExcelComponent
+  @state() styles = [basic, css``]; // Update with styles for NumbersComponent
 
   connectedCallback() {
     super.connectedCallback();
     this.updateStyles();
-    this.classList.add('c-excel');
+    this.classList.add('c-numbers');
     this.classList.add('c-app');
     if (this.filelink) {
       this.fetchFileContent(this.filelink);
@@ -32,7 +32,7 @@ export class Excel extends StyledElement {
   //need to be called to change the style
   updateStyles() {
     //select the current style (globalStyledElement.ts)
-    this.styles = this.applyStyles(styles, basic); // Update with styles for ExcelComponent
+    this.styles = this.applyStyles(styles, basic); // Update with styles for NumbersComponent
   }
 
   async updated(changedProperties: Map<string, any>) {
@@ -58,13 +58,13 @@ export class Excel extends StyledElement {
   }
 
   render() {
-    // create an excel app
+    // create an numbers app
     return html`
       <style>
         /* Import the good style */
         ${this.styles}
       </style>
-      <table class="c-excel__table">
+      <table class="c-numbers__table">
         <thead>
           <tr>
             ${Object.keys(this.content[0] || {}).map(

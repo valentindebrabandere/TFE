@@ -4,7 +4,7 @@ import "/src/assets/globalStyles/typoImports.css"
 
 export const basic = css`
   /* CSS here */
-  .c-excel {
+  .c-numbers {
     display: block;
     width: fit-content;
     height: fit-content;
@@ -13,23 +13,23 @@ export const basic = css`
     overflow-y: scroll;
   }
 
-  .c-excel table {
+  .c-numbers table {
     border-collapse: collapse;
     text-align: left;
     table-layout: fixed;
   }
 
-  .c-excel th, .c-excel td {
+  .c-numbers th, .c-numbers td {
     width: fit-content;
     padding: 2px 5px;
     border: 1px solid #ddd;
   }
 
-  .c-excel th {
+  .c-numbers th {
     background-color: #f4f4f4;
   }
 
-  .c-excel tr:nth-child(even) {
+  .c-numbers tr:nth-child(even) {
     background-color: #f8f8f8;
   }
 

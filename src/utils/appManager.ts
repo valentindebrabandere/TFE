@@ -1,13 +1,13 @@
 import { Aperçu } from "../components/apps/aperçu/aperçu";
 import { Figma } from "../components/apps/figma/figma";
 import { TextEdit } from "../components/apps/textEdit/textEdit";
-import { Excel } from "../components/apps/excel/excel";
+import { Numbers } from "../components/apps/numbers/numbers";
 import { Corbeille } from "../components/apps/corbeille/corbeille";
 import { Preferences } from "../components/apps/preferences/preferences";
 import { Finder } from "../components/apps/finder/finder";
 
 //add new apps here
-const allApps = [Aperçu, Excel, Figma, Finder, Preferences, TextEdit];
+const allApps = [Aperçu, Figma, Finder, Numbers, Preferences, TextEdit];
 
 export function getDockApps(style: string) {
   switch (style) {
@@ -18,9 +18,9 @@ export function getDockApps(style: string) {
     case 'skeuo':
       return [Finder, TextEdit, Aperçu];
     case 'grey':
-      return [Finder, Preferences, TextEdit, Excel];
+      return [Finder, Preferences, TextEdit, Numbers];
     case 'oneBit':
-      return [Finder, Preferences, TextEdit, Excel];
+      return [Finder, Preferences, TextEdit, Numbers];
     default:
       return [];
   }

@@ -46,7 +46,7 @@
       "position": {"top": "30%", "left": "83%"},
       "childItems": [
         {
-          "appname": "Excel",
+          "appname": "Numbers",
           "filename": "test.xls",
           "filelink": "/content/oneBit/desktop/test.csv",
           "childItems": [],
@@ -96,7 +96,7 @@
           "position": {}
         },
         {
-          "appname": "Excel",
+          "appname": "Numbers",
           "filename": "finencial_projection.xls",
           "filelink": "/content/oneBit/desktop/entreprise/projection.csv",
           "childItems": [],
