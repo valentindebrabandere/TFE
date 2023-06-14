@@ -85,7 +85,6 @@ export class Window extends StyledElement {
   }
 
   handleScaleClick() {
-
     this.scaled = !this.scaled;
     this.classList.toggle("c-window--scaled");
 
@@ -113,13 +112,11 @@ export class Window extends StyledElement {
     }
 
     const appContent = this.querySelector(".c-app__content");
+    console.log(appContent)
 
     if (appContent === null) return;
     //check if the content is vertical or horizontal
     appContent?.classList.toggle("c-app__content--scaled");
-    appContent.clientHeight > appContent.clientWidth
-      ? appContent?.classList.toggle("horizontal")
-      : appContent?.classList.toggle("vertical");
   }
 
   render() {

@@ -7,7 +7,7 @@ import { basic, styles } from './styles';
 // utils imports
 import { StyledElement } from '../../../utils/globalStyledElement';
 
-@customElement('aperçu-component')
+@customElement('apercu-component')
 export class Aperçu extends StyledElement {
   @property({ type: String, attribute: 'filelink' }) filelink: string|undefined;
 
@@ -50,7 +50,7 @@ export class Aperçu extends StyledElement {
         <!-- es6 if statement filelink undefied -->
         ${this.filelink ? 
         html`<img class="c-apercu__content c-app__content" src="${this.filelink}" alt="Preview" />` 
-        : html`<div class="c-apecu__no-content">
+        : html`<div class="c-apercu__no-content">
           <h2>Pas de ficher ouvert</h2>
           <p>Ouvrez une image pour afficher un résultat</p>
         </div>`}

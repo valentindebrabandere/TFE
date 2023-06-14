@@ -18,7 +18,7 @@ export const basic = css`
     object-fit: contain;
   }
 
-  .c-apecu__no-content{
+  .c-apercu__no-content{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +27,7 @@ export const basic = css`
     height: 30vw;
   }
 
-  .c-apecu__no-content p{ 
+  .c-apercu__no-content p{ 
     opacity: 0.5;
   }
 `;

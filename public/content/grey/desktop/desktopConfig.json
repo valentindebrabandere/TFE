@@ -3,6 +3,13 @@
   "style": "grey",
   "childItems": [
     {
+      "appname": "Video",
+      "filename": "Video.avi",
+      "filelink": "/content/grey/desktop/test.mp4",
+      "position": {"top": "30vh", "left": "66vw"},
+      "childItems": []
+    },
+    {
       "appname": "Aperçu",
       "filename": "Image1.jpg",
       "filelink": "/content/grey/desktop/desktopImages/image1.jpg",
