@@ -13,7 +13,7 @@ export const basic = css`
     width: 100%;
     height: 100%;
     max-width: 60vw;
-    max-height: 60vh;
+    max-height: 75vh;
     aspect-ratio: auto;
     object-fit: contain;
   }

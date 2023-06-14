@@ -3,15 +3,11 @@ import { Figma } from "../components/apps/figma/figma";
 import { TextEdit } from "../components/apps/textEdit/textEdit";
 import { Excel } from "../components/apps/excel/excel";
 import { Corbeille } from "../components/apps/corbeille/corbeille";
+import { Preferences } from "../components/apps/preferences/preferences";
 import { Finder } from "../components/apps/finder/finder";
 
-// import { GlobalStyleController, addStyleChangedEventListener } from "./styleController";
-
-// const styleController = new GlobalStyleController();
-// var currentStyle = styleController.style;
-
 //add new apps here
-const allApps = [Aperçu, Figma, TextEdit, Finder, Excel];
+const allApps = [Aperçu, Excel, Figma, Finder, Preferences, TextEdit];
 
 export function getDockApps(style: string) {
   switch (style) {
@@ -24,7 +20,7 @@ export function getDockApps(style: string) {
     case 'grey':
       return [Finder, TextEdit];
     case 'oneBit':
-      return [Finder, TextEdit, Excel, Aperçu];
+      return [Finder, Preferences, TextEdit, Excel, Aperçu];
     default:
       return [];
   }
