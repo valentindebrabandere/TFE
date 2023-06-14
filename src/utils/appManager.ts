@@ -18,9 +18,9 @@ export function getDockApps(style: string) {
     case 'skeuo':
       return [Finder, TextEdit, Aperçu];
     case 'grey':
-      return [Finder, TextEdit];
+      return [Finder, Preferences, TextEdit, Excel];
     case 'oneBit':
-      return [Finder, Preferences, TextEdit, Excel, Aperçu];
+      return [Finder, Preferences, TextEdit, Excel];
     default:
       return [];
   }

@@ -5,7 +5,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 50px;
+        height: 60px;
+        aspect-ratio: 1 / 1;
     }
 
     .c-appicon.active{
