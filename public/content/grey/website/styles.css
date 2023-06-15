@@ -1,0 +1,180 @@
+/* styles.css */
+body {
+    font-size: 18px;
+}
+
+/* Blocks */
+header {
+    position: relative;
+    background-color: blue;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+footer {
+    background-color: blue;
+    padding: 10px;
+    text-align: center;
+}
+
+.cta {
+    display: inline-block;
+    margin-top: 10px;
+    width: fit-content;
+    font-size: 18px;
+    background-color: cyan;
+    padding: 10px 15px;
+    border: 2px solid blue;
+    font-family: serif;
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+    /* old school box shadow */
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.cta:hover {
+    background-color: blue;
+    color: cyan;
+}
+
+/* Elements */
+.logo {
+    animation: blink 1s infinite;
+}
+
+.pp-div {
+    position: absolute;
+    top: 90%;
+    left: 95%;
+    transform: translate3d(-100%, 0, 0);
+}
+
+.pp-div p {
+    position: absolute;
+    bottom: -30px;
+    right: 10px;
+    color: aqua;
+    text-shadow: 0px 0px 5px 0px blue;
+}
+
+.pp {
+    width: 350px;
+    height: auto;
+}
+
+.slogan {
+    color: cyan;
+    font-size: 32px;
+}
+
+
+.about {
+    max-width: 60%;
+}
+
+.about h2 {
+    margin-bottom: 10px;
+    color: darkblue;
+}
+
+.about p,
+.team p,
+.news p,
+.products p,
+.contact p {
+    margin-bottom: 10px;
+}
+
+.style-image {
+    border: 5px solid blue;
+    box-shadow: 0px 0px 5px 0px blue;
+
+}
+
+/* Ajoutez ce code à votre fichier CSS */
+
+.products {
+    margin-top: 75px;
+  }
+
+  .produts-list{
+    display: flex;
+    gap: 10px;
+  }
+  
+  .product {
+    margin-bottom: 40px;
+  }
+  
+  .product img {
+    max-width: 550px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .product h3 {
+    font-size: 20px;
+    margin-bottom: 10px
+    }  
+
+/* Modifiers */
+@keyframes blink {
+    0% {
+        opacity: .6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .6;
+    }
+}
+
+/*pop up*/
+
+/* Ajoutez ce code dans votre fichier CSS */
+
+.popup {
+    display: inline-block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFCC;
+    border: 10px solid blue;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+    z-index: 9999;
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.popup p {
+    margin-bottom: 10px;
+}
