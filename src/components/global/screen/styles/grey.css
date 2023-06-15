@@ -15,3 +15,33 @@
 img {
     filter: saturate(0.8);
 }
+
+/* Styling the scrollbar */
+::-webkit-scrollbar {
+    width: 16px;
+    /* Width of the scrollbar */
+    height: 16px;
+}
+
+/* Styling the track (background) part of the scrollbar */
+::-webkit-scrollbar-track {
+    background: #646165;
+    border: 1px solid #000;
+    box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 rgba(255, 255, 255, 0.488), inset -2px -2px 0 0 #a099a16d, inset 2px 2px 0 0 #dedcde4e;
+    border-radius: 0;
+    /* Light grey color similar to Win 98 style */
+}
+
+/* Styling the handle (thumb) part of the scrollbar */
+::-webkit-scrollbar-thumb {
+    background: #cac6cb;
+    border: 1px solid #000;
+    box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white, inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
+    border-radius: 0;
+}
+
+/* Changing the color of the thumb when hovering over it */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #696969;
+    /* Changing the color to a slightly different shade of grey */
+}

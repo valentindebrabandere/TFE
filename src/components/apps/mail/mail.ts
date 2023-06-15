@@ -1,31 +1,28 @@
+// MailComponent.ts
 import { html, css } from 'lit';
 import { customElement, state, property } from 'lit/decorators.js';
-import Papa from 'papaparse';
 
 import { StyledElement } from '../../../utils/globalStyledElement';
-
 import { basic, styles } from './styles';
+import './mailItemComponent.ts';
 
 @customElement('mail-component')
 export class Mail extends StyledElement {
   @property({ type: String, attribute: 'filelink' }) filelink: string | undefined;
 
-  @state() content: Array<Record<string, unknown>> = Array(20).fill(0).map(() => {
-    let record: Record<string, unknown> = {};
-    for (let i = 0; i < 20; i++) {
-      record[`column${i}`] = '';
-    }
-    return record;
-  });
+  @state() mails: any[] = [];
+  @state() selectedMail: any = null;
   @state() styles = [basic, css``]; // Update with styles for MailComponent
+  @state() selectedMailContent: string = '';
 
-  connectedCallback() {
+  async connectedCallback() {
     super.connectedCallback();
     this.updateStyles();
     this.classList.add('c-mail');
     this.classList.add('c-app');
     if (this.filelink) {
-      this.fetchFileContent(this.filelink);
+      console.log(this.filelink)
+      this.mails = await this.fetchMails(this.filelink);
     }
   }
 
@@ -35,26 +32,32 @@ export class Mail extends StyledElement {
     this.styles = this.applyStyles(styles, basic); // Update with styles for MailComponent
   }
 
-  async updated(changedProperties: Map<string, any>) {
-    if (changedProperties.has('filelink')) {
-      if (this.filelink === undefined) {
-        return;
-      }
-      this.content = await this.fetchFileContent(this.filelink);
-    }
-  }
-
-  async fetchFileContent(filelink: string): Promise<Array<Record<string, unknown>>> {
-    if (!filelink) return this.content;
+  async fetchMails(filelink: string): Promise<any[]> {
+    if (!filelink) return this.mails;
 
     try {
       const response = await fetch(filelink);
-      const csvContent = await response.text();
-      const parsedContent = Papa.parse(csvContent, { header: true });
-      return parsedContent.data as Array<Record<string, unknown>>; // Explicitly cast to the expected type
+      const mails = await response.json();
+      return mails;
     } catch (error) {
-      return this.content;
+      return this.mails;
     }
+  }
+
+  async selectMail(mail: any) {
+    mail.read = true;
+    this.selectedMail = mail;
+    if (this.selectedMail.filelink) {
+      this.selectedMailContent = await this.fetchFileContent(this.selectedMail.filelink);
+    } else {
+      this.selectedMailContent = this.selectedMail.content;
+    }
+  }
+
+  async fetchFileContent(filelink: string): Promise<string> {
+    const response = await fetch(filelink);
+    const htmlContent = await response.text();
+    return htmlContent;
   }
 
   render() {
@@ -64,7 +67,24 @@ export class Mail extends StyledElement {
         /* Import the good style */
         ${this.styles}
       </style>
-      
+      <div class="c-mail">
+        <div class="c-mail__list">
+          ${this.mails.map(mail => html`
+            <mail-item-component 
+              .mail="${mail}" 
+              .read="${mail.read}" 
+              @click="${() => this.selectMail(mail)}">
+            </mail-item-component>
+          `)}
+        </div>
+        <div class="c-mail__content">
+          ${this.selectedMail ? html`
+            <div>${this.selectedMailContent}</div>
+          ` : html`
+            <p>Select a mail to read.</p>
+          `}
+        </div>
+      </div>
     `;
   }
 }

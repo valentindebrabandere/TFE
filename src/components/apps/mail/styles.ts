@@ -8,33 +8,9 @@ export const basic = css`
     display: block;
     width: fit-content;
     height: fit-content;
-    max-width: 60vw;
-    max-height: 60vh;
+    width: 60vw;
+    height: 60vh;
     overflow-y: scroll;
-  }
-
-  .c-mail table {
-    border-collapse: collapse;
-    text-align: left;
-    table-layout: fixed;
-  }
-
-  .c-mail th, .c-mail td {
-    width: fit-content;
-    padding: 2px 5px;
-    border: 1px solid #ddd;
-  }
-
-  .c-mail th {
-    background-color: #f4f4f4;
-  }
-
-  .c-mail tr:nth-child(even) {
-    background-color: #f8f8f8;
-  }
-
-  :focus-visible {
-    outline: 2px solid #000;
   }
 
 `;
@@ -50,11 +26,6 @@ const styleOneBit:StyleObject = {
     
     /* CSS here */
 
-    ::selection {
-      background-color: black;
-      color: white;
-    }
-
     `
 };
 
@@ -63,10 +34,6 @@ const styleGrey:StyleObject = {
   css: css`
   
   /* CSS here */
-
-  .c-text-edit {
-    background-color: #DEDEDE;
-  }
 
   `
 };
