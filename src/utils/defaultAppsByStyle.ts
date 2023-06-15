@@ -21,9 +21,9 @@ defaultAppsByStyle.set('oneBit', [
 ]);
 
 //Grey
-defaultAppsByStyle.set('grey', [
-  { id: 'Browser', filelink: '/content/grey/website/website.html', childItems: [], top: 2, left: 2 },
-]);
+// defaultAppsByStyle.set('grey', [
+//   { id: 'Browser', filelink: '/content/grey/website/website.html', childItems: [], top: 2, left: 2 },
+// ]);
 
 //Modern Mac
 defaultAppsByStyle.set('modernMac', [
