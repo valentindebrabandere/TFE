@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Anne",
+        "notif": 2,
+        "profilePic": "",
+        "chats": [
+            {
+                "send": true,
+                "timestamp": "2023-06-18T12:00:00Z",
+                "content": null,
+                "fileType": "image",
+                "filelink": "/content/skeuo/messages/img1"
+            },
+            {
+                "send": false,
+                "timestamp": "2023-06-18T12:30:00Z",
+                "content": "Hello",
+                "fileType": "",
+                "filelink": ""
+            },
+            {
+                "send": false,
+                "timestamp": "2023-06-18T12:30:00Z",
+                "content": "Super",
+                "fileType": "",
+                "filelink": ""
+            }
+        ]
+    },
+    {
+        "name": "Luc",
+        "notif": 0,
+        "profilePic": "",
+        "chats": [
+            {
+                "send": true,
+                "timestamp": "2023-06-17T12:00:00Z",
+                "content": null,
+                "fileType": "image",
+                "filelink": "/content/skeuo/messages/img1"
+            },
+            {
+                "send": false,
+                "timestamp": "2023-06-17T12:30:00Z",
+                "content": "Super",
+                "fileType": "",
+                "filelink": ""
+            },
+            {
+                "send": false,
+                "timestamp": "2023-06-17T12:30:00Z",
+                "content": null,
+                "fileType": "image",
+                "filelink": "/content/skeuo/messages/img1"
+            }
+        ]
+    }
+]

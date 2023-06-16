@@ -3,17 +3,15 @@ import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import {formatDate} from "./formatDate";
 
-
 @customElement("messages-item-component")
 export class MessagesItemComponent extends LitElement {
-  @property({ type: Object }) messages = {
-    object: "",
-    content: "",
-    from: "",
-    date: "",
-    hour: "",
+  @property({ type: Object }) chat = {
+    send: false,
+    timestamp: "",
+    content: null,
+    fileType: null,
+    filelink: null,
   };
-  @property({ type: Boolean, reflect: true }) read = false;
 
   connectedCallback(): void {
     super.connectedCallback();
@@ -27,13 +25,12 @@ export class MessagesItemComponent extends LitElement {
   render() {
     return html`
       <div class="c-messages-item__head">
-        <p class="c-messages-item__from">${this.messages.from}</p>
-        <p class="c-messages-item__date">${this.messages.hour} - ${formatDate(this.messages.date)}</p>
+        <p class="c-messages-item__from">${this.chat.send ? 'Me' : 'Them'}</p>
+        <p class="c-messages-item__date">${formatDate(this.chat.timestamp)}</p>
       </div>
-      <h4 class="c-messages-item__object">${this.messages.object}</h4>
-      <p class="c-messages-item__content">
-        ${this.messages.content || "(No preview available)"}
-      </p>
+      <div class="c-messages-item__content">
+        ${this.chat.content || "(No content available)"}
+      </div>
     `;
   }
 }
