@@ -22,7 +22,7 @@ defaultAppsByStyle.set('oneBit', [
 
 //Grey
 defaultAppsByStyle.set('grey', [
-  { id: 'Mail', filelink: '/content/grey/mail/mail.json', childItems: [], top: 2, left: 2 },
+  { id: 'Mail', filelink: '', childItems: [], top: 2, left: 2 },
 ]);
 
 //Modern Mac

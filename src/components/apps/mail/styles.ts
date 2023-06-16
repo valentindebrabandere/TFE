@@ -26,8 +26,11 @@ export const basic = css`
 
   .c-mail__content-container{
     width: 70%;
-    height: 100%;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
   }
   .c-mail__content-container::-webkit-scrollbar{
     width: 10px;
@@ -70,6 +73,7 @@ export const basic = css`
 
   .c-mail__content {
     padding: 25px 25px;
+    line-height: 1.5rem;
   }
 
   .c-mail__footer {
@@ -175,6 +179,97 @@ const styleGrey:StyleObject = {
   css: css`
   
   /* CSS here */
+
+  .c-mail__content-container{
+    width: 70%;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .c-mail__content-container::-webkit-scrollbar{
+    width: 10px;
+  }
+
+  /* Mail content */
+
+  .c-mail-content__head {
+    background: #cac6cb;
+    box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white, inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
+  }
+
+  .c-mail__content {
+    padding: 50px 25px;
+    line-height: 1.5rem;
+  }
+
+  .c-mail__footer {
+    background: #cac6cb;
+    box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white, inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
+  }
+
+  .c-mail__reply {
+    background: #cac6cb;
+    box-shadow: inset -1px -1px 0 0 white, inset 1px 1px 0 0 #464147, inset -2px -2px 0 0 #dedcde, inset 2px 2px 0 0 #cac6cb;
+  }
+
+  .c-mail__button {
+    background: #cac6cb;
+    box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white, inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
+  }
+
+  .c-mail__button:hover {
+    box-shadow: inset -1px -1px 0 0 white, inset 1px 1px 0 0 #464147, inset -2px -2px 0 0 #dedcde, inset 2px 2px 0 0 #cac6cb;
+  }
+
+
+  /* Mail item */
+
+  .c-mail-item{
+    background: #cac6cb;
+    box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white, inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
+  }
+  .c-mail-item[read] {
+    box-shadow: inset -1px -1px 0 0 white, inset 1px 1px 0 0 #464147, inset -2px -2px 0 0 #dedcde, inset 2px 2px 0 0 #cac6cb;
+  }
+
+  .c-mail-item__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .c-mail-item__from {
+    max-width: 50%;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0;
+  }
+  
+  .c-mail-item__date {
+    font-size: 0.8rem;
+    opacity: .7;
+    margin: 0;
+  }
+
+  .c-mail-item__object {
+    font-weight: bold;
+    margin: 10px 0;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .c-mail-item__content {
+    font-size: 0.9rem;
+    opacity: .7;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0;
+  }
 
   `
 };
