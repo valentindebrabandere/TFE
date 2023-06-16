@@ -123,6 +123,7 @@ export class Finder extends StyledElement {
         ${this.childItems.map(
           (item) => html`
             <file-component
+              class="c-file--finder"
               appname="${item.appname}"
               filename="${item.filename}"
               filelink="${item.filelink}"

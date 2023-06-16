@@ -5,12 +5,13 @@ import { Figma } from "../components/apps/figma/figma";
 import { Finder } from "../components/apps/finder/finder";
 import { Numbers } from "../components/apps/numbers/numbers";
 import { Mail } from "../components/apps/mail/mail";
+import { Messages } from "../components/apps/messages/messages";
 import { Preferences } from "../components/apps/preferences/preferences";
 import { TextEdit } from "../components/apps/textEdit/textEdit";
 import { Video } from "../components/apps/video/video";
 
 //add new apps here
-const allApps = [Aperçu, Browser, Figma, Finder, Numbers, Mail, Preferences, TextEdit, Video];
+const allApps = [Aperçu, Browser, Figma, Finder, Numbers, Mail, Messages, Preferences, TextEdit, Video];
 
 export function getDockApps(style: string) {
   switch (style) {
@@ -19,7 +20,7 @@ export function getDockApps(style: string) {
     case 'flat':
       return [Finder, Figma, TextEdit, Aperçu];
     case 'skeuo':
-      return [Finder, TextEdit, Aperçu];
+      return [Finder, Messages, TextEdit, Aperçu];
     case 'grey':
       return [Finder, Preferences, Mail, TextEdit, Numbers, Video, Browser];
     case 'oneBit':

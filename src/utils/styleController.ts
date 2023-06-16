@@ -65,7 +65,7 @@ class GlobalStyleController implements ReactiveController {
 
     // Initialize the style with the first style in the list
     //Fist style to show
-    this._style = stylesList[1].call;
+    this._style = stylesList[2].call;
     setCurrentStyle(this._style);
     this.dispatchEvent();
   }

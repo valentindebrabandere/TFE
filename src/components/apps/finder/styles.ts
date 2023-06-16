@@ -48,6 +48,10 @@ const styleSkeuo:StyleObject = {
   
   /* CSS here */
 
+  .c-finder {
+    background-color: #fff;
+  }
+
   `
 };
   
