@@ -3,9 +3,10 @@
       "date": "2023-06-15",
       "hour": "12:00",
       "object": "Hello World",
-      "content": "This is the first email.",
+      "content": "This is the first email. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, vitae a",
       "filelink": "",
-      "read": false
+      "read": false,
+      "from": "john@example.com"
     },
     {
       "date": "2023-06-16",
@@ -13,7 +14,8 @@
       "object": "Second Email",
       "content": "This is the second email.",
       "filelink": "",
-      "read": true
+      "read": false,
+      "from": "mary@example.com"
     },
     {
       "date": "2023-06-17",
@@ -21,7 +23,89 @@
       "object": "Third Email",
       "content": "This is the third email.",
       "filelink": "",
-      "read": false
+      "read": false,
+      "from": "david@example.com"
+    },
+    {
+      "date": "2023-06-15",
+      "hour": "12:00",
+      "object": "Hello World",
+      "content": "This is the first email.",
+      "filelink": "",
+      "read": false,
+      "from": "john@example.com"
+    },
+    {
+      "date": "2023-06-16",
+      "hour": "15:00",
+      "object": "Second Email",
+      "content": "This is the second email.",
+      "filelink": "",
+      "read": false,
+      "from": "mary@example.com"
+    },
+    {
+      "date": "2023-06-17",
+      "hour": "18:00",
+      "object": "Third Email",
+      "content": "This is the third email.",
+      "filelink": "",
+      "read": false,
+      "from": "david@example.com"
+    },
+    {
+      "date": "2023-06-15",
+      "hour": "12:00",
+      "object": "Hello World",
+      "content": "This is the first email. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget ultricies ultrices, nunc nisl aliquam nunc, vitae a",
+      "filelink": "",
+      "read": false,
+      "from": "john@example.com"
+    },
+    {
+      "date": "2023-06-16",
+      "hour": "15:00",
+      "object": "Second Email",
+      "content": "This is the second email.",
+      "filelink": "",
+      "read": false,
+      "from": "mary@example.com"
+    },
+    {
+      "date": "2023-06-17",
+      "hour": "18:00",
+      "object": "Third Email",
+      "content": "This is the third email.",
+      "filelink": "",
+      "read": false,
+      "from": "david@example.com"
+    },
+    {
+      "date": "2023-06-15",
+      "hour": "12:00",
+      "object": "Hello World",
+      "content": "This is the first email.",
+      "filelink": "",
+      "read": false,
+      "from": "john@example.com"
+    },
+    {
+      "date": "2023-06-16",
+      "hour": "15:00",
+      "object": "Second Email",
+      "content": "This is the second email.",
+      "filelink": "",
+      "read": false,
+      "from": "mary@example.com"
+    },
+    {
+      "date": "2023-06-17",
+      "hour": "18:00",
+      "object": "Third Email",
+      "content": "This is the third email.",
+      "filelink": "",
+      "read": false,
+      "from": "david@example.com"
     }
   ]
   

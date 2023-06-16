@@ -1,31 +1,37 @@
 // MailItemComponent.ts
-import { html, css, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { html, LitElement } from "lit";
+import { customElement, property } from "lit/decorators.js";
 
-@customElement('mail-item-component')
+@customElement("mail-item-component")
 export class MailItemComponent extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-      padding: 10px;
-      cursor: pointer;
-      background-color: white;
-      border-bottom: 1px solid #ddd;
-    }
-    :host([read]) {
-      background-color: #ddd;
-    }
-  `;
-
-  @property({ type: Object }) mail = {object:"string" , content:"string"};
+  @property({ type: Object }) mail = {
+    object: "",
+    content: "",
+    from: "",
+    date: "",
+    hour: "",
+  };
   @property({ type: Boolean, reflect: true }) read = false;
+
+  connectedCallback(): void {
+    super.connectedCallback();
+    this.classList.add("c-mail-item");
+  }
+
+  createRenderRoot() {
+    return this;
+  }
 
   render() {
     return html`
-      <div>
-        <h4>${this.mail.object}</h4>
-        <p>${this.mail.content || '(No preview available)'}</p>
+      <div class="c-mail-item__head">
+        <p class="c-mail-item__from">${this.mail.from}</p>
+        <p class="c-mail-item__date">${this.mail.hour} - ${this.mail.date}</p>
       </div>
+      <h4 class="c-mail-item__object">${this.mail.object}</h4>
+      <p class="c-mail-item__content">
+        ${this.mail.content || "(No preview available)"}
+      </p>
     `;
   }
 }
