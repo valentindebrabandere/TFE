@@ -5,6 +5,7 @@ import { customElement, state, property } from "lit/decorators.js";
 import { StyledElement } from "../../../utils/globalStyledElement";
 import { basic, styles } from "./styles";
 import "./mailItemComponent";
+import {formatDate} from "./formatDate";
 
 @customElement("mail-component")
 export class Mail extends StyledElement {
@@ -107,7 +108,7 @@ export class Mail extends StyledElement {
                   </h3>
                 </div>
                 <p class="c-mail-content__date">
-                  ${this.selectedMail.hour} - ${this.selectedMail.date}
+                  ${this.selectedMail.hour} - ${formatDate(this.selectedMail.date)}
                 </p>
               </div>
               ${this.selectedMail.filelink
