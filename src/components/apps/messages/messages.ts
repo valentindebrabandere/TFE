@@ -9,13 +9,15 @@ import "./DiscussionItemComponent";
 
 @customElement("messages-component")
 export class Messages extends StyledElement {
-  @property({ type: String, attribute: "filelink" }) filelink: string | undefined;
+  @property({ type: String, attribute: "filelink" }) filelink:
+    | string
+    | undefined;
 
   @state() discussions: any[] = [];
   @state() selectedDiscussion: any = null;
   @state() styles = [basic, css``];
   @state() currentStyle = "";
-  
+
   async connectedCallback() {
     super.connectedCallback();
     this.updateStyles();
@@ -51,15 +53,38 @@ export class Messages extends StyledElement {
 
   sortDiscussions() {
     this.discussions.sort((a, b) => {
-      const lastChatA = a.chats[a.chats.length - 1];
-      const lastChatB = b.chats[b.chats.length - 1];
-      return new Date(lastChatB.timestamp).getTime() - new Date(lastChatA.timestamp).getTime();
+      const lastMessageA = a.chats
+        .slice()
+        .reverse()
+        .find((item: any) => item.type === "message");
+      const lastMessageB = b.chats
+        .slice()
+        .reverse()
+        .find((item: any) => item.type === "message");
+      return (
+        new Date(lastMessageB?.timestamp).getTime() -
+        new Date(lastMessageA?.timestamp).getTime()
+      );
     });
   }
 
   updateStyles() {
     this.styles = this.applyStyles(styles, basic);
     this.currentStyle = this.globalStyleController.style;
+  }
+
+  // Helper functions to format date and time
+  formatDate(dateTime: Date) {
+    const year = dateTime.getFullYear();
+    const month = (dateTime.getMonth() + 1).toString().padStart(2, "0");
+    const day = dateTime.getDate().toString().padStart(2, "0");
+    return `${day}-${month}-${year}`;
+  }
+
+  formatTime(dateTime: Date) {
+    const hour = dateTime.getHours().toString().padStart(2, "0");
+    const minute = dateTime.getMinutes().toString().padStart(2, "0");
+    return `${hour}:${minute}`;
   }
 
   render() {
@@ -82,14 +107,28 @@ export class Messages extends StyledElement {
       <div class="c-messages__content-container">
         ${this.selectedDiscussion
           ? html`
-              ${this.selectedDiscussion.chats.map(
-                (chat:Object) => html`
-                  <messages-item-component .chat="${chat}"></messages-item-component>
-                `
-              )}
+              <!-- Iterate through all the chats in the discussion -->
+              ${this.selectedDiscussion.chats.reduce((acc: any[], chat: any, index: number, chats: any[]) => {
+                // Get the current chat date
+                const currentChatDate = new Date(chat.timestamp);
+                // Get the next chat
+                const nextChat = chats[index + 1];
+                // Get the next chat date
+                const nextChatDate = nextChat ? new Date(nextChat.timestamp) : null;
+                // Add date and time separator if it's the first chat or if the date has changed
+                if (index === 0 || (index > 0 && currentChatDate.getDate() !== new Date(chats[index - 1].timestamp).getDate())) {
+                  acc.push(html`<div class="c-messages__day">${this.formatDate(currentChatDate)} ${this.formatTime(currentChatDate)}</div>`);
+                } else if (nextChatDate && nextChatDate.getTime() - currentChatDate.getTime() > 30 * 60 * 1000) { // Add time separator if the time difference between the current chat and the next one is more than 30 minutes
+                  acc.push(html`<div class="c-messages__slot">${this.formatTime(nextChatDate)}</div>`);
+                }
+                // Add the chat
+                acc.push(html`<messages-item-component .chat="${chat}"></messages-item-component>`);
+                return acc;
+              }, [])}
             `
           : html`<p>Select a discussion to see the chats.</p>`}
       </div>
     `;
   }
+  
 }

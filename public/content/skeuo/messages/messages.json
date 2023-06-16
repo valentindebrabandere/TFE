@@ -1,58 +1,66 @@
 [
     {
-        "name": "Anne",
-        "notif": 2,
-        "profilePic": "",
-        "chats": [
-            {
-                "send": true,
-                "timestamp": "2023-06-18T12:00:00Z",
-                "content": null,
-                "fileType": "image",
-                "filelink": "/content/skeuo/messages/img1"
-            },
-            {
-                "send": false,
-                "timestamp": "2023-06-18T12:30:00Z",
-                "content": "Hello",
-                "fileType": "",
-                "filelink": ""
-            },
-            {
-                "send": false,
-                "timestamp": "2023-06-18T12:30:00Z",
-                "content": "Super",
-                "fileType": "",
-                "filelink": ""
-            }
-        ]
+      "name": "Anne",
+      "notif": 2,
+      "profilePic": "",
+      "chats": [
+        {
+          "send": true,
+          "timestamp": "2023-06-16T13:00:00.000+02:00",
+          "content": "Hello, how are you?",
+          "fileType": null,
+          "filelink": null
+        },
+        {
+          "send": false,
+          "timestamp": "2023-06-16T13:05:00.000+02:00",
+          "content": "I'm good, thanks!",
+          "fileType": null,
+          "filelink": null
+        },
+        {
+          "send": true,
+          "timestamp": "2023-06-16T13:45:00.000+02:00",
+          "content": "Great to hear!",
+          "fileType": null,
+          "filelink": null
+        }
+      ]
     },
     {
-        "name": "Luc",
-        "notif": 0,
-        "profilePic": "",
-        "chats": [
-            {
-                "send": true,
-                "timestamp": "2023-06-17T12:00:00Z",
-                "content": null,
-                "fileType": "image",
-                "filelink": "/content/skeuo/messages/img1"
-            },
-            {
-                "send": false,
-                "timestamp": "2023-06-17T12:30:00Z",
-                "content": "Super",
-                "fileType": "",
-                "filelink": ""
-            },
-            {
-                "send": false,
-                "timestamp": "2023-06-17T12:30:00Z",
-                "content": null,
-                "fileType": "image",
-                "filelink": "/content/skeuo/messages/img1"
-            }
-        ]
+      "name": "Luc",
+      "notif": 0,
+      "profilePic": "",
+      "chats": [
+        {
+          "send": true,
+          "timestamp": "2023-06-16T13:00:00.000+02:00",
+          "content": "Hello, how are you?",
+          "fileType": null,
+          "filelink": null
+        },
+        {
+          "send": false,
+          "timestamp": "2023-06-16T13:05:00.000+02:00",
+          "content": "I'm good, thanks!",
+          "fileType": null,
+          "filelink": null
+        },
+        {
+          "send": true,
+          "timestamp": "2023-06-16T13:55:00.000+02:00",
+          "content": "Great to hear!",
+          "fileType": null,
+          "filelink": null
+        },
+        {
+          "send": true,
+          "timestamp": "2023-06-17T13:35:00.000+02:00",
+          "content": "Great to send a other message!",
+          "fileType": null,
+          "filelink": null
+        }
+      ]
     }
-]
+  ]
+  
