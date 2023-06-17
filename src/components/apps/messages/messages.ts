@@ -1,6 +1,6 @@
 // MessagesComponent.ts
 import { html, css } from "lit";
-import { customElement, state, property } from "lit/decorators.js";
+import { customElement, state, property, query } from "lit/decorators.js";
 
 import { StyledElement } from "../../../utils/globalStyledElement";
 import { basic, styles } from "./styles";
@@ -17,6 +17,7 @@ export class Messages extends StyledElement {
   @state() selectedDiscussion: any = null;
   @state() styles = [basic, css``];
   @state() currentStyle = "";
+  @query(".c-messages__content-container") chatContainer?: HTMLElement;
 
   async connectedCallback() {
     super.connectedCallback();
@@ -30,9 +31,9 @@ export class Messages extends StyledElement {
     } else {
       this.discussions = await this.fetchDiscussions(
         `/content/${this.currentStyle}/messages/messagesConfig.json`
-      );
-      this.selectDiscussion(this.discussions[0]);
-      this.sortDiscussions();
+        );
+        this.sortDiscussions();
+        this.selectDiscussion(this.discussions[0]);
     }
   }
 
@@ -47,20 +48,23 @@ export class Messages extends StyledElement {
     }
   }
 
+  scrollToBottom() {
+    if (this.chatContainer) {
+      this.chatContainer.scrollTop = this.chatContainer.scrollHeight;
+    }
+  }
+
   selectDiscussion(discussion: any) {
     this.selectedDiscussion = discussion;
+    setTimeout(() => {
+      this.scrollToBottom();
+    }, 0);
   }
 
   sortDiscussions() {
     this.discussions.sort((a, b) => {
-      const lastMessageA = a.chats
-        .slice()
-        .reverse()
-        .find((item: any) => item.type === "message");
-      const lastMessageB = b.chats
-        .slice()
-        .reverse()
-        .find((item: any) => item.type === "message");
+      const lastMessageA = a.chats[a.chats.length - 1];
+    const lastMessageB = b.chats[b.chats.length - 1];
       return (
         new Date(lastMessageB?.timestamp).getTime() -
         new Date(lastMessageA?.timestamp).getTime()
@@ -92,7 +96,6 @@ export class Messages extends StyledElement {
       <style>
         ${this.styles}
       </style>
-
       <div class="c-messages__list">
         ${this.discussions.map(
           (discussion) => html`
@@ -123,60 +126,64 @@ export class Messages extends StyledElement {
         </div>
 
         <div class="c-messages__content-container">
-          ${this.selectedDiscussion
-            ? html`
-                <!-- Iterate through all the chats in the discussion -->
-                ${this.selectedDiscussion.chats.reduce(
-                  (acc: any[], chat: any, index: number, chats: any[]) => {
-                    // Get the current chat date
-                    const currentChatDate = new Date(chat.timestamp);
-                    // Get the next chat
-                    const nextChat = chats[index + 1];
-                    // Get the next chat date
-                    const nextChatDate = nextChat
-                      ? new Date(nextChat.timestamp)
-                      : null;
-                    // Add date and time separator if it's the first chat or if the date has changed
-                    if (
-                      index === 0 ||
-                      (index > 0 &&
-                        currentChatDate.getDate() !==
-                          new Date(chats[index - 1].timestamp).getDate())
-                    ) {
-                      acc.push(
-                        html`<div
-                          class="c-messages__slot c-messages__slot--day"
-                        >
-                          ${this.formatDate(currentChatDate)} à
-                          ${this.formatTime(currentChatDate)}
-                        </div>`
-                      );
-                    } else if (
-                      nextChatDate &&
-                      nextChatDate.getTime() - currentChatDate.getTime() >
-                        30 * 60 * 1000
-                    ) {
-                      // Add time separator if the time difference between the current chat and the next one is more than 30 minutes
-                      acc.push(
-                        html`<div
-                          class="c-messages__slot c-messages__slot--hour"
-                        >
-                          ${this.formatTime(nextChatDate)}
-                        </div>`
-                      );
-                    }
-                    // Add the chat
-                    acc.push(
-                      html`<messages-item-component
-                        .chat="${chat}"
-                      ></messages-item-component>`
-                    );
-                    return acc;
-                  },
-                  []
-                )}
-              `
-            : html`<p>Select a discussion to see the chats.</p>`}
+          <div class="c-messages__chat">
+            ${this.selectedDiscussion
+              ? html`
+                  <!-- Iterate through all the chats in the discussion -->
+                  ${this.selectedDiscussion.chats.reduce(
+                    (acc: any[], chat: any, index: number, chats: any[]) => {
+
+                      // Get the current chat date
+                      const currentChatDate = new Date(chat.timestamp);
+                      // Get the next chat
+                      const prevChat = chats[index - 1];
+                      const prevChatDate = prevChat
+                        ? new Date(prevChat.timestamp)
+                        : null;
+                      // Add date and time separator if it's the first chat or if the date has changed
+                      if (
+                        index === 0 ||
+                        (index > 0 &&
+                          currentChatDate.getDate() !==
+                            new Date(chats[index - 1].timestamp).getDate())
+                      ) {
+                        acc.push(
+                          html`<div
+                            class="c-messages__slot c-messages__slot--day"
+                          >
+                            ${this.formatDate(currentChatDate)} à
+                            ${this.formatTime(currentChatDate)}
+                          </div>`
+                        );
+                      } else if (
+                        prevChatDate &&
+                        // If the difference between the current chat date and the previous chat date is greater than 1 hour
+                        currentChatDate.getTime() - prevChatDate.getTime() >
+                          60 * 60 * 1000
+                      ) {
+                        // Add time separator if the time difference between the current chat and the next one is more than 30 minutes
+                          acc.push(
+                            html`<div
+                              class="c-messages__slot c-messages__slot--hour"
+                            >
+                              ${this.formatTime(currentChatDate)}
+                            </div>`
+                          );
+                      }
+                        // Add the chat
+                        acc.push(
+                          html`<messages-item-component
+                            .chat="${chat}"
+                          ></messages-item-component>`
+                        );
+
+                      return acc;
+                    },
+                    []
+                  )}
+                `
+              : html`<p>Select a discussion to see the chats.</p>`}
+          </div>
         </div>
         <div class="c-messages__footer">
           <div class="c-messages__reply" contenteditable></div>

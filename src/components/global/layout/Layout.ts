@@ -121,16 +121,21 @@ export class Layout extends StyledElement {
 
   openLayout(): void {
     const screenContainer: HTMLElement | null = document.querySelector(".c-screen__container");
-
+  
     // Update the disable state for the buttons
     const newIndex = this.globalStyleController.getStyleIndex();
     this.isDisabledPrev = newIndex === 0;
     this.isDisabledNext = newIndex === stylesList.length - 1;
-
+  
     if (this.layout === null || screenContainer === null) return;
+    this.layout.style.display = "block";
     this.layout.style.pointerEvents = "auto";
-    this.layout.style.transform = "scale(1)";
-    screenContainer.style.transform = "scale(0.7)";
+    
+    setTimeout(() => {
+      if (this.layout === null || screenContainer === null) return;
+      screenContainer.style.transform = "scale(0.7)";
+      this.layout.style.transform = "scale(1)";
+    }, 10); // give it a small delay
   }
 
   closeLayout(): void {
@@ -140,6 +145,11 @@ export class Layout extends StyledElement {
     this.layout.style.pointerEvents = "none";
     this.layout.style.transform = "scale(1.5)";
     screenContainer.style.transform = "scale(1)";
+    setTimeout(() => {
+      if (this.layout === null) return;
+      this.layout.style.display = "none";
+    }
+    , 500);
   }
 
   render() {

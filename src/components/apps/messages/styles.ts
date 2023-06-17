@@ -21,7 +21,7 @@ export const basic = css`
   }
 
   .c-messages__list::-webkit-scrollbar {
-    width: 10px;
+    display: none;
   }
 
   .c-messages__right {
@@ -35,6 +35,7 @@ export const basic = css`
   .c-messages__header {
     display: flex;
     align-items: center;
+    height: 7.5%;
     justify-content: space-between;
     padding: 10px 25px;
     margin-bottom: auto;
@@ -51,7 +52,7 @@ export const basic = css`
   .c-messages__footer {
     display: flex;
     align-items: center;
-    padding: 25px 25px;
+    padding: 15px 25px;
     gap: 10px;
     border-top: 1px solid #ddd;
   }
@@ -59,7 +60,9 @@ export const basic = css`
   .c-messages__reply {
     width: 100%;
     height: 100%;
-    min-height: 75px;
+    min-height: 20px;
+    max-height: 100px;
+    overflow-y: auto;
     padding: 10px;
     border: 1px solid #ddd;
     box-sizing: border-box;
@@ -67,22 +70,33 @@ export const basic = css`
     resize: none;
   }
 
+  .c-messages__reply::-webkit-scrollbar {
+    display: none;
+  }
+
   .c-messages__content-container {
-    overflow-y: scroll;
+    overflow-y: auto;
+  }
+
+  .c-messages__content-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .c-messages__chat {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 25px;
   }
 
-  .c-messages__content-container::-webkit-scrollbar {
-    width: 10px;
-  }
-
   .c-messages__slot {
     margin: 15px auto;
     font-size: 0.9rem;
     opacity: 0.7;
+  }
+
+  .c-messages__slot--day {
+    margin: 25px auto;
   }
 
   /* message item */
@@ -92,6 +106,7 @@ export const basic = css`
     width: fit-content;
     background: #ddd;
     padding: 10px 15px;
+    margin-bottom: 1px;
     max-width: 80%;
     border-radius: 10px;
   }
@@ -241,7 +256,8 @@ const styleSkeuo: StyleObject = {
 
     .c-messages__reply{
       background-color: #ffffff;
-      border-radius: 5px;
+      border-radius: 25px;
+      padding: 15px 20px;
       border: 1px solid #9c9c9c;
       box-shadow: inset 0 -1px 3px rgba(0, 0, 0, 0.45);
     }
@@ -282,6 +298,7 @@ const styleSkeuo: StyleObject = {
       box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.35),
         0px 5px 5px rgba(0, 0, 0, 0.1),
         inset 0px -5px 10px rgba(255, 255, 255, 0.4),
+        inset 0px 5px 10px rgba(255, 255, 255, 0.4),
         inset 0px 2px 5px rgba(0, 0, 0, 0.2);
     }
 

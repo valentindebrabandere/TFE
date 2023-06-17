@@ -6,22 +6,22 @@
       "chats": [
         {
           "send": true,
-          "timestamp": "2023-06-16T13:00:00.000+02:00",
+          "timestamp": "2023-04-16T13:00:00.000+02:00",
           "content": "Hello, how are you?",
           "fileType": null,
           "filelink": null
         },
         {
           "send": false,
-          "timestamp": "2023-06-16T13:05:00.000+02:00",
+          "timestamp": "2023-04-16T13:02:00.000+02:00",
           "content": "I'm good, thanks!",
           "fileType": null,
           "filelink": null
         },
         {
           "send": true,
-          "timestamp": "2023-06-16T13:45:00.000+02:00",
-          "content": "Great to hear!",
+          "timestamp": "2023-04-16T13:45:00.000+02:00",
+          "content": "13:45",
           "fileType": null,
           "filelink": null
         }
@@ -29,61 +29,82 @@
     },
     {
       "name": "Luc",
-      "notif": 0,
+      "notif": 2,
       "profilePic": "",
       "chats": [
         {
           "send": true,
-          "timestamp": "2023-06-16T13:00:00.000+02:00",
+          "timestamp": "2023-05-16T13:00:00.000+02:00",
           "content": "Hello, how are you?",
           "fileType": null,
           "filelink": null
         },
         {
           "send": false,
-          "timestamp": "2023-06-16T13:05:00.000+02:00",
+          "timestamp": "2023-05-16T13:05:00.000+02:00",
           "content": "I'm good, thanks!",
           "fileType": null,
           "filelink": null
         },
         {
+          "send": false,
+          "timestamp": "2023-05-16T13:06:00.000+02:00",
+          "content": "Test!",
+          "fileType": null,
+          "filelink": null
+        },
+        {
+          "send": false,
+          "timestamp": "2023-05-16T13:07:00.000+02:00",
+          "content": "13:07",
+          "fileType": null,
+          "filelink": null
+        },
+        {
+          "send": false,
+          "timestamp": "2023-05-16T13:38:00.000+02:00",
+          "content": "13:38",
+          "fileType": null,
+          "filelink": null
+        },
+        {
           "send": true,
-          "timestamp": "2023-06-16T13:55:00.000+02:00",
+          "timestamp": "2023-05-16T13:40:00.000+02:00",
           "content": "Great to hear!",
           "fileType": null,
           "filelink": null
         },
         {
           "send": true,
-          "timestamp": "2023-06-17T13:35:00.000+02:00",
+          "timestamp": "2023-05-17T14:35:00.000+02:00",
           "content": "Great to send a other message!",
           "fileType": null,
           "filelink": null
         },
         {
           "send": true,
-          "timestamp": "2023-06-18T13:00:00.000+02:00",
+          "timestamp": "2023-05-18T13:00:00.000+02:00",
           "content": "Hello, how are you?",
           "fileType": null,
           "filelink": null
         },
         {
           "send": false,
-          "timestamp": "2023-06-18T13:05:00.000+02:00",
+          "timestamp": "2023-05-18T13:05:00.000+02:00",
           "content": "I'm good, thanks!",
           "fileType": null,
           "filelink": null
         },
         {
           "send": true,
-          "timestamp": "2023-06-18T13:55:00.000+02:00",
+          "timestamp": "2023-05-18T13:55:00.000+02:00",
           "content": "Great to hear!",
           "fileType": null,
           "filelink": null
         },
         {
           "send": true,
-          "timestamp": "2023-06-19T13:35:00.000+02:00",
+          "timestamp": "2023-05-19T13:35:00.000+02:00",
           "content": "Great to send a other message!",
           "fileType": null,
           "filelink": null
