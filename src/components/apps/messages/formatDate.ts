@@ -5,5 +5,5 @@ export function formatDate(date: string): string {
   const month = String(dateObj.getMonth() + 1).padStart(2, "0"); // Months are zero-based in JavaScript
   const year = dateObj.getFullYear();
 
-  return `${day}-${month}-${year}`;
+  return `${day}.${month}.${year}`;
 }

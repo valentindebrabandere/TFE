@@ -59,6 +59,34 @@
           "content": "Great to send a other message!",
           "fileType": null,
           "filelink": null
+        },
+        {
+          "send": true,
+          "timestamp": "2023-06-18T13:00:00.000+02:00",
+          "content": "Hello, how are you?",
+          "fileType": null,
+          "filelink": null
+        },
+        {
+          "send": false,
+          "timestamp": "2023-06-18T13:05:00.000+02:00",
+          "content": "I'm good, thanks!",
+          "fileType": null,
+          "filelink": null
+        },
+        {
+          "send": true,
+          "timestamp": "2023-06-18T13:55:00.000+02:00",
+          "content": "Great to hear!",
+          "fileType": null,
+          "filelink": null
+        },
+        {
+          "send": true,
+          "timestamp": "2023-06-19T13:35:00.000+02:00",
+          "content": "Great to send a other message!",
+          "fileType": null,
+          "filelink": null
         }
       ]
     }

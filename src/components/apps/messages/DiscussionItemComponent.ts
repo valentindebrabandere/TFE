@@ -1,7 +1,8 @@
 // DiscussionItemComponent.ts
-import { html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import {formatDate} from './formatDate';
+import { html } from "lit";
+import { customElement, property, state } from "lit/decorators.js";
+import { formatDate } from "./formatDate";
+import { StyledElement } from "../../../utils/globalStyledElement";
 
 interface Chat {
   send: boolean;
@@ -19,27 +20,33 @@ interface Discussion {
   chats: Chat[];
 }
 
-@customElement('discussion-item-component')
-export class DiscussionItemComponent extends LitElement {
+@customElement("discussion-item-component")
+export class DiscussionItemComponent extends StyledElement {
   @property({ type: Object }) discussion: Discussion = {
     name: "",
     notif: 0,
     profilePic: "",
-    chats: []
+    chats: [],
   };
+  @state() currentStyle = "";
 
   connectedCallback(): void {
     super.connectedCallback();
     this.classList.add("c-discussion-item");
+    this.updateStyles();
   }
 
   createRenderRoot() {
     return this;
   }
 
+  updateStyles() {
+    this.currentStyle = this.globalStyleController.style;
+  }
+
   render() {
     const lastChat = this.discussion.chats[this.discussion.chats.length - 1];
-    let content = '';
+    let content = "";
 
     if (lastChat) {
       if (lastChat.content) {
@@ -50,19 +57,30 @@ export class DiscussionItemComponent extends LitElement {
     }
 
     return html`
-      <div class="c-discussion-item__head">
-        <img class="c-discussion-item__profile" src="${this.discussion.profilePic || "content/messages/profilesPicures/default.png"}" alt="profile picture">
-        <p class="c-discussion-item__name">${this.discussion.name}</p>
-        <p class="c-discussion-item__date">${lastChat ? formatDate(lastChat.timestamp) : ""}</p>
+      <div class="c-discussion-item__img">
+        <img
+          class="c-discussion-item__profile"
+          src="${this.discussion.profilePic ||
+          "/content/" +
+            this.currentStyle +
+            "/messages/profilePictures/default.png"}"
+          alt="profile picture"
+        />
+        ${this.discussion.notif > 0
+          ? html`<div class="c-discussion-item__notif">
+              ${this.discussion.notif}
+            </div>`
+          : ""}
       </div>
-      <div class="c-discussion-item__content">
-        ${content}
-      </div>
-      <div class="c-discussion-item__notif">
-        ${this.discussion.notif > 0 ? this.discussion.notif : ""}
+      <div class="c-discussion-item__infos">
+        <div class="c-discussion-item__top-infos">
+          <p class="c-discussion-item__name">${this.discussion.name}</p>
+          <p class="c-discussion-item__date">
+            ${lastChat ? formatDate(lastChat.timestamp) : ""}
+          </p>
+        </div>
+        <div class="c-discussion-item__content">${content}</div>
       </div>
     `;
   }
-
-
 }

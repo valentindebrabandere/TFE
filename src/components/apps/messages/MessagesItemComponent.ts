@@ -23,6 +23,11 @@ export class MessagesItemComponent extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
     this.classList.add("c-messages-item");
+    if (this.chat.send) {
+      this.classList.add("c-messages-item--send");
+    }else{
+      this.classList.add("c-messages-item--receive");
+    }
   }
 
   createRenderRoot() {
@@ -38,13 +43,13 @@ export class MessagesItemComponent extends LitElement {
           content = html`<img class="c-message-item__image" src="${this.chat.filelink}" alt="Chat Image" />`;
           break;
         case 'vocal':
-          content = html`<audio controls>
+          content = html`<audio  class="c-message-item__vocal" controls>
                             <source src="${this.chat.filelink}" type="audio/mpeg">
                             Your browser does not support the audio element.
                          </audio>`;
           break;
         case 'video':
-          content = html`<video width="320" height="240" controls>
+          content = html`<video  class="c-message-item__video" width="320" height="240" controls>
                             <source src="${this.chat.filelink}" type="video/mp4">
                             Your browser does not support the video tag.
                          </video>`;
@@ -55,9 +60,7 @@ export class MessagesItemComponent extends LitElement {
     }
 
     return html`
-      <div class="c-messages-item__content ${this.chat.send ? 'c-messages-item__content--send' : 'c-messages-item__content--received'}">
         ${content}
-      </div>
     `;
   }
 }

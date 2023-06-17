@@ -12,8 +12,14 @@
   }
 
   .c-dock__app::before {
-    background-color: #ffffff6A;
+    background-image: -webkit-linear-gradient(
+        #ffffff 0%,
+        #b1fff5 100%
+      );
+    width: 5px;
+    height: px;
     border-radius: 50%;
+    filter: drop-shadow(0px 0px 4px #55ffff);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
   }

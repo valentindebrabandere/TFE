@@ -29,7 +29,7 @@ export class Messages extends StyledElement {
       this.selectDiscussion(this.discussions[0]);
     } else {
       this.discussions = await this.fetchDiscussions(
-        `/content/${this.currentStyle}/messages/messages.json`
+        `/content/${this.currentStyle}/messages/messagesConfig.json`
       );
       this.selectDiscussion(this.discussions[0]);
       this.sortDiscussions();
@@ -78,7 +78,7 @@ export class Messages extends StyledElement {
     const year = dateTime.getFullYear();
     const month = (dateTime.getMonth() + 1).toString().padStart(2, "0");
     const day = dateTime.getDate().toString().padStart(2, "0");
-    return `${day}-${month}-${year}`;
+    return `${day}.${month}.${year}`;
   }
 
   formatTime(dateTime: Date) {
@@ -92,7 +92,7 @@ export class Messages extends StyledElement {
       <style>
         ${this.styles}
       </style>
-      
+
       <div class="c-messages__list">
         ${this.discussions.map(
           (discussion) => html`
@@ -103,32 +103,86 @@ export class Messages extends StyledElement {
           `
         )}
       </div>
-      
-      <div class="c-messages__content-container">
-        ${this.selectedDiscussion
-          ? html`
-              <!-- Iterate through all the chats in the discussion -->
-              ${this.selectedDiscussion.chats.reduce((acc: any[], chat: any, index: number, chats: any[]) => {
-                // Get the current chat date
-                const currentChatDate = new Date(chat.timestamp);
-                // Get the next chat
-                const nextChat = chats[index + 1];
-                // Get the next chat date
-                const nextChatDate = nextChat ? new Date(nextChat.timestamp) : null;
-                // Add date and time separator if it's the first chat or if the date has changed
-                if (index === 0 || (index > 0 && currentChatDate.getDate() !== new Date(chats[index - 1].timestamp).getDate())) {
-                  acc.push(html`<div class="c-messages__day">${this.formatDate(currentChatDate)} ${this.formatTime(currentChatDate)}</div>`);
-                } else if (nextChatDate && nextChatDate.getTime() - currentChatDate.getTime() > 30 * 60 * 1000) { // Add time separator if the time difference between the current chat and the next one is more than 30 minutes
-                  acc.push(html`<div class="c-messages__slot">${this.formatTime(nextChatDate)}</div>`);
-                }
-                // Add the chat
-                acc.push(html`<messages-item-component .chat="${chat}"></messages-item-component>`);
-                return acc;
-              }, [])}
-            `
-          : html`<p>Select a discussion to see the chats.</p>`}
+
+      <div class="c-messages__right">
+        <div class="c-messages__header">
+          <img
+            class="c-messages__pp"
+            src="${this.selectedDiscussion &&
+            this.selectedDiscussion.profilePicture
+              ? this.selectedDiscussion.profilePicture
+              : "/content/" +
+                this.currentStyle +
+                "/messages/profilePictures/default.png"}"
+            alt=""
+          />
+          <p class="c-messages__title">
+            ${this.selectedDiscussion ? this.selectedDiscussion.name : ""}
+          </p>
+          <button class="c-messages__button c-cta c-cta--blue">Détails</button>
+        </div>
+
+        <div class="c-messages__content-container">
+          ${this.selectedDiscussion
+            ? html`
+                <!-- Iterate through all the chats in the discussion -->
+                ${this.selectedDiscussion.chats.reduce(
+                  (acc: any[], chat: any, index: number, chats: any[]) => {
+                    // Get the current chat date
+                    const currentChatDate = new Date(chat.timestamp);
+                    // Get the next chat
+                    const nextChat = chats[index + 1];
+                    // Get the next chat date
+                    const nextChatDate = nextChat
+                      ? new Date(nextChat.timestamp)
+                      : null;
+                    // Add date and time separator if it's the first chat or if the date has changed
+                    if (
+                      index === 0 ||
+                      (index > 0 &&
+                        currentChatDate.getDate() !==
+                          new Date(chats[index - 1].timestamp).getDate())
+                    ) {
+                      acc.push(
+                        html`<div
+                          class="c-messages__slot c-messages__slot--day"
+                        >
+                          ${this.formatDate(currentChatDate)} à
+                          ${this.formatTime(currentChatDate)}
+                        </div>`
+                      );
+                    } else if (
+                      nextChatDate &&
+                      nextChatDate.getTime() - currentChatDate.getTime() >
+                        30 * 60 * 1000
+                    ) {
+                      // Add time separator if the time difference between the current chat and the next one is more than 30 minutes
+                      acc.push(
+                        html`<div
+                          class="c-messages__slot c-messages__slot--hour"
+                        >
+                          ${this.formatTime(nextChatDate)}
+                        </div>`
+                      );
+                    }
+                    // Add the chat
+                    acc.push(
+                      html`<messages-item-component
+                        .chat="${chat}"
+                      ></messages-item-component>`
+                    );
+                    return acc;
+                  },
+                  []
+                )}
+              `
+            : html`<p>Select a discussion to see the chats.</p>`}
+        </div>
+        <div class="c-messages__footer">
+          <div class="c-messages__reply" contenteditable></div>
+          <button class="c-messages__button c-cta c-cta--primary">Reply</button>
+        </div>
       </div>
     `;
   }
-  
 }
