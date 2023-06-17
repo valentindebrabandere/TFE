@@ -1,6 +1,7 @@
 // MessagesComponent.ts
 import { html, css } from "lit";
 import { customElement, state, property, query } from "lit/decorators.js";
+import { classMap } from 'lit/directives/class-map.js';
 
 import { StyledElement } from "../../../utils/globalStyledElement";
 import { basic, styles } from "./styles";
@@ -17,6 +18,7 @@ export class Messages extends StyledElement {
   @state() selectedDiscussion: any = null;
   @state() styles = [basic, css``];
   @state() currentStyle = "";
+  @state() imagePreviewSrc: string | null = null; 
   @query(".c-messages__content-container") chatContainer?: HTMLElement;
 
   async connectedCallback() {
@@ -35,7 +37,18 @@ export class Messages extends StyledElement {
         this.sortDiscussions();
         this.selectDiscussion(this.discussions[0]);
     }
+
+    this.addEventListener('showImagePreview', (event) => {
+      const customEvent = event as CustomEvent;
+      this.imagePreviewSrc = customEvent.detail.imageSrc;
+    }); 
+    
   }
+
+  closeImagePreview() {
+    this.imagePreviewSrc = null;  // hide the image preview
+  }
+
 
   async fetchDiscussions(filelink: string): Promise<any[]> {
     if (!filelink) return this.discussions;
@@ -56,10 +69,13 @@ export class Messages extends StyledElement {
 
   selectDiscussion(discussion: any) {
     this.selectedDiscussion = discussion;
+    this.scrollToBottom();
+
     setTimeout(() => {
       this.scrollToBottom();
-    }, 0);
+    }, 20);
   }
+  
 
   sortDiscussions() {
     this.discussions.sort((a, b) => {
@@ -96,10 +112,16 @@ export class Messages extends StyledElement {
       <style>
         ${this.styles}
       </style>
+       ${this.imagePreviewSrc ? html`
+            <div class="image-preview-overlay" @click="${this.closeImagePreview}">
+              <img src="${this.imagePreviewSrc}" alt="Image Preview" class="image-preview"/>
+            </div>
+          ` : ''}
       <div class="c-messages__list">
         ${this.discussions.map(
           (discussion) => html`
             <discussion-item-component
+              class=${classMap({ 'c-discussion-item--selected': this.selectedDiscussion === discussion })}
               .discussion="${discussion}"
               @click="${() => this.selectDiscussion(discussion)}"
             ></discussion-item-component>
@@ -132,7 +154,6 @@ export class Messages extends StyledElement {
                   <!-- Iterate through all the chats in the discussion -->
                   ${this.selectedDiscussion.chats.reduce(
                     (acc: any[], chat: any, index: number, chats: any[]) => {
-
                       // Get the current chat date
                       const currentChatDate = new Date(chat.timestamp);
                       // Get the next chat
@@ -176,7 +197,6 @@ export class Messages extends StyledElement {
                             .chat="${chat}"
                           ></messages-item-component>`
                         );
-
                       return acc;
                     },
                     []

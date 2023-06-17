@@ -8,22 +8,43 @@
           "send": true,
           "timestamp": "2023-04-16T13:00:00.000+02:00",
           "content": "Hello, how are you?",
-          "fileType": null,
+          "fileType": "text",
           "filelink": null
         },
         {
           "send": false,
           "timestamp": "2023-04-16T13:02:00.000+02:00",
           "content": "I'm good, thanks!",
-          "fileType": null,
+          "fileType": "text",
           "filelink": null
         },
         {
           "send": true,
           "timestamp": "2023-04-16T13:45:00.000+02:00",
           "content": "13:45",
-          "fileType": null,
+          "fileType": "text",
           "filelink": null
+        },
+        {
+          "send": false,
+          "timestamp": "2023-06-16T13:45:00.000+02:00",
+          "content": null,
+          "fileType": "image",
+          "filelink": "content/skeuo/messages/image.jpg"
+        },
+        {
+          "send": false,
+          "timestamp": "2023-06-16T13:55:00.000+02:00",
+          "content": null,
+          "fileType": "vocal",
+          "filelink": "content/skeuo/messages/vocal.m4a"
+        },
+        {
+          "send": true,
+          "timestamp": "2023-06-16T13:55:00.000+02:00",
+          "content": null,
+          "fileType": "vocal",
+          "filelink": "content/skeuo/messages/vocal.m4a"
         }
       ]
     },
@@ -36,77 +57,84 @@
           "send": true,
           "timestamp": "2023-05-16T13:00:00.000+02:00",
           "content": "Hello, how are you?",
-          "fileType": null,
+          "fileType": "text",
           "filelink": null
         },
         {
           "send": false,
           "timestamp": "2023-05-16T13:05:00.000+02:00",
           "content": "I'm good, thanks!",
-          "fileType": null,
+          "fileType": "text",
           "filelink": null
         },
         {
           "send": false,
           "timestamp": "2023-05-16T13:06:00.000+02:00",
           "content": "Test!",
-          "fileType": null,
+          "fileType": "text",
           "filelink": null
         },
         {
           "send": false,
           "timestamp": "2023-05-16T13:07:00.000+02:00",
           "content": "13:07",
-          "fileType": null,
+          "fileType": "text",
           "filelink": null
         },
         {
           "send": false,
           "timestamp": "2023-05-16T13:38:00.000+02:00",
           "content": "13:38",
-          "fileType": null,
+          "fileType": "text",
+          "filelink": null
+        },
+        {
+          "send": false,
+          "timestamp": "2023-05-16T13:38:00.000+02:00",
+          "content": "13:38",
+          "fileType": "text",
           "filelink": null
         },
         {
           "send": true,
           "timestamp": "2023-05-16T13:40:00.000+02:00",
           "content": "Great to hear!",
-          "fileType": null,
+          "fileType": "text",
           "filelink": null
         },
         {
           "send": true,
           "timestamp": "2023-05-17T14:35:00.000+02:00",
           "content": "Great to send a other message!",
-          "fileType": null,
+          "fileType": "text",
           "filelink": null
         },
         {
           "send": true,
           "timestamp": "2023-05-18T13:00:00.000+02:00",
           "content": "Hello, how are you?",
-          "fileType": null,
+          "fileType": "text",
           "filelink": null
         },
         {
           "send": false,
           "timestamp": "2023-05-18T13:05:00.000+02:00",
           "content": "I'm good, thanks!",
-          "fileType": null,
+          "fileType": "text",
           "filelink": null
         },
         {
           "send": true,
           "timestamp": "2023-05-18T13:55:00.000+02:00",
           "content": "Great to hear!",
-          "fileType": null,
+          "fileType": "text",
           "filelink": null
         },
         {
           "send": true,
           "timestamp": "2023-05-19T13:35:00.000+02:00",
           "content": "Great to send a other message!",
-          "fileType": null,
+          "fileType": "text",
           "filelink": null
         }
       ]

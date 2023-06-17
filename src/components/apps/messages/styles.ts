@@ -104,13 +104,88 @@ export const basic = css`
   .c-messages-item {
     display: inline-block;
     width: fit-content;
-    background: #ddd;
-    padding: 10px 15px;
     margin-bottom: 1px;
     max-width: 80%;
     border-radius: 10px;
   }
 
+  .c-messages-item--text {
+    padding: 10px 15px;
+    background: #ddd;
+  }
+
+  .c-messages-item__image {
+    max-width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .image-preview-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .image-preview {
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  .c-messages-item--vocal {
+    padding: 10px 15px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    max-width: 400px;
+  }
+
+  .c-message-vocal__button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: transparent;
+    overflow: hidden;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+}
+
+.c-message-vocal__icon{
+    fill: black;
+    width: 20px;
+    height: 20px;
+}
+
+
+  .c-message-vocal__progress-bar {
+    flex-grow: 1;
+    height: 5px;
+    background-color: #ddd;
+    margin-left: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .c-message-vocal__progress {
+    height: 5px;
+    background-color: #007BFF;
+  }
+  
   .c-messages-item p {
     margin: 0;
   }
@@ -135,6 +210,7 @@ export const basic = css`
     box-sizing: border-box;
     border-bottom: 1px solid #e0e0e0;
     cursor: pointer;
+    transition: padding-left 0.2s ease-in-out;
   }
 
   .c-discussion-item p {
@@ -173,6 +249,7 @@ export const basic = css`
   .c-discussion-item__name {
     font-weight: 500;
     color: #000000;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
   }
 
   .c-discussion-item__date {
@@ -264,12 +341,11 @@ const styleSkeuo: StyleObject = {
 
     /* message item */
 
-    .c-messages-item {
+    .c-messages-item--text, .c-messages-item--vocal {
       font-family: ".LucidaGrandeUI", "Lucida Grande", "Lucida sans unicode";
       color: black;
       font-size: 1rem;
       padding: 12px 18px;
-      display: inline-block;
 
       background-image: -webkit-linear-gradient(
         #ffffff 0%,
@@ -286,7 +362,7 @@ const styleSkeuo: StyleObject = {
       text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
     }
 
-    .c-messages-item--send {
+    .c-messages-item--text.c-messages-item--send, .c-messages-item--vocal.c-messages-item--send {
       background-image: -webkit-linear-gradient(
         #b6db7c 0%,
         #aed96e 18%,
@@ -302,6 +378,45 @@ const styleSkeuo: StyleObject = {
         inset 0px 2px 5px rgba(0, 0, 0, 0.2);
     }
 
+    /* message item vocal */
+    .c-messages-item--vocal {
+      padding: 10px 15px 10px 10px;
+    }
+  
+    .c-message-vocal__button {
+      width: 40px;
+      height: 40px;
+      color: #fff;
+      border: 1px solid #9C9C9C;
+      border-color: #705ebb;
+      background-image: -webkit-linear-gradient(#acc5e9 0%, #a3c0f2 18%,
+              #61a0ed 39%, #55a3f2 70%,
+              #82c2f1 91.72%, #9AD2F2 100%);
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.35);
+      }
+  
+  .c-message-vocal__icon{
+    fill: white;
+    width: 20px;
+    height: 20px;
+    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.5));
+  }
+
+  .c-message-vocal__progress-bar {
+    height: 10px;
+    overflow: hidden;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2),
+     0px 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  .c-message-vocal__progress {
+    height: 100%;
+    background-image: -webkit-linear-gradient(#acc5e9 0%, #a3c0f2 18%,
+      #61a0ed 39%, #55a3f2 70%,
+      #82c2f1 91.72%, #9AD2F2 100%);
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2);
+  }
+
     /* discussion */
 
     .c-discussion-item {
@@ -313,20 +428,30 @@ const styleSkeuo: StyleObject = {
         #dfdfdf 60%,
         #d7d7d7 100%
       );
-      transition: box-shadow 0.2s ease-in-out;
+      transition: box-shadow 0.2s ease-in-out, background-image 0.2s ease-in-out;
+    }
+
+    .c-discussion-item--selected{
+      background-image: -webkit-linear-gradient(
+        #dddddd 0%,
+        #d1d1d1 30%,
+        #cacaca 45%,
+        #bebebe 60%,
+        #b7b7b7 100%
+      );
+      transition: box-shadow 0.2s ease-in-out, background-image 0.2s ease-in-out;
     }
 
     .c-discussion-item:hover {
-      border: 1px solid #9c9c9c;
       background-image: -webkit-linear-gradient(
-        #ffffff 0%,
-        #f1f1f1 30%,
-        #eaeaea 45%,
-        #dfdfdf 60%,
-        #d7d7d7 100%
+        #eeeeee 0%,
+        #e1e1e1 30%,
+        #dadada 45%,
+        #cecece 60%,
+        #c7c7c7 100%
       );
       box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
-      transition: box-shadow 0.2s ease-in-out;
+      transition: box-shadow 0.2s ease-in-out, background-image 0.2s ease-in-out;
     }
 
     .c-discussion-item__notif {
