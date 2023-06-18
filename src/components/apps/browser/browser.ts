@@ -1,4 +1,4 @@
-// Apercu.ts
+// browser.ts
 import { html, css } from "lit";
 import { customElement, state, property } from "lit/decorators.js";
 
@@ -13,8 +13,6 @@ export class Browser extends StyledElement {
   @property({ type: String, attribute: "filelink" }) filelink:
     | string
     | undefined;
-
-  @state() content: string = "";
   @state() styles = [basic, css``];
   @state() currentStyle = "";
 
@@ -54,11 +52,16 @@ export class Browser extends StyledElement {
       </style>
       <!-- es6 if statement filelink undefied -->
       ${this.filelink
-        ? html`<iframe
-            src="${this.filelink}"
-            frameborder="0"
-            style="width: 100%; height: 100%;"
-          ></iframe>`
+        ? html`
+        <div class="c-browser__content">
+          <iframe
+              class="c-browser__iframe"
+              src="${this.filelink}"
+              frameborder="0"
+              style="width: 100%; height: 100%;"
+            ></iframe>
+        </div>
+        `
         : html`<div class="c-browser__no-content">
             <img src="${app.icon(this.currentStyle)}" alt="" />
             <h2>La page que vous essayez de rejoindre est inacessible</h2>

@@ -5,19 +5,27 @@ import "/src/assets/globalStyles/typoImports.css"
 export const basic = css`
   .c-browser {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #fff;
     width: 90vw;
     height: 80vh;
+    will-change: transform;
+    backface-visibility: hidden;
   }
 
-  .c-browser__content{
+  .c-browser__content {
     width: 100%;
     height: 100%;
-    max-width: 60vw;
-    max-height: 75vh;
-    aspect-ratio: auto;
-    object-fit: contain;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .c-browser__iframe{
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   .c-browser__no-content{
@@ -28,6 +36,8 @@ export const basic = css`
     margin: auto;
     width: 35vw;
     height: 30vw;
+    will-change: transform;
+    backface-visibility: hidden;
   }
 
   .c-browser__no-content img{ 
