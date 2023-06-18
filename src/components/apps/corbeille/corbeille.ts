@@ -125,6 +125,8 @@ export class Corbeille extends StyledElement {
       <style>
         ${this.styles}
       </style>
+      <div class="finder__header">
+        
       <div class="finder__content">
         ${this.childItems.map(
           (item) => html`

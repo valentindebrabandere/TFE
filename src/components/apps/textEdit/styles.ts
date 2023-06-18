@@ -11,7 +11,7 @@ export const basic = css`
     background-color: #fff;
   }
 
-  .text-edit__editor {
+  .c-text-edit__editor {
     width: 100%;
     height: 100%;
     flex-grow: 1;
@@ -24,8 +24,14 @@ export const basic = css`
     box-sizing: border-box;
   }
 
-  .text-edit__editor > * {
+  .c-text-edit__editor > * {
     word-break: keep-all;
+}
+
+.c-text-edit__editor[data-placeholder]:empty::before {
+  content: attr(data-placeholder);
+  color: gray;
+  pointer-events: none;
 }
 `;
 

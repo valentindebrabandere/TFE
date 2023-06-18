@@ -54,7 +54,7 @@ export class TextEdit extends StyledElement {
       this.content = await this.fetchFileContent(this.filelink);
     }
     // Set focus on the contenteditable div after updating the content
-    const editor = this.querySelector('.text-edit__editor') as HTMLElement;
+    const editor = this.querySelector('.c-text-edit__editor') as HTMLElement;
     if (editor) {
       editor.focus();
     }
@@ -82,9 +82,10 @@ export class TextEdit extends StyledElement {
         ${this.styles}
       </style>
        <div
-        class="text-edit__editor"
+        class="c-text-edit__editor"
         contenteditable
         spellcheck=false
+        data-placeholder="Entrez votre texte ici..."
         .innerHTML="${this.content}"
       ></div>
     `;

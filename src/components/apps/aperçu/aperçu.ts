@@ -6,6 +6,8 @@ import { basic, styles } from './styles';
 
 // utils imports
 import { StyledElement } from '../../../utils/globalStyledElement';
+import { getApplicationByID } from "../../../utils/appManager";
+
 
 @customElement('apercu-component')
 export class Aperçu extends StyledElement {
@@ -13,6 +15,7 @@ export class Aperçu extends StyledElement {
 
   @state() content: string = '';
   @state() styles = [basic, css``];
+  @state() currentStyle = '';
 
   constructor() {
     super();
@@ -29,6 +32,7 @@ export class Aperçu extends StyledElement {
   updateStyles() {
     //select the current style (globalStyledElement.ts)
     this.styles = this.applyStyles(styles, basic);
+    this.currentStyle = this.globalStyleController.style;
   }
 
   getFileIcon(style: string) {
@@ -42,6 +46,7 @@ export class Aperçu extends StyledElement {
 
   render() {
     // create a aperçu app
+    const app = getApplicationByID("Aperçu");
     return html`
       <style>
         /* Import the good style */
@@ -51,6 +56,7 @@ export class Aperçu extends StyledElement {
         ${this.filelink ? 
         html`<img class="c-apercu__content c-app__content" src="${this.filelink}" alt="Preview" />` 
         : html`<div class="c-apercu__no-content">
+          <img src="${app.icon(this.currentStyle)}" alt="Aperçu Logo" />
           <h2>Pas de ficher ouvert</h2>
           <p>Ouvrez une image pour afficher un résultat</p>
         </div>`}

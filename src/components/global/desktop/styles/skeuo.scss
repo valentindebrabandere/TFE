@@ -11,8 +11,9 @@
 
   .selected p {
     background-color: #0085FE;
-    border-radius: 3px;
+    border-radius: 7px;
     text-shadow: none;
+    color: #fff !important;
   }
 
 
@@ -21,11 +22,9 @@
 */
 
   .opened p {
-
-    color: #6D6D6D;
+    color: #6D6D6D !important;
     background-color: #CDCDCD;
     border-radius: 3px;
     text-shadow: none;
-
   }
 }
