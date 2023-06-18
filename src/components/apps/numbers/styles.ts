@@ -10,7 +10,7 @@ export const basic = css`
     height: fit-content;
     max-width: 60vw;
     max-height: 60vh;
-    overflow-y: scroll;
+    overflow: auto;
   }
 
   .c-numbers table {

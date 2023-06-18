@@ -112,7 +112,6 @@ export class Window extends StyledElement {
     }
 
     const appContent = this.querySelector(".c-app__content");
-    console.log(appContent)
 
     if (appContent === null) return;
     //check if the content is vertical or horizontal

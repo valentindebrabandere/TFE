@@ -24,12 +24,14 @@ defaultAppsByStyle.set('oneBit', [
 defaultAppsByStyle.set('grey', [
   { id: 'Mail', filelink: '', childItems: [], top: 5, left: 10 },
   { id: 'Browser', filelink: '/content/grey/website/website.html', childItems: [], top: 2, left: 2 },
+  // { id: 'Browser', filelink: '/content/grey/website/Google.html', childItems: [], top: 2, left: 2 }
+
 ]);
 
-//Skeuo
-defaultAppsByStyle.set('skeuo', [
-  { id: 'Messages', filelink: '', childItems: [], top: 5, left: 10 },
-]);
+// //Skeuo
+// defaultAppsByStyle.set('skeuo', [
+//   { id: 'Messages', filelink: '', childItems: [], top: 5, left: 10 },
+// ]);
 
 
 

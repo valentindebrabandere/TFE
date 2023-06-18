@@ -16,11 +16,11 @@ const allApps = [Aperçu, Browser, Figma, Finder, Numbers, Mail, Messages, Prefe
 export function getDockApps(style: string) {
   switch (style) {
     case 'modernMac':
-      return [Finder, Figma, TextEdit, Aperçu];
+      return [Finder, Preferences, Figma, TextEdit, Aperçu];
     case 'flat':
-      return [Finder, Figma, TextEdit, Aperçu];
+      return [Finder, Preferences, Figma, TextEdit, Aperçu];
     case 'skeuo':
-      return [Finder, Messages, TextEdit, Aperçu];
+      return [Finder, Preferences,  Messages, TextEdit, Numbers, Aperçu];
     case 'grey':
       return [Finder, Preferences, Mail, TextEdit, Numbers, Video, Browser];
     case 'oneBit':

@@ -53,17 +53,20 @@
 
  /* Styling the scrollbar */
  ::-webkit-scrollbar {
-     width: 16px;
+     width: 12px;
      /* Width of the scrollbar */
-     height: 16px;
+     height: 12px;
+     overflow: hidden;
+     box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2),
+      0px 1px 3px rgba(0, 0, 0, 0.4);
  }
 
  /* Styling the track (background) part of the scrollbar */
  ::-webkit-scrollbar-track {
-     background: #646165;
-     border: 1px solid #000;
-     box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 rgba(255, 255, 255, 0.488), inset -2px -2px 0 0 #a099a16d, inset 2px 2px 0 0 #dedcde4e;
-     border-radius: 0;
+     background: #fff;
+    overflow: hidden;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2),
+     0px 1px 3px rgba(0, 0, 0, 0.4);
      /* Light grey color similar to Win 98 style */
  }
 
@@ -73,7 +76,7 @@
     background-image: -webkit-linear-gradient(#acc5e9 0%, #a3c0f2 18%,
             #61a0ed 39%, #55a3f2 70%,
             #82c2f1 91.72%, #9AD2F2 100%);
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.65);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.65);
     border-radius: 6px;
  }
 

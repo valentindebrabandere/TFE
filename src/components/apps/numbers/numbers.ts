@@ -24,6 +24,7 @@ export class Numbers extends StyledElement {
     this.updateStyles();
     this.classList.add('c-numbers');
     this.classList.add('c-app');
+    this.classList.add('c-app__content');
     if (this.filelink) {
       this.fetchFileContent(this.filelink);
     }
