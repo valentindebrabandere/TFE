@@ -11,3 +11,7 @@
      background: url(/images/wallpaper/modernMac.png) 50% 50% no-repeat;
      background-size: cover;
  }
+
+ .c-screen__container{
+    background-color: #000;
+ }

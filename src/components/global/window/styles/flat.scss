@@ -1,0 +1,47 @@
+.flat{
+    .c-window {
+        border-radius: 10px;
+        background-color: #ECECEC;
+    
+        filter: drop-shadow(0px 9px 10px rgba(21, 21, 15, 0.5));
+        -webkit-filter: drop-shadow(0px 9px 10px rgba(21, 21, 15, 0.5));
+    }
+    
+    .c-window__head {
+        background: linear-gradient(180deg, rgba(173, 171, 174, 0) 97.82%, #ADABAE 97.86%),
+        linear-gradient(180deg, #EAE4E9 0%, #CECED0 100%);
+
+    }
+    
+    .c-window__head:hover .c-window__control-icon {
+        opacity: .6;
+    }
+    
+    .c-window__control {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .c-window__control-icon {
+        display: block;
+        width: 70%;
+        height: auto;
+        opacity: 0;
+    }
+    
+    .c-window__control--quit {
+        background-color: #FC5753;
+        border: solid 1px #DF4744;
+    }
+    
+    .c-window__control--hide {
+        background-color: #FDBC40;
+        border: solid 1px #DE9F34;
+    }
+    
+    .c-window__control--scale {
+        background-color: #36C84B;
+        border: solid 1px #27AA35;
+    }
+}

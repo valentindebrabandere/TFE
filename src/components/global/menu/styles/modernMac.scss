@@ -1,7 +1,18 @@
-.modernMac{
+.modernMac {
     .c-menu-bar {
-        backdrop-filter: blur(7px);
-        -webkit-backdrop-filter: blur(7px);
-        background-color: #ffffff44;
+        height: 30px;
+        background: rgba(83, 83, 83, 0.5);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+    }
+
+    .c-menu-bar__btn {
+        font-size: 15px;
+        color: #fff;
+    }
+
+    .c-menu-bar__icon {
+        scale: .8;
+        filter: invert(1);
     }
 }

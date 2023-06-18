@@ -1,3 +1,4 @@
+
 .c-screen__container{
     display: block;
     width: 100vw;
@@ -12,6 +13,7 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 /* -----------------------------

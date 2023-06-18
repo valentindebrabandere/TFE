@@ -1,44 +1,63 @@
-.modernMac{
+.modernMac {
     .c-window {
         border-radius: 10px;
-    
-        filter: drop-shadow(0px 9px 10px rgba(21, 21, 15, 0.5));
-        -webkit-filter: drop-shadow(0px 9px 10px rgba(21, 21, 15, 0.5));
+
+        box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.12), 0px 10px 30px rgba(0, 0, 0, 0.2), 0px 20px 50px rgba(0, 0, 0, 0.5), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.6);
+
     }
-    
+
+    .c-window::after {
+        content: "";
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        width: calc(100% - 3px);
+        height: calc(100% - 2px);
+        border-radius: 10px;
+
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.6);
+
+        pointer-events: none;
+    }
+
     .c-window__head {
-        background-color: #3D3C3C;
+        z-index: 1;
+        background: #363636;
+        box-shadow: 0px 1px .5px rgba(0, 0, 0, 0.7), 0px 2px 1px rgba(0, 0, 0, 0.3);
     }
-    
+
     .c-window__head:hover .c-window__control-icon {
         opacity: .7;
     }
-    
+
     .c-window__control {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    
+
     .c-window__control-icon {
         display: block;
         width: 70%;
         height: auto;
         opacity: 0;
     }
-    
+
     .c-window__control--quit {
-        background-color: #E0463C;
-        border: solid 1px #bd3c33;
+        background-color: #FC5753;
+        border: solid 1px #DF4744;
     }
-    
+
     .c-window__control--hide {
-        background-color: #D9A623;
-        border: solid 1px #b58a1e;
+        background-color: #FDBC40;
+        border: solid 1px #DE9F34;
     }
-    
+
     .c-window__control--scale {
-        background-color: #73BE59;
-        border: solid 1px #528840;
+        background-color: #36C84B;
+        border: solid 1px #27AA35;
     }
 }

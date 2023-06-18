@@ -143,13 +143,13 @@ export class Layout extends StyledElement {
 
     if (this.layout === null || screenContainer === null) return;
     this.layout.style.pointerEvents = "none";
-    this.layout.style.transform = "scale(1.5)";
+    this.layout.style.transform = "scale(1.46)";
     screenContainer.style.transform = "scale(1)";
     setTimeout(() => {
       if (this.layout === null) return;
       this.layout.style.display = "none";
     }
-    , 500);
+    , 400);
   }
 
   render() {
@@ -195,9 +195,6 @@ export class Layout extends StyledElement {
           </div>
           <h2 class="c-layout__name">${this.currentStyleName}</h2>
           <p class="c-layout__date">${this.currentStyleDate}</p>
-        </div>
-        <div class="c-layout__cache-container">
-          <div class="c-layout__cache"></div>
         </div>
         <div class="c-layout__screen" @click=${() => this.closeLayout()}></div>
       </div>
