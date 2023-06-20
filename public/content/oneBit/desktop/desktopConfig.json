@@ -43,35 +43,63 @@
       "appname": "Finder",
       "filename": "Famille",
       "filelink": "",
+      "position": {"top": "15%", "left": "83%"},
+      "childItems": [
+        {
+          "appname": "TextEdit",
+          "filename": "baby shower.txt",
+          "filelink": "/content/oneBit/desktop/famille/babyShower.html",
+          "childItems": []
+        },
+        {
+          "appname": "TextEdit",
+          "filename": "livres parent.txt",
+          "filelink": "/content/oneBit/desktop/famille/livresBaby.html",
+          "childItems": []
+        },
+        {
+          "appname": "TextEdit",
+          "filename": "déco chambre.txt",
+          "filelink": "/content/oneBit/desktop/famille/deco.html",
+          "childItems": []
+        }
+      ]
+    },
+    {
+      "appname": "Finder",
+      "filename": "Perso",
+      "filelink": "",
       "position": {"top": "30%", "left": "83%"},
       "childItems": [
         {
-          "appname": "Numbers",
-          "filename": "test.xls",
-          "filelink": "/content/oneBit/desktop/test.csv",
-          "childItems": [],
-          "position": {}
+          "appname": "TextEdit",
+          "filename": "sport.txt",
+          "filelink": "/content/oneBit/desktop/personnel/course.html",
+          "childItems": []
         },
         {
-          "appname": "Finder",
-          "filename": "subfolder",
-          "filelink": "",
-          "childItems": [
-            {
-              "appname": "Aperçu",
-              "filename": "Image4.jpg",
-              "filelink": "/content/oneBit/desktop/desktopImages/image2.jpg",
-              "childItems": [],
-              "position": {}
-            },
-            {
-              "appname": "Aperçu",
-              "filename": "Image4.jpg",
-              "filelink": "/content/oneBit/desktop/desktopImages/image3.jpg",
-              "childItems": [],
-              "position": {}
-            }
-          ]
+          "appname": "TextEdit",
+          "filename": "idees.txt",
+          "filelink": "/content/oneBit/desktop/personnel/idees.html",
+          "childItems": []
+        },
+        {
+          "appname": "TextEdit",
+          "filename": "livres a lire.txt",
+          "filelink": "/content/oneBit/desktop/personnel/livres.html",
+          "childItems": []
+        },
+        {
+          "appname": "TextEdit",
+          "filename": "recettes.txt",
+          "filelink": "/content/oneBit/desktop/personnel/recettes.html",
+          "childItems": []
+        },
+        {
+          "appname": "TextEdit",
+          "filename": "vacance.txt",
+          "filelink": "/content/oneBit/desktop/personnel/vacance.html",
+          "childItems": []
         }
       ]
     },

@@ -54,13 +54,12 @@ export class Menu extends StyledElement {
     });
 
     return html`
-    
       <div class="c-menu-bar">
         <ul class="c-menu-bar__left">
           <li class="c-menu-bar__item">
             <button
               @click=${this.callOpenLayout}
-              class="c-menu-bar__btn js-menu-bar__logo"
+              class="c-menu-bar__btn c-menu-bar__logo js-menu-bar__logo"
             >
               <img
                 class="c-menu-bar__icon"
@@ -90,6 +89,18 @@ export class Menu extends StyledElement {
           </li>
         </ul>
         <ul class="c-menu-bar__rigth">
+          ${this.currentStyle === "modernMac"
+            ? html` <li class="c-menu-bar__item">
+                <button class="c-menu-bar__btn" data-menu-bar="Batterie">
+                  <img
+                    class="c-menu-bar__icon"
+                    src="/images/components/menu/${this
+                      .currentStyle}/battery.png"
+                    alt="icon Wifi"
+                  />
+                </button>
+              </li>`
+            : ""}
           ${this.currentStyle !== "oneBit" && this.currentStyle !== "grey"
             ? html`
                 <li class="c-menu-bar__item">
@@ -113,7 +124,10 @@ export class Menu extends StyledElement {
                   </button>
                 </li>
                 <li class="c-menu-bar__item">
-                  <button class="c-menu-bar__btn" data-menu-bar="Control center">
+                  <button
+                    class="c-menu-bar__btn"
+                    data-menu-bar="Control center"
+                  >
                     <img
                       class="c-menu-bar__icon"
                       src="/images/components/menu/${this

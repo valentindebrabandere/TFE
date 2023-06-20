@@ -65,20 +65,23 @@ export class Layout extends StyledElement {
     } else if (direction === "back") {
       screen.style.transition = "transform 250ms ease-in";
       screen.style.transform = "scale3d(1.2, 1.2, 1.2)";
-  
+
       setTimeout(() => {
-        screen.style.transition = "transform 0ms ease-in";
-        screen.style.transform = "scale3d(0.8, 0.8, 0.8)";
         requestAnimationFrame(() => {
-          this.globalStyleController.changeStyle(direction);
-          this.currentStyle = this.globalStyleController.style;
-          this.currentStyleDate = this.globalStyleController.getDate();
-          this.currentStyleName = this.globalStyleController.getName();
-          const newIndex = this.globalStyleController.getStyleIndex();
-          this.isDisabledPrev = newIndex === 0;
-          this.isDisabledNext = newIndex === stylesList.length - 1;
-          screen.style.transition = "transform 400ms ease-out";
-          screen.style.transform = "scale3d(1, 1, 1)";
+          screen.style.transition = "transform 0ms ease-in";
+          screen.style.transform = "scale3d(0.8, 0.8, 0.8)";
+
+          requestAnimationFrame(() => {
+            this.globalStyleController.changeStyle(direction);
+            this.currentStyle = this.globalStyleController.style;
+            this.currentStyleDate = this.globalStyleController.getDate();
+            this.currentStyleName = this.globalStyleController.getName();
+            const newIndex = this.globalStyleController.getStyleIndex();
+            this.isDisabledPrev = newIndex === 0;
+            this.isDisabledNext = newIndex === stylesList.length - 1;
+            screen.style.transition = "transform 400ms ease-out";
+            screen.style.transform = "scale3d(1, 1, 1)";
+          });
         });
       }, 250);
     }

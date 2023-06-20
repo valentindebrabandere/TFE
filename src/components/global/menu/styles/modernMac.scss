@@ -12,7 +12,12 @@
     }
 
     .c-menu-bar__icon {
+        scale: 1.1;
+        filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.2));
+    }
+
+    .c-menu-bar__logo{
         scale: .8;
-        filter: invert(1);
+        filter: invert(1) drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.2));
     }
 }
