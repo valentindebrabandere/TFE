@@ -1,5 +1,4 @@
-
-.c-screen__container{
+.c-screen__container {
     display: block;
     width: 100vw;
     height: 100vh;
@@ -13,7 +12,8 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    border-radius: 10px;
+    transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transform-origin: center center;
 }
 
 /* -----------------------------

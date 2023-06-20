@@ -14,6 +14,7 @@
     "@types/papaparse": "^5.3.7",
     "@types/tabulator-tables": "^5.4.8",
     "animejs": "^3.2.1",
+    "html2canvas": "^1.4.1",
     "interactjs": "^1.10.17",
     "lit": "^2.6.1",
     "papaparse": "^5.4.1",

@@ -5,7 +5,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    transform: scale(1.46);
+    transform: scale3D(1.46, 1.46, 1.46);
     pointer-events: none;
     z-index: 1000;
     transition: transform 0.4s ease-in-out;

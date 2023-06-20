@@ -11,6 +11,9 @@ export const basic = css`
     width: 85vw;
     height: 70vh;
     overflow: hidden;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   .c-mail__list {

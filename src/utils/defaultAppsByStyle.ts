@@ -28,10 +28,10 @@ defaultAppsByStyle.set('grey', [
 
 ]);
 
-// //Skeuo
-// defaultAppsByStyle.set('skeuo', [
-//   { id: 'Messages', filelink: '', childItems: [], top: 5, left: 10 },
-// ]);
+//Skeuo
+defaultAppsByStyle.set('skeuo', [
+  { id: 'Messages', filelink: '', childItems: [], top: 5, left: 10 },
+]);
 
 
 

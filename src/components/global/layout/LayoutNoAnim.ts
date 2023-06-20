@@ -40,84 +40,69 @@ export class Layout extends StyledElement {
   }
 
   changeStyleHandler(direction: string) {
-    const screen: HTMLElement | null = document.querySelector(".js-screen");
+    const screen: HTMLElement | null = document.querySelector('.js-screen');
     if (screen === null) return;
-
-    if (direction === "next") {
-      screen.style.transition = "transform 250ms ease-in";
-      screen.style.transform = "scale3d(0.8, 0.8, 0.8)";
-
-      setTimeout(() => {
-        screen.style.transition = "transform 0ms ease-in";
-        screen.style.transform = "scale3d(1.3, 1.3, 1.3)";
-        requestAnimationFrame(() => {
-          this.globalStyleController.changeStyle(direction);
-          this.currentStyle = this.globalStyleController.style;
-          this.currentStyleDate = this.globalStyleController.getDate();
-          this.currentStyleName = this.globalStyleController.getName();
-          const newIndex = this.globalStyleController.getStyleIndex();
-          this.isDisabledPrev = newIndex === 0;
-          this.isDisabledNext = newIndex === stylesList.length - 1;
-          screen.style.transition = "transform 400ms ease-out";
-          screen.style.transform = "scale3d(1, 1, 1)";
-        });
-      }, 250);
-    } else if (direction === "back") {
-      screen.style.transition = "transform 250ms ease-in";
-      screen.style.transform = "scale3d(1.2, 1.2, 1.2)";
   
-      setTimeout(() => {
-        screen.style.transition = "transform 0ms ease-in";
-        screen.style.transform = "scale3d(0.8, 0.8, 0.8)";
-        requestAnimationFrame(() => {
-          this.globalStyleController.changeStyle(direction);
-          this.currentStyle = this.globalStyleController.style;
-          this.currentStyleDate = this.globalStyleController.getDate();
-          this.currentStyleName = this.globalStyleController.getName();
-          const newIndex = this.globalStyleController.getStyleIndex();
-          this.isDisabledPrev = newIndex === 0;
-          this.isDisabledNext = newIndex === stylesList.length - 1;
-          screen.style.transition = "transform 400ms ease-out";
-          screen.style.transform = "scale3d(1, 1, 1)";
-        });
-      }, 250);
+    if (direction === "next") {
+
+
+      this.globalStyleController.changeStyle(direction);
+      this.currentStyle = this.globalStyleController.style;
+      this.currentStyleDate = this.globalStyleController.getDate();
+      this.currentStyleName = this.globalStyleController.getName();
+      
+      // Update the disable state for the buttons
+      const newIndex = this.globalStyleController.getStyleIndex();
+      this.isDisabledPrev = newIndex === 0;
+      this.isDisabledNext = newIndex === stylesList.length - 1;
+
+    } else if (direction === "back") {
+
+      this.globalStyleController.changeStyle(direction);
+      this.currentStyle = this.globalStyleController.style;
+      this.currentStyleDate = this.globalStyleController.getDate();
+      this.currentStyleName = this.globalStyleController.getName();
+      
+      // Update the disable state for the buttons
+      const newIndex = this.globalStyleController.getStyleIndex();
+      this.isDisabledPrev = newIndex === 0;
+      this.isDisabledNext = newIndex === stylesList.length - 1;
+
     }
-  }
+  }  
+  
 
   openLayout(): void {
-    const screenContainer: HTMLElement | null = document.querySelector(
-      ".c-screen__container"
-    );
-
+    const screenContainer: HTMLElement | null = document.querySelector(".c-screen__container");
+  
     // Update the disable state for the buttons
     const newIndex = this.globalStyleController.getStyleIndex();
     this.isDisabledPrev = newIndex === 0;
     this.isDisabledNext = newIndex === stylesList.length - 1;
-
+  
     if (this.layout === null || screenContainer === null) return;
     this.layout.style.display = "block";
     this.layout.style.pointerEvents = "auto";
-
+    
     setTimeout(() => {
       if (this.layout === null || screenContainer === null) return;
-      screenContainer.style.transform = "scale3D(0.7, 0.7, 0.7)";
-      this.layout.style.transform = "scale3D(1, 1, 1)";
+      screenContainer.style.transform = "scale(0.7)";
+      this.layout.style.transform = "scale(1)";
     }, 10); // give it a small delay
   }
 
   closeLayout(): void {
-    const screenContainer: HTMLElement | null = document.querySelector(
-      ".c-screen__container"
-    );
+    const screenContainer: HTMLElement | null = document.querySelector(".c-screen__container");
 
     if (this.layout === null || screenContainer === null) return;
     this.layout.style.pointerEvents = "none";
-    this.layout.style.transform = "scale3D(1.5, 1.5, 1.5)";
-    screenContainer.style.transform = "scale3D(1, 1, 1)";
+    this.layout.style.transform = "scale(1.5)";
+    screenContainer.style.transform = "scale(1)";
     setTimeout(() => {
       if (this.layout === null) return;
       this.layout.style.display = "none";
-    }, 500);
+    }
+    , 500);
   }
 
   render() {

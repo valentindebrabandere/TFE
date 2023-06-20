@@ -10,8 +10,9 @@
  .c-screen {
      background: url(/images/wallpaper/modernMac.png) 50% 50% no-repeat;
      background-size: cover;
+     border-radius: 10px;
  }
 
- .c-screen__container{
-    background-color: #000;
+ .c-screen__container {
+     background-color: #000;
  }
