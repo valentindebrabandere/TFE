@@ -8,15 +8,13 @@ export const basic = css`
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    width: 90vw;
-    height: 80vh;
     will-change: transform;
     backface-visibility: hidden;
   }
 
   .c-browser__content {
-    width: 100%;
-    height: 100%;
+    width: 90vw;
+    height: 80vh;
     will-change: transform;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;

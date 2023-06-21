@@ -1,0 +1,27 @@
+.flat {
+  /* CSS here */
+
+  .c-dock__app::before {
+    background-color: #ffffff6A;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .c-dock__app.active::before {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .c-appicon::after {
+    color: #000;
+    border-radius: 1px;
+    border: 1px solid #0000002b;
+
+    background: #ffffffCC;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+}

@@ -16,8 +16,8 @@
       "childItems": [],
       "position": {"top": "15%", "left": "66%"}
     },
-
-
+    
+    
     {
       "appname": "TextEdit",
       "filename": "business plan.txt",
@@ -38,6 +38,13 @@
       "filelink": "/content/oneBit/desktop/lettre.html",
       "childItems": [],
       "position": {"top": "45%", "left": "92%"}
+    },
+    {
+      "appname": "Aperçu",
+      "filename": "Echographie.jpg",
+      "filelink": "/content/oneBit/desktop/echographie.png",
+      "position": {"top": "60%", "left": "92%"},
+      "childItems": []
     },
     {
       "appname": "Finder",

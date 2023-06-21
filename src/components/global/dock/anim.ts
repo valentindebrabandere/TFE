@@ -45,11 +45,6 @@ function animDockAddEvtList(app:Element) {
       addAnim(evt, iconAnimDockOut);
     }
   });
-  app.addEventListener("click", (evt) => {
-    if (shouldApplyAnimation()) {
-      iconBounce(evt.currentTarget);
-    }
-  });
 }
 
 function addAnim(evt: Event, iconAnimDock: Function) {
@@ -106,14 +101,5 @@ function animeJsTarget(
     margin: "0 " + margin,
     duration: 30,
     easing: "linear",
-  });
-}
-
-function iconBounce(target: EventTarget | null) {
-  anime({
-    targets: target,
-    translateY: [-250, 0],
-    duration: 200,
-    easing: "easeOutBounce",
   });
 }

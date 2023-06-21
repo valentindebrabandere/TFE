@@ -1,6 +1,7 @@
 // Video.ts
 import { html, css } from "lit";
 import { customElement, state, property, query } from "lit/decorators.js";
+import { getApplicationByID } from "../../../utils/appManager";
 
 import { basic, styles } from "./styles";
 
@@ -15,6 +16,7 @@ export class Video extends StyledElement {
 
   @state() content: string = "";
   @state() styles = [basic, css``];
+  @state() currentStyle = "";
 
   @query("#video") videoEl!: HTMLVideoElement;
   @query("#play-pause") playButtonEl!: HTMLButtonElement;
@@ -25,8 +27,8 @@ export class Video extends StyledElement {
   connectedCallback() {
     super.connectedCallback();
     this.updateStyles();
-    this.classList.add('c-video');
-    this.classList.add('c-app');
+    this.classList.add("c-video");
+    this.classList.add("c-app");
   }
 
   firstUpdated() {
@@ -75,6 +77,7 @@ export class Video extends StyledElement {
   updateStyles() {
     //select the current style (globalStyledElement.ts)
     this.styles = this.applyStyles(styles, basic);
+    this.currentStyle = this.globalStyleController.style;
   }
 
   getFileIcon(style: string) {
@@ -118,6 +121,7 @@ export class Video extends StyledElement {
 
   render() {
     // create a video app
+    const app = getApplicationByID("Video");
     return html`
       <style>
         /* Import the good style */
@@ -125,7 +129,11 @@ export class Video extends StyledElement {
       </style>
       <!-- es6 if statement filelink undefied -->
       ${this.filelink
-        ? html`<video id="video" class="c-video__content c-app__content" autoplay>
+        ? html`<video
+              id="video"
+              class="c-video__content c-app__content"
+              autoplay
+            >
               <source class="" src="${this.filelink}" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -154,7 +162,9 @@ export class Video extends StyledElement {
               />
               <div id="time" class="c-video__controls-time">0:00 / 0:00</div>
             </div>`
-        : html`<div class="c-apecu__no-content">
+        : html`<div class="c-video__no-content">
+            <img src="${app.icon(this.currentStyle)}" alt="Aperçu Logo" />
+
             <h2>Pas de ficher ouvert</h2>
             <p>Ouvrez une video pour afficher un résultat</p>
           </div>`}
