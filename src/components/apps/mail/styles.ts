@@ -1,6 +1,5 @@
-
-import { css, CSSResult } from 'lit';
-import "/src/assets/globalStyles/typoImports.css"
+import { css, CSSResult } from "lit";
+import "/src/assets/globalStyles/typoImports.css";
 
 export const basic = css`
   /* CSS here */
@@ -27,7 +26,7 @@ export const basic = css`
     width: 10px;
   }
 
-  .c-mail__content-container{
+  .c-mail__content-container {
     width: 70%;
     overflow-y: scroll;
     display: flex;
@@ -35,7 +34,7 @@ export const basic = css`
     justify-content: space-between;
     min-height: 100%;
   }
-  .c-mail__content-container::-webkit-scrollbar{
+  .c-mail__content-container::-webkit-scrollbar {
     width: 10px;
   }
 
@@ -69,13 +68,14 @@ export const basic = css`
 
   .c-mail-content__date {
     font-size: 0.8rem;
-    opacity: .7;
+    opacity: 0.7;
     margin: 0;
   }
 
   .c-mail__content {
     padding: 25px 25px;
     line-height: 1.5rem;
+    white-space: pre-line;
   }
 
   .c-mail__footer {
@@ -99,7 +99,7 @@ export const basic = css`
   .c-mail__button {
     width: fit-content;
     height: 40px;
-    margin-left:auto;
+    margin-left: auto;
     margin-top: 10px;
     border: none;
     outline: none;
@@ -109,7 +109,7 @@ export const basic = css`
 
   /* Mail item */
 
-  .c-mail-item{
+  .c-mail-item {
     display: block;
     padding: 10px;
     cursor: pointer;
@@ -135,10 +135,10 @@ export const basic = css`
     white-space: nowrap;
     margin: 0;
   }
-  
+
   .c-mail-item__date {
     font-size: 0.8rem;
-    opacity: .7;
+    opacity: 0.7;
     margin: 0;
   }
 
@@ -153,90 +153,92 @@ export const basic = css`
 
   .c-mail-item__content {
     font-size: 0.9rem;
-    opacity: .7;
+    opacity: 0.7;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     margin: 0;
   }
-
 `;
 
 interface StyleObject {
-    styleName: string;
-    css: CSSResult;
+  styleName: string;
+  css: CSSResult;
 }
-  
-const styleOneBit:StyleObject = {
-    styleName: "oneBit",
-    css: css`
-    
-    /* CSS here */
 
-    `
+const styleOneBit: StyleObject = {
+  styleName: "oneBit",
+  css: css`
+    /* CSS here */
+  `,
 };
 
-const styleGrey:StyleObject = {
+const styleGrey: StyleObject = {
   styleName: "grey",
   css: css`
-  
-  /* CSS here */
+    /* CSS here */
 
-  .c-mail-content__head {
-    background: #cac6cb;
-    box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white, inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
-  }
+    .c-mail-content__head {
+      background: #cac6cb;
+      box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white,
+        inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
+    }
 
-  .c-mail__content {
-    padding: 50px 25px;
-  }
+    .c-mail__content {
+      padding: 50px 25px;
+    }
 
-  .c-mail__footer {
-    background: #cac6cb;
-    box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white, inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
-  }
+    .c-mail__footer {
+      background: #cac6cb;
+      box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white,
+        inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
+    }
 
-  .c-mail__reply {
-    background: #cac6cb;
-    box-shadow: inset -1px -1px 0 0 white, inset 1px 1px 0 0 #464147, inset -2px -2px 0 0 #dedcde, inset 2px 2px 0 0 #cac6cb;
-  }
+    .c-mail__reply {
+      background: #cac6cb;
+      box-shadow: inset -1px -1px 0 0 white, inset 1px 1px 0 0 #464147,
+        inset -2px -2px 0 0 #dedcde, inset 2px 2px 0 0 #cac6cb;
+    }
 
-  .c-mail__button {
-    background: #cac6cb;
-    box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white, inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
-  }
+    .c-mail__button {
+      background: #cac6cb;
+      box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white,
+        inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
+    }
 
-  .c-mail__button:hover {
-    box-shadow: inset -1px -1px 0 0 white, inset 1px 1px 0 0 #464147, inset -2px -2px 0 0 #dedcde, inset 2px 2px 0 0 #cac6cb;
-  }
+    .c-mail__button:hover {
+      box-shadow: inset -1px -1px 0 0 white, inset 1px 1px 0 0 #464147,
+        inset -2px -2px 0 0 #dedcde, inset 2px 2px 0 0 #cac6cb;
+    }
 
+    /* Mail item */
 
-  /* Mail item */
-
-  .c-mail-item{
-    background: #cac6cb;
-    box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white, inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
-  }
-  .c-mail-item[read] {
-    box-shadow: inset -1px -1px 0 0 white, inset 1px 1px 0 0 #464147, inset -2px -2px 0 0 #dedcde, inset 2px 2px 0 0 #cac6cb;
-  }
-
-  `
+    .c-mail-item {
+      background: #cac6cb;
+      box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white,
+        inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
+    }
+    .c-mail-item[read] {
+      box-shadow: inset -1px -1px 0 0 white, inset 1px 1px 0 0 #464147,
+        inset -2px -2px 0 0 #dedcde, inset 2px 2px 0 0 #cac6cb;
+    }
+  `,
 };
-const styleSkeuo:StyleObject = {
+const styleSkeuo: StyleObject = {
   styleName: "skeuo",
   css: css`
-  
-  /* CSS here */
-
-  `
-};
-  
-const styleModernMac:StyleObject = {
-    styleName: "modernMac",
-    css: css`
-    
-    `
+    /* CSS here */
+  `,
 };
 
-export const styles:StyleObject[] = [styleOneBit, styleGrey, styleSkeuo,styleModernMac];
+const styleModernMac: StyleObject = {
+  styleName: "modernMac",
+  css: css``,
+};
+
+export const styles: StyleObject[] = [
+  styleOneBit,
+  styleGrey,
+  styleSkeuo,
+  styleModernMac,
+];

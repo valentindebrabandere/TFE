@@ -12,10 +12,6 @@
     background-size: cover;
 }
 
-img {
-    filter: saturate(0.8);
-}
-
 /* Styling the scrollbar */
 ::-webkit-scrollbar {
     width: 16px;
