@@ -33,6 +33,15 @@ export const basic = css`
   color: gray;
   pointer-events: none;
 }
+
+  p{
+    margin-top: 0;
+  }
+
+  h2{
+    margin-bottom: 6px;
+  }
+
 `;
 
 interface StyleObject {
@@ -45,14 +54,6 @@ const styleOneBit:StyleObject = {
     css: css`
     
     /* CSS here */
-
-    p{
-      margin-top: 0;
-  }
-  
-    h2{
-       margin-bottom: 6px; 
-    }
 
     ::selection {
       background-color: black;

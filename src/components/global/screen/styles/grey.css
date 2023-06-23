@@ -1,8 +1,20 @@
-*,
-*::before,
-*::after {
+.c-screen *,
+.c-screen *::before,
+.c-screen *::after {
     font-family: "MS Sans Serif", system-ui, sans-serif;
     font-weight: normal;
+}
+
+.c-screen p,
+.c-screen button,
+.c-screen div,
+.c-screen th,
+.c-screen td,
+.c-screen input,
+.c-screen select,
+.c-screen textarea,
+.c-screen a,
+.c-screen li {
     font-size: 16px;
 }
 

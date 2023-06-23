@@ -42,3 +42,64 @@ ul {
 .scale-normal {
     transform: scale3d(1, 1, 1);
 }
+
+/* <div class="c-style-menu">
+      <div class="c-style-menu__item-container">
+        <p class="c-style-menu__date c-style-menu__item">1982</p>
+      </div>
+      <div class="c-style-menu__item-container">
+        <h2 class="c-style-menu__name">One Bit</h2>
+      </div>
+      <div class="c-style-menu__item-container">
+        <p class="c-style-menu__chapter c-style-menu__item">Naissance d'un rêve</p>
+      </div>
+    </div> */
+
+.c-style-menu {
+    font-family: "Poppins", system-ui, sans-serif;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    z-index: 999;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+    background-color: #fff;
+}
+
+.c-style-menu--hidden {
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.c-style-menu__item-container {
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+
+}
+.c-style-menu__item {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0;
+    opacity: .7;
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.c-style-menu__name {
+    font-size: clamp(6rem, 10vw, 4rem);
+    font-weight: 700;
+    margin: 0;
+    line-height: 100%;
+    margin-bottom: 1rem;
+    opacity: 1;
+}

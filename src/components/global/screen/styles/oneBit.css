@@ -1,12 +1,21 @@
-*,
-*::before,
-*::after {
+.c-screen *,
+.c-screen *::before,
+.c-screen *::after {
     font-family: "Munro", system-ui, sans-serif;
     font-weight: normal;
 }
 
-p, button, div, th, td, input, select, textarea, a, li{
-    font-size: 20px;
+.c-screen p,
+.c-screen button,
+.c-screen div,
+.c-screen th,
+.c-screen td,
+.c-screen input,
+.c-screen select,
+.c-screen textarea,
+.c-screen a,
+.c-screen li{
+    font-size: 18px;
 }
 
 /* cursor image */

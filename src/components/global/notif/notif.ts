@@ -3,7 +3,9 @@ import { html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { getApplicationByID } from "../../../utils/appManager";
 
+import { newStyleDisplay } from "../../../utils/newStyleDisplay.ts";
 import { addNewOpenedApp } from "../../../utils/openedAppsProvider.ts";
+import { stylesList } from "../../../utils/styleController.ts";
 
 // utils imports
 import { StyledElement } from "../../../utils/globalStyledElement";
@@ -48,6 +50,12 @@ export class Notif extends StyledElement {
         addNewOpenedApp(this.id, app.component, this.filelink);
       } else {
         // If the notification is for an app without a filelink
+
+        //get the index of the current style
+        let index = stylesList.findIndex((element) => element.call == this.currentStyle);
+        let nextStyle = stylesList[index +1];
+
+        newStyleDisplay(nextStyle);
         this.globalStyleController.changeStyle("next");
       }
     }

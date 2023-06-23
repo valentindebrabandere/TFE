@@ -22,8 +22,8 @@ defaultAppsByStyle.set('oneBit', [
 
 //Grey
 defaultAppsByStyle.set('grey', [
-  { id: 'Browser', filelink: '/content/grey/website/website.html', childItems: [], top: 2, left: 2 },
   { id: 'Mail', filelink: '', childItems: [], top: 5, left: 10 },
+  { id: 'Browser', filelink: '/content/grey/website/website.html', childItems: [], top: 2, left: 2 },
 
 ]);
 
