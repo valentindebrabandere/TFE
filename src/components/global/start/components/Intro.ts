@@ -1,8 +1,10 @@
 import { LitElement, html } from "lit";
-import { customElement } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 
 @customElement("intro-component")
 export class Intro extends LitElement {
+
+  @property({ type: Function }) nextPanel: (() => void) | undefined;
 
   constructor() {
     super();
@@ -27,7 +29,7 @@ export class Intro extends LitElement {
         <div class="c-intro__subtitle-container">
           <p class="c-intro__subtitle">Laissez votre curiosité vous guider à travers la vie de Mike</p>
         </div>
-        <button class="c-intro__cta">Commencer l'aventure</button>
+        <button @click="${this.nextPanel}" class="c-intro__cta">Commencer l'aventure</button>
         <img src="/public/images/components/intro/logobg.png" alt="Logo Lorem Ipson" class="c-intro__logo">
       </div>
       <div class="c-intro__footer">

@@ -1,10 +1,18 @@
 import { LitElement, html } from "lit";
-import { customElement } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 import "./style.css";
 import "./components/Intro.ts"
+import { newStyleDisplay } from "../../../utils/newStyleDisplay.ts";
 
 @customElement("start-component")
 export class Start extends LitElement {
+  
+  @property({ type: Number }) currentPanelIndex = 0;
+
+  panels = [
+    () => html`<intro-component .nextPanel="${this.nextPanel.bind(this)}"/>`
+  ];
+
 
   constructor() {
     super();
@@ -19,10 +27,20 @@ export class Start extends LitElement {
     return this;
   }
 
+  nextPanel() {
+    if (this.currentPanelIndex < this.panels.length - 1) {
+      this.currentPanelIndex++;
+      this.requestUpdate();
+    } else {
+      newStyleDisplay();
+      setTimeout(() => {
+        this.remove();
+      }, 1000);
+    }
+  }
+
 
   render() {
-    return html`
-      <intro-component/>
-    `;
+    return this.panels[this.currentPanelIndex]();  
   }
 }
