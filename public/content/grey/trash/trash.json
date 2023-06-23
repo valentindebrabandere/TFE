@@ -1,0 +1,34 @@
+{
+  "folderName": "Desktop",
+  "style": "grey",
+  "childItems": [
+    {
+      "appname": "Aperçu",
+      "filename": "24-04-97.jpg",
+      "filelink": "/content/grey/trash/drugs.png",
+      "position": {},
+      "childItems": []
+    },
+    {
+      "appname": "Aperçu",
+      "filename": "serena.jpg",
+      "filelink": "/content/grey/trash/girl.png",
+      "position": {},
+      "childItems": []
+    },
+    {
+      "appname": "Aperçu",
+      "filename": "soiree.jpg",
+      "filelink": "/content/grey/trash/party.png",
+      "position": {},
+      "childItems": []
+    },
+    {
+      "appname": "Aperçu",
+      "filename": "soiee serena.jpg",
+      "filelink": "/content/grey/trash/partGirl.png",
+      "position": {},
+      "childItems": []
+    }
+  ]
+}

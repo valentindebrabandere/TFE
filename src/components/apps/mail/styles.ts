@@ -159,6 +159,18 @@ export const basic = css`
     white-space: nowrap;
     margin: 0;
   }
+
+  .c-mail-content__img-container{
+    width: 90%;
+    max-height: 70vh;
+    margin: 20px auto;
+  }
+
+  .c-mail-content__img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 `;
 
 interface StyleObject {

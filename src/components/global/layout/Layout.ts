@@ -48,18 +48,20 @@ export class Layout extends StyledElement {
       screen.style.transform = "scale3d(0.8, 0.8, 0.8)";
 
       setTimeout(() => {
-        screen.style.transition = "transform 0ms ease-in";
-        screen.style.transform = "scale3d(1.3, 1.3, 1.3)";
         requestAnimationFrame(() => {
-          this.globalStyleController.changeStyle(direction);
-          this.currentStyle = this.globalStyleController.style;
-          this.currentStyleDate = this.globalStyleController.getDate();
-          this.currentStyleName = this.globalStyleController.getName();
-          const newIndex = this.globalStyleController.getStyleIndex();
-          this.isDisabledPrev = newIndex === 0;
-          this.isDisabledNext = newIndex === stylesList.length - 1;
-          screen.style.transition = "transform 400ms ease-out";
-          screen.style.transform = "scale3d(1, 1, 1)";
+          screen.style.transition = "transform 0ms ease-in";
+          screen.style.transform = "scale3d(1.3, 1.3, 1.3)";
+          requestAnimationFrame(() => {
+            this.globalStyleController.changeStyle(direction);
+            this.currentStyle = this.globalStyleController.style;
+            this.currentStyleDate = this.globalStyleController.getDate();
+            this.currentStyleName = this.globalStyleController.getName();
+            const newIndex = this.globalStyleController.getStyleIndex();
+            this.isDisabledPrev = newIndex === 0;
+            this.isDisabledNext = newIndex === stylesList.length - 1;
+            screen.style.transition = "transform 400ms ease-out";
+            screen.style.transform = "scale3d(1, 1, 1)";
+          });
         });
       }, 250);
     } else if (direction === "back") {

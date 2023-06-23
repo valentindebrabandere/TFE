@@ -3,6 +3,13 @@
   "style": "grey",
   "childItems": [
     {
+      "appname": "TextEdit",
+      "filename": "Journal.txt",
+      "filelink": "/content/grey/desktop/journal.html",
+      "childItems": [],
+      "position": {"top": "15%", "left": "66%"}
+    },
+    {
       "appname": "Video",
       "filename": "Video.avi",
       "filelink": "/content/grey/desktop/test.mp4",

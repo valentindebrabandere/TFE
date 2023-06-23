@@ -56,13 +56,7 @@ export class Mail extends StyledElement {
   async selectMail(mail: any) {
     mail.read = true;
     this.selectedMail = mail;
-    if (this.selectedMail.filelink) {
-      this.selectedMailContent = await this.fetchFileContent(
-        this.selectedMail.filelink
-      );
-    } else {
-      this.selectedMailContent = this.selectedMail.content;
-    }
+    this.selectedMailContent = this.selectedMail.content;
   }
 
   sortMails() {
@@ -112,10 +106,12 @@ export class Mail extends StyledElement {
                 </p>
               </div>
               ${this.selectedMail.filelink
-                ? html`<div
-                    .innerHTML="${this.selectedMailContent}"
-                    class="c-mail__content"
-                  ></div>`
+                ? html`<div class="c-mail__content">
+                  ${this.selectedMailContent}
+                  <div class="c-mail-content__img-container">
+                    <img class="c-mail-content__img" src="${"/content/" + this.currentStyle + "/mail/files/" + this.selectedMail.filelink}" alt="">
+                  </div>
+                </div>`
                 : html`<div class="c-mail__content">
                     ${this.selectedMailContent}
                   </div>`}
