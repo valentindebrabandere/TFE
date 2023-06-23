@@ -24,15 +24,11 @@ export class TextEdit extends StyledElement {
   }
 
   notifCheck(){
-    //create a notification
-      let newNotif = Notif.createNewNotification("Style", "Aller au style suivant", "");
-      let display = document.querySelector(".c-notif-container");
-      display?.appendChild(newNotif);
 
-    if(this.filelink?.includes("journal.html")){
-      if(this.filelink?.includes("flat")){
-        return;
-      }
+      if(this.filelink?.includes("journal.html")){
+        if(this.filelink?.includes("flat")){
+          return;
+        }
       //create a notification
       setTimeout(() => {
         let newNotif = Notif.createNewNotification("Style", "Aller au style suivant", "");

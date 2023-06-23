@@ -94,7 +94,7 @@
     left: 50%;
     top: 6vh;
     transform: translate3d(-50%, 0, 0);
-    font-family: "Poppins", system-ui, sans-serif;
+    font-family: "Outfit", system-ui, sans-serif;
     font-weight: 600;
     font-size: 1.3rem;
     text-transform: uppercase;
@@ -107,7 +107,7 @@
     left: 50%;
     bottom: 5vh;
     transform: translate3d(-50%, 0, 0);
-    font-family: "Poppins", system-ui, sans-serif;
+    font-family: "Outfit", system-ui, sans-serif;
     font-weight: 400;
     opacity: 0.5;
     text-transform: uppercase;

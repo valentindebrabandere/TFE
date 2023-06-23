@@ -56,7 +56,10 @@ export class Notif extends StyledElement {
         let nextStyle = stylesList[index +1];
 
         newStyleDisplay(nextStyle);
-        this.globalStyleController.changeStyle("next");
+        setTimeout(() => {
+          this.globalStyleController.changeStyle("next");
+        }, 1600);
+          
       }
     }
   }

@@ -9,9 +9,9 @@ export interface StyleObject {
 }
 
 export const stylesList:StyleObject[] =  [
-  { call: 'oneBit', name: 'One bit', date: 1982, chapter: "Naissance d'un rêve"},
+  { call: 'oneBit', name: 'One bit', date: 1987, chapter: "Naissance d'un rêve"},
 { call: 'grey', name: 'Grey scale and color', date: 1997, chapter: "Sur le fil du succès" },
-{ call: 'skeuo', name: 'Skeuomorphism', date: 2009, chapter: "Le poids de l'ambition" },
+{ call: 'skeuo', name: 'Skeuomorphism', date: 2007, chapter: "Le revers de la médaille" },
 { call: 'flat', name: 'Flat design', date: 2017, chapter: "Entre les murs de l'isolement" },
 { call: 'modernMac', name: 'Modern', date: 2022, chapter: "La vie continue" },
 
