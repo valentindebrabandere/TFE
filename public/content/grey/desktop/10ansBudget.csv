@@ -1,0 +1,27 @@
+Catégorie,Item,Quantité,Coût unitaire (en euros),Coût total (en euros)
+Lieu,"Location de l'espace",1,20000,20000
+Lieu,"Nettoyage après l'événement",1,1500,1500
+Lieu,"Assurance pour l'événement",1,2000,2000
+
+Catering,"Buffet haut de gamme",200,100,20000
+Catering,"Boissons premium",300,50,15000
+Catering,"Service",1,5000,5000
+
+Divertissement,"DJ célèbre",1,10000,10000
+Divertissement,"Groupe de musique live renommé",1,15000,15000
+
+Décoration,"Guirlandes de lumières",20,50,1000
+Décoration,"Photos et encadrements",100,20,2000
+Décoration,"Autres décorations (ballons, banderoles, etc.)",1,1000,1000
+
+Récompenses,"Trophées pour les employés",20,100,2000
+Récompenses,"Cadeaux souvenirs de luxe",300,50,15000
+
+Matériel technique,"Stations interactives pour les démonstrations de produits",20,500,10000
+Matériel technique,"Sonorisation pour la musique et les discours",1,3000,3000
+
+Relations publiques,"Photographe pour l'événement",1,2000,2000
+Relations publiques,"Invitations et papeterie",300,10,3000
+Relations publiques,"Communiqués de presse",1,500,500
+
+TOTAL,,,,117 000

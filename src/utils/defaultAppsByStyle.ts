@@ -20,19 +20,16 @@ defaultAppsByStyle.set('oneBit', [
   { id: 'Aperçu', filelink: '/content/oneBit/desktop/entreprise/logo.png', childItems: [], top: 5, left: 2 },
 ]);
 
-//Grey
-defaultAppsByStyle.set('grey', [
-  { id: 'Mail', filelink: '', childItems: [], top: 5, left: 10 },
-  { id: 'Browser', filelink: '/content/grey/website/website.html', childItems: [], top: 2, left: 2 },
-
-]);
+// //Grey
+// defaultAppsByStyle.set('grey', [
+//   { id: 'Mail', filelink: '', childItems: [], top: 5, left: 10 },
+//   { id: 'Browser', filelink: '/content/grey/website/website.html', childItems: [], top: 2, left: 2 },
+// ]);
 
 //Skeuo
 defaultAppsByStyle.set('skeuo', [
   { id: 'Messages', filelink: '', childItems: [], top: 5, left: 10 },
 ]);
-
-
 
 //Modern Mac
 defaultAppsByStyle.set('modernMac', [

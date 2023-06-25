@@ -3,10 +3,10 @@
   "childItems": [
     {
       "appname": "TextEdit",
-      "filename": "Hello.txt",
-      "filelink": "/content/modernMac/desktop/hello.html",
+      "filename": "Journal.txt",
+      "filelink": "/content/flat/desktop/journal.html",
       "childItems": [],
-      "position": {"top": "30vh", "left": "68vw"}
+      "position": {"top": "15%", "left": "66%"}
     },
     {
       "appname": "Aperçu",

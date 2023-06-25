@@ -3,6 +3,13 @@
   "style": "skeuo",
   "childItems": [
     {
+      "appname": "TextEdit",
+      "filename": "Journal.txt",
+      "filelink": "/content/skeuo/desktop/journal.html",
+      "childItems": [],
+      "position": {"top": "15%", "left": "66%"}
+    },
+    {
       "appname": "Aperçu",
       "filename": "Image1.jpg",
       "filelink": "/content/skeuo/desktop/desktopImages/image1.jpg",

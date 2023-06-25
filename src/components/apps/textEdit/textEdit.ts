@@ -14,6 +14,7 @@ export class TextEdit extends StyledElement {
 
   @state() content: string = '';
   @state() styles = [basic, css``];
+  @state() currentStyle = "";
 
   connectedCallback() {
     super.connectedCallback();
@@ -26,9 +27,6 @@ export class TextEdit extends StyledElement {
   notifCheck(){
 
       if(this.filelink?.includes("journal.html")){
-        if(this.filelink?.includes("flat")){
-          return;
-        }
       //create a notification
       setTimeout(() => {
         let newNotif = Notif.createNewNotification("Style", "Aller au style suivant", "");
