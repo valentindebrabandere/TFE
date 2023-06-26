@@ -6,8 +6,7 @@ export const basic = css`
   .c-messages {
     position: relative;
     display: flex;
-    width: fit-content;
-    max-width: 70vw;
+    width: 70vw;
     height: 70vh;
     overflow: hidden;
   }
@@ -106,12 +105,13 @@ export const basic = css`
     display: inline-block;
     width: fit-content;
     margin-bottom: 5px;
-    max-width: 60%;
+    max-width: 50%;
     border-radius: 10px;
   }
 
   .c-messages-item--text {
     padding: 10px 15px;
+    line-height: 1.5;
     background: #ddd;
   }
 
