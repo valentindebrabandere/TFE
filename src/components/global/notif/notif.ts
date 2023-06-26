@@ -4,7 +4,7 @@ import { customElement, property, state } from "lit/decorators.js";
 import { getApplicationByID } from "../../../utils/appManager";
 
 import { newStyleDisplay } from "../../../utils/newStyleDisplay.ts";
-import { addNewOpenedApp } from "../../../utils/openedAppsProvider.ts";
+import { addNewOpenedApp, removeOpenedApp } from "../../../utils/openedAppsProvider.ts";
 import { stylesList } from "../../../utils/styleController.ts";
 
 // utils imports
@@ -47,21 +47,21 @@ export class Notif extends StyledElement {
     if (app) {
       if (this.filelink != "") {
         // If the notification is for an app with a filelink, open the app
+        removeOpenedApp("",this.id);
         addNewOpenedApp(this.id, app.component, this.filelink);
       } else {
         // If the notification is for an app without a filelink
 
-        //get the index of the current style
         let index = stylesList.findIndex((element) => element.call == this.currentStyle);
         let nextStyle = stylesList[index +1];
 
         newStyleDisplay(nextStyle);
         setTimeout(() => {
           this.globalStyleController.changeStyle("next");
-        }, 1600);
-          
+        }, 1600);  
       }
     }
+    this.remove();
   }
 
   createNotification(id: string, message: string, filelink: string) {

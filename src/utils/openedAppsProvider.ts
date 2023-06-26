@@ -27,9 +27,20 @@ export function addNewOpenedApp(id: string, component: any, filelink?: string, c
   focusedAppUuidSubject.next(newApp.uuid);  // update the focused app
 }
 
-export function removeOpenedApp(uuid: string) {
+export function removeOpenedApp(uuid: string, name?: string) {
   const currentApps = openedAppsSubject.getValue();
-  const appToRemove = currentApps.find(app => app.uuid === uuid);
+  let appToRemove;
+  if (name) {
+    appToRemove = currentApps.find(app => app.id === name);
+    if (!appToRemove) {
+      console.error(`No app with name ${name} found`);
+      return;
+    }
+    uuid = appToRemove.uuid;
+  }
+  else{
+    appToRemove = currentApps.find(app => app.uuid === uuid);
+  }
   
   if (!appToRemove) {
     console.error(`No app with uuid ${uuid} found`);

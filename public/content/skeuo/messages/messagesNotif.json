@@ -1,0 +1,689 @@
+[
+  {
+    "name": "Claire",
+    "notif": 4,
+    "profilePic": "/content/skeuo/messages/profilePictures/claire.png",
+    "chats": [
+      {
+        "send": false,
+        "timestamp": "2007-11-10T20:30:00.000+02:00",
+        "content": "Mike, quand est-ce que tu rentreras ce soir ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-11-11T00:10:00.000+02:00",
+        "content": "Je travaille tard encore, désolé.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-11-14T08:15:00.000+02:00",
+        "content": "Mike, il faut que tu passes du temps avec Anne, elle a besoin de toi.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-11-14T22:45:00.000+02:00",
+        "content": "Je sais, je vais essayer de libérer du temps ce week-end.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-11-21T18:00:00.000+02:00",
+        "content": "Mike, tu as oublié la représentation de Anne. Elle est déçue.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-11-22T01:30:00.000+02:00",
+        "content": "Je suis désolé Claire, le travail m'a retenu.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-02T09:20:00.000+02:00",
+        "content": "Mike, ça ne peut plus continuer comme ça, tu es absent tout le temps.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-02T23:45:00.000+02:00",
+        "content": "Claire, je sais, je fais de mon mieux.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-06T10:15:00.000+02:00",
+        "content": "Mike, les nouvelles ne sont pas bonnes à la télévision... Que se passe-t-il avec l'entreprise ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-06T23:55:00.000+02:00",
+        "content": "Ne t'inquiète pas pour ça Claire, je gère la situation.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-15T16:00:00.000+02:00",
+        "content": "Mike, tu as pensé à mon anniversaire la semaine prochaine ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-16T01:15:00.000+02:00",
+        "content": "Oui, bien sûr, je ne l'ai pas oublié.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-24T08:00:00.000+02:00",
+        "content": "Joyeux Noël Mike. J'espère que tu peux passer un moment en famille aujourd'hui.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-25T00:30:00.000+02:00",
+        "content": "Joyeux Noël Claire. Je ferai de mon mieux.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-26T10:15:00.000+02:00",
+        "content": "Mike, c'était mon anniversaire hier... Tu ne m'as pas appelée.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-26T21:45:00.000+02:00",
+        "content": "Je suis vraiment désolé Claire, j'ai complètement oublié avec tout ce qui se passe.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-27T14:00:00.000+02:00",
+        "content": "Mike, il faut qu'on parle de tout ça. Tu te perds dans ton travail.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-28T10:10:00.000+02:00",
+        "content": "Mike ??",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-28T15:30:00.000+02:00",
+        "content": "Quel exemple tu donnes à ta fille… On a vu dans le journal tes photos ! Rappelle-nous !",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-28T16:45:00.000+02:00",
+        "content": "Je ne sais même pas si je suis déçue... Depuis le temps je m'y attendais presque.",
+        "fileType": "text",
+        "filelink": null
+      }
+    ]
+  },
+  {
+    "name": "Anne",
+    "notif": 2,
+    "profilePic": "/content/skeuo/messages/profilePictures/anne.png",
+    "chats": [
+      {
+        "send": false,
+        "timestamp": "2007-11-15T17:35:00.000+02:00",
+        "content": "Coucou Papa, juste pour te dire que j'ai réussi mon examen de mathématiques !",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-11-15T21:10:00.000+02:00",
+        "content": "Bravo ma puce ! Je suis très fier de toi. Continue comme ça.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-11-20T16:15:00.000+02:00",
+        "content": "Papa, tu viendras à ma représentation ce week-end ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-11-20T23:45:00.000+02:00",
+        "content": "Je ne peux pas te promettre, ma chérie. Le travail est très prenant en ce moment.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-11-23T20:30:00.000+02:00",
+        "content": "Ça s'est bien passé. Mais j'aurais aimé te voir",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-11-23T20:30:00.000+02:00",
+        "content": "",
+        "fileType": "image",
+        "filelink": "content/skeuo/messages/discussions/anne/representation.jpg"
+      },
+      {
+        "send": true,
+        "timestamp": "2007-11-24T01:10:00.000+02:00",
+        "content": "Je suis désolé Anne. Je ferai tout mon possible pour être là la prochaine fois.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-06T18:00:00.000+02:00",
+        "content": "Papa, on a vu les nouvelles à la télé... Est-ce que tu vas bien ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-07T03:25:00.000+02:00",
+        "content": "Ne t'inquiète pas pour moi, je gère la situation.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-10T21:00:00.000+02:00",
+        "content": "Papa, j'ai vraiment besoin de toi... Tu es distant ces derniers temps.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-11T02:00:00.000+02:00",
+        "content": "Je suis désolé, ma puce. Je suis juste un peu submergé en ce moment.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-16T17:20:00.000+02:00",
+        "content": "Papa, tu te rappelles de l'anniversaire de maman la semaine prochaine ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-17T01:15:00.000+02:00",
+        "content": "Merci de me le rappeler. Je lui offrirai quelque chose de spécial.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-24T14:00:00.000+02:00",
+        "content": "Joyeux Noël Papa ! J'espère que tu vas bien.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-25T00:30:00.000+02:00",
+        "content": "Joyeux Noël ma puce. Je t'aime.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-27T14:10:00.000+02:00",
+        "content": "On ne voit que toi aux informations… Tout va bien ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-27T17:15:00.000+02:00",
+        "content": "Papa, tout le monde s'inquiète pour toi... Tu ne réponds pas à nos appels.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-27T18:05:00.000+02:00",
+        "content": "C’était l’anniversaire de Maman hier ! Je lui ai acheté des fleurs de ta part…",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-28T13:10:00.000+02:00",
+        "content": "Papa, est-ce que tu peux me répondre ?? On commence à s’inquiéter.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-28T14:00:00.000+02:00",
+        "content": "Ne t'inquiète pas pour moi, Anne. Je suis juste un peu occupé. Je t'appellerai plus tard.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-28T15:30:00.000+02:00",
+        "content": "Papa, je t'en prie, tu me fais peur. Est-ce que tu es sûr que tout va bien ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-28T16:20:00.000+02:00",
+        "content": "Papa, réponds-moi s'il te plaît...",
+        "fileType": "text",
+        "filelink": null
+      }
+    ]
+  },
+
+  {
+    "name": "Steve Boulot",
+    "notif": 1,
+    "profilePic": "/content/skeuo/messages/profilePictures/steve.png",
+    "chats": [
+      {
+        "send": true,
+        "timestamp": "2007-12-23T09:35:00.000+02:00",
+        "content": "Salut Mike, j'ai reçu les derniers rapports financiers. On doit en parler.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-23T10:05:00.000+02:00",
+        "content": "Salut Steve, je suis en déplacement aujourd'hui. On peut discuter demain ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-23T10:15:00.000+02:00",
+        "content": "D'accord, mais c'est urgent Mike. Assure-toi d'être disponible.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-24T09:10:00.000+02:00",
+        "content": "Salut Steve, je suis libre maintenant. Qu'est-ce qui ne va pas ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-24T09:20:00.000+02:00",
+        "content": "Les chiffres ne sont pas bons, Mike. On est en chute libre.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-24T09:25:00.000+02:00",
+        "content": "Quoi ? Comment c'est possible ? On avait une bonne progression.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-24T09:30:00.000+02:00",
+        "content": "Il y a eu des erreurs, Mike. Certaines décisions n'ont pas porté leurs fruits.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-24T09:45:00.000+02:00",
+        "content": "On peut rectifier le tir, non ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-24T09:55:00.000+02:00",
+        "content": "C'est compliqué. Je pense qu'on devrait penser à une solution de secours.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-24T10:00:00.000+02:00",
+        "content": "Je refuse d'abandonner, Steve. C'est mon entreprise.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-24T10:05:00.000+02:00",
+        "content": "Je ne te demande pas d'abandonner, Mike. Je veux juste que tu sois réaliste.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-24T13:00:00.000+02:00",
+        "content": "Donne-moi un peu de temps, Steve. Je vais trouver une solution.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-25T09:00:00.000+02:00",
+        "content": "Joyeux Noël, Mike. Prends du temps avec ta famille aujourd'hui. On en reparle demain.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-26T14:30:00.000+02:00",
+        "content": "Hello Mike, j'ai une solution pour l'entreprise. Rappelle-moi !",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-26T15:00:00.000+02:00",
+        "content": "Je suis en réunion. Je t'appelle dès que possible.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-26T15:10:00.000+02:00",
+        "content": "D'accord, mais ne tarde pas trop.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-28T18:37:00.000+02:00",
+        "content": "",
+        "fileType": "vocal",
+        "filelink": "content/skeuo/messages/discussions/steve/vocal.m4a"
+      }
+    ]
+  },
+  {
+    "name": "Facebook",
+    "notif": 0,
+    "profilePic": "",
+    "chats": [
+      {
+        "send": false,
+        "timestamp": "2007-12-28T13:10:00.000+02:00",
+        "content": "Votre code d'accès à Facebook est : 123456",
+        "fileType": "text",
+        "filelink": null
+      }
+    ]
+  },
+  {
+    "name": "Service de livraison",
+    "notif": 0,
+    "profilePic": "",
+    "chats": [
+      {
+        "send": false,
+        "timestamp": "2007-12-28T10:45:00.000+02:00",
+        "content": "Votre colis a été livré. Merci de votre commande.",
+        "fileType": "text",
+        "filelink": null
+      }
+    ]
+  },
+  {
+    "name": "Mme Johnson (secrétaire)",
+    "notif": 0,
+    "profilePic": "/content/skeuo/messages/profilePictures/secretaire.png",
+    "chats": [
+      {
+        "send": true,
+        "timestamp": "2007-12-28T09:30:00.000+02:00",
+        "content": "Mme Johnson, pourriez-vous svp prendre en charge la demande du fournisseur. Merci.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-28T09:30:00.000+02:00",
+        "content": "Bonjour M. Mike, je m'occupe de cette demande immédiatement.",
+        "fileType": "text",
+        "filelink": null
+      }
+    ]
+  },
+  {
+    "name": "Oncle John",
+    "notif": 0,
+    "profilePic": "/content/skeuo/messages/profilePictures/oncle.png",
+    "chats": [
+      {
+        "send": false,
+        "timestamp": "2007-12-24T20:00:00.000+02:00",
+        "content": "Joyeux Noël, Mike ! Espérons que l'année prochaine soit meilleure.",
+        "fileType": "text",
+        "filelink": null
+      }
+    ]
+  },
+  {
+    "name": "Service client",
+    "notif": 0,
+    "profilePic": "",
+    "chats": [
+      {
+        "send": true,
+        "timestamp": "2007-12-27T11:20:00.000+02:00",
+        "content": "J'ai un souci avec le dernier produit que j'ai acheté. Pouvez-vous m'aider?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-27T11:20:00.000+02:00",
+        "content": "Nous avons bien reçu votre demande et nous y répondons dans les plus brefs délais.",
+        "fileType": "text",
+        "filelink": null
+      }
+    ]
+  },
+  {
+    "name": "Ben",
+    "notif": 0,
+    "profilePic": "/content/skeuo/messages/profilePictures/ben.png",
+    "chats": [
+      {
+        "send": false,
+        "timestamp": "2007-12-27T22:15:00.000+02:00",
+        "content": "Mike, on a tous entendu parler des problèmes avec ton entreprise. Si tu as besoin de parler, je suis là.",
+        "fileType": "text",
+        "filelink": null
+      }
+    ]
+  },
+  {
+    "name": "Mr Adams (avocat)",
+    "notif": 0,
+    "profilePic": "/content/skeuo/messages/profilePictures/avocat.jpg",
+    "chats": [
+      {
+        "send": true,
+        "timestamp": "2007-12-27T18:05:00.000+02:00",
+        "content": "Je pense qu'il est temps de discuter de mes options légales.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-27T18:05:00.000+02:00",
+        "content": "Je pense que nous devons sérieusement envisager vos options légales. Contactez-moi dès que possible.",
+        "fileType": "text",
+        "filelink": null
+      }
+    ]
+  },
+  {
+    "name": "Serena",
+    "notif": 0,
+    "profilePic": "/content/skeuo/messages/profilePictures/serena.png",
+    "chats": [
+      {
+        "send": false,
+        "timestamp": "2007-12-10T20:10:00.000+02:00",
+        "content": "Hey Mike, comment ça va ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-10T20:15:00.000+02:00",
+        "content": "Salut Serena, ça va bien et toi ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-10T20:18:00.000+02:00",
+        "content": "Je vais bien. Je pensais aller en boîte demain soir, tu viens ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-10T20:20:00.000+02:00",
+        "content": "Ça sonne bien. On se voit là-bas ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-10T20:25:00.000+02:00",
+        "content": "Génial ! Je t'y retrouve à 22h.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-10T20:30:00.000+02:00",
+        "content": "C'est un rendez-vous alors. A demain.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-14T16:50:00.000+02:00",
+        "content": "Salut Mike, on devrait prendre un dîner la semaine prochaine. Qu'en penses-tu ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-14T17:05:00.000+02:00",
+        "content": "Salut Serena, ça me semble une excellente idée. Que dirais-tu de mardi prochain ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-14T17:10:00.000+02:00",
+        "content": "Parfait, on se retrouve au restaurant Le Petit Prince à 20h ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-14T17:15:00.000+02:00",
+        "content": "Ça me va, à mardi.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-19T09:15:00.000+02:00",
+        "content": "Mike, hier soir était fantastique. Merci beaucoup.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-19T09:20:00.000+02:00",
+        "content": "Je suis content que tu aies passé un bon moment. On devrait refaire ça.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-19T09:25:00.000+02:00",
+        "content": "Oui, j'adorerais ça.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-21T15:00:00.000+02:00",
+        "content": "Mike, tu as prévu quelque chose pour Noël ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-21T15:05:00.000+02:00",
+        "content": "Je ne sais pas encore, je n'ai pas vraiment fait de plans. Pourquoi ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-21T15:10:00.000+02:00",
+        "content": "J'étais en train de penser que nous pourrions faire quelque chose ensemble.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-21T15:15:00.000+02:00",
+        "content": "Je vais voir ce que je peux faire, je te tiens au courant.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-21T15:20:00.000+02:00",
+        "content": "D'accord, fais-le moi savoir dès que tu peux.",
+        "fileType": "text",
+        "filelink": null
+      }
+    ]
+  }
+]

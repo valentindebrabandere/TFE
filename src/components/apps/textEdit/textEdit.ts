@@ -35,7 +35,7 @@ export class TextEdit extends StyledElement {
         let newNotif = Notif.createNewNotification("Style", "Aller au style suivant", "");
         let display = document.querySelector(".c-notif-container");
         display?.appendChild(newNotif);
-      }, 5000);
+      }, 3000);
 
     }
 

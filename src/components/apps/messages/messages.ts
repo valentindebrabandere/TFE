@@ -1,7 +1,7 @@
 // MessagesComponent.ts
 import { html, css } from "lit";
 import { customElement, state, property, query } from "lit/decorators.js";
-import { classMap } from 'lit/directives/class-map.js';
+import { classMap } from "lit/directives/class-map.js";
 
 import { StyledElement } from "../../../utils/globalStyledElement";
 import { basic, styles } from "./styles";
@@ -18,7 +18,7 @@ export class Messages extends StyledElement {
   @state() selectedDiscussion: any = null;
   @state() styles = [basic, css``];
   @state() currentStyle = "";
-  @state() imagePreviewSrc: string | null = null; 
+  @state() imagePreviewSrc: string | null = null;
   @query(".c-messages__content-container") chatContainer?: HTMLElement;
 
   async connectedCallback() {
@@ -33,22 +33,20 @@ export class Messages extends StyledElement {
     } else {
       this.discussions = await this.fetchDiscussions(
         `/content/${this.currentStyle}/messages/messagesConfig.json`
-        );
-        this.sortDiscussions();
-        this.selectDiscussion(this.discussions[0]);
+      );
+      this.sortDiscussions();
+      this.selectDiscussion(this.discussions[0]);
     }
 
-    this.addEventListener('showImagePreview', (event) => {
+    this.addEventListener("showImagePreview", (event) => {
       const customEvent = event as CustomEvent;
       this.imagePreviewSrc = customEvent.detail.imageSrc;
-    }); 
-    
+    });
   }
 
   closeImagePreview() {
-    this.imagePreviewSrc = null;  // hide the image preview
+    this.imagePreviewSrc = null; // hide the image preview
   }
-
 
   async fetchDiscussions(filelink: string): Promise<any[]> {
     if (!filelink) return this.discussions;
@@ -75,12 +73,11 @@ export class Messages extends StyledElement {
       this.scrollToBottom();
     }, 20);
   }
-  
 
   sortDiscussions() {
     this.discussions.sort((a, b) => {
       const lastMessageA = a.chats[a.chats.length - 1];
-    const lastMessageB = b.chats[b.chats.length - 1];
+      const lastMessageB = b.chats[b.chats.length - 1];
       return (
         new Date(lastMessageB?.timestamp).getTime() -
         new Date(lastMessageA?.timestamp).getTime()
@@ -112,16 +109,28 @@ export class Messages extends StyledElement {
       <style>
         ${this.styles}
       </style>
-       ${this.imagePreviewSrc ? html`
-            <div class="image-preview-overlay" @click="${this.closeImagePreview}">
-              <img src="${this.imagePreviewSrc}" alt="Image Preview" class="image-preview"/>
+      ${this.imagePreviewSrc
+        ? html`
+            <div
+              class="image-preview-overlay"
+              @click="${this.closeImagePreview}"
+            >
+              <img
+                src="${this.imagePreviewSrc}"
+                alt="Image Preview"
+                class="image-preview"
+              />
             </div>
-          ` : ''}
+          `
+        : ""}
       <div class="c-messages__list">
         ${this.discussions.map(
           (discussion) => html`
             <discussion-item-component
-              class=${classMap({ 'c-discussion-item--selected': this.selectedDiscussion === discussion })}
+              class=${classMap({
+                "c-discussion-item--selected":
+                  this.selectedDiscussion === discussion,
+              })}
               .discussion="${discussion}"
               @click="${() => this.selectDiscussion(discussion)}"
             ></discussion-item-component>
@@ -133,8 +142,7 @@ export class Messages extends StyledElement {
         <div class="c-messages__header">
           <img
             class="c-messages__pp"
-            src="${this.selectedDiscussion &&
-            this.selectedDiscussion.profilePic
+            src="${this.selectedDiscussion && this.selectedDiscussion.profilePic
               ? this.selectedDiscussion.profilePic
               : "/content/" +
                 this.currentStyle +
@@ -183,20 +191,20 @@ export class Messages extends StyledElement {
                           60 * 60 * 1000
                       ) {
                         // Add time separator if the time difference between the current chat and the next one is more than 30 minutes
-                          acc.push(
-                            html`<div
-                              class="c-messages__slot c-messages__slot--hour"
-                            >
-                              ${this.formatTime(currentChatDate)}
-                            </div>`
-                          );
-                      }
-                        // Add the chat
                         acc.push(
-                          html`<messages-item-component
-                            .chat="${chat}"
-                          ></messages-item-component>`
+                          html`<div
+                            class="c-messages__slot c-messages__slot--hour"
+                          >
+                            ${this.formatTime(currentChatDate)}
+                          </div>`
                         );
+                      }
+                      // Add the chat
+                      acc.push(
+                        html`<messages-item-component
+                          .chat="${chat}"
+                        ></messages-item-component>`
+                      );
                       return acc;
                     },
                     []

@@ -1,5 +1,6 @@
 import { html } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
+import { Notif } from "../../global/notif/notif";
 
 import '../menu/menu';
 import  '../openedApps/openedApps';
@@ -23,11 +24,12 @@ export class Screen extends StyledElement {
 
   connectedCallback() {
     super.connectedCallback();
+    this.updateStyles();
+    this.notifCheck();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-
   }
 
   //need to be called to change the style
@@ -35,6 +37,21 @@ export class Screen extends StyledElement {
     //select the current style (globalStyledElement.ts)
     this.currentStyle = this.globalStyleController.style;
   }
+
+  notifCheck() {
+    if (this.currentStyle === "skeuo") {
+    //create a notification
+    setTimeout(() => {
+      let newNotif = Notif.createNewNotification(
+        "Messages",
+        "Steve vous a envoyé un message vocal",
+        "/content/skeuo/messages/messagesNotif.json"
+      );
+      let display = document.querySelector(".c-notif-container");
+      display?.appendChild(newNotif);
+    }, 9000);
+  }
+}
 
 
   render() {
