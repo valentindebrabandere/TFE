@@ -252,7 +252,7 @@ export const basic = css`
   .c-discussion-item__name {
     font-weight: 500;
     color: #000000;
-    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 -0.5px 1px rgba(0, 0, 0, 0.4);
   }
 
   .c-discussion-item__date {

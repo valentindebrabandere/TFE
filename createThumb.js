@@ -2,8 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-const watchedFolder = './public/content/oneBit/desktop/desktopImages';
-const thumbnailsFolder = './public/content/oneBit/desktop/desktopImages/thumb';
+const watchedFolder = './public/content/skeuo/desktop';
+const thumbnailsFolder = './public/content/skeuo/desktop/thumb';
 const thumbnailWidth = 75;
 const thumbnailHeight = 75;
 
@@ -20,7 +20,10 @@ fs.readdirSync(watchedFolder).forEach(file => {
   // Ensure the file is not a directory
   if (fs.lstatSync(filePath).isFile()) {
     sharp(filePath)
-      .resize(thumbnailWidth, thumbnailHeight)
+      .resize(thumbnailWidth, thumbnailHeight, {
+        fit: 'cover',
+        position: 'center',
+      })
       .toFile(path.join(thumbnailsFolder, file))
       .catch(err => console.error(err));
   }
