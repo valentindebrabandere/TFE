@@ -12,9 +12,16 @@
 
     {
       "appname": "Video",
-      "filename": "Anne Velo.avi",
-      "filelink": "/content/grey/desktop/test.mp4",
+      "filename": "Anne drole.avi",
+      "filelink": "/content/grey/desktop/elephantt.mp4",
       "position": {"top": "30%", "left": "60%"},
+      "childItems": []
+    },
+    {
+      "appname": "Video",
+      "filename": "Anne racone.avi",
+      "filelink": "/content/grey/desktop/2min.mp4",
+      "position": {"top": "40%", "left": "60%"},
       "childItems": []
     },
 

@@ -12,8 +12,15 @@
     {
       "appname": "Aperçu",
       "filename": "news.jpg",
-      "filelink": "/content/skeuo/desktop/news.png",
-      "position": {"top": "15%", "left": "60vw"},
+      "filelink": "/content/skeuo/desktop/desktopImages/news.png",
+      "position": {"top": "15%", "left": "60%"},
+      "childItems": []
+    },
+    {
+      "appname": "Aperçu",
+      "filename": "bourse.jpg",
+      "filelink": "/content/skeuo/desktop/desktopImages/bourse.png",
+      "position": {"top": "30%", "left": "60%"},
       "childItems": []
     }
   ]

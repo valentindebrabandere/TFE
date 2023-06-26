@@ -29,8 +29,8 @@ defaultAppsByStyle.set('grey', [
 //Skeuo
 defaultAppsByStyle.set('skeuo', [
   { id: 'Messages', filelink: '', childItems: [], top: 5, left: 5 },
-  { id: 'Aperçu', filelink: '/content/skeuo/desktop/bourse.png', childItems: [], top: 15, left: 8 },
-  { id: 'Aperçu', filelink: '/content/skeuo/desktop/news.png', childItems: [], top: 8, left: 60 },
+  { id: 'Aperçu', filelink: '/content/skeuo/desktop/desktopImages/bourse.png', childItems: [], top: 15, left: 8 },
+  { id: 'Aperçu', filelink: '/content/skeuo/desktop/desktopImages/news.png', childItems: [], top: 8, left: 60 },
 ]);
 
 //Modern Mac
