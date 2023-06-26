@@ -134,8 +134,8 @@ export class Messages extends StyledElement {
           <img
             class="c-messages__pp"
             src="${this.selectedDiscussion &&
-            this.selectedDiscussion.profilePicture
-              ? this.selectedDiscussion.profilePicture
+            this.selectedDiscussion.profilePic
+              ? this.selectedDiscussion.profilePic
               : "/content/" +
                 this.currentStyle +
                 "/messages/profilePictures/default.png"}"

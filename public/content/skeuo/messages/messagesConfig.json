@@ -1,47 +1,209 @@
-[
+[ 
+  {
+    "name": "Anne",
+    "notif": 2,
+    "profilePic": "/content/skeuo/messages/profilePictures/anne.png",
+    "chats": [
+      {
+        "send": false,
+        "timestamp": "2007-11-15T17:35:00.000+02:00",
+        "content": "Coucou Papa, juste pour te dire que j'ai réussi mon examen de mathématiques !",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-11-15T21:10:00.000+02:00",
+        "content": "Bravo ma puce ! Je suis très fier de toi. Continue comme ça.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-11-20T16:15:00.000+02:00",
+        "content": "Papa, tu viendras à ma représentation ce week-end ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-11-20T23:45:00.000+02:00",
+        "content": "Je ne peux pas te promettre, ma chérie. Le travail est très prenant en ce moment.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-11-23T20:30:00.000+02:00",
+        "content": "Ça s'est bien passé. Mais j'aurais aimé te voir",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-11-23T20:30:00.000+02:00",
+        "content": "",
+        "fileType": "image",
+        "filelink": "content/skeuo/messages/discussions/anne/representation.jpg"
+      },
+      {
+        "send": true,
+        "timestamp": "2007-11-24T01:10:00.000+02:00",
+        "content": "Je suis désolé Anne. Je ferai tout mon possible pour être là la prochaine fois.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-06T18:00:00.000+02:00",
+        "content": "Papa, on a vu les nouvelles à la télé... Est-ce que tu vas bien ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-07T03:25:00.000+02:00",
+        "content": "Ne t'inquiète pas pour moi, je gère la situation.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-10T21:00:00.000+02:00",
+        "content": "Papa, j'ai vraiment besoin de toi... Tu es distant ces derniers temps.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-11T02:00:00.000+02:00",
+        "content": "Je suis désolé, ma puce. Je suis juste un peu submergé en ce moment.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-16T17:20:00.000+02:00",
+        "content": "Papa, tu te rappelles de l'anniversaire de maman la semaine prochaine ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-17T01:15:00.000+02:00",
+        "content": "Merci de me le rappeler. Je lui offrirai quelque chose de spécial.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-24T14:00:00.000+02:00",
+        "content": "Joyeux Noël Papa ! J'espère que tu vas bien.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-25T00:30:00.000+02:00",
+        "content": "Joyeux Noël ma puce. Je t'aime.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-27T14:10:00.000+02:00",
+        "content": "On ne voit que toi aux informations… Tout va bien ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-27T17:15:00.000+02:00",
+        "content": "Papa, tout le monde s'inquiète pour toi... Tu ne réponds pas à nos appels.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-27T18:05:00.000+02:00",
+        "content": "C’était l’anniversaire de Maman hier ! Je lui ai acheté des fleurs de ta part…",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-28T13:10:00.000+02:00",
+        "content": "Papa, est-ce que tu peux me répondre ?? On commence à s’inquiéter.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": true,
+        "timestamp": "2007-12-28T14:00:00.000+02:00",
+        "content": "Ne t'inquiète pas pour moi, Anne. Je suis juste un peu occupé. Je t'appellerai plus tard.",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-28T15:30:00.000+02:00",
+        "content": "Papa, je t'en prie, tu me fais peur. Est-ce que tu es sûr que tout va bien ?",
+        "fileType": "text",
+        "filelink": null
+      },
+      {
+        "send": false,
+        "timestamp": "2007-12-28T16:20:00.000+02:00",
+        "content": "Papa, réponds-moi s'il te plaît...",
+        "fileType": "text",
+        "filelink": null
+      }
+    ]
+  },
+
     {
-      "name": "Anne",
+      "name": "Jeanne",
       "notif": 2,
       "profilePic": "",
       "chats": [
         {
           "send": true,
-          "timestamp": "2023-04-16T13:00:00.000+02:00",
+          "timestamp": "2002-04-16T13:00:00.000+02:00",
           "content": "Hello, how are you? MArgauxxxxx",
           "fileType": "text",
           "filelink": null
         },
         {
           "send": false,
-          "timestamp": "2023-04-16T13:02:00.000+02:00",
+          "timestamp": "2002-04-16T13:02:00.000+02:00",
           "content": "I'm good, thanks!",
           "fileType": "text",
           "filelink": null
         },
         {
           "send": true,
-          "timestamp": "2023-04-16T13:45:00.000+02:00",
+          "timestamp": "2002-04-16T13:45:00.000+02:00",
           "content": "13:45",
           "fileType": "text",
           "filelink": null
         },
         {
           "send": false,
-          "timestamp": "2023-06-16T13:45:00.000+02:00",
+          "timestamp": "2002-06-16T13:45:00.000+02:00",
           "content": null,
           "fileType": "image",
           "filelink": "content/skeuo/messages/image.jpg"
         },
         {
           "send": false,
-          "timestamp": "2023-06-16T13:55:00.000+02:00",
+          "timestamp": "2002-06-16T13:55:00.000+02:00",
           "content": null,
           "fileType": "vocal",
           "filelink": "content/skeuo/messages/vocal.m4a"
         },
         {
           "send": true,
-          "timestamp": "2023-06-16T13:55:00.000+02:00",
+          "timestamp": "2002-06-16T13:55:00.000+02:00",
           "content": null,
           "fileType": "vocal",
           "filelink": "content/skeuo/messages/vocal.m4a"
@@ -55,84 +217,84 @@
       "chats": [
         {
           "send": true,
-          "timestamp": "2023-05-16T13:00:00.000+02:00",
+          "timestamp": "2002-05-16T13:00:00.000+02:00",
           "content": "Hello, how are you?",
           "fileType": "text",
           "filelink": null
         },
         {
           "send": false,
-          "timestamp": "2023-05-16T13:05:00.000+02:00",
+          "timestamp": "2002-05-16T13:05:00.000+02:00",
           "content": "I'm good, thanks!",
           "fileType": "text",
           "filelink": null
         },
         {
           "send": false,
-          "timestamp": "2023-05-16T13:06:00.000+02:00",
+          "timestamp": "2002-05-16T13:06:00.000+02:00",
           "content": "Test!",
           "fileType": "text",
           "filelink": null
         },
         {
           "send": false,
-          "timestamp": "2023-05-16T13:07:00.000+02:00",
+          "timestamp": "2002-05-16T13:07:00.000+02:00",
           "content": "13:07",
           "fileType": "text",
           "filelink": null
         },
         {
           "send": false,
-          "timestamp": "2023-05-16T13:38:00.000+02:00",
+          "timestamp": "2002-05-16T13:38:00.000+02:00",
           "content": "13:38",
           "fileType": "text",
           "filelink": null
         },
         {
           "send": false,
-          "timestamp": "2023-05-16T13:38:00.000+02:00",
+          "timestamp": "2002-05-16T13:38:00.000+02:00",
           "content": "13:38",
           "fileType": "text",
           "filelink": null
         },
         {
           "send": true,
-          "timestamp": "2023-05-16T13:40:00.000+02:00",
+          "timestamp": "2002-05-16T13:40:00.000+02:00",
           "content": "Great to hear!",
           "fileType": "text",
           "filelink": null
         },
         {
           "send": true,
-          "timestamp": "2023-05-17T14:35:00.000+02:00",
+          "timestamp": "2002-05-17T14:35:00.000+02:00",
           "content": "Great to send a other message!",
           "fileType": "text",
           "filelink": null
         },
         {
           "send": true,
-          "timestamp": "2023-05-18T13:00:00.000+02:00",
+          "timestamp": "2002-05-18T13:00:00.000+02:00",
           "content": "Hello, how are you?",
           "fileType": "text",
           "filelink": null
         },
         {
           "send": false,
-          "timestamp": "2023-05-18T13:05:00.000+02:00",
+          "timestamp": "2002-05-18T13:05:00.000+02:00",
           "content": "I'm good, thanks!",
           "fileType": "text",
           "filelink": null
         },
         {
           "send": true,
-          "timestamp": "2023-05-18T13:55:00.000+02:00",
+          "timestamp": "2002-05-18T13:55:00.000+02:00",
           "content": "Great to hear!",
           "fileType": "text",
           "filelink": null
         },
         {
           "send": true,
-          "timestamp": "2023-05-19T13:35:00.000+02:00",
+          "timestamp": "2002-05-19T13:35:00.000+02:00",
           "content": "Great to send a other message!",
           "fileType": "text",
           "filelink": null

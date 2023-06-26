@@ -7,7 +7,7 @@ export const basic = css`
     position: relative;
     display: flex;
     width: fit-content;
-    width: 70vw;
+    max-width: 70vw;
     height: 70vh;
     overflow: hidden;
   }
@@ -47,6 +47,7 @@ export const basic = css`
     height: 50px;
     border-radius: 20%;
     margin-right: 18px;
+    box-shadow: 0 2px 2px #000;
   }
 
   .c-messages__footer {
@@ -104,8 +105,8 @@ export const basic = css`
   .c-messages-item {
     display: inline-block;
     width: fit-content;
-    margin-bottom: 1px;
-    max-width: 80%;
+    margin-bottom: 5px;
+    max-width: 60%;
     border-radius: 10px;
   }
 
@@ -121,6 +122,7 @@ export const basic = css`
     overflow: hidden;
     border-radius: 10px;
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
 
   .image-preview-overlay {
@@ -244,6 +246,7 @@ export const basic = css`
     width: 50px;
     height: 50px;
     border-radius: 20%;
+    box-shadow: 0 2px 2px #000;
   }
 
   .c-discussion-item__name {
