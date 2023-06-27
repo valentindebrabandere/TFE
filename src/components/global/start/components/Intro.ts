@@ -84,7 +84,7 @@ export class Intro extends LitElement {
       </div>
       <div class="c-intro__footer hidden-fade hidden-from-bottom">
         <p class="c-intro-footer__text">
-        Travail de fin d’études réalisé dans le cadre d’un master en developpement interactif à  l’Institut des Arts de la Diffusion, section realisation multimédia.<br/><br/>TFE réalisé durant l’année scolaire 2022-2023 par Valentin de Brabandère
+        Travail de fin d’études réalisé dans le cadre d’un master en développement interactif à  l’Institut des Arts de la Diffusion, section réalisation multimédia.<br/><br/>TFE réalisé durant l’année scolaire 2022-2023 par Valentin de Brabandère
         </p>
         <img src="/public/images/components/intro/logoIad.png" alt="IAD" class="c-intro-footer__logo">
       </div>

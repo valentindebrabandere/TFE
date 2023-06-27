@@ -1,11 +1,11 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import "./style.css";
-import "./components/Intro.ts"
-import "./components/Tuto.ts"
-import "./components/Text.ts"
+import "./components/Intro"
+import "./components/Tuto"
+import "./components/Text"
 
-import { newStyleDisplay } from "../../../utils/newStyleDisplay.ts";
+import { newStyleDisplay } from "../../../utils/newStyleDisplay";
 
 @customElement("start-component")
 export class Start extends LitElement {
@@ -45,6 +45,7 @@ export class Start extends LitElement {
       this.requestUpdate();
     } else {
       newStyleDisplay();
+      this.currentPanelIndex++;
       setTimeout(() => {
         this.style.display = "none";
       }, 1000);

@@ -1,26 +1,26 @@
 .skeuo {
     /* CSS here */
 
-    .c-file__icon{
-        filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.2));
+    .c-file__icon {
+        filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.2));
     }
-    
-    .c-file__icon--image{
+
+    .c-file__icon--image {
         border: 2px solid #fff;
     }
-    
-    .c-file__name{
+
+    .c-file__name {
         color: #fff;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         border-radius: 25px;
     }
 
-    .c-file--finder{
-        filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.1));
-        
-        .c-file__name{
+    .c-file--finder {
+        filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.1));
+
+        .c-file__name {
             color: #000;
             text-shadow: none;
         }
-      }
+    }
 }

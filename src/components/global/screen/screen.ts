@@ -21,12 +21,6 @@ export class Screen extends StyledElement {
     this.classList.add("c-screen__container");
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    this.updateStyles();
-    this.notifCheck();
-  }
-
   disconnectedCallback() {
     super.disconnectedCallback();
   }
@@ -35,6 +29,7 @@ export class Screen extends StyledElement {
   updateStyles() {
     //select the current style (globalStyledElement.ts)
     this.currentStyle = this.globalStyleController.style;
+    this.notifCheck();
   }
 
   notifCheck() {
@@ -47,27 +42,30 @@ export class Screen extends StyledElement {
           "/content/skeuo/messages/messagesNotif.json"
         );
         let display = document.querySelector(".c-notif-container");
+        if (!display) return;
+        if (display.children.length > 0) return;
         display?.appendChild(newNotif);
-      }, 20000);
+      }, 15000);
     }
 
     if (this.currentStyle === "flat") {
       setTimeout(() => {
+        if (this.currentStyle !== "flat") return;
         const app = getApplicationByID("FaceTime");
-    const openAppEvent = new CustomEvent('addOpenedApp', {
-      detail: {
-        id: app.name,
-        component: app.component,
-        filelink: "/content/flat/faceTime/appelVideo.mp4",
-        childItems: "",
-        top: 5, 
-        left: 40
-      },
-      bubbles: true,
-      composed: true,
-    });
-    this.dispatchEvent(openAppEvent);
-      }, 100);
+        const openAppEvent = new CustomEvent("addOpenedApp", {
+          detail: {
+            id: app.name,
+            component: app.component,
+            filelink: "/content/flat/faceTime/appelVideo.mp4",
+            childItems: "",
+            top: 5,
+            left: 40,
+          },
+          bubbles: true,
+          composed: true,
+        });
+        this.dispatchEvent(openAppEvent);
+      }, 10000);
     }
   }
 

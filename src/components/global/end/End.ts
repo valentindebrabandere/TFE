@@ -32,7 +32,6 @@ export class End extends LitElement {
     const text = this.querySelectorAll(".c-text__p") as NodeListOf<HTMLElement>;
     this.classList.add("hidden-fade");
 
-
     text.forEach((t) => {
       t.classList.add("hidden-fade");
       t.classList.add("hidden-from-top-px");
@@ -61,7 +60,7 @@ export class End extends LitElement {
     const text = this.querySelectorAll(".c-text__p") as NodeListOf<HTMLElement>;
     const cta = this.querySelector(".c-start__cta") as HTMLElement;
     const logo = this.querySelector(".c-text__logo") as HTMLElement;
-    
+
     text.forEach((t) => {
       t.classList.add("hidden-fade");
     });
@@ -71,7 +70,7 @@ export class End extends LitElement {
     this.classList.add("hidden-fade");
 
     logo.style.opacity = ".5";
-    
+
     await this.sleep(500);
     this.remove();
   }
@@ -90,15 +89,30 @@ export class End extends LitElement {
     return html`
       <div class="c-text__main">
         <div class="c-text__text">
-          <p class="c-text__p">End</p>
+        <p class="c-text__p">Meri d'avoir joué le jeu !</p>
           <p class="c-text__p">
-            À la maison, on a toujours évité le sujet, mais aujourd’hui, je vais
-            tout savoir. J’ai retrouvé son ordinateur en rangeant son grenier.
-            En cherchant bien, je suis sûr que je trouverai toutes les réponses
-            à mes questions.
+            Ce projet, c'est la conclusion de mes études. J'aimerais donc
+            remercié tous les enseignant qui m'ont accompagné durant ces 4
+            années.
+          </p>
+          <p class="c-text__p">
+            Un merci spécial à l'équipe web, Jérome Coupé, Julien Moreau et
+            Thomas Henrion, car a eux trois ils permette une vison très complète
+            du developpement, chacun avec leur spécialité.
+          </p>
+          <p class="c-text__p">
+            Merci à Christophe Beaujean pour la relecture et du scénario. A
+            Amethys, Boris et Yuna pour leurs apparitions dans les fichiers
+            d'ordinateur !
+          </p>
+          <p class="c-text__p">
+            Merci à ma famille et mes amis pour l'aide apportée tout au long de
+            ce travail.
           </p>
           <p class="c-text__p c-text__p---muted ">
-            Vous êtes la petite-fille de Mike Ipson, bonne recherche…
+            Travail de fin d'études réalisé en 2023 par Valentin de Brabandère
+            pour son master en développement interactif à l’Institut des Arts de
+            la Diffusion, section réalisation multimédia.
           </p>
         </div>
         <button @click="${this.nextPanel}" class="c-start__cta c-text__cta">
