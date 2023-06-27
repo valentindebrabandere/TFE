@@ -12,11 +12,13 @@ export class Start extends LitElement {
   
   @property({ type: Number }) currentPanelIndex = 0;
   @property({ type: Boolean }) cameraAccessDenied = false; 
-
+  @property({ type: Number }) initialDelay = 0; 
+  @property({ type: Number }) initialPanel = 0; 
+  
   panels = [
     () => html`<intro-component .nextPanel="${this.nextPanel.bind(this)}"/>`,
     () => html`<tuto-component .nextPanel="${this.nextPanel.bind(this)}"/>`,
-    () => html`<text-component .nextPanel="${this.nextPanel.bind(this)}"/>`
+    () => html`<text-component .nextPanel="${this.nextPanel.bind(this)}"/>`,
   ];
 
 
@@ -25,21 +27,12 @@ export class Start extends LitElement {
     this.classList.add("c-start");
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    this.requestCameraAccess(); // Add this line
-  }
-
-  async requestCameraAccess() {
-    try {
-      // This will prompt the user for camera access
-      await navigator.mediaDevices.getUserMedia({ video: true });
-    } catch (err) {
-      // If the user denies access, this error will be thrown
-      console.log('Camera access denied');
-      // Set some global state to indicate camera access was denied
-      this.cameraAccessDenied = true;
-    }
+  startCustom(panel: number, delay?: number,) {
+    this.style.display = "block";
+    setTimeout(() => {
+      this.currentPanelIndex = panel;
+      this.requestUpdate();
+    }, delay);
   }
   
   createRenderRoot() {
@@ -53,7 +46,7 @@ export class Start extends LitElement {
     } else {
       newStyleDisplay();
       setTimeout(() => {
-        this.remove();
+        this.style.display = "none";
       }, 1000);
     }
   }

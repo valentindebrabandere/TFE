@@ -5,8 +5,8 @@
     width: 100%;
     height: 100%;
     z-index: 900;
-    background-color: #eeeeee;
     color: #16191f;
+    background-color: #eeeeee;
     cursor: auto;
     font-family: "Outfit", system-ui, sans-serif;
 }

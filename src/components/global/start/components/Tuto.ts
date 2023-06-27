@@ -9,6 +9,7 @@ export class Tuto extends LitElement {
   constructor() {
     super();
     this.classList.add("c-tuto");
+    this.classList.add("c-start-element");
   }
 
   connectedCallback() {

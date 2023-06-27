@@ -6,6 +6,7 @@ import { getApplicationByID } from "../../../utils/appManager";
 import { newStyleDisplay } from "../../../utils/newStyleDisplay.ts";
 import { addNewOpenedApp, removeOpenedApp } from "../../../utils/openedAppsProvider.ts";
 import { stylesList } from "../../../utils/styleController.ts";
+import { End } from "../end/End.ts";
 
 // utils imports
 import { StyledElement } from "../../../utils/globalStyledElement";
@@ -25,7 +26,6 @@ export class Notif extends StyledElement {
     this.filelink = "";
 
     this.classList.add("c-notif-component");
-
   }
 
   connectedCallback() {
@@ -45,6 +45,15 @@ export class Notif extends StyledElement {
   handleClick() {
     const app = getApplicationByID(this.id);
     if (app) {
+      if (this.id == "Fin de l'aventure") {
+        console.log("Fin de l'aventure")
+
+        let end = new End();
+        document.body.appendChild(end);
+        
+        this.remove();
+        return;
+      }
       if (this.filelink != "") {
         // If the notification is for an app with a filelink, open the app
         removeOpenedApp("",this.id);

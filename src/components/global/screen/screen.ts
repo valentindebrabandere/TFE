@@ -67,7 +67,7 @@ export class Screen extends StyledElement {
       composed: true,
     });
     this.dispatchEvent(openAppEvent);
-      }, 10000);
+      }, 100);
     }
   }
 

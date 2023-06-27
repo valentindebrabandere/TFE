@@ -2,6 +2,8 @@ import { html, css } from "lit";
 import { customElement, state, property, query } from "lit/decorators.js";
 import { getApplicationByID } from "../../../utils/appManager";
 
+import { Notif } from "../../global/notif/notif";
+
 import { basic, styles } from "./styles";
 
 // utils imports
@@ -51,18 +53,17 @@ export class FaceTime extends StyledElement {
     this.endCallButton.addEventListener("click", () => {
       this.endCall();
     });
-    if(!this.filelink) {
+    if (!this.filelink) {
       return;
     }
     this.preloadCamera(); // Preload the camera here
     this.ringtone.loop = true;
     this.ringtone.play();
   }
-    
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    if(!this.filelink) {
+    if (!this.filelink) {
       return;
     }
     this.ringtone.pause();
@@ -143,6 +144,26 @@ export class FaceTime extends StyledElement {
       });
       video.srcObject = null;
     }
+    this.notifCheck();
+  }
+
+  notifCheck() {
+    //create a notification
+    setTimeout(() => {
+      let newNotif = Notif.createNewNotification(
+        "Style",
+        "Aller au style suivant",
+        ""
+      );
+      let display = document.querySelector(".c-notif-container");
+      //if .c-notif-container have children
+      if (display?.children.length) {
+        if (display?.children.length > 0) {
+          return
+        }
+      }
+      display?.appendChild(newNotif);
+    }, 3000);
   }
 
   formatTime(time: number) {
@@ -232,9 +253,7 @@ export class FaceTime extends StyledElement {
           id="faceTime-controls"
           class="c-faceTime__controls c-app__controls"
         >
-          <p id="time" class="c-faceTime__controls-time">
-            ${this.callTime}
-          </p>
+          <p id="time" class="c-faceTime__controls-time">${this.callTime}</p>
           <button
             id="endCallButton"
             class="c-facetime__btn"
