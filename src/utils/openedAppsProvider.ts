@@ -50,8 +50,8 @@ export function removeOpenedApp(uuid: string, name?: string) {
 }
 
 export const openedAppsProvider = {  
-  handleAddOpenedApp(e: CustomEvent<{ id: string; component: any; filelink: string; childItems?: FileItem[] }>) {
-    addNewOpenedApp(e.detail.id, e.detail.component, e.detail.filelink, e.detail.childItems);
+  handleAddOpenedApp(e: CustomEvent<{ id: string; component: any; filelink: string; childItems?: FileItem[], top:number; left: number}>) {
+    addNewOpenedApp(e.detail.id, e.detail.component, e.detail.filelink, e.detail.childItems, e.detail.top, e.detail.left);
   },
 };
 

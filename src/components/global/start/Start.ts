@@ -11,6 +11,7 @@ import { newStyleDisplay } from "../../../utils/newStyleDisplay.ts";
 export class Start extends LitElement {
   
   @property({ type: Number }) currentPanelIndex = 0;
+  @property({ type: Boolean }) cameraAccessDenied = false; 
 
   panels = [
     () => html`<intro-component .nextPanel="${this.nextPanel.bind(this)}"/>`,
@@ -26,8 +27,21 @@ export class Start extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+    this.requestCameraAccess(); // Add this line
   }
 
+  async requestCameraAccess() {
+    try {
+      // This will prompt the user for camera access
+      await navigator.mediaDevices.getUserMedia({ video: true });
+    } catch (err) {
+      // If the user denies access, this error will be thrown
+      console.log('Camera access denied');
+      // Set some global state to indicate camera access was denied
+      this.cameraAccessDenied = true;
+    }
+  }
+  
   createRenderRoot() {
     return this;
   }

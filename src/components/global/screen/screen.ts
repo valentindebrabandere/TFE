@@ -10,6 +10,7 @@ import "../desktop/desktop";
 
 // utils imports
 import { StyledElement } from "../../../utils/globalStyledElement";
+import { getApplicationByID } from "../../../utils/appManager";
 
 @customElement("screen-component")
 export class Screen extends StyledElement {
@@ -49,16 +50,23 @@ export class Screen extends StyledElement {
         display?.appendChild(newNotif);
       }, 20000);
     }
+
     if (this.currentStyle === "flat") {
       setTimeout(() => {
-        if (this.currentStyle !== "flat") return;
-        let newNotif = Notif.createNewNotification(
-          "FaceTime",
-          "Anne vous appel en vidéo...",
-          "/content/flat/faceTime/appelVideo.mp4"
-        );
-        let display = document.querySelector(".c-notif-container");
-        display?.appendChild(newNotif);
+        const app = getApplicationByID("FaceTime");
+    const openAppEvent = new CustomEvent('addOpenedApp', {
+      detail: {
+        id: app.name,
+        component: app.component,
+        filelink: "/content/flat/faceTime/appelVideo.mp4",
+        childItems: "",
+        top: 20, 
+        left: 40
+      },
+      bubbles: true,
+      composed: true,
+    });
+    this.dispatchEvent(openAppEvent);
       }, 100);
     }
   }

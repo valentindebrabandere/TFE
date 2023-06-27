@@ -38,7 +38,6 @@ export class Window extends StyledElement {
 
   firstUpdated() {
     this.uuid = this.appUuid;
-      
     const topOffset = (this.windowNumber * 5) % 100;
     const leftOffset = (this.windowNumber * 3) % 100;
     this.style.top = `${5 + topOffset}%`;

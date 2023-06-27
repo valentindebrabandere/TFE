@@ -3,10 +3,26 @@ import "/src/assets/globalStyles/typoImports.css";
 
 export const basic = css`
   .c-faceTime {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #fff;
+    min-width: 300px;
+    min-height: 500px;
+  }
+
+  .c-faceTime__user{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 130px;
+    height: auto;
+
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    pointer-events: auto;
   }
 
   .c-faceTime__content {
@@ -16,6 +32,8 @@ export const basic = css`
     max-height: 75vh;
     aspect-ratio: auto;
     object-fit: contain;
+    pointer-events: none;
+
   }
 
   .c-faceTime__no-content {
@@ -40,24 +58,6 @@ export const basic = css`
     display: flex;
     justify-content: space-around;
     align-items: center;
-  }
-
-  .c-faceTime__controls-play,
-  .c-faceTime__controls-stop {
-    background-color: #fff;
-    border: none;
-    padding: 2px;
-    color: #000;
-    cursor: pointer;
-  }
-
-  .c-faceTime__controls-progress {
-    width: 50%;
-    cursor: pointer;
-  }
-
-  .c-faceTime__controls-time {
-    padding: 10px;
   }
 `;
 
