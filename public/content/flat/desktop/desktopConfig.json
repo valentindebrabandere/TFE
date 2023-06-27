@@ -4,17 +4,46 @@
   "childItems": [
     {
       "appname": "TextEdit",
-      "filename": "Journal.txt",
+      "filename": "Journal.doc",
       "filelink": "/content/flat/desktop/journal.html",
       "childItems": [],
-      "position": {"top": "15%", "left": "66%"}
+      "position": {"top": "10%", "left": "52%"}
+    },
+    {
+      "appname": "TextEdit",
+      "filename": "Avocats Ipson.doc",
+      "filelink": "/content/flat/desktop/avocats.html",
+      "childItems": [],
+      "position": {"top": "20%", "left": "50%"}
+    },
+
+    {
+      "appname": "Aperçu",
+      "filename": "Steve Londres",
+      "filelink": "/content/flat/desktop/desktopImages/londres.png",
+      "childItems": [],
+      "position": {"top": "55%", "left": "38%"}
+    },
+    {
+      "appname": "Aperçu",
+      "filename": "Steve Milan",
+      "filelink": "/content/flat/desktop/desktopImages/milan.png",
+      "childItems": [],
+      "position": {"top": "60%", "left": "32%"}
+    },
+    {
+      "appname": "Aperçu",
+      "filename": "Steve Voleur",
+      "filelink": "/content/flat/desktop/desktopImages/voleur.png",
+      "childItems": [],
+      "position": {"top": "48%", "left": "32%"}
     },
 
     {
       "appname": "Finder",
       "filename": "Famille",
       "filelink": "",
-      "position": {"top": "20%", "left": "83%"},
+      "position": {"top": "33%", "left": "70%"},
       "childItems": [
         {
           "appname": "Video",
@@ -61,43 +90,12 @@
         }
       ]
     },
-  
     {
-      "appname": "Finder",
-      "filename": "Entreprise",
-      "filelink": "",
-      "position": {"top": "30%", "left": "83%"},
-      "childItems": [
-        {
-          "appname": "Numbers",
-          "filename": "Rapport-finence.xls",
-          "filelink": "/content/grey/desktop/rapportFinencesQ2.csv",
-          "childItems": [],
-          "position": {"top": "30%", "left": "66%"}
-        },
-        {
-          "appname": "TextEdit",
-          "filename": "plan-lancement.txt",
-          "filelink": "/content/grey/desktop/entreprise/plan.html",
-          "childItems": [],
-          "position": {}
-        },
-        {
-          "appname": "TextEdit",
-          "filename": "fete 10ans.txt",
-          "filelink": "/content/grey/desktop/10ans.html",
-          "childItems": [],
-          "position": {"top": "20%", "left": "90%"}
-        },
-        {
-          "appname": "Numbers",
-          "filename": "fete 10ans budget.xls",
-          "filelink": "/content/grey/desktop/10ansBudget.csv",
-          "childItems": [],
-          "position": {"top": "30%", "left": "90%"}
-        }
-        
-      ]
+      "appname": "TextEdit",
+      "filename": "Réucpérer Lorem Ipson.doc",
+      "filelink": "/content/flat/desktop/recup.html",
+      "childItems": [],
+      "position": {"top": "35%", "left": "69%"}
     }
   ]
 }

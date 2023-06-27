@@ -1,32 +1,32 @@
 {
   "folderName": "Desktop",
-  "style": "grey",
+  "style": "skeuo",
   "childItems": [
     {
       "appname": "Aperçu",
-      "filename": "soiree serena.jpg",
-      "filelink": "/content/grey/trash/partGirl.png",
+      "filename": "soirée serena.jpg",
+      "filelink": "/content/skeuo/trash/partGirl.png",
       "position": {},
       "childItems": []
     },
     {
       "appname": "Aperçu",
       "filename": "24-04-97.jpg",
-      "filelink": "/content/grey/trash/drugs.png",
+      "filelink": "/content/skeuo/trash/drugs.png",
       "position": {},
       "childItems": []
     },
     {
       "appname": "Aperçu",
       "filename": "serena.jpg",
-      "filelink": "/content/grey/trash/girl.png",
+      "filelink": "/content/skeuo/trash/girl.png",
       "position": {},
       "childItems": []
     },
     {
       "appname": "Aperçu",
       "filename": "soiree.jpg",
-      "filelink": "/content/grey/trash/party.png",
+      "filelink": "/content/skeuo/trash/party.png",
       "position": {},
       "childItems": []
     }

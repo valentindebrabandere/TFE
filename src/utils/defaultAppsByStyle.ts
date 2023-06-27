@@ -34,6 +34,12 @@ defaultAppsByStyle.set('skeuo', [
   { id: 'Messages', filelink: '', childItems: [], top: 5, left: 5 },
 ]);
 
+//Flat
+defaultAppsByStyle.set('flat', [
+  { id: 'TextEdit', filelink: '/content/flat/desktop/recup.html', childItems: [], top: 10, left: 10 },
+  { id: 'TextEdit', filelink: '/content/flat/desktop/avocats.html', childItems: [], top: 5, left: 30 },
+  { id: 'Aperçu', filelink: '/content/flat/desktop/desktopImages/voleur.png', childItems: [], top: 12, left: 20 },
+]);
 //Modern Mac
 defaultAppsByStyle.set('modernMac', [
   { id: 'Finder', filelink: '/content/modernMac/desktop/desktopConfig.json', childItems: [], top: 20, left: 20 },

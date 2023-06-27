@@ -1,0 +1,27 @@
+{
+  "folderName": "Desktop",
+  "style": "flat",
+  "childItems": [
+    {
+      "appname": "TextEdit",
+      "filename": "avocats 16.12.2016.doc",
+      "filelink": "/content/flat/trash/lettre1.html",
+      "childItems": [],
+      "position": {"top": "35%", "left": "69%"}
+    },
+    {
+      "appname": "TextEdit",
+      "filename": "avocats 25.01.2017.doc",
+      "filelink": "/content/flat/trash/lettre2.html",
+      "childItems": [],
+      "position": {"top": "35%", "left": "69%"}
+    },
+    {
+      "appname": "TextEdit",
+      "filename": "avocats 05.02.2017.doc",
+      "filelink": "/content/flat/trash/lettre3.html",
+      "childItems": [],
+      "position": {"top": "35%", "left": "69%"}
+    }
+  ]
+}
