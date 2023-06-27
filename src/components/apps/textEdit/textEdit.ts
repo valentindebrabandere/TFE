@@ -30,6 +30,9 @@ export class TextEdit extends StyledElement {
         if(this.filelink?.includes("modernMac")){
           return;
         }
+        if(this.filelink?.includes("flat")){
+          return;
+        }
       //create a notification
       setTimeout(() => {
         let newNotif = Notif.createNewNotification("Style", "Aller au style suivant", "");

@@ -207,7 +207,7 @@ export class FaceTime extends StyledElement {
             />
             <p class="c-facetime__label">Accepter</p>
           </button>
-          <button class="c-facetime__btn" @click="${this.endCall}">
+          <button class="c-facetime__btn" @dblclick="${this.endCall}">
             <img
               src="/content/flat/faceTime/decline.svg"
               alt="accept icon"
