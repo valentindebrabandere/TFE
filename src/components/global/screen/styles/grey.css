@@ -20,7 +20,7 @@
 
 .c-screen {
     background: #9C9CCE;
-    /* background: url(/images/wallpaper/grey.jpg) 50% 50% no-repeat; */
+    background: url(/images/wallpaper/grey.png) 50% 100% no-repeat;
     background-size: cover;
 }
 

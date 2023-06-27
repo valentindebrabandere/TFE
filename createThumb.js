@@ -2,8 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-const watchedFolder = './public/content/skeuo/desktop';
-const thumbnailsFolder = './public/content/skeuo/desktop/thumb';
+const watchedFolder = './public/content/skeuo/desktop/desktopImages';
+const thumbnailsFolder = './public/content/skeuo/desktop/desktopImages/thumb';
 const thumbnailWidth = 75;
 const thumbnailHeight = 75;
 

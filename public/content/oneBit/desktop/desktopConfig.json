@@ -10,6 +10,13 @@
       "childItems": []
     },
     {
+      "appname": "Aperçu",
+      "filename": "Claire et moi.jpg",
+      "filelink": "/content/oneBit/desktop/Mariage.png",
+      "position": {"top": "30%", "left": "60%"},
+      "childItems": []
+    },
+    {
       "appname": "TextEdit",
       "filename": "Journal.txt",
       "filelink": "/content/oneBit/desktop/journal.html",

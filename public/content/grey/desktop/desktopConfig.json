@@ -62,31 +62,66 @@
       "filelink": "",
       "position": {"top": "20%", "left": "83%"},
       "childItems": [
-        
+        {
+          "appname": "Video",
+          "filename": "Anne drole.avi",
+          "filelink": "/content/grey/desktop/elephantt.mp4",
+          "position": {"top": "", "left": ""},
+          "childItems": []
+        },
+        {
+          "appname": "Video",
+          "filename": "Anne racone.avi",
+          "filelink": "/content/grey/desktop/2min.mp4",
+          "position": {"top": "", "left": ""},
+          "childItems": []
+        },
+    
+        {
+          "appname": "Aperçu",
+          "filename": "dessin Anne.jpg",
+          "filelink": "/content/grey/desktop/dessin.png",
+          "position": {"top": "", "left": ""},
+          "childItems": []
+        }
       ]
     },
-    {
-      "appname": "Finder",
-      "filename": "Perso",
-      "filelink": "",
-      "position": {"top": "30%", "left": "83%"},
-      "childItems": [
-        
-      ]
-    },
+  
     {
       "appname": "Finder",
       "filename": "Entreprise",
       "filelink": "",
-      "position": {"top": "40%", "left": "83%"},
+      "position": {"top": "30%", "left": "83%"},
       "childItems": [
+        {
+          "appname": "Numbers",
+          "filename": "Rapport-finence.xls",
+          "filelink": "/content/grey/desktop/rapportFinencesQ2.csv",
+          "childItems": [],
+          "position": {"top": "30%", "left": "66%"}
+        },
         {
           "appname": "TextEdit",
           "filename": "plan-lancement.txt",
           "filelink": "/content/grey/desktop/entreprise/plan.html",
           "childItems": [],
           "position": {}
+        },
+        {
+          "appname": "TextEdit",
+          "filename": "fete 10ans.txt",
+          "filelink": "/content/grey/desktop/10ans.html",
+          "childItems": [],
+          "position": {"top": "20%", "left": "90%"}
+        },
+        {
+          "appname": "Numbers",
+          "filename": "fete 10ans budget.xls",
+          "filelink": "/content/grey/desktop/10ansBudget.csv",
+          "childItems": [],
+          "position": {"top": "30%", "left": "90%"}
         }
+        
       ]
     }
   ]

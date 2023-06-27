@@ -18,7 +18,7 @@ export function getDockApps(style: string) {
     case 'modernMac':
       return [Finder, Preferences, Figma, TextEdit, Aperçu];
     case 'flat':
-      return [Finder, Preferences,Numbers, Video, Browser, Figma, TextEdit, Aperçu];
+      return [Finder, Preferences,Numbers, Browser, TextEdit, Aperçu];
     case 'skeuo':
       return [Finder, Preferences,  Messages, TextEdit, Numbers, Aperçu];
     case 'grey':
