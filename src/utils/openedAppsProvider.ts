@@ -33,7 +33,7 @@ export function removeOpenedApp(uuid: string, name?: string) {
   if (name) {
     appToRemove = currentApps.find(app => app.id === name);
     if (!appToRemove) {
-      console.error(`No app with name ${name} found`);
+      console.log(`No app with name ${name} found`);
       return;
     }
     uuid = appToRemove.uuid;
@@ -43,10 +43,9 @@ export function removeOpenedApp(uuid: string, name?: string) {
   }
   
   if (!appToRemove) {
-    console.error(`No app with uuid ${uuid} found`);
+    console.log(`No app with uuid ${uuid} found`);
     return;
   }
-  
   openedAppsSubject.next(currentApps.filter((app) => app.uuid !== uuid));
 }
 

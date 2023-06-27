@@ -49,6 +49,18 @@ export class Screen extends StyledElement {
         display?.appendChild(newNotif);
       }, 20000);
     }
+    if (this.currentStyle === "flat") {
+      setTimeout(() => {
+        if (this.currentStyle !== "flat") return;
+        let newNotif = Notif.createNewNotification(
+          "FaceTime",
+          "Anne vous appel en vidéo...",
+          "/content/flat/faceTime/appelVideo.mp4"
+        );
+        let display = document.querySelector(".c-notif-container");
+        display?.appendChild(newNotif);
+      }, 100);
+    }
   }
 
   render() {
