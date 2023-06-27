@@ -4,8 +4,8 @@ import sharp from 'sharp';
 
 const watchedFolder = './public/content/skeuo/desktop/desktopImages';
 const thumbnailsFolder = './public/content/skeuo/desktop/desktopImages/thumb';
-const thumbnailWidth = 75;
-const thumbnailHeight = 75;
+const thumbnailWidth = 140;
+const thumbnailHeight = 140;
 
 // Delete existing thumbnails
 fs.readdirSync(thumbnailsFolder).forEach(file => {

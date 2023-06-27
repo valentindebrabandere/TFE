@@ -61,7 +61,28 @@
         {
           "appname": "Aperçu",
           "filename": "dessin Anne.jpg",
-          "filelink": "/content/grey/desktop/dessin.png",
+          "filelink": "/content/skeuo/desktop/desktopImages/dessin.png",
+          "position": {"top": "", "left": ""},
+          "childItems": []
+        },
+        {
+          "appname": "Aperçu",
+          "filename": "Anne-petite.jpg",
+          "filelink": "/content/skeuo/desktop/desktopImages/anne.jpg",
+          "position": {"top": "", "left": ""},
+          "childItems": []
+        },
+        {
+          "appname": "Aperçu",
+          "filename": "Anne annif.jpg",
+          "filelink": "/content/skeuo/desktop/desktopImages/anne2.jpg",
+          "position": {"top": "", "left": ""},
+          "childItems": []
+        },
+        {
+          "appname": "Aperçu",
+          "filename": "Anne dents.jpg",
+          "filelink": "/content/skeuo/desktop/desktopImages/anne3.jpg",
           "position": {"top": "", "left": ""},
           "childItems": []
         }

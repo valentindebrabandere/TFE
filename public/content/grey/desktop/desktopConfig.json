@@ -83,7 +83,15 @@
           "filelink": "/content/grey/desktop/dessin.png",
           "position": {"top": "", "left": ""},
           "childItems": []
+        },
+        {
+          "appname": "Aperçu",
+          "filename": "Anne.jpg",
+          "filelink": "/content/grey/desktop/anne.jpg",
+          "position": {"top": "", "left": ""},
+          "childItems": []
         }
+
       ]
     },
   
@@ -121,7 +129,6 @@
           "childItems": [],
           "position": {"top": "30%", "left": "90%"}
         }
-        
       ]
     }
   ]
