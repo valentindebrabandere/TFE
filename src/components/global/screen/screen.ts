@@ -42,12 +42,12 @@ export class Screen extends StyledElement {
         if (this.currentStyle !== "skeuo") return;
         let newNotif = Notif.createNewNotification(
           "Messages",
-          "Steve vous a envoyé un message vocal",
+          "Steve - Boulot vous a envoyé un message vocal",
           "/content/skeuo/messages/messagesNotif.json"
         );
         let display = document.querySelector(".c-notif-container");
         display?.appendChild(newNotif);
-      }, 9000);
+      }, 20000);
     }
   }
 
