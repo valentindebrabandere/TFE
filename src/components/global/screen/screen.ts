@@ -60,14 +60,14 @@ export class Screen extends StyledElement {
         component: app.component,
         filelink: "/content/flat/faceTime/appelVideo.mp4",
         childItems: "",
-        top: 20, 
+        top: 5, 
         left: 40
       },
       bubbles: true,
       composed: true,
     });
     this.dispatchEvent(openAppEvent);
-      }, 100);
+      }, 1000);
     }
   }
 

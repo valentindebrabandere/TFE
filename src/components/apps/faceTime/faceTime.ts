@@ -16,7 +16,7 @@ export class FaceTime extends StyledElement {
   @property({ type: Boolean }) cameraAccessDenied = false;
 
   @state() contactName: string = "Anne";
-  @state() contactPhoto: string = "johndoe.jpg";
+  @state() contactPhoto: string = "/content/flat/faceTime/anne.png";
 
   @state() content: string = "";
   @state() styles = [basic, css``];
@@ -25,18 +25,48 @@ export class FaceTime extends StyledElement {
   @state() callEnded: boolean = false;
   @state() callStarted: boolean = false;
 
+  @state() ringtoneSource: string =
+    "public/content/flat/faceTime/sound/ring.mp3";
+  @state() enterCallSource: string =
+    "public/content/flat/faceTime/sound/in.mp3";
+  @state() endCallSource: string = "public/content/flat/faceTime/sound/out.mp3";
+
   @query("#time") timeEl!: HTMLDivElement;
   @query("#endCallButton") endCallButton!: HTMLButtonElement;
 
   private startTime?: Date;
   private updateTimeInterval?: number;
+  private ringtone = new Audio(this.ringtoneSource);
+  private enterCallSound = new Audio(this.enterCallSource);
+  private endCallSound = new Audio(this.endCallSource);
 
   connectedCallback() {
     super.connectedCallback();
     this.updateStyles();
     this.classList.add("c-faceTime");
     this.classList.add("c-app");
+  }
+
+  firstUpdated() {
+    this.endCallButton.addEventListener("click", () => {
+      this.endCall();
+    });
+    if(!this.filelink) {
+      return;
+    }
     this.preloadCamera(); // Preload the camera here
+    this.ringtone.loop = true;
+    this.ringtone.play();
+  }
+    
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    if(!this.filelink) {
+      return;
+    }
+    this.ringtone.pause();
+    this.ringtone.currentTime = 0;
   }
 
   async preloadCamera() {
@@ -55,6 +85,10 @@ export class FaceTime extends StyledElement {
 
   async startCamera() {
     this.startCall();
+    this.enterCallSound.play();
+    this.ringtone.currentTime = 0;
+    this.ringtone.pause();
+    this.enterCallSound.play();
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ video: true });
       const video = this.querySelector("#faceTime-user");
@@ -75,7 +109,7 @@ export class FaceTime extends StyledElement {
       video.play();
 
       video.onended = () => {
-        // this.endCall();
+        this.endCall();
       };
     }
     this.callStarted = true;
@@ -88,11 +122,18 @@ export class FaceTime extends StyledElement {
   }
 
   endCall() {
+    this.endCallSound.play();
+    this.ringtone.currentTime = 0;
+    this.ringtone.pause();
     if (this.updateTimeInterval !== undefined) {
       clearInterval(this.updateTimeInterval);
     }
     this.callStarted = false;
     this.callEnded = true;
+    const videoCall = this.querySelector("#faceTime");
+    if (videoCall instanceof HTMLVideoElement) {
+      videoCall.pause();
+    }
     const video = this.querySelector("#faceTime-user");
     if (video instanceof HTMLVideoElement && video.srcObject) {
       const stream = video.srcObject as MediaStream;
@@ -102,12 +143,6 @@ export class FaceTime extends StyledElement {
       });
       video.srcObject = null;
     }
-  }
-
-  firstUpdated() {
-    this.endCallButton.addEventListener("click", () => {
-      this.endCall();
-    });
   }
 
   formatTime(time: number) {
@@ -147,16 +182,42 @@ export class FaceTime extends StyledElement {
       </style>
 
       <div
-        class="call-panel"
+        class="c-facetime__call"
         style="display: ${!this.callStarted && !this.callEnded && this.filelink
-          ? "block"
+          ? "flex"
           : "none"}"
       >
-        <img src="${this.contactPhoto}" alt="${this.contactName}" />
-        <h2>${this.contactName} is calling...</h2>
-        <button @click="${this.startCamera}">Answer</button>
-        <button @click="${this.endCall}">Decline</button>
+        <img
+          class="o-fluidimage c-facetime__call-img"
+          src="${this.contactPhoto}"
+          alt="${this.contactName}"
+        />
+        <img
+          class="o-fluidimage c-facetime__call-contact"
+          src="${this.contactPhoto}"
+          alt="${this.contactName}"
+        />
+        <h2 class="c-facetime__h2">${this.contactName} vous appelle...</h2>
+        <div class="c-facetime__call-footer">
+          <button class="c-facetime__btn" @click="${this.startCamera}">
+            <img
+              src="/content/flat/faceTime/accept.svg"
+              alt="accept icon"
+              class="c-facetime__btn-icon"
+            />
+            <p class="c-facetime__label">Accepter</p>
+          </button>
+          <button class="c-facetime__btn" @click="${this.endCall}">
+            <img
+              src="/content/flat/faceTime/decline.svg"
+              alt="accept icon"
+              class="c-facetime__btn-icon"
+            />
+            <p class="c-facetime__label">Refuser</p>
+          </button>
+        </div>
       </div>
+
       <div
         style="display: ${this.callStarted && !this.callEnded
           ? "block"
@@ -171,28 +232,49 @@ export class FaceTime extends StyledElement {
           id="faceTime-controls"
           class="c-faceTime__controls c-app__controls"
         >
-          <div id="time" class="c-faceTime__controls-time">
+          <p id="time" class="c-faceTime__controls-time">
             ${this.callTime}
-          </div>
-          <button id="endCallButton" class="c-faceTime__controls-button">
-            End Call
+          </p>
+          <button
+            id="endCallButton"
+            class="c-facetime__btn"
+            @click="${this.endCall}"
+          >
+            <img
+              src="/content/flat/faceTime/decline.svg"
+              alt="accept icon"
+              class="c-facetime__btn-icon"
+            />
           </button>
         </div>
       </div>
 
       <div
-        class="call-ended-panel"
-        style="display: ${this.callEnded ? "block" : "none"}"
+        class="c-facetime__call c-facetime__call--ended"
+        style="display: ${!this.callStarted && this.callEnded
+          ? "flex"
+          : "none"}"
       >
-        <h2>Call with ${this.contactName} ended</h2>
-        <img src="${this.contactPhoto}" alt="${this.contactName}" />
-        <p>Duration: ${this.callTime}</p>
+        <img
+          class="o-fluidimage c-facetime__call-img"
+          src="${this.contactPhoto}"
+          alt="${this.contactName}"
+        />
+        <img
+          class="o-fluidimage c-facetime__call-contact"
+          src="${this.contactPhoto}"
+          alt="${this.contactName}"
+        />
+        <h2>L'appel avec ${this.contactName} est terminé</h2>
+        <div class="c-facetime__call-footer">
+          <p>Durée: ${this.callTime}</p>
+        </div>
       </div>
 
       <div
         class="c-faceTime__no-content"
         style="display: ${!this.callStarted && !this.callEnded && !this.filelink
-          ? "block"
+          ? "flex"
           : "none"}"
       >
         <img src="${app.icon(this.currentStyle)}" alt="Aperçu Logo" />

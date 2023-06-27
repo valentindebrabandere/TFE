@@ -10,6 +10,72 @@ export const basic = css`
     background-color: #fff;
     min-width: 300px;
     min-height: 500px;
+
+    overflow: hidden;
+  }
+
+  .c-facetime__call{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 25px 40px;
+
+    z-index: 1;
+    max-width: 300px;
+    flex:1;
+    color: #fff;
+  }
+
+  .c-facetime__call h2{
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0;
+    text-align: center;
+  }
+
+  .c-facetime__call-contact{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+
+  .c-facetime__call-footer{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  .c-facetime__btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+  }
+
+  .c-facetime__btn-icon{
+    transition: 0.2s ease-in-out;
+  }
+
+  .c-facetime__btn-icon:hover{
+    scale: 1.1;
+    transition: 0.2s ease-in-out;
+  }
+
+  .c-facetime__call-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    object-fit: cover;
+    scale: 1.1;
+    pointer-events: none;
+    filter: blur(5px) brightness(0.5);
   }
 
   .c-faceTime__user{
@@ -23,6 +89,7 @@ export const basic = css`
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     pointer-events: auto;
+    z-index: 1;
   }
 
   .c-faceTime__content {
@@ -34,6 +101,8 @@ export const basic = css`
     object-fit: contain;
     pointer-events: none;
 
+    scale: 1.1;
+    z-index: -1;
   }
 
   .c-faceTime__no-content {
@@ -43,6 +112,8 @@ export const basic = css`
     justify-content: center;
     width: 35vw;
     height: 30vw;
+    box-sizing: border-box;
+    padding: 25px;
   }
 
   .c-faceTime__no-content p {
@@ -50,15 +121,25 @@ export const basic = css`
   }
 
   .c-faceTime__controls {
-    position: relative;
-    box-sizing: border-box;
-    background-color: #fff;
-    width: 100%;
-    height: 50px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: space-around;
+    box-sizing: border-box;
+    flex-direction: column;
     align-items: center;
+
+    gap: 10px;
+
+    background-color: transparent;
   }
+
+  .c-faceTime__controls > p {
+    opacity: 0.5;
+    color: #fff;
+  }
+
 `;
 
 interface StyleObject {
@@ -66,102 +147,4 @@ interface StyleObject {
   css: CSSResult;
 }
 
-const styleOneBit: StyleObject = {
-  styleName: "grey",
-  css: css`
-    /* CSS here */
-
-    .c-faceTime {
-      background-color: #dcd8dd;
-    }
-
-    .c-faceTime__controls {
-      background: #cac6cb;
-      box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white,
-        inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
-    }
-
-    .c-faceTime__controls-play {
-      background: #cac6cb;
-      border: 1px solid #000;
-      box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white,
-        inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
-    }
-    .c-faceTime__controls-play:hover {
-      box-shadow: inset -1px -1px 0 0 white, inset 1px 1px 0 0 #464147,
-        inset -2px -2px 0 0 #dedcde, inset 2px 2px 0 0 #cac6cb;
-    }
-
-    .c-faceTime__controls-time {
-      box-shadow: inset -1px -1px 0 0 white, inset 1px 1px 0 0 #464147,
-        inset -2px -2px 0 0 #dedcde, inset 2px 2px 0 0 #cac6cb;
-    }
-
-    .c-faceTime__controls-progress {
-      background: transparent;
-      height: 20px;
-      -webkit-appearance: none;
-      appearance: none; /* Add standard appearance property */
-    }
-    
-    /* Webkit (Chrome, Safari) */
-    .c-faceTime__controls-progress::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none; /* Add standard appearance property */
-      width: 20px;
-      height: 20px;
-      transform: translateY(-5px);
-      background: #cac6cb;
-      box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white,
-        inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
-    }
-    
-    /* Mozilla Firefox */
-    .c-faceTime__controls-progress::-moz-range-thumb {
-      width: 20px;
-      height: 20px;
-      background: #cac6cb;
-      box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white,
-        inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
-      border-radius: 0;
-    }
-    
-    .c-faceTime__controls-progress::-webkit-slider-runnable-track {
-      height: 10px;
-      -webkit-appearance: none;
-      appearance: none; /* Add standard appearance property */
-      border: none;
-      background: #000;
-      box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white,
-        inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
-    }
-    
-    /* Mozilla Firefox */
-    .c-faceTime__controls-progress::-moz-range-track {
-      height: 10px;
-      border: none;
-      background: #000;
-      box-shadow: inset -1px -1px 0 0 #464147, inset 1px 1px 0 0 white,
-        inset -2px -2px 0 0 #a099a1, inset 2px 2px 0 0 #dedcde;
-    }    
-
-  `,
-};
-
-const styleSkeuo: StyleObject = {
-  styleName: "skeuo",
-  css: css`
-    /* CSS here */
-  `,
-};
-
-const styleModernMac: StyleObject = {
-  styleName: "modernMac",
-  css: css`
-    .c-faceTime {
-      background-color: #2d2c2c;
-    }
-  `,
-};
-
-export const styles: StyleObject[] = [styleOneBit, styleSkeuo, styleModernMac];
+export const styles: StyleObject[] = [];
