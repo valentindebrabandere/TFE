@@ -50,6 +50,8 @@ export class Screen extends StyledElement {
 
     if (this.currentStyle === "flat") {
       setTimeout(() => {
+        let call = document.querySelector("face-time-component")
+        if (call) return;
         if (this.currentStyle !== "flat") return;
         const app = getApplicationByID("FaceTime");
         const openAppEvent = new CustomEvent("addOpenedApp", {
