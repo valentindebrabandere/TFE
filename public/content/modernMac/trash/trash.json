@@ -1,0 +1,49 @@
+{
+  "folderName": "Desktop",
+  "style": "modernMac",
+  "childItems": [
+    {
+      "appname": "TextEdit",
+      "filename": "Journal.doc",
+      "filelink": "/content/flat/desktop/journal.html",
+      "childItems": [],
+      "position": {"top": "10%", "left": "52%"}
+    },
+    {
+      "appname": "TextEdit",
+      "filename": "Avocats Ipson.doc",
+      "filelink": "/content/flat/desktop/avocats.html",
+      "childItems": [],
+      "position": {"top": "20%", "left": "50%"}
+    },
+
+    {
+      "appname": "Aperçu",
+      "filename": "Steve Londres",
+      "filelink": "/content/flat/desktop/desktopImages/londres.png",
+      "childItems": [],
+      "position": {"top": "55%", "left": "38%"}
+    },
+    {
+      "appname": "Aperçu",
+      "filename": "Steve Milan",
+      "filelink": "/content/flat/desktop/desktopImages/milan.png",
+      "childItems": [],
+      "position": {"top": "60%", "left": "32%"}
+    },
+    {
+      "appname": "Aperçu",
+      "filename": "Steve Voleur",
+      "filelink": "/content/flat/desktop/desktopImages/voleur.png",
+      "childItems": [],
+      "position": {"top": "48%", "left": "32%"}
+    },
+    {
+      "appname": "TextEdit",
+      "filename": "Réucpérer Lorem Ipson.doc",
+      "filelink": "/content/flat/desktop/recup.html",
+      "childItems": [],
+      "position": {"top": "37%", "left": "69%"}
+    }
+  ]
+}

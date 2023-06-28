@@ -3,58 +3,101 @@
   "childItems": [
     {
       "appname": "TextEdit",
-      "filename": "Journal.txt",
+      "filename": "Journal.doc",
       "filelink": "/content/modernMac/desktop/journal.html",
-      "childItems": [],
-      "position": {"top": "15%", "left": "66%"}
+      "position": {"top": "20%", "left": "26%"},
+      "childItems": []
     },
     {
       "appname": "Aperçu",
-      "filename": "Image1.jpg",
-      "filelink": "/content/modernMac/desktop/desktopImages/image1.jpg",
-      "position": {"top": "30vh", "left": "60vw"},
+      "filename": "Bébé de anne.jpg",
+      "filelink": "/content/modernMac/desktop/desktopImages/Yuna 1.jpeg",
+      "position": {"top": "20%", "left": "20%"},
+      "childItems": []
+    },
+    {
+      "appname": "Aperçu",
+      "filename": "Anne et Marie.jpg",
+      "filelink": "/content/modernMac/desktop/desktopImages/Yuna 2.jpeg",
+      "position": {"top": "32%", "left": "20%"},
+      "childItems": []
+    },
+    {
+      "appname": "Aperçu",
+      "filename": "Fille de anne.jpg",
+      "filelink": "/content/modernMac/desktop/desktopImages/Yuna 8.jpeg",
+      "position": {"top": "32%", "left": "26%"},
+      "childItems": []
+    },
+    {
+      "appname": "Aperçu",
+      "filename": "Marie au parc.jpg",
+      "filelink": "/content/modernMac/desktop/desktopImages/Yuna 9.jpeg",
+      "position": {"top": "70%", "left": "20%"},
+      "childItems": []
+    },
+    {
+      "appname": "Aperçu",
+      "filename": "Marie.jpg",
+      "filelink": "/content/modernMac/desktop/desktopImages/Yuna 3.jpeg",
+      "position": {"top": "70%", "left": "14%"},
+      "childItems": []
+    },
+    {
+      "appname": "TextEdit",
+      "filename": "Lettre.doc",
+      "filelink": "/content/modernMac/desktop/lettre.html",
+      "position": {"top": "20%", "left": "83%"},
       "childItems": []
     },
     {
       "appname": "Finder",
-      "filename": "Fooldér",
+      "filename": "Famille",
       "filelink": "",
-      "position": {"top": "40vh", "left": "60vw"},
+      "position": {"top": "32%", "left": "83%"},
       "childItems": [
         {
+          "appname": "Video",
+          "filename": "Anne drole.avi",
+          "filelink": "/content/grey/desktop/elephantt.mp4",
+          "position": {"top": "", "left": ""},
+          "childItems": []
+        },
+        {
+          "appname": "Video",
+          "filename": "Anne racone.avi",
+          "filelink": "/content/grey/desktop/2min.mp4",
+          "position": {"top": "", "left": ""},
+          "childItems": []
+        },
+    
+        {
           "appname": "Aperçu",
-          "filename": "Image2.jpg",
-          "filelink": "/content/modernMac/desktop/desktopImages/image2.jpg",
-          "childItems": [],
-          "position": {}
+          "filename": "dessin Anne.jpg",
+          "filelink": "/content/skeuo/desktop/desktopImages/dessin.png",
+          "position": {"top": "", "left": ""},
+          "childItems": []
         },
         {
           "appname": "Aperçu",
-          "filename": "Image3.jpg",
-          "filelink": "/content/modernMac/desktop/desktopImages/image3.jpg",
-          "childItems": [],
-          "position": {}
+          "filename": "Anne-petite.jpg",
+          "filelink": "/content/skeuo/desktop/desktopImages/anne.jpg",
+          "position": {"top": "", "left": ""},
+          "childItems": []
         },
         {
-          "appname": "Finder",
-          "filename": "subfolder",
-          "filelink": "",
-          "childItems": [
-            {
-              "appname": "Aperçu",
-              "filename": "Image4.jpg",
-              "filelink": "/content/modernMac/desktop/desktopImages/image2.jpg",
-              "childItems": [],
-              "position": {}
-            },
-            {
-              "appname": "Aperçu",
-              "filename": "Image4.jpg",
-              "filelink": "/content/modernMac/desktop/desktopImages/image3.jpg",
-              "childItems": [],
-              "position": {}
-            }
-          ]
+          "appname": "Aperçu",
+          "filename": "Anne annif.jpg",
+          "filelink": "/content/skeuo/desktop/desktopImages/anne2.jpg",
+          "position": {"top": "", "left": ""},
+          "childItems": []
+        },
+        {
+          "appname": "Aperçu",
+          "filename": "Anne dents.jpg",
+          "filelink": "/content/skeuo/desktop/desktopImages/anne3.jpg",
+          "position": {"top": "", "left": ""},
+          "childItems": []
         }
       ]
     }

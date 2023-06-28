@@ -2,8 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-const watchedFolder = './public/content/flat/desktop/desktopImages';
-const thumbnailsFolder = './public/content/flat/desktop/desktopImages/thumb';
+const watchedFolder = './public/content/modernMac/desktop/desktopImages';
+const thumbnailsFolder = './public/content/modernMac/desktop/desktopImages/thumb';
 const thumbnailSize = 140;
 
 // Delete existing thumbnails

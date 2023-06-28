@@ -26,13 +26,13 @@ export class TextEdit extends StyledElement {
 
   notifCheck(){
 
-      if(this.filelink?.includes("journal.html")){
+      if(this.filelink?.includes("journal.html")){ 
         if(this.filelink?.includes("modernMac")){
           setTimeout(() => {
             let newNotif = Notif.createNewNotification("Fin de l'aventure", "Eteindre l'ordinateur ?", "");
             let display = document.querySelector(".c-notif-container");
             display?.appendChild(newNotif);
-          }, 100);
+          }, 2000);
           return;
         }
         if(this.filelink?.includes("flat")){

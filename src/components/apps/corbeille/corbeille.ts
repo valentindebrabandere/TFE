@@ -91,7 +91,7 @@ export class Corbeille extends StyledElement {
         this.arrangeChildItems();
       })
       .catch(error => {
-        console.warn("There was an error fetching the desktop config:", error);
+        console.warn("There was an error fetching the trash config:", error);
         this.childItems = [];
       });
   }

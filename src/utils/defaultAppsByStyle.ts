@@ -42,8 +42,11 @@ defaultAppsByStyle.set('flat', [
 ]);
 //Modern Mac
 defaultAppsByStyle.set('modernMac', [
-  { id: 'Finder', filelink: '/content/modernMac/desktop/desktopConfig.json', childItems: [], top: 20, left: 20 },
-  { id: 'TextEdit', filelink: '/content/modernMac/desktop/hello.html', childItems: [], top: 10, left: 10 },
+  { id: 'TextEdit', filelink: '/content/modernMac/desktop/lettre.html', childItems: [], top: 10, left: 25 },
+  { id: 'Aperçu', filelink: '/content/modernMac/desktop/desktopImages/Yuna 1.jpeg', childItems: [], top: 8, left: 8 },
+  { id: 'Aperçu', filelink: '/content/modernMac/desktop/desktopImages/Yuna 8.jpeg', childItems: [], top: 5, left: 55 },
+  { id: 'Aperçu', filelink: '/content/modernMac/desktop/desktopImages/Yuna 2.jpeg', childItems: [], top: 10, left: 25 },
+
 ]);
 
 
