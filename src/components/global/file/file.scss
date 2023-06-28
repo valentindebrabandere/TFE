@@ -19,6 +19,8 @@
 .c-file__icon--image {
     width: 85%;
     aspect-ratio: 1/1;
+    object-fit: contain;
+    
 }
 
 .c-file__name {

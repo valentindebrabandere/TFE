@@ -36,8 +36,8 @@ defaultAppsByStyle.set('skeuo', [
 
 //Flat
 defaultAppsByStyle.set('flat', [
-  { id: 'TextEdit', filelink: '/content/flat/desktop/recup.html', childItems: [], top: 10, left: 10 },
-  { id: 'TextEdit', filelink: '/content/flat/desktop/avocats.html', childItems: [], top: 5, left: 30 },
+  { id: 'TextEdit', filelink: '/content/flat/desktop/recup.html', childItems: [], top: 18, left: 8 },
+  { id: 'TextEdit', filelink: '/content/flat/desktop/avocats.html', childItems: [], top: 8, left: 30 },
   { id: 'Aperçu', filelink: '/content/flat/desktop/desktopImages/voleur.png', childItems: [], top: 12, left: 20 },
 ]);
 //Modern Mac
