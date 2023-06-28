@@ -79,7 +79,7 @@ export class End extends LitElement {
     let startComponent = document.querySelector("start-component") as any;
     if (startComponent) {
       this.outAnimation();
-      startComponent.startCustom(0, 500);
+      startComponent.startCustom(0, 100);
     } else {
       console.log("start-component is not found in the DOM");
     }
