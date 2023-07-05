@@ -47,7 +47,6 @@ interface Application {
   isHidden?: boolean;
 }
 
-
 function populateApplicationsList() {
   applications.clear();
   allApplicationsList.forEach((app: any) => {
@@ -57,7 +56,6 @@ function populateApplicationsList() {
       appName: app.appName,
     };
     
-
     if (app.prototype.hasOwnProperty('getFileIcon')) {
       application.fileIcon = (style: string) => app.prototype.getFileIcon(style);
     }
@@ -70,18 +68,16 @@ function populateApplicationsList() {
   });
 }
 
-populateApplicationsList(); // Populate the applications list initially
+populateApplicationsList();
+
 
 // addStyleChangedEventListener(onStyleChanged);
 
 // function onStyleChanged() {
 //   currentStyle = styleController.style;
 
-//   //things that have to change with style
-// 
-
 
 export { dockAppsActives };
 export function getApplicationByID(id: string): Application{
-    return applications.has(id) ? applications.get(id) : applications.get("default");
+  return applications.has(id) ? applications.get(id) : applications.get("default");
 }
