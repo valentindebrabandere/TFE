@@ -62,7 +62,7 @@ export class FileComponent extends StyledElement {
     const app = getApplicationByID(this.appname);
     const openAppEvent = new CustomEvent('addOpenedApp', {
       detail: {
-        id: app.name,
+        id: app.appName,
         component: app.component,
         filelink: this.filelink,
         childItems: this.childItems,
@@ -110,7 +110,7 @@ export class FileComponent extends StyledElement {
   }
 
   defaultIcon(app: any) {
-    const fileIconPath = `/images/fileIcons/${this.currentStyle}/${app.name}.png`;
+    const fileIconPath = `/images/fileIcons/${this.currentStyle}/${app.appName}.png`;
     return fileIconPath;
   }
 

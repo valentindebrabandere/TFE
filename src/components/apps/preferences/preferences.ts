@@ -37,7 +37,7 @@ export class Preferences extends StyledElement {
   render() {
     return html`
       <div class="c-app">
-        <default-app-component name="${Preferences.name}"></default-app-component>
+        <default-app-component name="${Preferences.appName}"></default-app-component>
       </div>
     `;
   }

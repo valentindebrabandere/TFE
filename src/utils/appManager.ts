@@ -39,7 +39,7 @@ const applications = new Map();
 const iconPathByStyle = (appName: string, style: string) =>`/images/appIcons/${style}/${appName}.png`;
 
 interface Application {
-  name: string;
+  appName: string;
   component: { new (): HTMLElement; prototype: HTMLElement; };
   icon: (style: string) => string;
   fileIcon?: ((style: string) => string) | undefined;
@@ -54,7 +54,7 @@ function populateApplicationsList() {
     const application: Application = {
       icon: (style: string) => iconPathByStyle(app.appName, style),
       component: app,
-      name: app.appName,
+      appName: app.appName,
     };
     
 

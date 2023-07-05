@@ -41,7 +41,7 @@ export class AppIcon extends StyledElement {
     const openedApps = openedAppsSubject.getValue();
   
     // Check if the app is already open
-    const openedApp = openedApps.find((openedApp) => openedApp.id === app.name);
+    const openedApp = openedApps.find((openedApp) => openedApp.id === app.appName);
   
     if (this.isHidden) {
       if (this.isHidden) {
@@ -55,7 +55,7 @@ export class AppIcon extends StyledElement {
         focusedAppUuidSubject.next(openedApp.uuid);
       } else {
         const openAppEvent = new CustomEvent("addOpenedApp", {
-          detail: { id: app.name, component: app.component },
+          detail: { id: app.appName, component: app.component },
           bubbles: true,
           composed: true,
         });

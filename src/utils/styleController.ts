@@ -34,6 +34,10 @@ export function changeStyle(direction: string): string {
     el.remove();
   });
 
+  if (direction === 'start') {
+    currentStyle = stylesList[0].call;
+    return currentStyle;
+  }
 
   if (direction === 'next') {
     if (styleIndex < stylesList.length - 1) {

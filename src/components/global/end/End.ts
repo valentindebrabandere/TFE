@@ -1,10 +1,11 @@
-import { LitElement, html } from "lit";
+import { html } from "lit";
 import { customElement } from "lit/decorators.js";
 
 import "./style.css";
+import { StyledElement } from "../../../utils/globalStyledElement";
 
 @customElement("end-component")
-export class End extends LitElement {
+export class End extends StyledElement {
   constructor() {
     super();
     this.classList.add("c-end");
@@ -80,6 +81,7 @@ export class End extends LitElement {
     if (startComponent) {
       this.outAnimation();
       startComponent.startCustom(0, 100);
+      this.globalStyleController.changeStyle("start");
     } else {
       console.log("start-component is not found in the DOM");
     }

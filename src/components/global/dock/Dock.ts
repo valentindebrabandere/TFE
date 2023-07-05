@@ -62,20 +62,20 @@ export class Dock extends StyledElement {
       <div class="c-dock js-dock">
         <div class="c-dock__static js-dock__static">
           ${dockApps.map(
-            (app) => html` <app-icon-component name=${app.name} /> `
+            (app) => html` <app-icon-component name=${app.appName} /> `
           )}
         </div>
         <div class="c-dock__active js-dock__active">
           ${dockAppsActives.map((app: any) => {
-            return app.name !== "Corbeille"
+            return app.appName !== "Corbeille"
               ? html`
                   <app-icon-component
-                    name=${app.name}
+                    name=${app.appName}
                     .uuid=${app.uuid}
                     .isHidden=${app.isHidden}
                   />
                 `
-              : html` <app-icon-component name=${app.name} /> `;
+              : html` <app-icon-component name=${app.appName} /> `;
           })}
         </div>
       </div>

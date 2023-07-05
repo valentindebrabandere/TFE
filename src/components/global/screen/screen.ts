@@ -62,7 +62,7 @@ export class Screen extends StyledElement {
         const app = getApplicationByID("FaceTime");
         const openAppEvent = new CustomEvent("addOpenedApp", {
           detail: {
-            id: app.name,
+            id: app.appName,
             component: app.component,
             filelink: "/content/flat/faceTime/appelVideo.mp4",
             childItems: "",

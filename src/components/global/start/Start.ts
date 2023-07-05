@@ -45,7 +45,6 @@ export class Start extends LitElement {
       this.requestUpdate();
     } else {
       newStyleDisplay();
-      this.currentPanelIndex++;
       setTimeout(() => {
         this.style.display = "none";
       }, 1000);

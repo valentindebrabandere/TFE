@@ -16,6 +16,7 @@ export class StyledElement extends LitElement {
       (el) => el !== this
     );
     this.removeEventListener('style-changed', this.onStyleChanged.bind(this));
+    this.remove();
   }
 
   onStyleChanged() {

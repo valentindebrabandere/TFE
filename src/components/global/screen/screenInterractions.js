@@ -1,6 +1,4 @@
-//=====================
-//=Drag
-//=====================
+import interact from "interactjs";
 
 //--------------------
 //=Draggable

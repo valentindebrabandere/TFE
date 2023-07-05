@@ -39,7 +39,7 @@ export class Figma extends StyledElement {
   render() {
     return html`
       <div class="c-app">
-        <default-app-component name="${this.appName}"></default-app-component>
+        <default-app-component name="${Figma.appName}"></default-app-component>
       </div>
     `;
   }
