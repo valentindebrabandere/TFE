@@ -8,6 +8,12 @@ import "../notif/notif";
 import "../dock/dock";
 import "../desktop/desktop";
 
+import "./screenInterractions.js"
+
+
+import "../../../main.scss"
+import "./screen.css";
+
 // utils imports
 import { StyledElement } from "../../../utils/globalStyledElement";
 import { getApplicationByID } from "../../../utils/appManager";
@@ -78,11 +84,7 @@ export class Screen extends StyledElement {
       <div class="${this.currentStyle} c-screen js-screen">
         <link
           rel="stylesheet"
-          href="/src/components/global/screen/screen.css"
-        />
-        <link
-          rel="stylesheet"
-          href="/src/components/global/screen/styles/${this.currentStyle}.css"
+          href="/screenStyles/${this.currentStyle}.css"
         />
         <div class="c-screen__overlay"></div>
         <menu-component></menu-component>

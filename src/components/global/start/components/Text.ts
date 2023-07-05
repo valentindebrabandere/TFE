@@ -77,7 +77,7 @@ export class Text extends LitElement {
           <p class="c-text__arrow">→</p>
         </button>
         <img
-          src="/public/images/components/intro/logobg.png"
+          src="/images/components/intro/logobg.png"
           alt="Logo Lorem Ipson"
           class="c-start__logo c-text__logo"
         />

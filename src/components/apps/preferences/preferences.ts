@@ -13,6 +13,7 @@ import '../default/default';
 export class Preferences extends StyledElement {
 
   @state() styles = [basic, css``];
+  static appName = 'Preferences';
 
   constructor() {
     super();

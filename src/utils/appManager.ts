@@ -36,7 +36,7 @@ let allApplicationsList = [...allApps, ...dockAppsActives];
 
 const applications = new Map();
 
-const iconPathByStyle = (appName: string, style: string) =>`/public/images/appIcons/${style}/${appName}.png`;
+const iconPathByStyle = (appName: string, style: string) =>`/images/appIcons/${style}/${appName}.png`;
 
 interface Application {
   name: string;
@@ -52,16 +52,16 @@ function populateApplicationsList() {
   applications.clear();
   allApplicationsList.forEach((app: any) => {
     const application: Application = {
-      icon: (style: string) => iconPathByStyle(app.name, style),
+      icon: (style: string) => iconPathByStyle(app.appName, style),
       component: app,
-      name: app.name,
+      name: app.appName,
     };
+    
 
     if (app.prototype.hasOwnProperty('getFileIcon')) {
       application.fileIcon = (style: string) => app.prototype.getFileIcon(style);
     }
-
-    applications.set(app.name, application);
+    applications.set(app.appName, application);
   });
 
   applications.set("default", {

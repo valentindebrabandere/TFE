@@ -23,6 +23,8 @@ export class Corbeille extends StyledElement {
   static isHidden: boolean;
   static uuid: any;
 
+  static appName = "Corbeille";
+
   constructor() {
     super();
     this.classList.add('c-finder');

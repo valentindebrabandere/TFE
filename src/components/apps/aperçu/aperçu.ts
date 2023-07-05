@@ -16,6 +16,7 @@ export class Aperçu extends StyledElement {
   @state() content: string = '';
   @state() styles = [basic, css``];
   @state() currentStyle = '';
+  static appName = 'Aperçu';
 
   constructor() {
     super();

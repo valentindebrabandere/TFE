@@ -15,6 +15,7 @@ export class TextEdit extends StyledElement {
   @state() content: string = '';
   @state() styles = [basic, css``];
   @state() currentStyle = "";
+  static appName = 'TextEdit';
 
   connectedCallback() {
     super.connectedCallback();

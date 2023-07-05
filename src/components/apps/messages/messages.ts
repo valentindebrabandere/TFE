@@ -21,6 +21,8 @@ export class Messages extends StyledElement {
   @state() imagePreviewSrc: string | null = null;
   @query(".c-messages__content-container") chatContainer?: HTMLElement;
 
+  static appName = "Messages";
+
   async connectedCallback() {
     super.connectedCallback();
     this.updateStyles();

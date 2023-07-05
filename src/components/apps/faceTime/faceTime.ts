@@ -28,10 +28,10 @@ export class FaceTime extends StyledElement {
   @state() callStarted: boolean = false;
 
   @state() ringtoneSource: string =
-    "public/content/flat/faceTime/sound/ring.mp3";
+    "content/flat/faceTime/sound/ring.mp3";
   @state() enterCallSource: string =
-    "public/content/flat/faceTime/sound/in.mp3";
-  @state() endCallSource: string = "public/content/flat/faceTime/sound/out.mp3";
+    "content/flat/faceTime/sound/in.mp3";
+  @state() endCallSource: string = "content/flat/faceTime/sound/out.mp3";
 
   @query("#time") timeEl!: HTMLDivElement;
   @query("#endCallButton") endCallButton!: HTMLButtonElement;
@@ -41,6 +41,8 @@ export class FaceTime extends StyledElement {
   private ringtone = new Audio(this.ringtoneSource);
   private enterCallSound = new Audio(this.enterCallSource);
   private endCallSound = new Audio(this.endCallSource);
+
+  static appName = "FaceTime";
 
   connectedCallback() {
     super.connectedCallback();

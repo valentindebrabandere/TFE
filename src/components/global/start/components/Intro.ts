@@ -80,13 +80,13 @@ export class Intro extends LitElement {
           <p class="c-intro__subtitle hidden-from-top">Laissez votre curiosité vous guider à travers la vie de Mike</p>
         </div>
         <button @click="${this.outAnimation}" class="c-start__cta hidden-fade hidden-from-top-px">Commencer l'aventure</button>
-        <img src="/public/images/components/intro/logobg.png" alt="Logo Lorem Ipson" class="c-start__logo c-intro__logo hidden-fade">
+        <img src="/images/components/intro/logobg.png" alt="Logo Lorem Ipson" class="c-start__logo c-intro__logo hidden-fade">
       </div>
       <div class="c-intro__footer hidden-fade hidden-from-bottom">
         <p class="c-intro-footer__text">
         Travail de fin d’études réalisé dans le cadre d’un master en développement interactif à  l’Institut des Arts de la Diffusion, section réalisation multimédia.<br/><br/>TFE réalisé durant l’année scolaire 2022-2023 par Valentin de Brabandère
         </p>
-        <img src="/public/images/components/intro/logoIad.png" alt="IAD" class="c-intro-footer__logo">
+        <img src="/images/components/intro/logoIad.png" alt="IAD" class="c-intro-footer__logo">
       </div>
     `;
   }

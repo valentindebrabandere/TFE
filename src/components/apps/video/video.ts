@@ -24,6 +24,8 @@ export class Video extends StyledElement {
   @query("#progress") progressBarEl!: HTMLInputElement;
   @query("#time") timeEl!: HTMLDivElement;
 
+  static appName = "Video";
+
   connectedCallback() {
     super.connectedCallback();
     this.updateStyles();

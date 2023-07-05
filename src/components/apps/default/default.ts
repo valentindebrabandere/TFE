@@ -10,7 +10,7 @@ import { StyledElement } from '../../../utils/globalStyledElement';
 
 
 @customElement('default-app-component')
-export class DefaultApp extends StyledElement {
+export class Default extends StyledElement {
   @property({ type: String }) name: string;
 
   @state() styles = [basic, css``];

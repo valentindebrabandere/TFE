@@ -16,6 +16,7 @@ export class Finder extends StyledElement {
   public fileClicked: boolean = false;
 
   size: DOMRect | null = null;
+  static appName = 'Finder';
 
   constructor() {
     super();

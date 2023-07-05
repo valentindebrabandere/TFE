@@ -19,6 +19,8 @@ export class Numbers extends StyledElement {
   });
   @state() styles = [basic, css``]; // Update with styles for NumbersComponent
 
+  static appName = 'Numbers';
+
   connectedCallback() {
     super.connectedCallback();
     this.updateStyles();

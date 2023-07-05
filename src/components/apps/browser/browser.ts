@@ -15,6 +15,7 @@ export class Browser extends StyledElement {
     | undefined;
   @state() styles = [basic, css``];
   @state() currentStyle = "";
+  static appName = "Browser";
 
   constructor() {
     super();

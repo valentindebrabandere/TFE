@@ -15,6 +15,7 @@ import '../default/default';
 export class Figma extends StyledElement {
 
   @state() styles = [basic, css``];
+  static appName = 'Figma';
 
   constructor() {
     super();
@@ -38,7 +39,7 @@ export class Figma extends StyledElement {
   render() {
     return html`
       <div class="c-app">
-        <default-app-component name="${Figma.name}"></default-app-component>
+        <default-app-component name="${this.appName}"></default-app-component>
       </div>
     `;
   }

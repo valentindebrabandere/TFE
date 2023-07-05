@@ -19,6 +19,8 @@ export class Mail extends StyledElement {
   @state() selectedMailContent: string = "";
   @state() currentStyle = "";
 
+  static appName = "Mail";
+
   async connectedCallback() {
     super.connectedCallback();
     this.updateStyles();

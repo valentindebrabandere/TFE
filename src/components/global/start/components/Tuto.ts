@@ -97,7 +97,7 @@ export class Tuto extends LitElement {
             </li>
           </ul>
         <button @click="${this.outAnimation}" class="c-start__cta">Commencer l'aventure</button>
-        <img src="/public/images/components/intro/logobg.png" alt="Logo Lorem Ipson" class="c-start__logo c-tuto__logo">
+        <img src="/images/components/intro/logobg.png" alt="Logo Lorem Ipson" class="c-start__logo c-tuto__logo">
       </div>
     `;
   }
