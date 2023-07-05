@@ -87,6 +87,7 @@ export class Layout extends StyledElement {
         });
       }, 250);
     }
+    
   }
 
   openLayout(): void {
