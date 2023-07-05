@@ -89,31 +89,34 @@ export class End extends LitElement {
     return html`
       <div class="c-text__main">
         <div class="c-text__text">
-        <p class="c-text__p">Meri d'avoir joué le jeu !</p>
+        <p class="c-text__p">Merci d'avoir joué le jeu !</p>
           <p class="c-text__p">
             Ce projet, c'est la conclusion de mes études. J'aimerais donc
-            remercié tous les enseignant qui m'ont accompagné durant ces 4
+            remercié tous les enseignants qui m'ont accompagné durant ces
             années.
           </p>
           <p class="c-text__p">
             Un merci spécial à l'équipe web, Jérome Coupé, Julien Moreau et
-            Thomas Henrion, car a eux trois ils permette une vison très complète
-            du developpement, chacun avec leur spécialité.
+            Thomas Henrion, car a eux trois ils permettent une vision très complète
+            du développement, chacun avec leur spécialité.
           </p>
           <p class="c-text__p">
             Merci à Christophe Beaujean pour la relecture et du scénario. A
             Amethys, Boris et Yuna pour leurs apparitions dans les fichiers
-            d'ordinateur !
+            d'ordinateur 
           </p>
           <p class="c-text__p">
             Merci à ma famille et mes amis pour l'aide apportée tout au long de
-            ce travail.
+            ce travail. Et aux Multitis la motivation !!
           </p>
           <p class="c-text__p c-text__p---muted ">
             Travail de fin d'études réalisé en 2023 par Valentin de Brabandère
             pour son master en développement interactif à l’Institut des Arts de
             la Diffusion, section réalisation multimédia.
+            <br>
+            ©MediaDiffusion 2023
           </p>
+
         </div>
         <button @click="${this.nextPanel}" class="c-start__cta c-text__cta">
           <p class="c-text__arrow">→</p>

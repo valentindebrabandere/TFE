@@ -50,7 +50,7 @@ export class Notif extends StyledElement {
 
         let end = new End();
         document.body.appendChild(end);
-        
+        /*  */
         this.remove();
         return;
       }
