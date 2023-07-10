@@ -4,7 +4,7 @@ import { customElement, state, property } from "lit/decorators.js";
 
 import { StyledElement } from "../../../utils/globalStyledElement";
 import { basic, styles } from "./styles";
-import "./MailItemComponent";
+import "./mailItemComponent";
 import {formatDate} from "./formatDate";
 
 @customElement("mail-component")

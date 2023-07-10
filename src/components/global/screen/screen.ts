@@ -2,10 +2,10 @@ import { html } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { Notif } from "../../global/notif/notif";
 
-import "../menu/menu";
+import "../menu/menu.js";
 import "../openedApps/openedApps";
 import "../notif/notif";
-import "../dock/dock";
+import "../dock/dock.js";
 import "../desktop/desktop";
 
 import "./screenInterractions.js"

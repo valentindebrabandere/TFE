@@ -1,9 +1,9 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import "./style.css";
-import "./components/Intro"
-import "./components/Tuto"
-import "./components/Text"
+import "./components/intro"
+import "./components/tuto"
+import "./components/text"
 
 import { newStyleDisplay } from "../../../utils/newStyleDisplay";
 
