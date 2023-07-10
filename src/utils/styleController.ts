@@ -1,5 +1,5 @@
 // styleController.ts
-import { ReactiveController, ReactiveElement } from 'lit';
+import { ReactiveController, ReactiveElement } from "lit";
 
 export interface StyleObject {
   call: string;
@@ -8,38 +8,63 @@ export interface StyleObject {
   chapter: string;
 }
 
-export const stylesList:StyleObject[] =  [
-  { call: 'oneBit', name: 'One bit', date: 1987, chapter: "Naissance d'un rêve"},
-{ call: 'grey', name: 'Grey scale and color', date: 1997, chapter: "Sur le fil du succès" },
-{ call: 'skeuo', name: 'Skeuomorphism', date: 2007, chapter: "Le revers de la médaille" },
-{ call: 'flat', name: 'Flat design', date: 2017, chapter: "Entre les murs de l'isolement" },
-{ call: 'modernMac', name: 'Modern', date: 2022, chapter: "La vie continue" },
+const startStyle = 0;
 
+export const stylesList: StyleObject[] = [
+  {
+    call: "oneBit",
+    name: "One bit",
+    date: 1987,
+    chapter: "Naissance d'un rêve",
+  },
+  {
+    call: "grey",
+    name: "Grey scale and color",
+    date: 1997,
+    chapter: "Sur le fil du succès",
+  },
+  {
+    call: "skeuo",
+    name: "Skeuomorphism",
+    date: 2007,
+    chapter: "Le revers de la médaille",
+  },
+  {
+    call: "flat",
+    name: "Flat design",
+    date: 2017,
+    chapter: "Entre les murs de l'isolement",
+  },
+  { call: "modernMac", name: "Modern", date: 2022, chapter: "La vie continue" },
 ];
 
-export var currentStyle:string;
+export var currentStyle: string;
 
 export function setCurrentStyle(style: string): void {
   currentStyle = style;
 }
 
-export function addStyleChangedEventListener(listener: EventListenerOrEventListenerObject) {
-  window.addEventListener('style-changed', listener);
+export function addStyleChangedEventListener(
+  listener: EventListenerOrEventListenerObject
+) {
+  window.addEventListener("style-changed", listener);
 }
 
 export function changeStyle(direction: string): string {
-  const styleIndex = stylesList.findIndex((style) => style.call === currentStyle);
+  const styleIndex = stylesList.findIndex(
+    (style) => style.call === currentStyle
+  );
 
-  document.querySelectorAll('notif-component').forEach((el) => {
+  document.querySelectorAll("notif-component").forEach((el) => {
     el.remove();
   });
 
-  if (direction === 'start') {
+  if (direction === "start") {
     currentStyle = stylesList[0].call;
     return currentStyle;
   }
 
-  if (direction === 'next') {
+  if (direction === "next") {
     if (styleIndex < stylesList.length - 1) {
       currentStyle = stylesList[styleIndex + 1].call;
       return currentStyle;
@@ -63,21 +88,20 @@ class GlobalStyleController implements ReactiveController {
   private static instance: GlobalStyleController;
 
   constructor(host?: ReactiveElement) {
-
     if (host) {
       this.host = host;
       this.host.addController(this);
     }
-  
+
     if (GlobalStyleController.instance) {
       return GlobalStyleController.instance;
     }
-  
+
     GlobalStyleController.instance = this;
 
     // Initialize the style with the first style in the list
     //Fist style to show
-    this._style = stylesList[0].call;
+    this._style = stylesList[startStyle].call;
     setCurrentStyle(this._style);
     this.dispatchEvent();
   }
@@ -87,13 +111,17 @@ class GlobalStyleController implements ReactiveController {
   }
 
   getDate() {
-    const currentStyleObj = stylesList.find(style => style.call === this.style);
-    return currentStyleObj ? currentStyleObj.date : '';
+    const currentStyleObj = stylesList.find(
+      (style) => style.call === this.style
+    );
+    return currentStyleObj ? currentStyleObj.date : "";
   }
 
   getName() {
-    const currentStyleObj = stylesList.find(style => style.call === this.style);
-    return currentStyleObj ? currentStyleObj.name : '';
+    const currentStyleObj = stylesList.find(
+      (style) => style.call === this.style
+    );
+    return currentStyleObj ? currentStyleObj.name : "";
   }
 
   hostConnected() {
@@ -120,16 +148,18 @@ class GlobalStyleController implements ReactiveController {
     if (style !== this._style) {
       this._style = style;
       this.host?.requestUpdate();
-  
+
       // Dispatch the 'style-changed' event
       this.dispatchEvent();
     }
   }
 
   dispatchEvent() {
-    const event = new CustomEvent('style-changed');
+    const event = new CustomEvent("style-changed");
     window.dispatchEvent(event);
-    this.elements.forEach((element: HTMLElement) => element.dispatchEvent(event));
+    this.elements.forEach((element: HTMLElement) =>
+      element.dispatchEvent(event)
+    );
   }
 
   changeStyle(direction: string) {
@@ -139,4 +169,3 @@ class GlobalStyleController implements ReactiveController {
 }
 
 export { GlobalStyleController };
-

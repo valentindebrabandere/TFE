@@ -463,6 +463,9 @@ const styleSkeuo: StyleObject = {
       box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5),
         inset 0 5px 7px rgba(255, 255, 255, 0.5),
         inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+      font-family: system-ui ,sans-serif;
+      font-size: 12px;
+      line-height: 1.2;
     }
   `,
 };
