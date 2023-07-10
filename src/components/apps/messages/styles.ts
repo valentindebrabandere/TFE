@@ -345,6 +345,7 @@ const styleSkeuo: StyleObject = {
 
     .c-messages-item--text, .c-messages-item--vocal {
       font-family: ".LucidaGrandeUI", "Lucida Grande", "Lucida sans unicode";
+      line-height: 120%;
       color: black;
       font-size: 1rem;
       padding: 12px 18px;

@@ -1,4 +1,4 @@
-// Apercu.ts
+// preview.ts
 import { html, css } from 'lit';
 import { customElement, state, property } from 'lit/decorators.js';
 
@@ -9,14 +9,14 @@ import { StyledElement } from '../../../utils/globalStyledElement';
 import { getApplicationByID } from "../../../utils/appManager";
 
 
-@customElement('apercu-component')
-export class Aperçu extends StyledElement {
+@customElement('preview-component')
+export class Preview extends StyledElement {
   @property({ type: String, attribute: 'filelink' }) filelink: string|undefined;
 
   @state() content: string = '';
   @state() styles = [basic, css``];
   @state() currentStyle = '';
-  static appName = 'Aperçu';
+  static appName = 'Preview';
 
   constructor() {
     super();
@@ -25,7 +25,7 @@ export class Aperçu extends StyledElement {
   connectedCallback() {
     super.connectedCallback();
     this.updateStyles();
-    this.classList.add('c-aperçu');
+    this.classList.add('c-preview');
     this.classList.add('c-app');
   }
   
@@ -41,13 +41,13 @@ export class Aperçu extends StyledElement {
       return this.filelink;
     }
     // If filelink is undefined, fall back to the default icon
-    const fileIconPath = `/images/fileIcons/${style}/${Aperçu.name}.png`;
+    const fileIconPath = `/images/fileIcons/${style}/${Preview.name}.png`;
     return fileIconPath;
   }
 
   render() {
-    // create a aperçu app
-    const app = getApplicationByID("Aperçu");
+    // create a preview app
+    const app = getApplicationByID("Preview");
     return html`
       <style>
         /* Import the good style */
@@ -55,9 +55,9 @@ export class Aperçu extends StyledElement {
       </style>
         <!-- es6 if statement filelink undefied -->
         ${this.filelink ? 
-        html`<img class="c-apercu__content c-app__content" src="${this.filelink}" alt="Preview" />` 
-        : html`<div class="c-apercu__no-content">
-          <img src="${app.icon(this.currentStyle)}" alt="Aperçu Logo" />
+        html`<img class="c-preview__content c-app__content" src="${this.filelink}" alt="Preview" />` 
+        : html`<div class="c-preview__no-content">
+          <img src="${app.icon(this.currentStyle)}" alt="Preview Logo" />
           <h2>Pas de ficher ouvert</h2>
           <p>Ouvrez une image pour afficher un résultat</p>
         </div>`}

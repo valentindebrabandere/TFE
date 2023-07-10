@@ -3,6 +3,7 @@
 .c-screen *::before,
 .c-screen *::after {
      font-family: "Lucida Grande", system-ui, sans-serif;
+     line-height: 120%;
      font-weight: normal;
      box-sizing: content-box;
  }
@@ -16,6 +17,7 @@
  .c-cta {
      text-decoration: none;
      font-family: "Lucida Grande", system-ui, sans-serif;
+     line-height: 120%;
      color: black;
      font-size: 1rem;
      padding: 8px 18px;

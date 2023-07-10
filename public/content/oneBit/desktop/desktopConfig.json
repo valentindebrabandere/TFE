@@ -3,14 +3,14 @@
   "style": "oneBit",
   "childItems": [
     {
-      "appname": "Aperçu",
+      "appname": "Preview",
       "filename": "affiche.jpg",
       "filelink": "/content/oneBit/desktop/affiche.png",
       "position": {"top": "15%", "left": "60%"},
       "childItems": []
     },
     {
-      "appname": "Aperçu",
+      "appname": "Preview",
       "filename": "Claire et moi.jpg",
       "filelink": "/content/oneBit/desktop/Mariage.png",
       "position": {"top": "30%", "left": "60%"},
@@ -47,7 +47,7 @@
       "position": {"top": "45%", "left": "92%"}
     },
     {
-      "appname": "Aperçu",
+      "appname": "Preview",
       "filename": "Echographie.jpg",
       "filelink": "/content/oneBit/desktop/echographie.png",
       "position": {"top": "60%", "left": "92%"},
@@ -145,7 +145,7 @@
           "position": {}
         },
         {
-          "appname": "Aperçu",
+          "appname": "Preview",
           "filename": "logo-test.jpg",
           "filelink": "/content/oneBit/desktop/entreprise/logo.png",
           "childItems": [],

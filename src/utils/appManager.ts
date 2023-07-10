@@ -1,4 +1,4 @@
-import { Aperçu } from "../components/apps/aperçu/aperçu";
+
 import { Browser } from "../components/apps/browser/browser";
 import { Corbeille } from "../components/apps/corbeille/corbeille";
 import { FaceTime } from "../components/apps/faceTime/faceTime";
@@ -8,20 +8,21 @@ import { Numbers } from "../components/apps/numbers/numbers";
 import { Mail } from "../components/apps/mail/mail";
 import { Messages } from "../components/apps/messages/messages";
 import { Preferences } from "../components/apps/preferences/preferences";
+import { Preview } from "../components/apps/preview/preview";
 import { TextEdit } from "../components/apps/textEdit/textEdit";
 import { Video } from "../components/apps/video/video";
 
 //add new apps here
-const allApps = [Aperçu, Browser,FaceTime, Figma, Finder, Numbers, Mail, Messages, Preferences, TextEdit, Video];
+const allApps = [Browser,FaceTime, Figma, Finder, Numbers, Mail, Messages, Preferences, Preview, TextEdit, Video];
 
 export function getDockApps(style: string) {
   switch (style) {
     case 'modernMac':
-      return [Finder, Preferences, Figma, TextEdit, Aperçu];
+      return [Finder, Preferences, Figma, TextEdit, Preview];
     case 'flat':
-      return [Finder, Preferences,Numbers, Browser, TextEdit, Aperçu, FaceTime];
+      return [Finder, Preferences,Numbers, Browser, TextEdit, Preview, FaceTime];
     case 'skeuo':
-      return [Finder, Preferences,  Messages, TextEdit, Numbers, Aperçu];
+      return [Finder, Preferences,  Messages, TextEdit, Numbers, Preview];
     case 'grey':
       return [Finder, Preferences, Mail, TextEdit, Numbers, Video, Browser];
     case 'oneBit':

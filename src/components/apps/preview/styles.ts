@@ -2,13 +2,13 @@
 import { css, CSSResult } from 'lit';
 
 export const basic = css`
-  .c-aperçu {
+  .c-preview {
     display: flex;
     flex-direction: column;
     background-color: #fff;
   }
 
-  .c-apercu__content{
+  .c-preview__content{
     width: 100%;
     height: 100%;
     max-width: 60vw;
@@ -17,7 +17,7 @@ export const basic = css`
     object-fit: contain;
   }
 
-  .c-apercu__no-content{
+  .c-preview__no-content{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +26,7 @@ export const basic = css`
     height: 30vw;
   }
 
-  .c-apercu__no-content p{ 
+  .c-preview__no-content p{ 
     opacity: 0.5;
   }
 `;
@@ -57,7 +57,7 @@ const styleSkeuo:StyleObject = {
 const styleModernMac:StyleObject = {
     styleName: "modernMac",
     css: css`
-      .c-aperçu {
+      .c-preview {
         background-color: #2D2C2C;
       }
 

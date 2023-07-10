@@ -165,7 +165,7 @@ export class Video extends StyledElement {
               <div id="time" class="c-video__controls-time">0:00 / 0:00</div>
             </div>`
         : html`<div class="c-video__no-content">
-            <img src="${app.icon(this.currentStyle)}" alt="Aperçu Logo" />
+            <img src="${app.icon(this.currentStyle)}" alt="Preview Logo" />
 
             <h2>Pas de ficher ouvert</h2>
             <p>Ouvrez une video pour afficher un résultat</p>

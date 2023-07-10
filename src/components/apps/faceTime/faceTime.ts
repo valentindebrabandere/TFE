@@ -298,7 +298,7 @@ export class FaceTime extends StyledElement {
           ? "flex"
           : "none"}"
       >
-        <img src="${app.icon(this.currentStyle)}" alt="Aperçu Logo" />
+        <img src="${app.icon(this.currentStyle)}" alt="Preview Logo" />
         <h2>Pas d'appel Récent</h2>
         <p>Connectez vous à internet pour charger vos anciens appels</p>
       </div>

@@ -24,7 +24,7 @@ export class FileComponent extends StyledElement {
 
   @state() currentStyle = "";
 
-  private differentIconDisplayApps = ["Aperçu"];
+  private differentIconDisplayApps = ["Preview"];
   private defaultIconStyles = ["oneBit", "grey"];
 
   constructor() {

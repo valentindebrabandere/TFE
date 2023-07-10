@@ -26,7 +26,7 @@
     },
 
     {
-      "appname": "Aperçu",
+      "appname": "Preview",
       "filename": "dessin Anne.jpg",
       "filelink": "content/skeuo/desktop/desktopImages/dessin.png",
       "position": {"top": "20%", "left": "60%"},
@@ -78,14 +78,14 @@
         },
     
         {
-          "appname": "Aperçu",
+          "appname": "Preview",
           "filename": "dessin Anne.jpg",
           "filelink": "/content/grey/desktop/dessin.png",
           "position": {"top": "", "left": ""},
           "childItems": []
         },
         {
-          "appname": "Aperçu",
+          "appname": "Preview",
           "filename": "Anne.jpg",
           "filelink": "/content/grey/desktop/anne.jpg",
           "position": {"top": "", "left": ""},
