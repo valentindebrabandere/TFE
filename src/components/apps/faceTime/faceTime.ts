@@ -63,15 +63,27 @@ export class FaceTime extends StyledElement {
     this.ringtone.play();
   }
 
-  disconnectedCallback() {
+  stopVideoStreams() {
+    const video = this.querySelector("#faceTime-user");
+    if (video instanceof HTMLVideoElement && video.srcObject) {
+        const stream = video.srcObject as MediaStream;
+        const tracks = stream.getTracks();
+        tracks.forEach((track) => {
+            track.stop();
+        });
+        video.srcObject = null;
+    }
+}
+
+disconnectedCallback() {
     super.disconnectedCallback();
     if (!this.filelink) {
-      return;
+        return;
     }
     this.ringtone.pause();
     this.ringtone.currentTime = 0;
-  }
-
+    this.stopVideoStreams(); // Call it here
+}
   async preloadCamera() {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ video: true });

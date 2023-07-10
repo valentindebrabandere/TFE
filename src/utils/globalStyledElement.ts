@@ -21,6 +21,7 @@ export class StyledElement extends LitElement {
 
   onStyleChanged() {
     this.updateStyles();
+    this.requestUpdate();
   }
 
   updateStyles() {
