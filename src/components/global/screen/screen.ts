@@ -2,7 +2,7 @@ import { html } from "lit";
 import { customElement, state } from "lit/decorators.js";
 import { Notif } from "../../global/notif/notif";
 
-import "../menu/menu.js";
+import "../menu/Menu";
 import "../openedApps/openedApps";
 import "../notif/notif";
 import "../dock/dock.js";
