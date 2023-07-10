@@ -67,6 +67,11 @@ const styleGrey:StyleObject = {
     background-color: #DEDEDE;
   }
 
+  ::selection {
+    background-color: black;
+    color: white;
+  }
+
   `
 };
 const styleSkeuo:StyleObject = {
