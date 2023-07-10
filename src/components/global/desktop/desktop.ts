@@ -1,10 +1,10 @@
 import { html } from "lit";
 import { customElement } from "lit/decorators.js";
 
-import type { FileItem } from "../file/file.ts";
+import type { FileItem } from "../file/File";
 import { StyledElement } from "../../../utils/globalStyledElement.ts";
-import {FileComponent} from "../file/file.ts";
-import "../file/file.ts";
+import {FileComponent} from "../file/File.ts";
+import "../file/File.ts";
 
 @customElement("desktop-component")
 export class Desktop extends StyledElement {

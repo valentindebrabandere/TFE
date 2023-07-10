@@ -1,6 +1,6 @@
 import { html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
-import { getApplicationByID } from "../../../utils/appManager";
+import { getApplicationByID } from "../../../utils/appManager.ts";
 
 import { StyledElement } from "../../../utils/globalStyledElement.ts";
 

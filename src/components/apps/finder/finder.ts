@@ -6,7 +6,7 @@ import { basic, styles } from './styles';
 import { StyledElement } from '../../../utils/globalStyledElement';
 import { arrangeItemsInGrid } from '../../../utils/arrangeItemsGrid.ts';
 
-import type { FileItem, FileComponent } from '../../global/file/file.ts';
+import type { FileItem, FileComponent } from '../../global/file/File.ts';
 
 @customElement('finder-component')
 export class Finder extends StyledElement {

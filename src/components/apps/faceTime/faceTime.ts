@@ -2,7 +2,7 @@ import { html, css } from "lit";
 import { customElement, state, property, query } from "lit/decorators.js";
 import { getApplicationByID } from "../../../utils/appManager";
 
-import { Notif } from "../../global/notif/notif";
+import { Notif } from "../../global/notif/Notif";
 
 import { basic, styles } from "./styles";
 

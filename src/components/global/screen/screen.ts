@@ -1,11 +1,11 @@
 import { html } from "lit";
 import { customElement, state } from "lit/decorators.js";
-import { Notif } from "../../global/notif/notif";
+import { Notif } from "../notif/Notif.js";
 
 import "../menu/Menu";
 import "../openedApps/openedApps";
-import "../notif/notif";
-import "../dock/dock.js";
+import "../notif/Notif.js";
+import "../dock/Dock";
 import "../desktop/desktop";
 
 import "./screenInterractions.js"

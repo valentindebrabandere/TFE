@@ -1,15 +1,15 @@
 //notif.ts
 import { html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
-import { getApplicationByID } from "../../../utils/appManager";
+import { getApplicationByID } from "../../../utils/appManager.ts";
 
 import { newStyleDisplay } from "../../../utils/newStyleDisplay.ts";
 import { addNewOpenedApp, removeOpenedApp } from "../../../utils/openedAppsProvider.ts";
 import { stylesList } from "../../../utils/styleController.ts";
-import { End } from "../end/end";
+import { End } from "../end/end.ts";
 
 // utils imports
-import { StyledElement } from "../../../utils/globalStyledElement";
+import { StyledElement } from "../../../utils/globalStyledElement.ts";
 
 @customElement("notif-component")
 export class Notif extends StyledElement {
