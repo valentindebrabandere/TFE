@@ -6,7 +6,7 @@ import { getApplicationByID } from "../../../utils/appManager.ts";
 import { newStyleDisplay } from "../../../utils/newStyleDisplay.ts";
 import { addNewOpenedApp, removeOpenedApp } from "../../../utils/openedAppsProvider.ts";
 import { stylesList } from "../../../utils/styleController.ts";
-import { End } from "../end/end.ts";
+import { End } from "../end/End";
 
 // utils imports
 import { StyledElement } from "../../../utils/globalStyledElement.ts";
