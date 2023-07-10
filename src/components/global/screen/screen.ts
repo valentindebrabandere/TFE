@@ -4,7 +4,7 @@ import { Notif } from "../notif/Notif.js";
 
 import "../menu/Menu";
 import "../openedApps/openedApps";
-import "../notif/Notif.js";
+import "../notif/Notif";
 import "../dock/Dock";
 import "../desktop/desktop";
 
