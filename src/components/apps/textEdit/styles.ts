@@ -73,8 +73,7 @@ const styleGrey:StyleObject = {
   }
 
   ::selection {
-    background-color: black;
-    color: white;
+    background-color: #cac6cb;
   }
 
   `
