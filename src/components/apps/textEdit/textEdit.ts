@@ -1,7 +1,7 @@
 // TextEdit.ts
 import { html, css } from 'lit';
 import { customElement, state, property } from 'lit/decorators.js';
-import { Notif } from "../../global/notif/Notif";
+import { Notif } from "../../global/notif/notif";
 
 import { basic, styles } from './styles';
 

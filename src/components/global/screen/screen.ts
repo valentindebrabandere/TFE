@@ -1,7 +1,7 @@
 import { html } from "lit";
 import { customElement, state } from "lit/decorators.js";
-import { Notif } from "../notif/Notif.ts";
 
+import { Notif } from "../notif/notif";
 import "../menu/Menu";
 import "../openedApps/openedApps";
 import "../dock/Dock";

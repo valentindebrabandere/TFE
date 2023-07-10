@@ -11,7 +11,7 @@ import './assets/dynamicElement';
 import '../window/window'; 
 import { StyledElement } from '../../../utils/globalStyledElement';
 
-import "../notif/Notif";
+import "../notif/notif";
 
 @customElement('opened-apps-component')
 export class OpenedApps extends StyledElement {
