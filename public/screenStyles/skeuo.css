@@ -15,7 +15,7 @@
 
  .c-cta {
      text-decoration: none;
-     font-family: ".LucidaGrandeUI", "Lucida Grande", "Lucida sans unicode";
+     font-family: "Lucida Grande", system-ui, sans-serif;
      color: black;
      font-size: 1rem;
      padding: 8px 18px;

@@ -1,6 +1,5 @@
 
 import { css, CSSResult } from 'lit';
-import "/src/assets/globalStyles/typoImports.css"
 
 export const basic = css`
   .c-browser {

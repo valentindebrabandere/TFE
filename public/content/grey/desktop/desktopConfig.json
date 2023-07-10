@@ -28,7 +28,7 @@
     {
       "appname": "Aperçu",
       "filename": "dessin Anne.jpg",
-      "filelink": "/content/grey/desktop/dessin.png",
+      "filelink": "content/skeuo/desktop/desktopImages/dessin.png",
       "position": {"top": "20%", "left": "60%"},
       "childItems": []
     },
