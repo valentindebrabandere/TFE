@@ -6,7 +6,7 @@ import { classMap } from "lit/directives/class-map.js";
 import { StyledElement } from "../../../utils/globalStyledElement";
 import { basic, styles } from "./styles";
 import "./MessagesItemComponent";
-import "./discussionItemComponent";
+import "./DiscussionItemComponent";
 
 @customElement("messages-component")
 export class Messages extends StyledElement {
