@@ -4,7 +4,7 @@ import { customElement } from "lit/decorators.js";
 import type { FileItem } from "../file/File";
 import { StyledElement } from "../../../utils/globalStyledElement.ts";
 import {FileComponent} from "../file/File";
-import "../file/File.ts";
+import "../file/File";
 
 @customElement("desktop-component")
 export class Desktop extends StyledElement {
