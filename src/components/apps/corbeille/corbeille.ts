@@ -2,7 +2,7 @@
 import { html, css } from "lit";
 import { customElement, state, property } from "lit/decorators.js";
 
-import type { FileItem, FileComponent } from "../../global/file/File.ts";
+import type { FileItem, FileComponent } from "../../global/file/file.ts";
 import { basic, styles } from "../finder/styles";
 import { arrangeItemsInGrid } from '../../../utils/arrangeItemsGrid.ts';
 

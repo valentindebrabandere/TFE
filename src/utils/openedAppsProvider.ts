@@ -1,7 +1,7 @@
 // openedAppsProvider.ts
 import { BehaviorSubject } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
-import { FileItem } from '../components/global/file/File';
+import { FileItem } from '../components/global/file/file';
 import { GlobalStyleController, addStyleChangedEventListener } from "./styleController";
 import { getApplicationByID } from './appManager';
 import { getDefaultAppsForStyle } from './defaultAppsByStyle';

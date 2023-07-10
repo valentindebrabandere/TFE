@@ -1,5 +1,5 @@
 // defaultAppsByStyle.ts
-import { FileItem } from '../components/global/file/File';
+import { FileItem } from '../components/global/file/file';
 
 interface AppData {
   id: string;
