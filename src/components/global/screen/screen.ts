@@ -4,7 +4,6 @@ import { Notif } from "../notif/Notif";
 
 import "../menu/Menu";
 import "../openedApps/openedApps";
-import "../notif/Notif";
 import "../dock/Dock";
 import "../desktop/desktop";
 
