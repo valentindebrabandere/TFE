@@ -314,42 +314,42 @@
     "profilePic": "/content/skeuo/messages/profilePictures/steve.png",
     "chats": [
       {
-        "send": true,
+        "send": false,
         "timestamp": "2007-12-23T09:35:00.000+02:00",
         "content": "Salut Mike, j'ai reçu les derniers rapports financiers. On doit en parler.",
         "fileType": "text",
         "filelink": null
       },
       {
-        "send": false,
+        "send": true,
         "timestamp": "2007-12-23T10:05:00.000+02:00",
         "content": "Salut Steve, je suis en déplacement aujourd'hui. On peut discuter demain ?",
         "fileType": "text",
         "filelink": null
       },
       {
-        "send": true,
+        "send": false,
         "timestamp": "2007-12-23T10:15:00.000+02:00",
         "content": "D'accord, mais c'est urgent Mike. Assure-toi d'être disponible.",
         "fileType": "text",
         "filelink": null
       },
       {
-        "send": false,
+        "send": true,
         "timestamp": "2007-12-24T09:10:00.000+02:00",
         "content": "Salut Steve, je suis libre maintenant. Qu'est-ce qui ne va pas ?",
         "fileType": "text",
         "filelink": null
       },
       {
-        "send": true,
+        "send": false,
         "timestamp": "2007-12-24T09:20:00.000+02:00",
         "content": "Les chiffres ne sont pas bons, Mike. On est en chute libre.",
         "fileType": "text",
         "filelink": null
       },
       {
-        "send": false,
+        "send": true,
         "timestamp": "2007-12-24T09:25:00.000+02:00",
         "content": "Quoi ? Comment c'est possible ? On avait une bonne progression.",
         "fileType": "text",
@@ -370,21 +370,21 @@
         "filelink": null
       },
       {
-        "send": true,
+        "send": false,
         "timestamp": "2007-12-24T09:55:00.000+02:00",
         "content": "C'est compliqué. Je pense qu'on devrait penser à une solution de secours.",
         "fileType": "text",
         "filelink": null
       },
       {
-        "send": false,
+        "send": true,
         "timestamp": "2007-12-24T10:00:00.000+02:00",
         "content": "Je refuse d'abandonner, Steve. C'est mon entreprise.",
         "fileType": "text",
         "filelink": null
       },
       {
-        "send": true,
+        "send": false,
         "timestamp": "2007-12-24T10:05:00.000+02:00",
         "content": "Je ne te demande pas d'abandonner, Mike. Je veux juste que tu sois réaliste.",
         "fileType": "text",
