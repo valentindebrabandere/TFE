@@ -59,7 +59,7 @@ export class Text extends LitElement {
             multinationale technologique Lorem Ispon, vient de décéder.
           </p>
           <p class="c-text__p">
-            Depuis toute petite, son passé m’a toujours fasciné. Après tout, il
+            Depuis toute petite, son passé m’a toujours fascinée. Après tout, il
             a quand même crée Lorem Ipson, l’une des entreprises la plus
             influente au monde.
           </p>
